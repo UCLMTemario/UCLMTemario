@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Paula Castillejo Bravo" />
-  <title>MITIGACIÓN DE RIESGOS</title>
+  <title>PROCESAMIENTO INTELIGENTE</title>
   <style>
     html {
       color: #1a1a1a;
@@ -59,6 +59,10 @@
       color: #1a1a1a;
     }
     img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
       max-width: 100%;
     }
     h1, h2, h3, h4, h5, h6 {
@@ -153,25 +157,214 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
     ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">MITIGACIÓN DE RIESGOS</h1>
-<p class="subtitle">TEMA 5</p>
+<h1 class="title">PROCESAMIENTO INTELIGENTE</h1>
+<p class="subtitle">TEMA 4</p>
 <p class="author">Paula Castillejo Bravo</p>
-<p class="date">25-04-2023</p>
+<p class="date">16-05-2024</p>
 </header>
-
+<h1 id="procesamiento-inteligente">Procesamiento inteligente</h1>
+<h2 id="inteligencia-artificial">Inteligencia artificial</h2>
+<p>Disciplina científica que se ocupa de crear programas informáticos
+que ejecutan operaciones comparables a las que realiza la mente humana,
+como el aprendizaje o el razonamiento lógico.</p>
+<h2 id="modelo-de-ia">Modelo de IA</h2>
+<p>Definición de reglas utilizadas para producir un resultado dada una
+entrada específica. Muchos funcionan como cajas negras.</p>
+<h2 id="deductiva">Deductiva</h2>
+<p>Basado en reglas y premisas establecidas explícitamente. Deducción:
+método por el cual se procede lógicamente de lo universal a lo
+particular.</p>
+<h2 id="inductiva">Inductiva</h2>
+<p>Basado en reglas establecidas implícitamente. Inducción: método por
+el cual se procede lógicamente de lo particular a lo general.</p>
+<h2 id="aprendizaje-automático">Aprendizaje automático</h2>
+<p>Rama de la inteligencia artificial cuyo objetivo es desarrollar
+técnicas para que las computadoras “aprendan”.</p>
+<h2 id="aprendizaje-no-supervisado">Aprendizaje no supervisado</h2>
+<p>Uso de datos no etiquetados (o etiquetados, no influye para el
+proceso) para entrenar algorítmos que identifican patrones y estructuras
+por sí solos. Perfilar o segmentar clientes. Detectar anomalias.</p>
+<h2 id="aprendizaje-supervisado">Aprendizaje supervisado</h2>
+<p>Uso de datos etiquetados para entrenar algorítmos que clasifican los
+datos o predicen los resultados con precisión. Identificar tendencias en
+las ventas. Optimizar cadenas de suministro y niveles de inventario.</p>
+<h2 id="aprendizaje-por-refuerzo">Aprendizaje por refuerzo</h2>
+<p>Uso de datos para entretan algorítmos que resuelve problemas mediante
+prueba y error, recibiendo recompensas o penalizaciones basandose en la
+decisión elegida.</p>
+<h2 id="retos">Retos</h2>
+<p>Eficiencia Técnicas de optimización Calidad de los datos Sesgos
+Ética</p>
+<h1 id="el-flujo-de-datos">El flujo de datos</h1>
+<h2 id="tipos-de-flujo">Tipos de flujo</h2>
+<p>Todos los flujos pasan por la aplicacion y la BBDD no tiene autonomia
+para iniciar un flujo. Entrada: Usuario → Aplicación → BBDD. Salida:
+Aplicación → BBDD → Aplicación → Usuario. Retroalimentación al usuairo:
+Usuario → Aplicación → Usuario. Procesamiento automático: Aplicación →
+BBDD → Aplicación → BBDD.</p>
+<h2 id="fases-del-flujo-en-la-aplicación">Fases del flujo en la
+aplicación</h2>
+<p>Carga: entrada de los datos de una fuente externa a la aplicación.
+Transformación: adecuación de los datos a la siguiente etapa.
+Procesamiento: serie de operaciones principales que se aplican sobre los
+datos. Transmisión: envío de los datos a sud estino final.</p>
+<h1 id="ahora-sí-cómo-procesamos-los-datos-de-manera-inteligente">Ahora
+sí, ¿cómo procesamos los datos de manera inteligente?</h1>
+<h2 id="parámetros">Parámetros</h2>
+<p>Valores internos de los modelos que establecen como transformar una
+entrada en una salidad siguiendo el algoritmo que tuviera asignado. El
+usuario no puede modificar los parámetros. Se establecen durante el
+proceso de aprendizaje.</p>
+<h2 id="hiperparámetros">Hiperparámetros</h2>
+<p>Valores que podemos establecer como usuarios que condicionan el
+aprendizaje de los modelos.</p>
+<h2 id="distancias">Distancias</h2>
+<ol type="1">
+<li>La distancia entre un punto y sí mismo es siempre 0.</li>
+<li>La distancia entre puntos diferentes es siempre positiva.</li>
+<li>Simetría: la distancia de p0 a p1 es la misma que de p1 a p0.</li>
+<li>Tiene que satisfacer la desigualdad de triángulos.</li>
+</ol>
+<p>Distancia euclídea: es la más usada para describir distancias.
+Distancia Manhatan: útil en espacios discretos.</p>
+<h2 id="clustering">Clustering</h2>
+<p>Consiste en descubrir grupos de puntos cercanos dentro de los datos.
+Los resultados pueden cambiar mucho entre diferentes algoritmos.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>K-Means</th>
+<th>DBSCAN</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>¿Qué es?</td>
+<td>Basado en <a href="##"
+title="Representantes de cada cluster">centroides</a>: los valores más
+cercanos a cada centroide pertenecen a su cluster</td>
+<td>Basado en densidad: un cluster es una región con muchos puntos
+cercanos</td>
+</tr>
+<tr class="even">
+<td>Ventajas</td>
+<td>Fácil de interpretar</td>
+<td>Busqueda de <a href="##"
+title="Valores que se alejan significativamente de la mayoría de los demás valores en un conjunto de datos.">outlier</a></td>
+</tr>
+<tr class="odd">
+<td>Desventajas</td>
+<td>Clusters redondos</td>
+<td>Díficil de paramétrizar</td>
+</tr>
+</tbody>
+</table>
+<h2 id="clasificación">Clasificación</h2>
+<p>Consiste en descubrir cuáles son las normas subyacentes detrás de una
+agrupación predefinnida dentro de los datos. Clase: conjunto de valores
+discretos.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>K-Nearest Neighbours</th>
+<th>Árboles de decisión</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>¿Qué es?</td>
+<td>Basado en similitudes con los vecinos del conjunto de datos
+original</td>
+<td>Basado en la asignación de <a href="##"
+title="El modelo se construye como un árbol: nodos intermedios = decisiones; hojas = clases">clases</a>
+en base a decisiones binarias</td>
+</tr>
+<tr class="even">
+<td>Ventajas</td>
+<td>Fácil de implementar y explicar</td>
+<td>Funcionan con todo tipo de datos</td>
+</tr>
+<tr class="odd">
+<td>Desventajas</td>
+<td>Requiere guardar el conjunto de datos entero, escalando mal con
+muchos valores</td>
+<td>Díficil de parametrizar correctamente</td>
+</tr>
+</tbody>
+</table>
+<h2 id="regresión">Regresión</h2>
+<p>Consiste en descubrir las normas que relacionan valores continuos a
+un conjunto de datos.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Lineal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>¿Qué es?</td>
+<td>Basado en modelos matemáticos polinómicos de grado menor a 2</td>
+</tr>
+<tr class="even">
+<td>Ventajas</td>
+<td>Puede extenderse a grados mayores con preprocesamiento</td>
+</tr>
+<tr class="odd">
+<td>Desventajas</td>
+<td>Sensible a <a href="##"
+title="Valores que se alejan significativamente de la mayoría de los demás valores en un conjunto de datos.">outliers</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="consideraciones-para-elegir-algoritmo">Consideraciones para
+elegir algoritmo</h2>
+<p><img src="/img/site1/Tema4-1.png" /> <img
+src="/img/site1/Tema4-2.png" /></p>
+<h1 id="machine-learning-en-sie">Machine learning en SIE</h1>
+<h2 id="beneficios">Beneficios</h2>
+<p>Mejor toma de decisiones. Aumento de eficiencia operacional. Mayor
+flexibilidad y adaptabilidad. Mayor automatización. Alta optimización de
+recursos.</p>
+<h2 id="consideraciones-en-sie">Consideraciones en SIE</h2>
+<p>Eficiencia: Los sistemas transaccionales deben funcionar en tiempo
+real. Los modelos de IA suelen ser bastante lentos. Calidad del dato:
+ocurren más errores si la introducción es manual y de muchas fuentes.
+Heterogeneidad de los datos: es díficil construir modelos universales.
+El procesamiento es fundamental. Empleados humanos: Resistencia al
+cambio. Despidos y desplazamientos.</p>
+<hr />
+<p><a href="tag1_f3.html">SELECCIÓN E IMPLEMENTACIÓN DE ERP</a></p>
 </body>
 </html>
