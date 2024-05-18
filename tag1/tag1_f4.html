@@ -185,11 +185,11 @@ como el aprendizaje o el razonamiento lógico.</p>
 <p>Definición de reglas utilizadas para producir un resultado dada una
 entrada específica. Muchos funcionan como cajas negras.</p>
 <h2 id="deductiva">Deductiva</h2>
-<p>Basado en reglas y premisas establecidas explícitamente. Deducción:
+<p>Basado en reglas y premisas establecidas explícitamente. - Deducción:
 método por el cual se procede lógicamente de lo universal a lo
 particular.</p>
 <h2 id="inductiva">Inductiva</h2>
-<p>Basado en reglas establecidas implícitamente. Inducción: método por
+<p>Basado en reglas establecidas implícitamente. - Inducción: método por
 el cual se procede lógicamente de lo particular a lo general.</p>
 <h2 id="aprendizaje-automático">Aprendizaje automático</h2>
 <p>Rama de la inteligencia artificial cuyo objetivo es desarrollar
@@ -197,37 +197,47 @@ técnicas para que las computadoras “aprendan”.</p>
 <h2 id="aprendizaje-no-supervisado">Aprendizaje no supervisado</h2>
 <p>Uso de datos no etiquetados (o etiquetados, no influye para el
 proceso) para entrenar algorítmos que identifican patrones y estructuras
-por sí solos. Perfilar o segmentar clientes. Detectar anomalias.</p>
+por sí solos. - Perfilar o segmentar clientes. - Detectar anomalias.</p>
 <h2 id="aprendizaje-supervisado">Aprendizaje supervisado</h2>
 <p>Uso de datos etiquetados para entrenar algorítmos que clasifican los
-datos o predicen los resultados con precisión. Identificar tendencias en
-las ventas. Optimizar cadenas de suministro y niveles de inventario.</p>
+datos o predicen los resultados con precisión. - Identificar tendencias
+en las ventas. - Optimizar cadenas de suministro y niveles de
+inventario.</p>
 <h2 id="aprendizaje-por-refuerzo">Aprendizaje por refuerzo</h2>
 <p>Uso de datos para entretan algorítmos que resuelve problemas mediante
 prueba y error, recibiendo recompensas o penalizaciones basandose en la
 decisión elegida.</p>
 <h2 id="retos">Retos</h2>
-<p>Eficiencia Técnicas de optimización Calidad de los datos Sesgos
-Ética</p>
+<ul>
+<li>Eficiencia</li>
+<li>Técnicas de optimización</li>
+<li>Calidad de los datos</li>
+<li>Sesgos</li>
+<li>Ética</li>
+</ul>
 <h1 id="el-flujo-de-datos">El flujo de datos</h1>
 <h2 id="tipos-de-flujo">Tipos de flujo</h2>
 <p>Todos los flujos pasan por la aplicacion y la BBDD no tiene autonomia
-para iniciar un flujo. Entrada: Usuario → Aplicación → BBDD. Salida:
-Aplicación → BBDD → Aplicación → Usuario. Retroalimentación al usuairo:
-Usuario → Aplicación → Usuario. Procesamiento automático: Aplicación →
-BBDD → Aplicación → BBDD.</p>
+para iniciar un flujo. - Entrada: Usuario → Aplicación → BBDD. - Salida:
+Aplicación → BBDD → Aplicación → Usuario. - Retroalimentación al
+usuairo: Usuario → Aplicación → Usuario. - Procesamiento automático:
+Aplicación → BBDD → Aplicación → BBDD.</p>
 <h2 id="fases-del-flujo-en-la-aplicación">Fases del flujo en la
 aplicación</h2>
-<p>Carga: entrada de los datos de una fuente externa a la aplicación.
-Transformación: adecuación de los datos a la siguiente etapa.
-Procesamiento: serie de operaciones principales que se aplican sobre los
-datos. Transmisión: envío de los datos a sud estino final.</p>
+<ul>
+<li>Carga: entrada de los datos de una fuente externa a la
+aplicación.</li>
+<li>Transformación: adecuación de los datos a la siguiente etapa.</li>
+<li>Procesamiento: serie de operaciones principales que se aplican sobre
+los datos.</li>
+<li>Transmisión: envío de los datos a sud estino final.</li>
+</ul>
 <h1 id="ahora-sí-cómo-procesamos-los-datos-de-manera-inteligente">Ahora
 sí, ¿cómo procesamos los datos de manera inteligente?</h1>
 <h2 id="parámetros">Parámetros</h2>
 <p>Valores internos de los modelos que establecen como transformar una
-entrada en una salidad siguiendo el algoritmo que tuviera asignado. El
-usuario no puede modificar los parámetros. Se establecen durante el
+entrada en una salidad siguiendo el algoritmo que tuviera asignado. - El
+usuario no puede modificar los parámetros. - Se establecen durante el
 proceso de aprendizaje.</p>
 <h2 id="hiperparámetros">Hiperparámetros</h2>
 <p>Valores que podemos establecer como usuarios que condicionan el
@@ -239,8 +249,10 @@ aprendizaje de los modelos.</p>
 <li>Simetría: la distancia de p0 a p1 es la misma que de p1 a p0.</li>
 <li>Tiene que satisfacer la desigualdad de triángulos.</li>
 </ol>
-<p>Distancia euclídea: es la más usada para describir distancias.
-Distancia Manhatan: útil en espacios discretos.</p>
+<ul>
+<li>Distancia euclídea: es la más usada para describir distancias.</li>
+<li>Distancia Manhatan: útil en espacios discretos.</li>
+</ul>
 <h2 id="clustering">Clustering</h2>
 <p>Consiste en descubrir grupos de puntos cercanos dentro de los datos.
 Los resultados pueden cambiar mucho entre diferentes algoritmos.</p>
@@ -281,8 +293,8 @@ title="Valores que se alejan significativamente de la mayoría de los demás val
 </table>
 <h2 id="clasificación">Clasificación</h2>
 <p>Consiste en descubrir cuáles son las normas subyacentes detrás de una
-agrupación predefinnida dentro de los datos. Clase: conjunto de valores
-discretos.</p>
+agrupación predefinnida dentro de los datos. - Clase: conjunto de
+valores discretos.</p>
 <table>
 <colgroup>
 <col style="width: 33%" />
@@ -354,16 +366,31 @@ elegir algoritmo</h2>
 src="/img/site1/Tema4-2.png" /></p>
 <h1 id="machine-learning-en-sie">Machine learning en SIE</h1>
 <h2 id="beneficios">Beneficios</h2>
-<p>Mejor toma de decisiones. Aumento de eficiencia operacional. Mayor
-flexibilidad y adaptabilidad. Mayor automatización. Alta optimización de
-recursos.</p>
+<ul>
+<li>Mejor toma de decisiones.</li>
+<li>Aumento de eficiencia operacional.</li>
+<li>Mayor flexibilidad y adaptabilidad.</li>
+<li>Mayor automatización.</li>
+<li>Alta optimización de recursos.</li>
+</ul>
 <h2 id="consideraciones-en-sie">Consideraciones en SIE</h2>
-<p>Eficiencia: Los sistemas transaccionales deben funcionar en tiempo
-real. Los modelos de IA suelen ser bastante lentos. Calidad del dato:
-ocurren más errores si la introducción es manual y de muchas fuentes.
-Heterogeneidad de los datos: es díficil construir modelos universales.
-El procesamiento es fundamental. Empleados humanos: Resistencia al
-cambio. Despidos y desplazamientos.</p>
+<ul>
+<li>Eficiencia:
+<ul>
+<li>Los sistemas transaccionales deben funcionar en tiempo real.</li>
+<li>Los modelos de IA suelen ser bastante lentos.</li>
+</ul></li>
+<li>Calidad del dato: ocurren más errores si la introducción es manual y
+de muchas fuentes.</li>
+<li>Heterogeneidad de los datos: es díficil construir modelos
+universales.</li>
+<li>El procesamiento es fundamental.</li>
+<li>Empleados humanos:
+<ul>
+<li>Resistencia al cambio.</li>
+<li>Despidos y desplazamientos.</li>
+</ul></li>
+</ul>
 <hr />
 <p><a href="tag1_f3.html">SELECCIÓN E IMPLEMENTACIÓN DE ERP</a></p>
 </body>
