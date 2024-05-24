@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Paula Castillejo Bravo" />
+  <title>DOCKER</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">DOCKER</h1>
+<p class="subtitle">PRÁCTICA 3</p>
+<p class="author">Paula Castillejo Bravo</p>
+<p class="date">23-05-2024</p>
+</header>
+<h1 id="qué-es-docker">¿Qué es Docker?</h1>
+<p>Plataforma abierta para desarrollar, distribuir y ejecutar
+aplicaciones.</p>
+<ul>
+<li><p>Separa las aplicaciones del resto de la infraestructura para que
+se pueda entregar software rápidamente.</p></li>
+<li><p>Automatiza el despliegue de aplicaciones dentro de contenedores
+de software, proporcionando una capa adicional de abstracción.</p></li>
+</ul>
+<h1 id="para-quién-es-útil">¿Para quién es útil?</h1>
+<p>Útil para administradores de sistemas y para desarrolladores.</p>
+<ul>
+<li>Para asegurar la calidadd e desarrollo tenemos que asegurar que todo
+el mundo usa las mismas versiones de todas las aplicaciones y librerías
+necesarios.</li>
+</ul>
+<h1 id="qué-es-visualización">¿Qué es visualización?</h1>
+<h2 id="linux">Linux</h2>
+<p>No es virtualizado.</p>
+<ul>
+<li><p>Los procesos dentro del contenedor de docker se ejecutan con el
+mismo kernel que la máquina anfitrión.</p></li>
+<li><p>Aísla los procesos del resto del sistema.</p></li>
+<li><p>Es capaz de controlar los recursos que se les asignan a los
+contenedores.</p></li>
+<li><p>Internamente, el contenedor no sabe que lo es; como una
+distribución linux independiente, pero sin la penalización de
+rendimiento.</p></li>
+</ul>
+<h2 id="windows">Windows</h2>
+<p>Utiliza tecnología de virtualización para ejecutar contenedores.</p>
+<ul>
+<li><p>Docker Desktop for Windows utiliza Hyper-V para crear una maquina
+virtual ligera y luego ejecuta los contenedores dentro de está máquina
+virtual.</p></li>
+<li><p>Proporciona un entorno Linux donde se ejecutan los contenedores
+Docker.</p></li>
+</ul>
+<h1 id="la-plataforma-docker">La plataforma Docker</h1>
+<p>Empaqueta y ejecuta una aplicación en un entorno aislado.</p>
+<ul>
+<li><p>El aislamiento y la seguridad permiten ejecutar varios
+contenedores simultaneamente en un mismo host.</p></li>
+<li><p>Los contenedores son ligeros y contienen todo lo necesario para
+ejecutar la aplicación.</p></li>
+</ul>
+<blockquote>
+<p>Todas las personas con las que se comparte tienen el mismo contenedor
+que funciona de la misma manera.</p>
+</blockquote>
+<ul>
+<li><p>Proporciona herramientas y una plataforma para gestionar el ciclo
+de vida de sus contenedores.</p></li>
+<li><p>El contenedor se convierte en la unidad para distribuir y probar
+una aplicación.</p></li>
+</ul>
+<h1 id="arquitectura">Arquitectura</h1>
+<h2 id="docker-daemon">Docker Daemon</h2>
+<p>Escucha las peticiones de la API de Docker y gestiona objetos de
+Docker.</p>
+<h2 id="docker-cliente">Docker Cliente</h2>
+<p>Interactúa con Docker.</p>
+<ul>
+<li><p>Envía comandos al demonio docker, que los ejecuta.</p></li>
+<li><p>El comando docker utiliza la API de Docker.</p></li>
+</ul>
+<h2 id="docker-registries">Docker Registries</h2>
+<p>Almacena imágenes Docker.</p>
+<ul>
+<li><p>Docker Hub: registro público que cualquiera puede usar.</p></li>
+<li><p>Es posible ejecutar en registro privado.</p></li>
+</ul>
+<h2 id="comandos">Comandos</h2>
+<ol type="1">
+<li><p>Docker pull/Docker run: Docker extrae las imágenes necesarias de
+tu registro configurado.</p></li>
+<li><p>Docker push: Docker empuja tu imagen a tu registro
+configurado.</p></li>
+</ol>
+<h1 id="imágenes">Imágenes</h1>
+<p>Plantilla de solo lectura con instrucciones para crear un contenedor
+Docker.</p>
+<ul>
+<li><p>Puedes crear tus propias imágenes o utilizar las creadas por
+otros y publicadas en un registro.</p></li>
+<li><p>Ligeras, pequeñas y rápidas.</p></li>
+</ul>
+<h1 id="dockerfile">Dockerfile</h1>
+<p>Define los pasos necesarios para crear una imagen y ejecutarla.</p>
+<ul>
+<li><p>Cada instrucción de un Dockerfile crea una capa en la
+imagen.</p></li>
+<li><p>Cuando cambias el Dockerfile y reconstruyes la imagen, solo se
+reconstruyen las capas que han cambiado.</p></li>
+</ul>
+<ol type="1">
+<li><p>FROM: especifica la imagen base sobre la que se construirá la
+nueva imagen</p></li>
+<li><p>RUN: ejecuta comandos en la imagen.</p></li>
+<li><p>CMD: define el comando que se ejecutará al iniciar un contenedor
+a partir de la imagen.</p></li>
+<li><p>ENV: establece variables de entorno dentro de la imagen.</p></li>
+<li><p>COPY/ADD: copia archivos desde el host al contenedor.</p></li>
+<li><p>VOLUME: define volúmenes para almacenar datos
+persistentes.</p></li>
+<li><p>WORKDIR: establece el directorio de trabajo dentro del contenedor
+para cualquier instrucción posterior.</p></li>
+<li><p>EXPOSE: expone puertos en el contenedor para que puedan ser
+accesibles desde fuera del contenedor.</p></li>
+<li><p>ENTRYPOINT: especifica el ejecutable predeterminado.</p></li>
+</ol>
+<h1 id="contenedores">Contenedores</h1>
+<p>Instancia ejecutable de una imagen.</p>
+<ul>
+<li><p>Se puede crear, iniciar, detener, mover o eliminar un contenedor
+mediante la API de Docker.</p></li>
+<li><p>Por defecto, está relativamente aislado de otros contenedores y
+de su máquina anfitriona.</p></li>
+<li><p>Está definido por su imagen y por cualquier opción de
+configuración proporcionada al crearlo o iniciarlo.</p></li>
+<li><p>Cuando se elimina un contenedor, cualquier cambio en su estado
+que no esté almacenado en la memoria persistente desaparece.</p></li>
+</ul>
+<h1 id="persistencia-de-datos">Persistencia de datos</h1>
+<p>Si se elimina el contenedor, se eliminan también sus archivos.</p>
+<h2 id="almacenar-datos-dentro-de-un-contenedor">Almacenar datos dentro
+de un contenedor</h2>
+<ol type="1">
+<li><p>A través de volúmenes.</p></li>
+<li><p>Montando un directorio de la máquina anfitrión al
+contenedor.</p></li>
+<li><p>Almacenándolo en la memoria del sistema, pero se perderían al
+reiniciar.</p></li>
+</ol>
+<h1 id="docker-compose">Docker Compose</h1>
+<p>Herramienta para automatizar la creación, inicio y parada de un
+contenedor o un conjunto de ellos.</p>
+<ul>
+<li>Permite definir la configuración de los contenedores y sus
+interacciones en un único archivo YAML.</li>
+</ul>
+<h2 id="comandos-1">Comandos</h2>
+<ul>
+<li><p>Iniciar, detener y rehacer servicios.</p></li>
+<li><p>Ver estado de los servicios.</p></li>
+<li><p>Visualizar los logs.</p></li>
+<li><p>Ejecutar un comando en un servicio.</p></li>
+</ul>
+<hr />
+<p><a href="tag2_p1.html">P1: DHT11 y PIR HC-SR501</a></p>
+<p><a href="tag2_p2.html">P2: FREERTOS</a></p>
+<p><a href="tag2_p3.html">P3: DOCKER</a></p>
+<p><a href="tag2_p4.html">P4: ESPNOW</a></p>
+</body>
+</html>

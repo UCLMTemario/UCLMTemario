@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Paula Castillejo Bravo" />
+  <title>DATOS Y ANÁLISIS</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">DATOS Y ANÁLISIS</h1>
+<p class="subtitle">TEMA 5</p>
+<p class="author">Paula Castillejo Bravo</p>
+<p class="date">24-05-2024</p>
+</header>
+<h1 id="introducción">Introducción</h1>
+<h2 id="cuál-crees-que-es-uno-de-los-principales-retos-del-iot">¿Cuál
+crees que es uno de los principales retos del IoT?</h2>
+<p>La extracción de valor de los datos generados/recopilados.</p>
+<ul>
+<li>La creación de cantidades masivas de datos es uno de los mayores
+retos desde el punto de vista de transporte y de gestión.</li>
+</ul>
+<blockquote>
+<p>El valor real del IoT no reside únicamente en conectar cosas, sino en
+los datos que producen esas cosas, los nuevos servicios que se pueden
+habilitar a través de esas cosas conectadas y las perspectivas de
+negocio que pueden revelar los datos.</p>
+</blockquote>
+<ul>
+<li><p>Análisis de datos: Analizar esta cantidad de datos de la manera
+más eficiente posible, ofreciendo perspectivas y conocimiento.</p></li>
+<li><p>No todos los datos son iguales.</p></li>
+</ul>
+<h1 id="big-data">Big Data</h1>
+<p>Datos que son tan grandes, rápidos o complejos que es dificil
+procesarlos con los métodos tradicionales.</p>
+<ul>
+<li><p>Proporciona respuesta a muchas preguntas que ni siquiera sabían
+que tenían.</p></li>
+<li><p>Identifica problemas de forma más rápida y comprensible.</p></li>
+<li><p>Detecta tendencias dentro de los datos.</p></li>
+<li><p>Ayuda a aprovechar sus datos y utilizarlos para identificar
+nuevas oportunidades.</p></li>
+<li><p>Gran herramienta para tomar mejores decisiones de
+negocio.</p></li>
+</ul>
+<h2 id="vs">V’s</h2>
+<ol type="1">
+<li><p>Volumen: la organización recopila datos de diversas
+fuentes.</p></li>
+<li><p>Velocidad: los datos llegan a una velocidad sin precedentes y
+deben ser manejados en tiempo real.</p></li>
+<li><p>Variedad: los datos son de todo tipo de formatos.</p></li>
+<li><p>Variabilidad: los flujos de datos son impredecibles, cambian a
+menudo y varían mucho.</p></li>
+<li><p>Veracidad: calidad de los datos.</p></li>
+</ol>
+<h2 id="tejido-de-datos">Tejido de datos</h2>
+<p>Conjunto de estrategias, técnicas y herramientas utilizadas para
+conectar, integrar y administrar datos de diferentes fuentes para
+obtener información valiosa.</p>
+<ul>
+<li>Crea estructuras de datos sólidas y unificada a partir de datos
+dispersos y desordenados.</li>
+</ul>
+<blockquote>
+<p>Especialmente importante en el contexto de IoT ya que un gran número
+de dispositivos y sensores generan un gran volumen de datos y es
+necesario tener una estructura sólida para procesarlos y obtener
+información valiosa.</p>
+</blockquote>
+<blockquote>
+<p>Con la llegada del IoT, hay un mayor número de objetos y dispositivos
+conectados a Internet que generan datos sobre patrones de uso de los
+clientes y el rendimiento de los productos, pero el surgimiento del
+aprendizaje automático ha producido aún más datos.</p>
+</blockquote>
+<h1 id="categorización-de-los-datos">Categorización de los datos</h1>
+<h2 id="datos-estructurados">Datos estructurados</h2>
+<p>Los datos siguen un modelo o esquema que define cómo se representan
+un organizan los datos.</p>
+<ul>
+<li>Se formatean, almacenan, consultan y procesan fácilmente.</li>
+</ul>
+<h2 id="datos-no-estructurados">Datos no estructurados</h2>
+<p>Carecen de esquema lógico que permita comprenderlos y descodificarlos
+con los medios tradicionales.</p>
+<ul>
+<li><p>EL 80% de los datos de la empresa son no estructurados.</p></li>
+<li><p>Métodos de análisis: Computación cognitiva y el aprendizaje
+automático.</p></li>
+</ul>
+<h2 id="datos-semi-estructurados">Datos semi-estructurados</h2>
+<p>Categoría intermedia entre los datos estructurados y no
+estructurados.</p>
+<ul>
+<li><p>No son relacionales, pero contienen un cierto esquema y
+coherencia.</p></li>
+<li><p>Contienen metadatos que proporcionan información adicional sobre
+el contenido del dato.</p></li>
+<li><p>Su procesamiento requiere una combinación de técnicas.</p></li>
+</ul>
+<h1 id="análisis-de-datos-iot">Análisis de datos IoT</h1>
+<h2 id="tipos">Tipos</h2>
+<ol type="1">
+<li><p>Descriptivo: informa de lo que está ocurriendo, ya sea ahora o en
+el pasado.</p></li>
+<li><p>Diagnóstico: cuando se está interesado en el “por qué”.</p></li>
+<li><p>Predictivo: ayuda a prever problemas o iniciativas antes de que
+se produzcan.</p></li>
+<li><p>Prescriptivo: recomienda soluciones para problemas
+venideros.</p></li>
+</ol>
+<ul>
+<li>El análisis predictivo y prescriptivo consume más recursos y aumenta
+la complejidad, pero el valor que aportan es mucho mayor.</li>
+</ul>
+<h2 id="retos">Retos</h2>
+<h3 id="problemas-de-escalabilidad">Problemas de escalabilidad</h3>
+<p>Debido al gran númoer de objetos inteligentes en la mayoría de las
+redes IoT que envían datos continuamente, las bases de datos
+relacionados pueden crecer increiblemente rápido.</p>
+<ul>
+<li>Problemas de rendimiento.</li>
+</ul>
+<h3 id="volatilidad-de-los-datos">Volatilidad de los datos</h3>
+<ul>
+<li><p>Es posible que el modelo de datos cambie y evolucione con el
+tiempo.</p></li>
+<li><p>Esquema dinámico.</p></li>
+</ul>
+<blockquote>
+<p>Con las bases de datos relacionales, es fundamental que el esquema se
+diseñe correctamente desde el principio. Cambiarlo después puede
+ralentizar o impedir el funcionamiento de la base de datos. Debido a la
+falta de flexibilidad, las revisiones del esquema deben mantenerse al
+mínimo.</p>
+</blockquote>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>SQL</th>
+<th>NoSQL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Utilizado para comunicarse con bases de datos relacionales</td>
+<td>Admite un modelo de datos complejo y evolutivo</td>
+</tr>
+<tr class="even">
+<td>Se organiza en tablas y columnas</td>
+<td>Se organizan en documentos, columnas, claves-valor o gráficos</td>
+</tr>
+<tr class="odd">
+<td>Los datos se relacionan entre sí mediante claves</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Insertar, actualizar, buscar y eliminar datos</td>
+<td>Manejar grandes cantidades de datos no estructurados</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>MongoDB: orientada a objetos, escalable y distribuida.</p></li>
+<li><p>Cassandra: diseñada para manejar grandes cantidades de datos en
+tiempo real.</p></li>
+<li><p>Redis: diseñada para manejar altas tasas de lectura/escritura y
+manejar grandes cantidades de datos en tiempo real.</p></li>
+<li><p>InfluxDB: de serie temporal, diseñada para manejar grandes
+cantidades de datos en tiempo real y series temporales.</p></li>
+<li><p>Couchbase: basada en documentos, escalable y
+distribuida.</p></li>
+</ul>
+<h1 id="machine-learning">Machine learning</h1>
+<h2
+id="diferencias-entre-inteligencia-artificial-machine-learning-y-deep-learning">Diferencias
+entre Inteligencia Artificial, Machine Learning y Deep Learning</h2>
+<ul>
+<li><p>Inteligencia Artificial: campo que estudia cómo crear programas
+informáticos con la habilidad de aprender y razonar como los humanos
+para resolver problemas de forma creativa.</p></li>
+<li><p>Machine Learning: Aplicación de la IA dedicada a la creación de
+algoritmos que permitan a los sistemas aprender sin intervención
+humana.</p></li>
+<li><p>Deep Learning: Subconjunto de ML enfocado en la creación de redes
+neuronales artificiales.</p></li>
+</ul>
+<h2 id="aspectos-básicos">Aspectos básicos</h2>
+<p>Rama de la inteligencia artificial que se enfoca en el desarrollo de
+algoritmos y técnicas que permiten a las computadoras aprender a partir
+de datos.</p>
+<ul>
+<li><p>Su objetivo es desarrollar sistemas que puedan mejorar su
+rendimiento automáticamente a medida que se les presentan nuevos
+datos.</p></li>
+<li><p>Tecnología clave el el ámbito del IoT ya que permite a los
+dispositivos tomar decisiones automatizadas y mejorar su
+rendimiento.</p></li>
+</ul>
+<blockquote>
+<p>Da sentido a los datos que se generan, ya que muchos de estos pueden
+parecer incomprensibles/inservibles a simple vista.</p>
+</blockquote>
+<h3 id="tipos-1">Tipos</h3>
+<h4 id="aprendizaje-supervisado">Aprendizaje supervisado</h4>
+<p>El algorimo se entrena con datos etiquetados.</p>
+<ul>
+<li>El objetivo es que sea capaz de predecir la salida deseada para
+nuevas entradas no vistas anteriormente.</li>
+</ul>
+<h4 id="aprendizaje-no-supervisado">Aprendizaje no supervisado</h4>
+<p>El alboritmo se entrena con datos no etiquetados.</p>
+<ul>
+<li><p>El objetivo es detectar patrones y relaciones en los
+datos.</p></li>
+<li><p>Útil para explorar y entender los datos.</p></li>
+</ul>
+<h4 id="aprendizaje-por-refuerzo">Aprendizaje por refuerzo</h4>
+<p>El algoritmo aprende a través de la interacción con su entorno y
+mediante la retroalimentación.</p>
+<ul>
+<li><p>El objetivo es maximizar una recompensa y minimizar un
+castigo.</p></li>
+<li><p>Utilizado para problemas de toma de decisiones.</p></li>
+</ul>
+<h2 id="deep-learning">Deep Learning</h2>
+<p>Técnica de ML que se basa en el uso de redes neuronales profundas
+para resolver problemas complejos.</p>
+<ul>
+<li>Tienen varias capas de procesamiento, lo que les permite aprender
+características abstractas y complejas a partir de los datos.</li>
+</ul>
+<blockquote>
+<p>“El Deep Learning anhela el Big Data porque es necesario para aislar
+patrones ocultos y para encontrar respuestas sin sobrecargar los datos.
+Con el Deep Learning, cuantos más datos de buena calidad tenga, mejores
+serán los resultados”</p>
+</blockquote>
+<h3 id="tipos-2">Tipos</h3>
+<ul>
+<li><p>Redes neuronales feedforward: son las más comunes y se utilizan
+para problemas de clasificación y regresión.</p></li>
+<li><p>Redes neuronales recurrentes: se utilizan para problemas de
+procesamiento de secuencias.</p></li>
+<li><p>Redes neuronales de refuerzo: se utilizan para problemas de
+aprendizaje por refuerzo.</p></li>
+</ul>
+<hr />
+<p><a href="tag2_t1.html">T1: FUNDAMENTOS</a></p>
+<p><a href="tag2_t2.html">T2: ARQUITECTURA Y DISEÑO</a></p>
+<p><a href="tag2_t3.html">T3:OBJETOS INTELIGENTES</a></p>
+<p><a href="tag2_t4.html">T4: CONEXIÓN</a></p>
+<p><a href="tag2_t5.html">T5: DATOS Y ANÁLISIS</a></p>
+<p><a href="tag2_t6.htmñ">T6: PLATAFORMAS Y ECOSISTEMAS</a></p>
+</body>
+</html>

@@ -4,7 +4,8 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Teória 23-22</title>
+  <meta name="author" content="Paula Castillejo Bravo" />
+  <title>ESPNOW</title>
   <style>
     html {
       color: #1a1a1a;
@@ -170,21 +171,67 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Teória 23-22</h1>
+<h1 class="title">ESPNOW</h1>
+<p class="subtitle">PRÁCTICA 4</p>
+<p class="author">Paula Castillejo Bravo</p>
+<p class="date">24-05-2024</p>
 </header>
-<p><a href="tag1/tag1_t1.html">tag1/tag1_t1</a> <a
-href="tag1/tag1_t2.html">tag1/tag1_t2</a> <a
-href="tag1/tag1_t3.html">tag1/tag1_t3</a> <a
-href="tag1/tag1_t4.html">tag1/tag1_t4</a> <a
-href="tag2/tag2_p1.html">tag2/tag2_p1</a> <a
-href="tag2/tag2_p2.html">tag2/tag2_p2</a> <a
-href="tag2/tag2_p3.html">tag2/tag2_p3</a> <a
-href="tag2/tag2_p4.html">tag2/tag2_p4</a> <a
-href="tag2/tag2_t1.html">tag2/tag2_t1</a> <a
-href="tag2/tag2_t2.html">tag2/tag2_t2</a> <a
-href="tag2/tag2_t3.html">tag2/tag2_t3</a> <a
-href="tag2/tag2_t4.html">tag2/tag2_t4</a> <a
-href="tag2/tag2_t5.html">tag2/tag2_t5</a> <a
-href="tag2/tag2_t6.html">tag2/tag2_t6</a></p>
+<h1 id="qué-es-esp_now">¿Qué es ESP_NOW?</h1>
+<p>Protocolo de comunicación desarrollado por Espressif.</p>
+<ul>
+<li>Permite la comunicación inalámbrica entre varios dispositivos sin
+necesidad de una red específica.</li>
+</ul>
+<blockquote>
+<p>Sin conexión.</p>
+</blockquote>
+<ul>
+<li>Intercambia pequeños paquetes de datos a alta velocidad a través de
+las bandas de frecuencia de 2,4GHz.</li>
+</ul>
+<h1 id="características">Características</h1>
+<ol type="1">
+<li><p>Permite una comunicación rápida y de bajo consumo.</p></li>
+<li><p>Soporta la comunicación MAC to MAC unidireccional y
+bidireccional</p></li>
+<li><p>Carga útil de hasta 250 bytes.</p></li>
+<li><p>Comunicación cifrada y no cifrada.</p></li>
+</ol>
+<h1 id="limitaciones">Limitaciones</h1>
+<ul>
+<li><p>Pares cifrados limitados a un máximo de 10 en Station
+mode.</p></li>
+<li><p>Pares no cifrados limitados a un máximo de 20.</p></li>
+<li><p>Carga útil limitada a 250 bytes.</p></li>
+</ul>
+<h1 id="comunicación-unidireccional">Comunicación unidireccional</h1>
+<ol type="1">
+<li><p>One-way communication.</p></li>
+<li><p>One “Master”, Multiple “Slaves”.</p></li>
+<li><p>One “Slave”, Multiple “Masters”.</p></li>
+</ol>
+<h1 id="comunicación-bidireccional">Comunicación bidireccional</h1>
+<ol type="1">
+<li>Two-way communicatión.</li>
+</ol>
+<h1 id="principales-funciones">Principales funciones</h1>
+<ol type="1">
+<li><p>esp_now_init(): inicializa ESP-NOW.</p>
+<ul>
+<li>Debe inicializarse Wi-Fi antes.</li>
+</ul></li>
+<li><p>esp_now_add_peer(): empareja un dispositivo y pasa como argumento
+la dirección MAC del par.</p></li>
+<li><p>esp_now_send(): enviar datos con ESP-NOW.</p></li>
+<li><p>esp_now_register_send_cb(): registra una función callback que se
+activa al enviar datos.</p></li>
+<li><p>esp_now_register_rcv_cb(): registra una función de devolución de
+llamada que se active al recibir datos.</p></li>
+</ol>
+<hr />
+<p><a href="tag2_p1.html">P1: DHT11 y PIR HC-SR501</a></p>
+<p><a href="tag2_p2.html">P2: FREERTOS</a></p>
+<p><a href="tag2_p3.html">P3: DOCKER</a></p>
+<p><a href="tag2_p4.html">P4: ESPNOW</a></p>
 </body>
 </html>
