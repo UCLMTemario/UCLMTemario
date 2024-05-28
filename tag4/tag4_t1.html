@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Paula Castillejo Bravo" />
+  <title>CONCEPTOS GENERALES</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">CONCEPTOS GENERALES</h1>
+<p class="subtitle">TEMA 1</p>
+<p class="author">Paula Castillejo Bravo</p>
+<p class="date">27-05-2024</p>
+</header>
+<h1 id="introducción">Introducción</h1>
+<ul>
+<li><p>El andamiaje matemático de la Ciencia de Redes es la Teoría de
+Grafos.</p></li>
+<li><p>La teoría de grafos puede remontarse a coordenadas espaciales y
+temporales concretas.</p></li>
+<li><p>La teoría de grafos nación en 1735 en Königsberg.</p></li>
+<li><p>Königsberg era una próspera ciudad mercantil de Prusia oriental y
+contaba con 7 puentes que cruzaban el río Pregel que rodeaba la ciudad.
+Cinco de ellos conectaban la isla de Kneiphof, atrapada entre los dos
+prazos del Pregel, con el continente.</p></li>
+<li><p>Esta peculiar disposición dio origen a un rompecabezas
+contemporáneo: ¿Es posible cruzar los siete puentes sin pasar dos veces
+por el mismo?</p></li>
+<li><p>A pesar de muchos intentos, nadie pudo encontrar ese camino. El
+problema quedó sin resolver hasta 1736, cuando Leonard Euler ofreció una
+rigurosa prueba matemática de que dicho camino no existe.</p></li>
+<li><p>La idea de Euler consistió en representar cada una de las 4 zonas
+terrestres separadas por el río como nodos. A continuación, conectó con
+líneas cada terreno que tenía puentes entre sí.</p></li>
+<li><p>Teoría de Euler</p>
+<ul>
+<li><p>Si un grafo tiene más de dos nodos de grado impar, no existe tal
+camino.</p></li>
+<li><p>Si un grafo está conectado y no tiene nodos de grado impar, tiene
+al menos un camino.</p></li>
+</ul></li>
+<li><p>Era la primera vez que alguien resolvía un problema matemático
+convirtiéndolo en un gráfico.</p>
+<ul>
+<li><p>Algunos problemas se vuelven más sencillos y tratables si se
+representan como un grafo.</p></li>
+<li><p>La existencia del camino no depende de nuestro ingenio para
+encontrarlo, más bien, es una propiedad del grafo.</p></li>
+</ul></li>
+<li><p>Así, los grafos/redes tienen propiedades, ocultas en su
+estructura, que afectan al funcionamiento del sistema que describen,
+limitando o mejorando nuestra capacidad de hacer cosas con o sobre
+ellos.</p></li>
+<li><p>Para entender bien cómo afectan las redes a las propiedades de un
+sistema, debemos familiarizarnos con algunos conceptos básicos de la
+teoría de grafos.</p></li>
+</ul>
+<h1 id="redes-y-grafos">Redes y grafos</h1>
+<ul>
+<li><p>Los términos red y grafo se utilizan con frecuencia
+indistintamente en la literatura científica.</p></li>
+<li><p>Sin embargo, existe una sutil diferencia entre ambos
+términos.</p></li>
+<li><p>Red: sistemas reales.</p></li>
+</ul>
+<blockquote>
+<p>Red = Nodo + Enlace</p>
+</blockquote>
+<ul>
+<li>Grafo: representación matemática de una red.</li>
+</ul>
+<blockquote>
+<p>Grafo = Vértice + Arista</p>
+</blockquote>
+<h1 id="métricas">Métricas</h1>
+<ul>
+<li><p>N: número de nodos.</p></li>
+<li><p>Principales tipos de redes.</p></li>
+</ul>
+<h2 id="no-dirigidas">No dirigidas</h2>
+<ul>
+<li>Enlaces: Simétricos.</li>
+</ul>
+<h2 id="dirigidas">Dirigidas</h2>
+<ul>
+<li>Enlaces: Arcos.</li>
+</ul>
+<h1 id="grado-del-nodo">Grado del nodo</h1>
+<p>Número de enlaces conectados al nodo.</p>
+<h2 id="no-dirigidos">No dirigidos</h2>
+<h2 id="dirigidos">Dirigidos</h2>
+<ul>
+<li><p>En los grafos dirigidos podemos definir un grado de entrada y un
+grado de salida.</p></li>
+<li><p>El grado total es la suma de los grados de entrada y salida.</p>
+<ul>
+<li><p>Origen: nodo con k<sup>in</sup>=0.</p></li>
+<li><p>Sumidero: nodo con k<sup>out</sup>=0.</p></li>
+</ul></li>
+</ul>
+<h2 id="promedio-del-grado">Promedio del grado</h2>
+<h3 id="indirecto">Indirecto</h3>
+<p><img src="/img/site1/tag4/Tema1-1.png" /></p>
+<h3 id="directo">Directo</h3>
+<p><img src="/img/site1/tag4/Tema1-2.png" /></p>
+<p><img src="/img/site1/tag4/Tema1-3.png" /></p>
+<p><img src="/img/site1/tag4/Tema1-4.png" /></p>
+<h2 id="distribución-del-grado">Distribución del grado</h2>
+<h3 id="distribución-de-x">Distribución de x:</h3>
+<p>Probabilidad de que un valor elegido al azar sea x.</p>
+<p><img src="/img/site1/tag4/Tema1-5.png" /></p>
+<p><img src="/img/site1/tag4/Tema1-6.png" /></p>
+<h3 id="distribución-de-grados-pk">Distribución de grados P(k)</h3>
+<p>Probabilidad de que un vértice elegido al azar tenga grado k.</p>
+<p>N<sub>k</sub> = # nodos con grado k</p>
+<p>P(k) = N<sub>k</sub> / N</p>
+<h3 id="representación-discreta">Representación discreta</h3>
+<p>p<sub>k</sub> es la probabilidad de que un nodo tenga grado k.</p>
+<h3 id="descripción-continua">Descripción continua</h3>
+<p>P(k) es la distribución de x de los grados</p>
+<p><img src="/img/site1/tag4/Tema1-7.png" /></p>
+<h3 id="condición-de-normalización">Condición de normalización</h3>
+<p><img src="/img/site1/tag4/Tema1-7.png" /></p>
+<p>donde k<sub>min</sub> es el grado mínimo de la red.</p>
+<h2 id="correlación-del-grado">Correlación del grado</h2>
+<ul>
+<li><p>¿Existe alguna tendencia a que los nodos se relacionen con otros
+nodos? ¿Sí? ¿No?</p></li>
+<li><p>Existe alguna tendencia entre los grados de los nodos
+enlazados.</p></li>
+</ul>
+<h3 id="asortativo">Asortativo</h3>
+<p>Los nodos muestran tendencia a enlazarse entre sí.</p>
+<h3 id="neutral">Neutral</h3>
+<p>Los nodos se conectan entre sí con las probabilidades aleatorias
+esperadas.</p>
+<h3 id="disortativo">Disortativo</h3>
+<p>Los nodos centrales tienden a evitar enlazarse entre sí.</p>
+<h2 id="redes-reales">Redes reales</h2>
+<ol type="1">
+<li><p>Red asortativa (r&gt;0): los nodos tienden a conectarse con otros
+nodos.</p></li>
+<li><p>Res disortativa (r&lt;0): los nodos tienden a conectarse con
+nodos pequeños.</p></li>
+</ol>
+<h1 id="caminos-y-distancias">Caminos y distancias</h1>
+<h2 id="caminos">Caminos</h2>
+<p>Un camino es una secuencia de nodos en la que cada nodo es adyacente
+al siguiente.</p>
+<ul>
+<li><p>P<sub>i0,in</sub> de longitud n entre los nodos i<sub>0</sub> e
+i<sub>n</sub> es una colección ordenada de n+1 nodos y n
+enlaces.</p></li>
+<li><p>Un camino puede intersecarse a sí mismo y pasar repetidamente por
+el mismo enlace. Cada vez que se cruza un enlace, se cuenta por
+separado.</p></li>
+<li><p>En un grafo no dirigido, el camino solo puede seguir la dirección
+de una flecha.</p></li>
+</ul>
+<h2 id="distancia">Distancia</h2>
+<p>La distancia entre dos nodos se define como el número de aristas a lo
+largo del camino más corto que los conecta.</p>
+<ul>
+<li><p>Si dos nodos están desconectados, la distancia es
+infinita.</p></li>
+<li><p>En los grafos no dirigidos, cada camino debe seguir la dirección
+de la flecha.</p></li>
+<li><p>¿Cómo determinar las distancias?</p>
+<ul>
+<li><p>Red no ponderada: BFS.</p></li>
+<li><p>Red ponderada: Dijktra (DFS)</p></li>
+</ul></li>
+</ul>
+<h3 id="matriz">Matriz</h3>
+<ul>
+<li><p>¿Cuántas entradas se necesitan para un grafo de N nodos?</p>
+<ul>
+<li><p>Dígrafo: N(N-1).</p></li>
+<li><p>Grafo simétrico: N(N-1)/2.</p></li>
+</ul></li>
+</ul>
+<p><img src="/img/site1/tag4/Tema1-8.png" /></p>
+<h2 id="diámetro">Diámetro</h2>
+<p>la distancia máxima entre cualquier par de nodos del grafo.</p>
+<h2 id="longitud-media-del-camino">Longitud media del camino</h2>
+<ul>
+<li>En un grafo dirigido (digrafo) I<sub>ij</sub> es la distancia del
+nodo i al nodo j.</li>
+</ul>
+<p><img src="/img/site1/tag4/Tema1-10.png" /></p>
+<ul>
+<li>En un grafo no dirigido (simétrico) I<sub>ij</sub> = I<sub>ji</sub>,
+entonces solo tenemos que contarlos una vez.</li>
+</ul>
+<p><img src="/img/site1/tag4/Tema1-10.png" /></p>
+<h1 id="conectividad">Conectividad</h1>
+<h2 id="grafo-no-dirigido-conexo">Grafo no dirigido conexo</h2>
+<p>Dos vértices cualesquiera pueden unirse mediante un camino.</p>
+<ul>
+<li><p>Un grafo desconcectado está formado por dos o más componentes
+conectados.</p></li>
+<li><p>Componente gigante: componente más grande.</p></li>
+<li><p>Aislados: el resto</p></li>
+<li><p>Puente: si lo borramos, el grafo queda desconectado.</p></li>
+</ul>
+<h2 id="grafo-dirigido-fuertemente-conexo">Grafo dirigido fuertemente
+conexo</h2>
+<p>Tiene un camino de cada nodo a cada otro nodo y viceversa.</p>
+<ul>
+<li><p>Componentes internos: nodos que pueden alcanzar a los componentes
+fuertemente conectados.</p></li>
+<li><p>Componentes esternos: nodos accesibles desde los componentes
+fuertemente conectados.</p></li>
+</ul>
+<h2 id="grafo-dirigido-débilmente-conexo">Grafo dirigido débilmente
+conexo</h2>
+<p>Está conectado si no tenemos en cuenta las direcciones de las
+aristas.</p>
+<h1 id="coeficiente-de-clustering">Coeficiente de clustering</h1>
+<ul>
+<li><p>¿Qué parte de sus vecinos están conectados?</p></li>
+<li><p>Nodo i con grado k<sub>i</sub>.</p></li>
+<li></li>
+</ul>
+<hr />
+<p><a href="tag4_t1.html">T1: CONCEPTOS GENERALES</a></p>
+<p><a href="tag4_t2.html">T2: MODELOS DE RED</a></p>
+<p><a href="tag4_t3.html">T3: COMUNIDADES EN REDES</a></p>
+<p><a href="tag4_t4.html">T4: REDES DINÁMICAS</a></p>
+<p><a href="tag4_t5.html">T5: ROBUSTEZ DE LA RED</a></p>
+</body>
+</html>
