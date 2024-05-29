@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Paula Castillejo Bravo" />
+  <title>DISEÑO Y MODELADO</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">DISEÑO Y MODELADO</h1>
+<p class="subtitle">TEMA 2</p>
+<p class="author">Paula Castillejo Bravo</p>
+<p class="date">29-05-2024</p>
+</header>
+<h1 id="arquitectura-de-datos-empresarial">Arquitectura de Datos
+Empresarial</h1>
+<h2 id="arquitectura-de-datos">Arquitectura de Datos</h2>
+<p>Organización fundamental de un sistema, incorporada en sus
+componentes, sus relaciones entre sí y con el ambiente, y los principios
+que rigen su diseño y evolución.</p>
+<ul>
+<li><p>Es más valiosa cuando impulsa completamente las necesidades de
+toda la empresa.</p></li>
+<li><p>Fundamental para la gestión de datos, dada la necesidad de
+representar los datos de la organización en diferentes niveles de
+abstracción para que puedan entenderse y tomarse decisiones.</p></li>
+</ul>
+<h2 id="dmbok">DMBok</h2>
+<p>El objetivo de la Arquitectura de Datos es ser un puente entre la
+estrategia empresarial y la ejecuciónn de tecnología.</p>
+<ul>
+<li><p>Se describe mediante una colección integrada de documentos
+maestros de diseño en diferentes niveles de abstracción.</p></li>
+<li><p>Incluye estándares que rigen cómo se recopilan, almacenan,
+organizan, usan y eliminan los datos.</p></li>
+</ul>
+<h2 id="actividades-de-arquitecto-de-datos">Actividades de Arquitecto de
+Datos</h2>
+<ul>
+<li><p>Definir el estado actual de los datos.</p></li>
+<li><p>Proporcionar un vocabulario de negocio estándar para datos y
+componentes.</p></li>
+<li><p>Alinear la Arquitectura de Datos con la estrategia empresarial y
+la arquitectura de negocio.</p></li>
+<li><p>Expresar los requisitos estratégicos de datos.</p></li>
+<li><p>Delinear diseños integrados de alto nivel para cumplir con los
+requisitos estratégicos.</p></li>
+<li><p>Definir flujos de datos y cadenas de valor de los datos.</p></li>
+<li><p>Determinar el impacto del linaje de datos: garantiza que las
+reglas de negocio en las aplicaciones a lo largo del flujo de datos sean
+consistentes.</p></li>
+<li><p>Control de replicación de datos: mejora el rendimiento de la
+aplicación y hace que los datos estén más dispobibles, pero con
+inconsistencias.</p></li>
+</ul>
+<h2 id="data-fabric">Data Fabric</h2>
+<p>Es una arquitectura que se centra en la automatización de la
+integración de los datos, la ingeniería de datos y el gobierno en una
+cadena de valor de los datos entre sus proveedores y consumidores.</p>
+<ul>
+<li><p>Usa gráficos de conocimiento, minería de datos y tecnología de
+Machine Learning para descubrir patrones en varios tipos de
+metadatos.</p></li>
+<li><p>Aplica toda esta información de valor para automatizar y
+orquestar la cadena de valor de datos.</p></li>
+</ul>
+<h3 id="ventajas">Ventajas</h3>
+<ul>
+<li><p>Democratización de los datos: facilita las aplicaciones de
+autoservicio, lo que amplía el acceso a los datos más allá del personal
+más técnico.</p></li>
+<li><p>Mayor acceso a los datos entre los productos y sus consumidores:
+permite reducir los silos de datos y da una imagen más completa de los
+datos.</p></li>
+<li><p>Reducen el tiemmpo de diseño de la integración en un 30%, el
+tiempo de despliegue en un 30% y el mantenimiento en un 70%.</p></li>
+</ul>
+<h2 id="data-mesh">Data Mesh</h2>
+<p>Es una arquitectura de datos descentralizada que organiza los datos
+por dominio empresarial</p>
+<ul>
+<li><p>Data as a Product: los datos se consideran un producto en sí
+mismo.</p></li>
+<li><p>Se potencia el autoservicio de los datos.</p></li>
+</ul>
+<h3 id="ventajas-1">Ventajas</h3>
+<ul>
+<li><p>Democratización de datos: facilitan aplicaciones de autoservicio
+de múltiples fuentes de datos.</p></li>
+<li><p>Eficiencia de costos: promueve la adopción de plataformas de
+datos en la nube y canales de transmisión para recopilar datos en tiempo
+real.</p></li>
+<li><p>Menos deuda técnica: la centralización genera más deuda técnica
+debido a la complejidad y la colaboración requerida para mantener el
+sistema.</p></li>
+<li><p>Interoperabilidad: los propietarios de datos acuerdan cómo
+estandarizar los campos de datos independientes del dominio por
+adelantado.</p></li>
+</ul>
+<h2 id="data-fabric-vs-data-mesh">Data Fabric vs Data Mesh</h2>
+<p>Una malla de datos también puede funcionar con un entramado de datos,
+con la automatización del entramado de datos que permite crear nuevos
+productos de datos más rápido o imponer el gobierno global.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fabric</th>
+<th></th>
+<th>Mesh</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Descubrimiento e ingesta de datos unificada</td>
+<td>Marcos para organizar ecosistemas de datos</td>
+<td>Arquitectura y propiedad centrada en dominio</td>
+</tr>
+<tr class="even">
+<td>Se abstrae y se unifica el acceso a datos</td>
+<td>Diseñado para agilizar el uso de datos a escala</td>
+<td>Mentalidad de Data-as-a-Product</td>
+</tr>
+<tr class="odd">
+<td>Acceso y control de seguridad centralizado</td>
+<td></td>
+<td>Acceso y permisos de autoservicio</td>
+</tr>
+<tr class="even">
+<td>Orquestación de datos interplataforma</td>
+<td></td>
+<td>Gobierno de datos descentralizado</td>
+</tr>
+</tbody>
+</table>
+<h1 id="metadatos">Metadatos</h1>
+<h2 id="definición">Definición</h2>
+<p>Datos sobre datos.</p>
+<ul>
+<li><p>Brindan información sobre procesos técnicos y comerciales, reglas
+y limitaciones de los datos y estructuras lógicas y físicas de los
+datos.</p></li>
+<li><p>Describen los datos propiamente dichos, los conceptos que
+representan los datos y las conexiones entre los datos y los
+concpetos.</p></li>
+<li><p>Ayudan a una organización a comprender sus datos, sus sistemas y
+sus flujos de trabajo.</p></li>
+<li><p>Permiten evaluar la calidad de los datos y son parte integrante
+de la gestión de las bases de datos y otras aplicaciones.</p></li>
+<li><p>Contribuyen a la capacidad de procesar, mantener, integrar,
+asegurar, auditar y gobernar otros datos.</p></li>
+</ul>
+<h2 id="motivación">Motivación</h2>
+<p>Sin metadatos fiables, una organización no sabe qué datos tiene, que
+representan los datos y cómo se mueven por los sistemas, quién tiene
+acceso a ellos o qué implica que los datos sean de alta calidad.</p>
+<h2 id="niveles">Niveles</h2>
+<ul>
+<li><p>De negocio: se centran en gran medida en el contenido y la
+condición de los datos e incluyen detalles relacinados con la gobernanza
+de los datos.</p></li>
+<li><p>Técnicos: proporcionan información sobre los detalles técnicos de
+los datos, los sistemas que los almacenan y los procesos que los mueven
+dentro de los sistemas y entre ellos.</p></li>
+<li><p>Operacionales. describen los detalles del procesamiento y el
+acceso a los datos.</p></li>
+</ul>
+<h2 id="tipos">Tipos</h2>
+<ul>
+<li><p>Descriptivos: describen un recurso y permiten su identificación y
+recuperación.</p></li>
+<li><p>Estructurales: describen las relaciones dentro de los recursos y
+entre ellos, así como sus componentes.</p></li>
+<li><p>Administrativos: se utilizan para gestionar los recursos a lo
+largo de su ciclo de vida.</p></li>
+</ul>
+<h2 id="gestión-de-metadatos">Gestión de metadatos</h2>
+<h3 id="clasificación">1. Clasificación</h3>
+<p>Los datos pueden tener muchas características por las que se pueden
+clasificar.</p>
+<ul>
+<li><p>Tema.</p></li>
+<li><p>Uso.</p></li>
+<li><p>Tiempo.</p></li>
+<li><p>Contenido.</p></li>
+<li><p>Alcance.</p></li>
+</ul>
+<h3 id="descripción">2. Descripción</h3>
+<p>Describir los datos ayuda a entender tanto sus aspectos lógicos como
+físicos.</p>
+<ul>
+<li><p>Significado de los datos.</p></li>
+<li><p>Estructura de los datos.</p></li>
+<li><p>Contenido de los datos.</p></li>
+<li><p>Valores de los datos.</p></li>
+<li><p>Linaje de los datos.</p></li>
+</ul>
+<h3 id="orientación">3. Orientación</h3>
+<ul>
+<li><p>Palabras clave: cualquier metadato descrito hasta ahora.</p></li>
+<li><p>Taxonomías.</p></li>
+<li><p>Sellos de fecha y hora.</p></li>
+<li><p>Informes asociados, procesos, personas: saber dónde surgen los
+datos, quiénes son los usuarios o administradores de los datos, y cómo
+se capturan y transforman los datos.</p></li>
+<li><p>Sinónimos, alias, términos relacionados.</p></li>
+</ul>
+<h3 id="control">4. Control</h3>
+<p>Los metadatos pueden proporcionar los conocimientos necesarios para
+determinar qué controles deben aplicarse a los datos y qué datos deben
+ser controlados.</p>
+<ul>
+<li><p>Cumplimmiento de normativa y políticas internas.</p></li>
+<li><p>Retención y archivo.</p></li>
+<li><p>Privacidad y seguridad.</p></li>
+<li><p>Niveles de servicio y requisitos comerciales.</p></li>
+<li><p>Reqsuisitos técnicos.</p></li>
+</ul>
+<h2 id="artefactos">Artefactos</h2>
+<h3 id="business-glossary">Business Glossary</h3>
+<p>Su propósito es documentar y almacenar los conceptos y la
+terminología comercial de una organización, las definiciones y las
+relaciones entre esos términos.</p>
+<ul>
+<li>La responsabilidad del glosario empresarial recae en la
+empresa.</li>
+</ul>
+<h3 id="data-catalog">Data Catalog</h3>
+<p>Es un activo de toda la empresa que proporciona una única fuente de
+referencia para la localización de cualquier conjunto de datos
+necesarios para diversas actividades.</p>
+<ul>
+<li>Proporciona el mapeo entre el glosario de negocios y los
+diccionarios de datos.</li>
+</ul>
+<h3 id="data-dictionary">Data Dictionary</h3>
+<p>Se centra en las descripciones y detalles que conlleva el
+almacenamiento de datos.</p>
+<ul>
+<li>Ayuda a los arquitectos, ingenieros y científicos de datos a
+entender cómo unir, consultar y reportar los datos.</li>
+</ul>
+<h2 id="linaje-de-datos">Linaje de datos</h2>
+<p>Proporciona una pista de auditoria de los puntos de datos en el nivel
+granular más alto, pero la representación se puede hacer en varios
+niveles de profundidad para simplificar la vasta información.</p>
+<ul>
+<li>El alcance determina el volumen de metadatos necesario para
+representar su linaje de datos.</li>
+</ul>
+<h1 id="modelado-de-datos">Modelado de Datos</h1>
+<h2 id="modelo-conceptual">Modelo conceptual</h2>
+<p>Técnica de análisis de requisitos y de diseño de base de datos.</p>
+<ul>
+<li><p>Ayuda a identificar problemas en los requisitos antes de comenzar
+el desarrollo, evitando gastos innecesarios.</p></li>
+<li><p>Permite representar de forma abstracta los conceptos y hechos
+relevantes del dominio del problema y transformarlos posteriormente en
+un esquema de la base de datos.</p></li>
+</ul>
+<h2 id="modelo-lógico">Modelo Lógico</h2>
+<p>Definición de los atributos, claves de las entidades y las
+relaciones.</p>
+<h2 id="modelo-físico">Modelo Físico</h2>
+<p>Optimización y diseño de la base de datos física concreta donde se
+van a almacenar los datos</p>
+<h2 id="modelo-prescriptivo">Modelo prescriptivo</h2>
+<p>Metodología tradicional, donde los esquemas de datos se crean al
+inicio del ciclo de vida del software.</p>
+<ul>
+<li>Esquema inicial.</li>
+</ul>
+<h2 id="modelo-descriptivo">Modelo descriptivo</h2>
+<p>Metodología ágil, donde los esquemas de datos se crean después del
+desarrollo inicial de datos.</p>
+<ul>
+<li>Esquema al leer.</li>
+</ul>
+<h2 id="tecnología-de-base-de-datos">Tecnología de base de datos</h2>
+<h3 id="bases-de-datos-relacionales">Bases de datos relacionales</h3>
+<p>Se crean y leen los datos a partir de la representación del modelo
+entidad-relación.</p>
+<ul>
+<li>Se crea a partir de un modelo prescriptivo.</li>
+</ul>
+<h3 id="bases-de-datos-nosql">Bases de datos NoSQL</h3>
+<p>No es necesario saber a priori para qué se almacenan.</p>
+<h1 id="datos-maestros-y-de-referencia">Datos Maestros y de
+Referencia</h1>
+<h2 id="datos-maestros">Datos Maestros</h2>
+<p>Datos comunes a todos los sistemas y departamentos de la
+organización, relativamente estáticos, sobre los que pivotarán todas las
+operaciones relativas a la cadena de valor.</p>
+<ol type="1">
+<li><p>Datos de Referencia: datos que se utilizan únicamente para
+caracterizar otros datos de una organización o para relacionarla en una
+base de datos con información más allá de los limites de la
+organización.</p></li>
+<li><p>Datos Estructurados Empresariales.</p></li>
+<li><p>Datos Estructurados de Transacciones.</p></li>
+</ol>
+<h3 id="tipos-1">Tipos</h3>
+<ul>
+<li><p>Geocráficos o geo-estadísticos.</p></li>
+<li><p>Datos de referencia industrial.</p></li>
+<li><p>Datos externos.</p></li>
+<li><p>Datos de referencia nuevos.</p></li>
+</ul>
+<h3 id="herramientas-de-gestión">Herramientas de gestión</h3>
+<ul>
+<li><p>Listas: típica combinación código-descripción.</p></li>
+<li><p>Lista de referencia cruzada: lista múltiple con relación 1 a
+1.</p></li>
+<li><p>Jerarquías.</p></li>
+</ul>
+<h2 id="gestión-de-datos-maestros">Gestión de Datos Maestros</h2>
+<p>Implica el control sobre los valores y los identificadores de los
+Datos Maestros que permiten el uso consistente, a través de sistemas, de
+los datos más precisos y oportunos sobre entidades de negocio
+esenciales.</p>
+<ul>
+<li>Garantizar la disponibilidad de valores precisos actuales al mismo
+tiempo que se reduce el riesgo asociado con identificadores
+ambiguos.</li>
+</ul>
+<h3 id="desafíos-comunes">Desafíos comunes</h3>
+<ol type="1">
+<li>Fragmentado: múltiple entrada de datos.</li>
+<li>Inconsistente: Pérdida de datos.</li>
+<li>Duplicado: Restricciones y errores de proceso.</li>
+<li>Incompleto: dificultad de consolidar datos.</li>
+</ol>
+<hr />
+<p><a href="tag5_t1.html">T1: INTRODUCCIÓN</a></p>
+<p><a href="tag5_t2.html">T2: DISEÑO Y MODELADO</a></p>
+<p><a href="tag5_t3.html">T3:</a></p>
+<p><a href="tag5_t4.html">T4:</a></p>
+<p><a href="tag5_t5.html">T5:</a></p>
+<p><a href="tag5_t6.html">T6:</a></p>
+<p><a href="tag5_t7.html">T7:</a></p>
+<p><a href="tag5_t8.html">T8:</a></p>
+</body>
+</html>
