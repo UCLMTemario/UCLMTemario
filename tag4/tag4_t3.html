@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="Paula Castillejo Bravo" />
-  <title>COMUNIDADES EN REDES</title>
+  <meta name="author" content="Aika Kenshi" />
+  <title>BASES DE DATOS EN ENTORNOS BIG DATA</title>
   <style>
     html {
       color: #1a1a1a;
@@ -171,16 +171,180 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">COMUNIDADES EN REDES</h1>
+<h1 class="title">BASES DE DATOS EN ENTORNOS BIG DATA</h1>
 <p class="subtitle">TEMA 3</p>
-<p class="author">Paula Castillejo Bravo</p>
-<p class="date">27-05-2024</p>
+<p class="author">Aika Kenshi</p>
+<p class="date">29-05-2024</p>
 </header>
+<h1 id="sistemas-gestores-de-bases-de-datos">Sistemas Gestores de Bases
+de Datos</h1>
+<h2 id="componentes">Componentes</h2>
+<ul>
+<li><p>Motor de la base de datos: acepta peticiones lógicas de los otros
+subsistemas del SGDB, las convierte en su equivalente físico y accede a
+la base de datos en el dispositivo de almacenamiento.</p></li>
+<li><p>Subsistema de definición de datos: define la estructura del
+fichero que soporta la base de datos.</p></li>
+<li><p>Subsistema de manipulación: ayuda al usuario a añadir, cambiar y
+borrar información de la base de datos y la consulta para extraer
+información.</p></li>
+<li><p>Subsistema de generación de aplicaciones: contiene utilidades
+para ayudar a los usuarios en el desarrollo de aplicaciones.</p></li>
+<li><p>Subsistema de administración: ayuda a gestionar la base de datos
+ofreciendo funcionalidades de almacenamiento y recuperación, gestión de
+la seguridad, optimización de preguntas, control de concurrencia y
+gestión de cambios.</p></li>
+</ul>
+<h2 id="evolución">Evolución</h2>
+<ol type="1">
+<li><p>Sistemas pre-relacionales.</p>
+<ul>
+<li><p>Basados en archivos.</p></li>
+<li><p>Basados en datos jerárquicos.</p></li>
+<li><p>Basados en datos en red.</p></li>
+</ul></li>
+<li><p>Sistemas relacionales.</p>
+<ul>
+<li><p>Sistemas experimentales.</p></li>
+<li><p>Sistemas comerciales.</p></li>
+<li><p>Sistemas open source.</p></li>
+</ul></li>
+<li><p>sistemas post-relacionales.</p>
+<ul>
+<li><p>Sistemas orientados a objetos.</p></li>
+<li><p>Sistemas objeto-relacionales.</p></li>
+<li><p>Sistemas NoSQL.</p></li>
+</ul></li>
+</ol>
+<h1 id="bd-distribuidas-y-teorema-cap">BD Distribuidas y Teorema
+CAP</h1>
+<h2 id="bases-de-datos-distribuidas">Bases de Datos Distribuidas</h2>
+<p>Colección de datos lógicamente interrelacionada de datos compartidos
+distribuidos en diferentes nodos de una red de ordenadores.</p>
+<ul>
+<li><p>Globalización.</p></li>
+<li><p>Capacidad computacional.</p></li>
+<li><p>Compartir datos.</p></li>
+</ul>
+<h3 id="esquemas">Esquemas</h3>
+<ul>
+<li><p>Esquema conceptual global: descripción lógica de toda la base de
+datos, como si no estuviera distribuida.</p></li>
+<li><p>Esquemas de fragmentación y asignación: cómo hay que partir los
+datos, cómo hay que ubicarlos teniendo en cuenta los mecanismos de
+replica.</p></li>
+<li><p>Esquemas locales: descripción lógica de la base de datos
+local.</p></li>
+</ul>
+<h2 id="aspectos-relevantes">Aspectos relevantes</h2>
+<ul>
+<li><p>Diseño centralizado.</p></li>
+<li><p>Proceso de distribuición de datos.</p></li>
+<li><p>Cómo dividir la base de datos en componentes para localizarlos en
+diferentes sitios.</p></li>
+<li><p>Qué cantidad de datos debe ser replicados y cómo deben los
+fragmentos replicados ser localizados.</p></li>
+<li><p>Cada ordenador debe tener su propia base de datos y debe estar
+capacitada para acceder a los datos de otros ordenadores.</p></li>
+<li><p>Los datos suelen almacenarse en un lugar próximo a aquel donde
+más frecuentemente son utilizados.</p></li>
+</ul>
+<h2 id="centralizado-vs-distribuido">Centralizado vs Distribuido</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Centralizado</th>
+<th>Distribuido</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Control centralizado</td>
+<td>Control jerárquico</td>
+</tr>
+<tr class="even">
+<td>Independencia de datos: organización de los datos transparente para
+el progamador</td>
+<td>Transparencia en la distribución</td>
+</tr>
+<tr class="odd">
+<td>Reducción de redundancia: una sola copia de datos que se
+comparta</td>
+<td>Replicación de datos: copias múltiples de datos incrementa la
+localidad y disponibilidad</td>
+</tr>
+<tr class="even">
+<td>Estructuras físicas complejas para accesos eficientes</td>
+<td>No hay estructuras inter-sitios: uso de optimización global para
+reducir transferencia de datos</td>
+</tr>
+<tr class="odd">
+<td>Seguridad</td>
+<td>Problemas de seguridad intrínsecos</td>
+</tr>
+</tbody>
+</table>
+<h2 id="teorema-cap">Teorema CAP</h2>
+<ol type="1">
+<li><p>Consistencia: se refiere a sí los datos tienen igual
+versión.</p></li>
+<li><p>Disponibilidad: se refiere al hecho de que cada petición recibida
+debe obtener una respuesta.</p></li>
+<li><p>Tolerancia a fallos: la base de datos no deja de funcionar a
+pesar de que caiga un servidor o se corten conexiones de red entre
+servidores.</p></li>
+</ol>
+<blockquote>
+<p>Sólo dos de cada tres pueden ser consideradas a la vez.</p>
+</blockquote>
+<h1 id="bases-de-datos-nosql">Bases de Datos NoSQL</h1>
+<h2 id="por-qué-surge-la-necesidad-de-big-data">¿Por qué surge la
+necesidad de Big Data?</h2>
+<h3 id="velocidad">Velocidad</h3>
+<p>En Internet la velocidad de respuesta de los sistemas tiene
+repersución directa con la satisfacción del cliente y los ingresos.</p>
+<h2 id="escalabilidad">Escalabilidad</h2>
+<ul>
+<li><p>Las compañías necesitan mantener la respuesta rápida aunque se
+incremente el número de usuarios simultaneos y/o el volumen de
+datos.</p></li>
+<li><p>Se ejecutan en clústeres de máquinas baratas.</p></li>
+</ul>
+<h3 id="arquitectura-de-sistemas-nosql">Arquitectura de sistemas
+NoSQL</h3>
+<ul>
+<li><p>Escala sin disminuir el rendimiento.</p></li>
+<li><p>Añade nodos sobre la marcha sin interrupciones del
+servicio.</p></li>
+<li><p>No genera cuellos de botella.</p></li>
+</ul>
+<h2 id="section"></h2>
+<h1 id="tipos-de-almacenamiento-en-bases-de-datos-nosql">Tipos de
+almacenamiento en bases de datos NoSQL</h1>
+<h1 id="tecnologías-de-rastreo">Tecnologías de Rastreo</h1>
+<h1 id="tecnologías-de-almacenamiento-escalable">Tecnologías de
+almacenamiento escalable</h1>
+<h2 id="escalabilidad-1">Escalabilidad</h2>
+<h3 id="tipos-según-dimensiones">Tipos según dimensiones</h3>
+<h3 id="escalabilidad-vertical">Escalabilidad vertical</h3>
+<h3 id="escalabilidad-horizontal">Escalabilidad horizontal</h3>
+<h2 id="balance-de-carga">Balance de carga</h2>
+<h3 id="operaciones">Operaciones</h3>
+<h2 id="replicación">Replicación</h2>
+<h3 id="desafíos">Desafíos</h3>
+<h2 id="particionamiento">Particionamiento</h2>
 <hr />
-<p><a href="tag4_t1.html">T1: CONCEPTOS GENERALES</a></p>
-<p><a href="tag4_t2.html">T2: MODELOS DE RED</a></p>
-<p><a href="tag4_t3.html">T3: COMUNIDADES EN REDES</a></p>
-<p><a href="tag4_t4.html">T4: REDES DINÁMICAS</a></p>
-<p><a href="tag4_t5.html">T5: ROBUSTEZ DE LA RED</a></p>
+<p><a href="tag5_t1.html">T1: INTRODUCCIÓN</a></p>
+<p><a href="tag5_t2.html">T2: DISEÑO Y MODELADO</a></p>
+<p><a href="tag5_t3.html">T3: BASES DE DATOS EN ENTORNOS BIG
+DATA</a></p>
+<p><a href="tag5_t4.html">T4: PROCESAMIENTO E INTEGRACIÓN</a></p>
+<p><a href="tag5_t5.html">T5: ALMACENES Y LAGOS</a></p>
+<p><a href="tag5_t7.html">T7: CALIDAD</a></p>
+<p><a href="tag5_t8.html">T8: SEGURIDAD Y ÉTICA DE LOS DATOS</a></p>
 </body>
 </html>

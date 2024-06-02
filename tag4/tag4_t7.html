@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Aika Kenshi" />
+  <title>SEGURIDAD Y ÉTICA DE LOS DATOS</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">SEGURIDAD Y ÉTICA DE LOS DATOS</h1>
+<p class="subtitle">TEMA 7</p>
+<p class="author">Aika Kenshi</p>
+<p class="date">2-06-2024</p>
+</header>
+<h1 id="introducción">Introducción</h1>
+<h2 id="definición-de-calidad">Definición de calidad</h2>
+<ul>
+<li><p>Adecuación del producto al uso.</p></li>
+<li><p>Conformidad con requisitos y confiabilidad en el
+funcionamiento.</p></li>
+<li><p>Cero defectos.</p></li>
+<li><p>Pérdida económica que un producto supone para la sociedad desde
+el momento de su expedición.</p></li>
+<li><p>Grado en el que un conjunto de características inherentes cumple
+con los requisitos.</p></li>
+</ul>
+<p><img src="/img/site1/tag4/Tema7-1.png" /></p>
+<h2 id="visiones-de-calidad">Visiones de calidad</h2>
+<ul>
+<li><p>Interna.</p></li>
+<li><p>Externa.</p></li>
+<li><p>En uso.</p></li>
+</ul>
+<h1 id="operaciones-de-calidad-de-datos">Operaciones de calidad de
+datos</h1>
+<h2 id="elementos-básicos-en-la-gestión-de-la-calidad">Elementos básicos
+en la gestión de la calidad</h2>
+<ul>
+<li><p>Medición de la calidad: conjunto de acciones orientadas a obtener
+medidas de la ‘cantidad’ de calidad que tiene un producto o un
+servicio.</p></li>
+<li><p>Evaluación de la calidad: juicio que se hace sobre las medidas
+para determinar si el producto o servicio tiene la cantidad adecuada
+para satisfacer unas expectativas.</p></li>
+<li><p>Control y Mejora de la calidad: acciones que se toman para hacer
+que los valores de las mediciones sean más adecuadas para un
+uso.</p></li>
+</ul>
+<h2 id="definición-más-formal-de-calidad-de-datos">Definición más formal
+de Calidad de datos</h2>
+<p>Se refiere al conjunto de procesos, técnicas, algoritmos y
+procedimientos encaminados a conseguir que los datos sean útiles para el
+fin que se le quiera dar en el negocio.</p>
+<ul>
+<li><p>Determinar si los datos proporcionan una visión única.</p></li>
+<li><p>Datos exactos, completos, consistentes, creibles y
+actualizados.</p></li>
+<li><p>Cumplen con normativas o aspectos legales.</p></li>
+</ul>
+<h2 id="ciclo-pdca">Ciclo PDCA</h2>
+<p><img src="/img/site1/tag4/Tema7-2.png" /></p>
+<h2 id="gestión-de-la-calidad">Gestión de la calidad</h2>
+<ul>
+<li><p>Evaluación y Mejora de la calidad: parte de la gestión de la
+calidad orientada a aumentar la capacidad de cumplir con los requisitos
+de la caliad.</p></li>
+<li><p>“Más vale prevenir que curar”: normalmente la mejora de la
+calidad de datos se reduce a iniciativas de limpieza de datos, pero el
+aseguramiento y control evita nuevos problemas y permite tomar medidas
+antes de tiempo.</p></li>
+</ul>
+<blockquote>
+<p>No se puede gestionar lo que no se puede medir; y no se puede medir
+lo que no se conoce.</p>
+</blockquote>
+<h2 id="programa-de-gestión-de-la-calidad">Programa de gestión de la
+calidad</h2>
+<p>No es un proyecto con un inicio y un fin, es un programa que debe
+quedarse en la organización como cualquier otra función.</p>
+<ul>
+<li><p>Aumentar el valor de los datos de la organización y las
+oportunidades para utilizarlos.</p></li>
+<li><p>Reducir riesgos y costes asociados a datos de baja
+calidad.</p></li>
+<li><p>Proteger y mejorar la reputación de la organización.</p></li>
+<li><p>Mejorar la eficiencia y productividad de la
+organización.</p></li>
+</ul>
+<h3 id="objetivos">Objetivos</h3>
+<ul>
+<li><p>Enfoque de gobierno de datos: conseguir que los datos cumplan con
+su propósito en base a las necesidades de los consumidores de
+datos.</p></li>
+<li><p>Estándares y especificaciones: definir estándares,
+especificaciones y requerimientos para establecer controles de calidad
+de los datos como parte del ciclo de vida de los datos.</p></li>
+<li><p>Medir, monitorizar, informar: definir e implementar controles que
+permitan medir, monitorizar e informar sobre los niveles de calidad de
+los datos.</p></li>
+<li><p>Oportunidad de mejora: identificar oportunidades de mejora y
+abogar por la mejora continua de la calidad.</p></li>
+</ul>
+<h1 id="limpieza-de-datos">Limpieza de datos</h1>
+<p>Es el proceso de detección y corrección o eliminación de registros
+corruptos o inexactos de un conjunto de datos, identificando partes
+incompletas, incorrectas, inexactas o irrelevantes para sustituirlos,
+modificarlos o eliminarlos.</p>
+<h2 id="análisis-de-calidad-de-datos">Análisis de calidad de datos</h2>
+<p>Determinar qué tipo de errores e inconsistencias existen que deben
+ser eliminados.</p>
+<ul>
+<li><p>Incorporación de programas que actúen sobre los metadatos para
+detectar problemas de calidad de datos en su definición que afecten a
+las propiedades de los datos.</p></li>
+<li><p>Planificación de la resolución de los errores
+identificados.</p></li>
+</ul>
+<h3 id="perfilado-de-datos">Perfilado de datos</h3>
+<p>Conjunto de actividades y procesos para desempeñar los metadatos
+sobre un determinado conjunto de datos.</p>
+<ul>
+<li><p>Identificar mediante ciertos descriptores estadísticos aspectos
+sintácticos y semánticos de los datos almacenaddos en un repositorio de
+datos.</p></li>
+<li><p>Crear resúmenes pequeños, pero informativos, de una base de
+datos.</p></li>
+<li><p>Cuenta de nulos.</p></li>
+<li><p>Valores máximos y mínimos.</p></li>
+<li><p>Longitud máxima y mínima.</p></li>
+<li><p>Distribución de frecuencia de valores para columnas
+individuales.</p></li>
+<li><p>Tipo y formato de datos.</p></li>
+<li><p>Identificar columnas duplicadas.</p></li>
+<li><p>Identificar relaciones de claves foráneas.</p></li>
+<li><p>Descubrir datos.</p></li>
+<li><p>Evaluar el estado actual de los datos.</p></li>
+<li><p>Identificar problemas potenciales.</p></li>
+<li><p>Analizar desviaciones.</p></li>
+<li><p>Identificar oportunidades de mejora.</p></li>
+</ul>
+<h4 id="técnicas">Técnicas</h4>
+<ul>
+<li><p>Exploración de datos: conocer el modelo de datos.</p></li>
+<li><p>Gestión de base de datos: identificar metadatos para las
+columnas.</p></li>
+<li><p>Ingeniería inversa de bases de datos: identificar relaciones,
+atributos y semántica por dominios.</p></li>
+<li><p>Integración de datos: establecer las etapas del ciclo de vida del
+dato en la organización.</p></li>
+<li><p>Una columna: análisis de las columnas individuales de una tabla
+determinada.</p></li>
+<li><p>Múltiples columnas: identificar las correlaciones entre los
+valores mediante patrones frecuentes o reglas de asociación.</p></li>
+<li><p>Dependencias: identificar las dependencias entre los valores que
+sean significativos.</p></li>
+</ul>
+<h2 id="flujo-de-datos">Flujo de datos</h2>
+<ul>
+<li><p>Identificación de las fuentes de datos que nutren el
+repositorio.</p></li>
+<li><p>Identificar el mecanismo para corregir los problemas relacionados
+con datos procedentes de una única fuente y prepararlos para la
+integración.</p></li>
+<li><p>Tratar los problemas de datos procedentes de diversas
+fuentes.</p></li>
+<li><p>Definir procesos ETL o ELT correctos con los datos
+corregidos.</p></li>
+</ul>
+<h3 id="limpieza-de-datos-1">Limpieza de datos</h3>
+<ul>
+<li><p>Normalización de datos: técnica aplicada a un conjunto de datos
+para reproducir su redundancia asociando formas similares a los mismos
+datos en una única forma de ellos.</p></li>
+<li><p>Duplicidad de datos: identificar registros que son similares en
+un conjunto de datos, estudiar cada uno de ellos y eliminar
+duplicados.</p></li>
+<li><p>Enriquecimiento de datos: técnica aplicada a un conjunto de datos
+a través de la cual los datos se completan añadiendo información
+conexa.</p></li>
+</ul>
+<h2 id="verificación">Verificación</h2>
+<p>Múltiples iteraciones para determinar si los errores han sido
+subsanados o corregidos en los repositorios de prueba.</p>
+<h2 id="transformación">Transformación</h2>
+<p>Proceder a ejecutar el flujo de carga de los datos para refrescar los
+repositorios operativos.</p>
+<h2 id="reflujo-de-datos-limpios">Reflujo de datos limpios</h2>
+<p>Reemplazar o actualizar los datos “sucios” con los nuevos obtenidos
+como resultado de la aplicación de los nuevos procesos ETL.</p>
+<h1 id="modelo-de-calidad-isoiec-25012">Modelo de calidad ISO/IEC
+25012</h1>
+<h2 id="isoiec-25012">ISO/IEC 25012</h2>
+<h3 id="visión-global">Visión global</h3>
+<p><img src="/img/site1/tag4/Tema7-3.png" /></p>
+<h3 id="calidad-de-datos-inherente">Calidad de datos inherente</h3>
+<p>Se refiere al grado con el que las características de calidad de los
+datos tienen el potencial intrínseco para satisfacer las necesidades
+establecidas y necesarias cuando los datos son utilizados bajo
+condiciones específicas.</p>
+<ul>
+<li><p>Valores de dominios de datos y posibles restricciones.</p></li>
+<li><p>Relaciones entre valores de datos.</p></li>
+<li><p>Metadatos.</p></li>
+</ul>
+<h4 id="exactitud">Exactitud</h4>
+<p>Grado en el que los datos representan correctamente el verdadero
+valor del atributo deseado en un concepto o evento en un contexto de uso
+específico.</p>
+<ul>
+<li><p>Exactitud Sintáctica: cercanía de los valores de los datos a un
+conjunto de valores definidos en un dominio considerado sintácticamente
+correcto.</p></li>
+<li><p>Exactitud Semántica: cercanía de los valores de los datos a un
+conjunto de valores definidos en un dominio considerado semánticamente
+correcto.</p></li>
+</ul>
+<h4 id="completitud">Completitud</h4>
+<p>Grado en el que los datos asociados con una entidad tienen valores
+para todos los atributos esperados e instancias de entidades
+relacionadas en un contexto de uso específico.</p>
+<h4 id="consistencia">Consistencia</h4>
+<p>Grado en el que los datos están libres de contradicción y son
+coherentes con otros datos en un contexto en específico.</p>
+<ul>
+<li>El uso de diccionarios de datos que incluyan los términos que son
+sinónimos puede ayudar a reducir los problemas.</li>
+</ul>
+<h4 id="credibilidad">Credibilidad</h4>
+<p>Grado en el que los datos tienen atributos que se consideran ciertos
+y creíbles en un contexto de uso espedífico.</p>
+<ul>
+<li>Autenticidad: la veracidad de los orígenes de datos, atribuciones y
+compromisos.</li>
+</ul>
+<h4 id="actualidad">Actualidad</h4>
+<p>Grado en el que los datos tienen atributos que tienen la antigüedad
+correcta en un contexto de uso espedífico.</p>
+<h3 id="calidad-de-datos-dependiente-del-sistema">Calidad de datos
+dependiente del sistema</h3>
+<p>Se refiere al grado con el que la calidad de datos es alcanzada y
+preservada a través de un sistema informático cuando los datos son
+utilizados bajo condiciones específicas.</p>
+<ul>
+<li>Depende del dominio tecnológico en el que los datos se utilizan, y
+se alcanza mediante las capacidades de los componentes del sistema
+informático.</li>
+</ul>
+<h2 id="iso-25024">ISO 25024</h2>
+<p>Define las medidas de calidad de los datos para la medición
+cuantitativa de los mismos en términos de caraterísticas definidas en
+ISO/IEC 25012.</p>
+<ul>
+<li><p>Un conjunto básico de medidas de datos para cada
+característica.</p></li>
+<li><p>Un conjunto básico de entidades objetivo a las que se aplican las
+medidas de caldiad durante el ciclo de vida de los datos.</p></li>
+<li><p>Un método de medición que indica cómo aplicar las medidas de
+calidad de los datos.</p></li>
+<li><p>Una orientación para las organizaciones que definen sus propias
+medidas de los requisitos de calidad de los datos y de la
+evaluación.</p></li>
+</ul>
+<h2 id="propiedades">Propiedades</h2>
+<p><img src="/img/site1/tag4/Tema7-4.png" /></p>
+<h1 id="conclusiones">Conclusiones</h1>
+<ul>
+<li><p>Los costes de la no calidad en los datos son elevados.</p></li>
+<li><p>Definir un sistema de gestión de calidad de datos es algo que
+lleva tiempo porque tiene que calar en la organización.</p></li>
+<li><p>La calidad de los datos no es tarea exclusiva de los
+administradores de bases de datos, si no que toda la la organización
+debe estar implicada.</p></li>
+<li><p>Se pueden prevenir errores controlando la calidad de los datos
+desde capas superiores, no solo a nivel de repositorio de
+datos.</p></li>
+</ul>
+<h2 id="data-observability">Data Observability</h2>
+<ul>
+<li><p>Data Quality implica procesos como la elaboración de perfiles, la
+limpieza y la validación de los datos para garantizar que los datos
+cumplan con los estándares de calidad predefinidos.</p></li>
+<li><p>Data observability emplea técnicas como monitoreo en tiempo real,
+la detección de anomalias y la resolución proactiva de
+problemas.</p></li>
+</ul>
+<h2 id="lecciones-aprendidas">Lecciones aprendidas</h2>
+<ul>
+<li><p>Los datos son los que cumplen con los propósitos de
+negocio.</p></li>
+<li><p>La calidad requiere compromiso de todos los niveles de la
+organización.</p></li>
+<li><p>Hay que adoptar un enfoque preventivo y evitar la entrada de
+errores.</p></li>
+<li><p>Cuando se detecten errores, hay que actuar sobre las causas de
+origen, no limitarse solo a corregir.</p></li>
+<li><p>Las reglas de calidad deben estar vinculadas a las reglas de
+negocio y asociadas a las Dimensiones de Calidad.</p></li>
+<li><p>La gestión de la calidad es un proceso cíclico en constante
+cambio.</p></li>
+<li><p>El perfilado de datos NO es Calidad de datos, es una
+técnica.</p></li>
+<li><p>El perfilado sirve para el descubrimiento de datos y de reglas de
+negocio, y como soporte a la medición.</p></li>
+<li><p>Para la evaluación de calidad de datos es necesario definir los
+umbrales y niveles.</p></li>
+<li><p>Las reglas de negocio son clave para determinar la calidad de
+datos, y para evitar problemas de calidad de datos cuando se introducen
+en los diferentes modelos durante el desarrollo de la base de
+datos.</p></li>
+<li><p>Es posible crear un sistema de gestión de calidad de datos con
+las medidas de calidad ad-hoc interesantes para nuestro
+negocio.</p></li>
+</ul>
+<hr />
+<p><a href="tag5_t1.html">T1: INTRODUCCIÓN</a></p>
+<p><a href="tag5_t2.html">T2: DISEÑO Y MODELADO</a></p>
+<p><a href="tag5_t3.html">T3: BASES DE DATOS EN ENTORNOS BIG
+DATA</a></p>
+<p><a href="tag5_t4.html">T4: PROCESAMIENTO E INTEGRACIÓN</a></p>
+<p><a href="tag5_t5.html">T5: ALMACENES Y LAGOS</a></p>
+<p><a href="tag5_t7.html">T7: CALIDAD</a></p>
+<p><a href="tag5_t8.html">T8: SEGURIDAD Y ÉTICA DE LOS DATOS</a></p>
+</body>
+</html>
