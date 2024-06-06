@@ -4,8 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="Aika Kenshi" />
-  <title>BASES DE DATOS EN ENTORNOS BIG DATA</title>
+  <title>tag4_t3</title>
   <style>
     html {
       color: #1a1a1a;
@@ -170,324 +169,722 @@
   </style>
 </head>
 <body>
-<header id="title-block-header">
-<h1 class="title">BASES DE DATOS EN ENTORNOS BIG DATA</h1>
-<p class="subtitle">TEMA 3</p>
-<p class="author">Aika Kenshi</p>
-<p class="date">29-05-2024</p>
-</header>
-<h1 id="sistemas-gestores-de-bases-de-datos">Sistemas Gestores de Bases
-de Datos</h1>
+<p><img src="/img/-" /><img src="/img/-" /><img src="/img/-" /> author:
+Aika Kenshi title: BASES DE DATOS EN ENTORNOS BIG DATA subtitle: TEMA 3
+subject: GD date: 29<img src="/img/-" />05<img src="/img/-" />2024 <img
+src="/img/-" /><img src="/img/-" /><img src="/img/-" /></p>
+<h1 id="sistemas-gestores-bases-datos">Sistemas Gestores <img
+src="/img/!%5B%5D(/img/de)" /> Bases <img src="/img/!%5B%5D(/img/de)" />
+Datos</h1>
 <h2 id="componentes">Componentes</h2>
-<ul>
-<li><p>Motor de la base de datos: acepta peticiones lógicas de los otros
-subsistemas del SGDB, las convierte en su equivalente físico y accede a
-la base de datos en el dispositivo de almacenamiento.</p></li>
-<li><p>Subsistema de definición de datos: define la estructura del
-fichero que soporta la base de datos.</p></li>
-<li><p>Subsistema de manipulación: ayuda al usuario a añadir, cambiar y
-borrar información de la base de datos y la consulta para extraer
-información.</p></li>
-<li><p>Subsistema de generación de aplicaciones: contiene utilidades
-para ayudar a los usuarios en el desarrollo de aplicaciones.</p></li>
-<li><p>Subsistema de administración: ayuda a gestionar la base de datos
-ofreciendo funcionalidades de almacenamiento y recuperación, gestión de
-la seguridad, optimización de preguntas, control de concurrencia y
-gestión de cambios.</p></li>
-</ul>
+<p><img src="/img/-" /> Motor <img src="/img/!%5B%5D(/img/de)" /> <img
+src="/img/la" /> base <img src="/img/!%5B%5D(/img/de)" /> datos: acepta
+peticiones lógicas <img src="/img/!%5B%5D(/img/de)" /> los otros
+subsistemas <img src="/img/!%5B%5D(/img/de)" />l SGDB, <img
+src="/img/la" />s <img src="/img/con" />vierte en su equivalente físico
+y acce<img src="/img/!%5B%5D(/img/de)" /> a <img src="/img/la" /> base
+<img src="/img/!%5B%5D(/img/de)" /> datos en el dispositivo <img
+src="/img/!%5B%5D(/img/de)" /> almacenamiento.</p>
+<p><img src="/img/-" /> Subsistema <img src="/img/!%5B%5D(/img/de)" />
+<img src="/img/!%5B%5D(/img/de)" />finición <img
+src="/img/!%5B%5D(/img/de)" /> datos: <img
+src="/img/!%5B%5D(/img/de)" />fine <img src="/img/la" /> estructura <img
+src="/img/!%5B%5D(/img/de)" />l fichero que soporta <img
+src="/img/la" /> base <img src="/img/!%5B%5D(/img/de)" /> datos.</p>
+<p><img src="/img/-" /> Subsistema <img src="/img/!%5B%5D(/img/de)" />
+manipu<img src="/img/la" />ción: ayuda al usuario a añadir, cambiar y
+borrar información <img src="/img/!%5B%5D(/img/de)" /> <img
+src="/img/la" /> base <img src="/img/!%5B%5D(/img/de)" /> datos y <img
+src="/img/la" /> <img src="/img/con" />sulta para extraer
+información.</p>
+<p><img src="/img/-" /> Subsistema <img src="/img/!%5B%5D(/img/de)" />
+generación <img src="/img/!%5B%5D(/img/de)" /> aplicaciones: <img
+src="/img/con" />tiene utilida<img src="/img/!%5B%5D(/img/de)" />s para
+ayudar a los usuarios en el <img src="/img/!%5B%5D(/img/de)" />sarrollo
+<img src="/img/!%5B%5D(/img/de)" /> aplicaciones.</p>
+<p><img src="/img/-" /> Subsistema <img src="/img/!%5B%5D(/img/de)" />
+administración: ayuda a gestionar <img src="/img/la" /> base <img
+src="/img/!%5B%5D(/img/de)" /> datos ofreciendo funcionalida<img
+src="/img/!%5B%5D(/img/de)" />s <img src="/img/!%5B%5D(/img/de)" />
+almacenamiento y recuperación, gestión <img
+src="/img/!%5B%5D(/img/de)" /> <img src="/img/la" /> seguridad,
+optimización <img src="/img/!%5B%5D(/img/de)" /> preguntas, <img
+src="/img/con" />trol <img src="/img/!%5B%5D(/img/de)" /> <img
+src="/img/con" />currencia y gestión <img src="/img/!%5B%5D(/img/de)" />
+cambios.</p>
 <h2 id="evolución">Evolución</h2>
 <ol type="1">
-<li><p>Sistemas pre-relacionales.</p>
-<ul>
-<li><p>Basados en archivos.</p></li>
-<li><p>Basados en datos jerárquicos.</p></li>
-<li><p>Basados en datos en red.</p></li>
-</ul></li>
-<li><p>Sistemas relacionales.</p>
-<ul>
-<li><p>Sistemas experimentales.</p></li>
-<li><p>Sistemas comerciales.</p></li>
-<li><p>Sistemas open source.</p></li>
-</ul></li>
-<li><p>sistemas post-relacionales.</p>
-<ul>
-<li><p>Sistemas orientados a objetos.</p></li>
-<li><p>Sistemas objeto-relacionales.</p></li>
-<li><p>Sistemas NoSQL.</p></li>
-</ul></li>
+<li><p>Sistemas pre<img src="/img/-" />re<img
+src="/img/la" />cionales.</p>
+<p><img src="/img/-" /> Basados en archivos.</p>
+<p><img src="/img/-" /> Basados en datos jerárquicos.</p>
+<p><img src="/img/-" /> Basados en datos en red.</p></li>
+<li><p>Sistemas re<img src="/img/la" />cionales.</p>
+<p><img src="/img/-" /> Sistemas experimentales.</p>
+<p><img src="/img/-" /> Sistemas comerciales.</p>
+<p><img src="/img/-" /> Sistemas open source.</p></li>
+<li><p>sistemas post<img src="/img/-" />re<img
+src="/img/la" />cionales.</p>
+<p><img src="/img/-" /> Sistemas orientados a objetos.</p>
+<p><img src="/img/-" /> Sistemas objeto<img src="/img/-" />re<img
+src="/img/la" />cionales.</p>
+<p><img src="/img/-" /> Sistemas NoSQL.</p></li>
 </ol>
 <h1 id="bd-distribuidas-y-teorema-cap">BD Distribuidas y Teorema
 CAP</h1>
-<h2 id="bases-de-datos-distribuidas">Bases de Datos Distribuidas</h2>
-<p>Colección de datos lógicamente interrelacionada de datos compartidos
-distribuidos en diferentes nodos de una red de ordenadores.</p>
-<ul>
-<li><p>Globalización.</p></li>
-<li><p>Capacidad computacional.</p></li>
-<li><p>Compartir datos.</p></li>
-</ul>
+<h2 id="bases-datos-distribuidas">Bases <img
+src="/img/!%5B%5D(/img/de)" /> Datos Distribuidas</h2>
+<p>Colección <img src="/img/!%5B%5D(/img/de)" /> datos lógicamente
+interre<img src="/img/la" />cionada <img src="/img/!%5B%5D(/img/de)" />
+datos compartidos distribuidos en diferentes nodos <img
+src="/img/!%5B%5D(/img/de)" /> una red <img
+src="/img/!%5B%5D(/img/de)" /> or<img
+src="/img/!%5B%5D(/img/de)" />nadores.</p>
+<p><img src="/img/-" /> Globalización.</p>
+<p><img src="/img/-" /> Capacidad computacional.</p>
+<p><img src="/img/-" /> Compartir datos.</p>
 <h3 id="esquemas">Esquemas</h3>
-<ul>
-<li><p>Esquema conceptual global: descripción lógica de toda la base de
-datos, como si no estuviera distribuida.</p></li>
-<li><p>Esquemas de fragmentación y asignación: cómo hay que partir los
-datos, cómo hay que ubicarlos teniendo en cuenta los mecanismos de
-replica.</p></li>
-<li><p>Esquemas locales: descripción lógica de la base de datos
-local.</p></li>
-</ul>
+<p><img src="/img/-" /> Esquema <img src="/img/con" />ceptual global:
+<img src="/img/!%5B%5D(/img/de)" />scripción lógica <img
+src="/img/!%5B%5D(/img/de)" /> toda <img src="/img/la" /> base <img
+src="/img/!%5B%5D(/img/de)" /> datos, como si no estuviera
+distribuida.</p>
+<p><img src="/img/-" /> Esquemas <img src="/img/!%5B%5D(/img/de)" />
+fragmentación y asignación: cómo hay que partir los datos, cómo hay que
+ubicarlos teniendo en cuenta los mecanismos <img
+src="/img/!%5B%5D(/img/de)" /> replica.</p>
+<p><img src="/img/-" /> Esquemas locales: <img
+src="/img/!%5B%5D(/img/de)" />scripción lógica <img
+src="/img/!%5B%5D(/img/de)" /> <img src="/img/la" /> base <img
+src="/img/!%5B%5D(/img/de)" /> datos local.</p>
 <h2 id="aspectos-relevantes">Aspectos relevantes</h2>
-<ul>
-<li><p>Diseño centralizado.</p></li>
-<li><p>Proceso de distribuición de datos.</p></li>
-<li><p>Cómo dividir la base de datos en componentes para localizarlos en
-diferentes sitios.</p></li>
-<li><p>Qué cantidad de datos debe ser replicados y cómo deben los
-fragmentos replicados ser localizados.</p></li>
-<li><p>Cada ordenador debe tener su propia base de datos y debe estar
-capacitada para acceder a los datos de otros ordenadores.</p></li>
-<li><p>Los datos suelen almacenarse en un lugar próximo a aquel donde
-más frecuentemente son utilizados.</p></li>
-</ul>
+<p><img src="/img/-" /> Diseño centralizado.</p>
+<p><img src="/img/-" /> Proceso <img src="/img/!%5B%5D(/img/de)" />
+distribuición <img src="/img/!%5B%5D(/img/de)" /> datos.</p>
+<p><img src="/img/-" /> Cómo dividir <img src="/img/la" /> base <img
+src="/img/!%5B%5D(/img/de)" /> datos en componentes para localizarlos en
+diferentes sitios.</p>
+<p><img src="/img/-" /> Qué cantidad <img src="/img/!%5B%5D(/img/de)" />
+datos <img src="/img/!%5B%5D(/img/de)" />be ser replicados y cómo <img
+src="/img/!%5B%5D(/img/de)" />ben los fragmentos replicados ser
+localizados.</p>
+<p><img src="/img/-" /> Cada or<img src="/img/!%5B%5D(/img/de)" />nador
+<img src="/img/!%5B%5D(/img/de)" />be tener su propia base <img
+src="/img/!%5B%5D(/img/de)" /> datos y <img
+src="/img/!%5B%5D(/img/de)" />be estar capacitada para acce<img
+src="/img/!%5B%5D(/img/de)" />r a los datos <img
+src="/img/!%5B%5D(/img/de)" /> otros or<img
+src="/img/!%5B%5D(/img/de)" />nadores.</p>
+<p><img src="/img/-" /> Los datos suelen almacenarse en un lugar próximo
+a aquel don<img src="/img/!%5B%5D(/img/de)" /> más frecuentemente son
+utilizados.</p>
 <h2 id="centralizado-vs-distribuido">Centralizado vs Distribuido</h2>
-<table>
-<colgroup>
-<col style="width: 75%" />
-<col style="width: 25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Centralizado</th>
-<th>Distribuido</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Control centralizado</td>
-<td>Control jerárquico</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Independencia de datos: organización de
-los datos transparente para el progamador</td>
-<td>Transparencia en la distribución</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Reducción de redundancia: una sola copia
-de datos que se comparta</td>
-<td>Replicación de datos: copias múltiples de datos incrementa la
-localidad y disponibilidad</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Estructuras físicas complejas para
-accesos eficientes</td>
-<td>No hay estructuras inter-sitios: uso de optimización global para
-reducir transferencia de datos</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Seguridad</td>
-<td>Problemas de seguridad intrínsecos</td>
-</tr>
-</tbody>
-</table>
+<p>|Centralizado|Distribuido| |:<img src="/img/-" />:|<img
+src="/img/-" />| |Control centralizado|Control jerárquico| |In<img
+src="/img/!%5B%5D(/img/de)" />pen<img src="/img/!%5B%5D(/img/de)" />ncia
+<img src="/img/!%5B%5D(/img/de)" /> datos: organización <img
+src="/img/!%5B%5D(/img/de)" /> los datos transparente para el
+progamador|Transparencia en <img src="/img/la" /> distribución|
+|Reducción <img src="/img/!%5B%5D(/img/de)" /> redundancia: una so<img
+src="/img/la" /> copia <img src="/img/!%5B%5D(/img/de)" /> datos que se
+comparta|Replicación <img src="/img/!%5B%5D(/img/de)" /> datos: copias
+múltiples <img src="/img/!%5B%5D(/img/de)" /> datos incrementa <img
+src="/img/la" /> localidad y disponibilidad| |Estructuras físicas
+complejas para accesos eficientes|No hay estructuras inter<img
+src="/img/-" />sitios: uso <img src="/img/!%5B%5D(/img/de)" />
+optimización global para reducir transferencia <img
+src="/img/!%5B%5D(/img/de)" /> datos| |Seguridad|Problemas <img
+src="/img/!%5B%5D(/img/de)" /> seguridad intrínsecos|</p>
 <h2 id="teorema-cap">Teorema CAP</h2>
 <ol type="1">
 <li><p>Consistencia: se refiere a sí los datos tienen igual
 versión.</p></li>
-<li><p>Disponibilidad: se refiere al hecho de que cada petición recibida
-debe obtener una respuesta.</p></li>
-<li><p>Tolerancia a fallos: la base de datos no deja de funcionar a
-pesar de que caiga un servidor o se corten conexiones de red entre
-servidores.</p></li>
+<li><p>Disponibilidad: se refiere al hecho <img
+src="/img/!%5B%5D(/img/de)" /> que cada petición recibida <img
+src="/img/!%5B%5D(/img/de)" />be obtener una respuesta.</p></li>
+<li><p>Tolerancia a fallos: <img src="/img/la" /> base <img
+src="/img/!%5B%5D(/img/de)" /> datos no <img
+src="/img/!%5B%5D(/img/de)" />ja <img src="/img/!%5B%5D(/img/de)" />
+funcionar a pesar <img src="/img/!%5B%5D(/img/de)" /> que caiga un
+servidor o se corten <img src="/img/con" />exiones <img
+src="/img/!%5B%5D(/img/de)" /> red entre servidores.</p></li>
 </ol>
-<blockquote>
-<p>Sólo dos de cada tres pueden ser consideradas a la vez.</p>
-</blockquote>
-<h1 id="bases-de-datos-nosql">Bases de Datos NoSQL</h1>
-<h2 id="por-qué-surge-la-necesidad-de-big-data">¿Por qué surge la
-necesidad de Big Data?</h2>
+<p><img src="/img/." />Sólo dos <img src="/img/!%5B%5D(/img/de)" /> cada
+tres pue<img src="/img/!%5B%5D(/img/de)" />n ser <img
+src="/img/con" />si<img src="/img/!%5B%5D(/img/de)" />radas a <img
+src="/img/la" /> vez.</p>
+<h1 id="bases-datos-nosql">Bases <img src="/img/!%5B%5D(/img/de)" />
+Datos NoSQL</h1>
+<h2 id="por-qué-surge-necesidad-big-data">¿Por qué surge <img
+src="/img/la" /> necesidad <img src="/img/!%5B%5D(/img/de)" /> Big
+Data?</h2>
 <h3 id="velocidad">Velocidad</h3>
-<p>En Internet la velocidad de respuesta de los sistemas tiene
-repersución directa con la satisfacción del cliente y los ingresos.</p>
-<h2 id="escalabilidad">Escalabilidad</h2>
-<ul>
-<li><p>Las compañías necesitan mantener la respuesta rápida aunque se
-incremente el número de usuarios simultaneos y/o el volumen de
-datos.</p></li>
-<li><p>Se ejecutan en clústeres de máquinas baratas.</p></li>
-</ul>
-<h3 id="arquitectura-de-sistemas-nosql">Arquitectura de sistemas
-NoSQL</h3>
-<ul>
-<li><p>Escala sin disminuir el rendimiento.</p></li>
-<li><p>Añade nodos sobre la marcha sin interrupciones del
-servicio.</p></li>
-<li><p>No genera cuellos de botella.</p></li>
-</ul>
-<h2 id="section"></h2>
-<h1 id="tipos-de-almacenamiento-en-bases-de-datos-nosql">Tipos de
-almacenamiento en bases de datos NoSQL</h1>
-<h1 id="tecnologías-de-rastreo">Tecnologías de Rastreo</h1>
-<h1 id="tecnologías-de-almacenamiento-escalable">Tecnologías de
-almacenamiento escalable</h1>
-<h2 id="escalabilidad-1">Escalabilidad</h2>
-<p>Capacidad de adaptación y respuesta de un sistema con respecto al
-rendimiento de este a medida que aumentan de forma significativa el
-número de usuarios.</p>
-<ul>
-<li><p>Hace referencia a la propiedad de aumentar la capacidad de
-trabajo de un programa sin alterar la eficiencia de trabajo o tamaño de
-un sistema y sin poner en riesgo el buen funcionamiento y la calidad del
-mismo.</p></li>
-<li><p>Es un aspecto complejo e importante del diseño.</p></li>
-<li><p>Influye en el rendimiento de forma significativa.</p></li>
-<li><p>Si una aplicación está bien diseñada, la escalabilidad no
-construye un problema y se deduce de la implementación y del diseño
-general del sistema.</p></li>
-<li><p>Supone un factor crítico en el crecimiento de un
-sistema.</p></li>
-</ul>
+<p>En Internet <img src="/img/la" /> velocidad <img
+src="/img/!%5B%5D(/img/de)" /> respuesta <img
+src="/img/!%5B%5D(/img/de)" /> los sistemas tiene repersución directa
+<img src="/img/con" /> <img src="/img/la" /> satisfacción <img
+src="/img/!%5B%5D(/img/de)" />l cliente y los ingresos.</p>
+<h2 id="escabilidad">Esca<img src="/img/la" />bilidad</h2>
+<p><img src="/img/-" /> Las compañías necesitan mantener <img
+src="/img/la" /> respuesta rápida aunque se incremente el número <img
+src="/img/!%5B%5D(/img/de)" /> usuarios simultaneos y/o el volumen <img
+src="/img/!%5B%5D(/img/de)" /> datos.</p>
+<p><img src="/img/-" /> Se ejecutan en clústeres <img
+src="/img/!%5B%5D(/img/de)" /> máquinas baratas.</p>
+<h3 id="arquitectura">Arquitectura</h3>
+<p><img src="/img/-" /> Esca<img src="/img/la" /> sin disminuir el
+rendimiento.</p>
+<p><img src="/img/-" /> Aña<img src="/img/!%5B%5D(/img/de)" /> nodos
+sobre <img src="/img/la" /> marcha sin interrupciones <img
+src="/img/!%5B%5D(/img/de)" />l servicio.</p>
+<p><img src="/img/-" /> No genera cuellos <img
+src="/img/!%5B%5D(/img/de)" /> botel<img src="/img/la" />.</p>
+<h2 id="por-qué-surge-necesidad-big-data-1">¿Por qué surge <img
+src="/img/la" /> necesidad <img src="/img/!%5B%5D(/img/de)" /> Big
+Data?</h2>
+<h3 id="inpenncia-localización">In<img
+src="/img/!%5B%5D(/img/de)" />pen<img src="/img/!%5B%5D(/img/de)" />ncia
+<img src="/img/!%5B%5D(/img/de)" /> localización</h3>
+<p>La globalización <img src="/img/!%5B%5D(/img/de)" />l mercado en WWW
+obliga a dar servicio rápido y en todas partes <img
+src="/img/!%5B%5D(/img/de)" />l mundo.</p>
+<h3 id="disponibilidad">Disponibilidad</h3>
+<p><img src="/img/-" /> Es lo más grave, por <img src="/img/la" />s
+repercusiones en los ingresos.</p>
+<p><img src="/img/-" /> Hay que pasar alta disponibilidad a <img
+src="/img/con" />tinua disponibilidad.</p>
+<h4 id="carácterísticas">Carácterísticas</h4>
+<p><img src="/img/-" /> Diseño sin servidor maestro.</p>
+<p><img src="/img/-" /> Multi<img src="/img/-" />data center.</p>
+<p><img src="/img/-" /> Disponibilidad cloud.</p>
+<p><img src="/img/-" /> Copias <img src="/img/!%5B%5D(/img/de)" /> datos
+y funcionalidad en múltiples localizaciones.</p>
+<h3 id="tipos-datos">Tipos <img src="/img/!%5B%5D(/img/de)" />
+datos</h3>
+<p><img src="/img/-" /> Necesida<img src="/img/!%5B%5D(/img/de)" />s
+nuevas: datos estructurados, semiestructurados y no estructurados.</p>
+<p><img src="/img/-" /> Perspectiva eficiente <img
+src="/img/!%5B%5D(/img/de)" /> almacenamiento.</p>
+<h2 id="ventajas-y-sventajas">Ventajas y <img
+src="/img/!%5B%5D(/img/de)" />sventajas</h2>
+<p>|Ventajas|Desventajas| |:<img src="/img/-" />:|:<img
+src="/img/-" />:| |Optimizado para recuperación y agregación|Pérdida
+<img src="/img/!%5B%5D(/img/de)" /> flexibilidad en tiempo <img
+src="/img/!%5B%5D(/img/de)" /> ejecución| |Esca<img
+src="/img/la" />bilidad y rendimiento|Poca funcionalidad <img
+src="/img/!%5B%5D(/img/de)" /> almacenamiento|</p>
+<h2 id="características">Características</h2>
+<p><img src="/img/-" /> No re<img src="/img/la" />cional.</p>
+<p><img src="/img/-" /> Distribuida.</p>
+<p><img src="/img/-" /> Código abierto.</p>
+<p><img src="/img/-" /> Esca<img src="/img/la" />ble
+horizontalmente.</p>
+<p><img src="/img/-" /> Libre <img src="/img/!%5B%5D(/img/de)" />
+esquemas.</p>
+<p><img src="/img/-" /> Fácil replicación.</p>
+<p><img src="/img/-" /> API sencil<img src="/img/la" />.</p>
+<p><img src="/img/-" /> Gran cantidad <img
+src="/img/!%5B%5D(/img/de)" /> datos.</p>
+<p><img src="/img/-" /> No cumple principios ACID.</p>
+<h2 id="de-acid-al-teorema-cap">De ACID al teorema CAP</h2>
+<h3 id="atomic">Atomic</h3>
+<p>Las transacciones se ejecutan completamente o no se hace.</p>
+<p><img src="/img/-" /> Si fal<img src="/img/la" />n es como si ni
+siquiera se hubieran intentado ejecutar.</p>
+<h3 id="consistency">Consistency</h3>
+<p>Garantiza que cualquier transacción llevará <img src="/img/la" />
+base <img src="/img/!%5B%5D(/img/de)" /> datos <img
+src="/img/!%5B%5D(/img/de)" /> un estado válido a otro estado
+válido.</p>
+<p><img src="/img/-" /> Cualquier dato que se escriba en <img
+src="/img/la" /> base tiene que ser válido <img
+src="/img/!%5B%5D(/img/de)" /> acuerdo <img src="/img/con" /> todas <img
+src="/img/la" />s reg<img src="/img/la" />s <img
+src="/img/!%5B%5D(/img/de)" /> integridad <img
+src="/img/!%5B%5D(/img/de)" />finidas en el mo<img
+src="/img/!%5B%5D(/img/de)" />lo.</p>
+<h3 id="isotion">Iso<img src="/img/la" />tion</h3>
+<p>Cuando varias transacciones se ejecutan en paralelo, cada una <img
+src="/img/!%5B%5D(/img/de)" /> el<img src="/img/la" />s ve el sistema
+<img src="/img/!%5B%5D(/img/de)" /> <img src="/img/la" /> misma manera a
+como lo vería si se ejecutaran <img src="/img/!%5B%5D(/img/de)" /> forma
+ais<img src="/img/la" />da o secuencial.</p>
+<h3 id="durability">Durability</h3>
+<p>El resultado <img src="/img/!%5B%5D(/img/de)" /> <img
+src="/img/la" />s transacciones es un cambio en el estado <img
+src="/img/!%5B%5D(/img/de)" />l sistema persistente.</p>
+<p><img src="/img/-" /> Si apagamos <img src="/img/la" /> máquina y <img
+src="/img/la" /> arrancamos <img src="/img/!%5B%5D(/img/de)" /> nuevo el
+cambio producido por <img src="/img/la" /> transacción aún está,
+persiste.</p>
+<h2 id="teorema-cap-en-nosql">Teorema CAP en NoSQL</h2>
+<h3 id="tolerancia-a-fallos-p-y-sistencia-c">Tolerancia a fallos (P) y
+<img src="/img/con" />sistencia (C)</h3>
+<p>Poner muchos nodos y replicar en todos.</p>
+<p><img src="/img/-" /> Degrada <img src="/img/la" /> disponibilidad
+(A).</p>
+<h3 id="aumentar-disponibilidad-d">Aumentar <img src="/img/la" />
+disponibilidad (D)</h3>
+<p>No esperar a replicar todos los nodos.</p>
+<p><img src="/img/-" /> Degrada <img src="/img/la" /> <img
+src="/img/con" />sistencia (C).</p>
+<h3 id="abandonar-tolerancia-a-fallos-p">Abandonar <img src="/img/la" />
+tolerancia a fallos (P)</h3>
+<p>Un solo nodo.</p>
+<p><img src="/img/-" /> Consigue <img src="/img/con" />sistencia (C) y
+disponibilidad (A).</p>
+<h2 id="limitaciones">Limitaciones</h2>
+<h3 id="limitaciones-técnicas">Limitaciones técnicas</h3>
+<p><img src="/img/-" /> Cómo mo<img src="/img/!%5B%5D(/img/de)" /><img
+src="/img/la" />r correctamente los datos para maximizar <img
+src="/img/la" />s capacida<img src="/img/!%5B%5D(/img/de)" />s.</p>
+<p><img src="/img/-" /> Nivel bajo <img src="/img/!%5B%5D(/img/de)" />
+seguridad.</p>
+<p><img src="/img/-" /> No soporta transacciones.</p>
+<p><img src="/img/-" /> Falta <img src="/img/!%5B%5D(/img/de)" />
+madurez en Business Intelligence.</p>
+<p><img src="/img/-" /> Problemas <img src="/img/!%5B%5D(/img/de)" />
+compatibilidad ya resueltos en los mo<img
+src="/img/!%5B%5D(/img/de)" />los re<img src="/img/la" />cionales.</p>
+<h3 id="limitaciones-no-técnicas">Limitaciones no técnicas</h3>
+<p><img src="/img/-" /> Falta <img src="/img/!%5B%5D(/img/de)" />
+expertos.</p>
+<p><img src="/img/-" /> Resistencia al cambio.</p>
+<p><img src="/img/-" /> Disponibilidad <img
+src="/img/!%5B%5D(/img/de)" />l ven<img
+src="/img/!%5B%5D(/img/de)" />dor.</p>
+<p><img src="/img/-" /> El código abierto pue<img
+src="/img/!%5B%5D(/img/de)" /> implicar problema <img
+src="/img/!%5B%5D(/img/de)" /> soporte para <img src="/img/la" />s
+empresas.</p>
+<h2 id="tipos">Tipos</h2>
+<h3 id="cvevalor">C<img src="/img/la" />ve<img src="/img/-" />valor</h3>
+<p>Almacena datos en <img src="/img/pares" /> c<img
+src="/img/la" />ve<img src="/img/-" /><img src="/img/valor," /> don<img
+src="/img/!%5B%5D(/img/de)" /> cada c<img src="/img/la" />ve es única y
+se asocia <img src="/img/con" /> un valor.</p>
+<p><img src="/img/-" /> El dato se acce<img
+src="/img/!%5B%5D(/img/de)" /> a partir <img
+src="/img/!%5B%5D(/img/de)" /> una c<img src="/img/la" />ve única.</p>
+<p><img src="/img/-" /> Los valores <img src="/img/!%5B%5D(/img/de)" />
+los datos son in<img src="/img/!%5B%5D(/img/de)" />pendientes y no están
+re<img src="/img/la" />cionados entre ellos.</p>
+<p><img src="/img/-" /> Ofrece acceso rápido y eficiente a los datos a
+través <img src="/img/!%5B%5D(/img/de)" /> <img src="/img/la" /> c<img
+src="/img/la" />ve.</p>
+<p><img src="/img/-" /> La estructura suele venir establecida por <img
+src="/img/la" /> aplicación.</p>
+<h3 id="documental">Documental</h3>
+<p>Almacena datos semi<img src="/img/-" />estructurados.</p>
+<p><img src="/img/-" /> Los datos se l<img src="/img/la" />man
+documentos y pue<img src="/img/!%5B%5D(/img/de)" />n estar XML, JSON,
+binary JSON o el que acepte <img src="/img/la" /> misma base <img
+src="/img/!%5B%5D(/img/de)" /> datos.</p>
+<p><img src="/img/-" /> Cada documento pue<img
+src="/img/!%5B%5D(/img/de)" /> <img src="/img/con" />tener datos
+animados y es auto<img src="/img/-" /><img src="/img/con" />tenible, lo
+que significa que pue<img src="/img/!%5B%5D(/img/de)" /> tener su propio
+esquema.</p>
+<p><img src="/img/-" /> Los documentos pue<img
+src="/img/!%5B%5D(/img/de)" />n representar objetos complejos y su
+re<img src="/img/la" />ción <img src="/img/con" /> otros documentos.</p>
+<h3 id="basado-en-grafos">Basado en grafos</h3>
+<p>Almacena datos semi<img src="/img/-" />estructurados.</p>
+<p><img src="/img/-" /> Basado en teoría <img
+src="/img/!%5B%5D(/img/de)" /> grafos: los nodos son <img
+src="/img/la" /> información y <img src="/img/la" />s aristas son <img
+src="/img/la" />s re<img src="/img/la" />ciones.</p>
+<p><img src="/img/-" /> Consultas: recorridos sobre grafos.</p>
+<p><img src="/img/-" /> Facilita <img src="/img/la" /> representación
+<img src="/img/!%5B%5D(/img/de)" /> re<img src="/img/la" />ciones
+complejas.</p>
+<p><img src="/img/-" /> Óptimo para <img src="/img/con" />sultas que
+involucran patrones <img src="/img/!%5B%5D(/img/de)" /> re<img
+src="/img/la" />ciones.</p>
+<h3 id="orientado-a-columnas">Orientado a columnas</h3>
+<p>Almacena datos en columnas en lugar <img
+src="/img/!%5B%5D(/img/de)" /> <img
+src="/img/fi!%5B%5D(/img/la)s" />.</p>
+<p><img src="/img/-" /> Cada fi<img src="/img/la" /> pue<img
+src="/img/!%5B%5D(/img/de)" /> tener una <img
+src="/img/con" />figuración <img src="/img/!%5B%5D(/img/de)" /> columna
+distinta.</p>
+<p><img src="/img/-" /> Permite una lectura eficiente <img
+src="/img/!%5B%5D(/img/de)" /> <img src="/img/con" />juntos <img
+src="/img/!%5B%5D(/img/de)" /> datos específicos.</p>
+<p><img src="/img/-" /> Óptimo para <img src="/img/con" />sultas
+analíticas y agragaciones en gran<img src="/img/!%5B%5D(/img/de)" />s
+cantida<img src="/img/!%5B%5D(/img/de)" />s <img
+src="/img/!%5B%5D(/img/de)" /> datos.</p>
+<h4 id="fis-vs-columnas">Fi<img src="/img/la" />s vs columnas</h4>
+<p>||Fi<img src="/img/la" />s|Columnas| |:<img src="/img/-" />:|:<img
+src="/img/-" />:|:<img src="/img/-" />:| |Ventaja|Eficiencia insertar y
+eliminar|Eficiencia <img src="/img/!%5B%5D(/img/de)" /> acceso a datos
+útiles| |Desventaja|Lectura <img src="/img/!%5B%5D(/img/de)" /> datos
+inútiles|Ineficiencia insertar y eliminar|</p>
+<h3 id="multimolo">Multi<img src="/img/-" />mo<img
+src="/img/!%5B%5D(/img/de)" />lo</h3>
+<p>Evolución para admitir varios <img src="/img/!%5B%5D(/img/de)" />
+estos mo<img src="/img/!%5B%5D(/img/de)" />los <img
+src="/img/!%5B%5D(/img/de)" /> datos simultáneamente.</p>
+<p><img src="/img/-" /> Útil en situaciones don<img
+src="/img/!%5B%5D(/img/de)" /> los datos tienen estructuras variadas y
+diferentes necesida<img src="/img/!%5B%5D(/img/de)" />s <img
+src="/img/!%5B%5D(/img/de)" /> <img src="/img/con" />sulta.</p>
+<p><img src="/img/-" /> Flexibilidad y simplificación en el <img
+src="/img/!%5B%5D(/img/de)" />sarrollo al permitir utilizar el mo<img
+src="/img/!%5B%5D(/img/de)" />lo <img src="/img/!%5B%5D(/img/de)" />
+datos más a<img src="/img/!%5B%5D(/img/de)" />cuado para cada caso <img
+src="/img/!%5B%5D(/img/de)" /> uso sin tener que recurrir a múltiples
+SGDB.</p>
+<h2 id="comparativa">Comparativa</h2>
+<p>|Tipo <img src="/img/!%5B%5D(/img/de)" /> base <img
+src="/img/!%5B%5D(/img/de)" /> datos NoSQL|Características <img
+src="/img/!%5B%5D(/img/de)" /> almacenamiento|Principales ventajas|
+|:<img src="/img/-" />:|:<img src="/img/-" />:|:<img src="/img/-" />:|
+|C<img src="/img/la" />ve<img src="/img/-" />valor|Se almacenan parejas
+‘c<img src="/img/la" />ve: valor’; valores i<img
+src="/img/!%5B%5D(/img/de)" />ntificados por una c<img
+src="/img/la" />ve|Muy rápido para lecturas| |De columnas| Almacena los
+datos en columnas en lugar <img src="/img/!%5B%5D(/img/de)" /> <img
+src="/img/fi!%5B%5D(/img/la)s" />|Consultas <img
+src="/img/!%5B%5D(/img/de)" /> datos porcolumnas y agregados|
+|Documental|Simi<img src="/img/la" />r al c<img src="/img/la" />ve<img
+src="/img/-" />valor pero el valor es un documento que <img
+src="/img/la" /> base <img src="/img/!%5B%5D(/img/de)" /> datos pue<img
+src="/img/!%5B%5D(/img/de)" /> interpretar|Rápido para
+escritura|Consultas complejas sobre campos <img
+src="/img/!%5B%5D(/img/de)" />l documento que se almacena| |Orientadas a
+grafos|La información se guarda en grafos dirigidos|Consultas sobre
+nodos y <img src="/img/con" />exiones|</p>
+<h1 id="tipos-almacenamiento-en-bases-datos-nosql">Tipos <img
+src="/img/!%5B%5D(/img/de)" /> almacenamiento en bases <img
+src="/img/!%5B%5D(/img/de)" /> datos NoSQL</h1>
+<h1 id="tecnologías-rastreo">Tecnologías <img
+src="/img/!%5B%5D(/img/de)" /> Rastreo</h1>
+<p>Aquel<img src="/img/la" />s para el procesamiento, in<img
+src="/img/!%5B%5D(/img/de)" />xación y recuperación para <img
+src="/img/con" />seguir acceso eficiente a <img src="/img/con" />tenidos
+multi<img src="/img/-" />formato.</p>
+<h2 id="objetivo-inxación">Objetivo <img src="/img/!%5B%5D(/img/de)" />
+<img src="/img/la" /> in<img src="/img/!%5B%5D(/img/de)" />xación</h2>
+<p><img src="/img/-" /> Acelerar el acceso a los datos.</p>
+<p><img src="/img/-" /> Funciones básicas: Put, Update, Get, Delete.</p>
+<p><img src="/img/-" /> Búqueda o <img src="/img/con" />sultas.</p>
+<h2 id="requisitos-inxación-en-big-data">Requisitos <img
+src="/img/!%5B%5D(/img/de)" /> in<img
+src="/img/!%5B%5D(/img/de)" />xación en Big Data</h2>
+<p><img src="/img/-" /> Rápi<img src="/img/!%5B%5D(/img/de)" />z <img
+src="/img/!%5B%5D(/img/de)" /> búsqueda: búsqueda sobre bitones<img
+src="/img/-" />trillones <img src="/img/!%5B%5D(/img/de)" /> valores
+<img src="/img/!%5B%5D(/img/de)" /> datos en segundos.</p>
+<p><img src="/img/-" /> Consultas multi<img src="/img/-" />variable: ser
+eficiente al combinar resultados <img src="/img/!%5B%5D(/img/de)" />
+variables individuales.</p>
+<p><img src="/img/-" /> Tamaño <img src="/img/!%5B%5D(/img/de)" />l
+índice: <img src="/img/!%5B%5D(/img/de)" />be ser una fracción <img
+src="/img/!%5B%5D(/img/de)" />l dato original.</p>
+<p><img src="/img/-" /> Paralelización: <img
+src="/img/!%5B%5D(/img/de)" />be ser fácilmente particionable en partes
+para hacer procesamiento paralelo.</p>
+<p><img src="/img/-" /> Velocidad en <img src="/img/la" /> generación
+<img src="/img/!%5B%5D(/img/de)" /> índices: para el procesamiento in
+situ, el índice se tiene que <img src="/img/con" />struir a <img
+src="/img/la" /> misma vez que se procesa el dato.</p>
+<h2 id="estructura-índices-datos">Estructura <img
+src="/img/!%5B%5D(/img/de)" /> Índices <img
+src="/img/!%5B%5D(/img/de)" /> datos</h2>
+<p>Los datos se almacenan en unida<img src="/img/!%5B%5D(/img/de)" />s
+<img src="/img/!%5B%5D(/img/de)" /> acceso fijo.</p>
+<p><img src="/img/-" /> C<img src="/img/la" />ves asociadas a su dato
+correspondiente.</p>
+<p><img src="/img/-" /> Los datos tienen que estar obligatoriamente
+i<img src="/img/!%5B%5D(/img/de)" />ntificados unívocamente.</p>
+<p><img src="/img/-" /> En disco: dirección a página <img
+src="/img/!%5B%5D(/img/de)" /> disco.</p>
+<p><img src="/img/-" /> En memoria principal: un puntero al dato.</p>
+<h3 id="hash"><img src="/img/Tab!%5B%5D(/img/la)s" /> Hash</h3>
+<p>Estructura <img src="/img/!%5B%5D(/img/de)" /> datos que asocia l<img
+src="/img/la" />ves o c<img src="/img/la" />ves <img src="/img/con" />
+valores.</p>
+<p><img src="/img/-" /> Búsqueda: operación principal que soporta <img
+src="/img/!%5B%5D(/img/de)" /> manera eficiente; acceso a partir <img
+src="/img/!%5B%5D(/img/de)" /> c<img src="/img/la" />ve generada.</p>
+<p><img src="/img/-" /> Transforma <img src="/img/la" /> c<img
+src="/img/la" />ve <img src="/img/con" /> una función hash en un número
+hash don<img src="/img/!%5B%5D(/img/de)" /> <img src="/img/la" />
+tab<img src="/img/la" /> hash localiza el valor <img
+src="/img/!%5B%5D(/img/de)" />seado.</p>
+<h3 id="índices-basados-en-árboles">Índices basados en árboles</h3>
+<p>Estructura <img src="/img/!%5B%5D(/img/de)" /> datos en forma <img
+src="/img/!%5B%5D(/img/de)" /> árbol preservando el or<img
+src="/img/!%5B%5D(/img/de)" />n <img src="/img/!%5B%5D(/img/de)" /> <img
+src="/img/la" />s c<img src="/img/la" />ves.</p>
+<p><img src="/img/-" /> Árboles binarios: <img src="/img/la" />s c<img
+src="/img/la" />ves se van almacenando en forma <img
+src="/img/!%5B%5D(/img/de)" /> árbol ba<img src="/img/la" />ceado basado
+en disco o en memoria.</p>
+<p><img src="/img/-" /> A tener en cuenta el tamaño <img
+src="/img/!%5B%5D(/img/de)" /> los índices y el coste <img
+src="/img/!%5B%5D(/img/de)" /> <img src="/img/con" />struir.</p>
+<h3 id="índices-multidimensionales">Índices multidimensionales</h3>
+<p>Los datos se representan como puntos en un espacio
+multidimensional.</p>
+<p><img src="/img/-" /> Una dimensión es como una columna en una tab<img
+src="/img/la" /> re<img src="/img/la" />cional.</p>
+<p><img src="/img/-" /> Tree<img src="/img/-" />in<img
+src="/img/!%5B%5D(/img/de)" />x: índice primario en una c<img
+src="/img/la" />ve.</p>
+<p><img src="/img/-" /> Acceso aleatorio: índices secundarios en otras
+c<img src="/img/la" />ves.</p>
+<p><img src="/img/-" /> Ventajas en <img src="/img/la" />s búsquedas:
+puntos y <img src="/img/con" />sultas sobre rangos.</p>
+<p>|Problema|Soluciones| |:<img src="/img/-" />:|:<img src="/img/-" />:|
+|Maldición <img src="/img/!%5B%5D(/img/de)" /> <img src="/img/la" />
+dimensionalidad|Partición y reducción <img
+src="/img/!%5B%5D(/img/de)" />l espacio dimensional| |Crecimiento
+exponencial|Comprensión <img src="/img/!%5B%5D(/img/de)" /> los
+datos|</p>
+<h4 id="aplicaciones">Aplicaciones</h4>
+<p><img src="/img/-" /> Multimedia.</p>
+<p><img src="/img/-" /> Recuperación <img src="/img/!%5B%5D(/img/de)" />
+documentos.</p>
+<p><img src="/img/-" /> Biología.</p>
+<p><img src="/img/-" /> Almacenamiento y acceso <img
+src="/img/!%5B%5D(/img/de)" /> datos <img src="/img/especiales" />.</p>
+<h3 id="inverted-files">Inverted files</h3>
+<p>Estructura <img src="/img/!%5B%5D(/img/de)" /> datos que se utiliza
+comúnmente en motores <img src="/img/!%5B%5D(/img/de)" /> búsqueda y
+sistemas <img src="/img/!%5B%5D(/img/de)" /> in<img
+src="/img/!%5B%5D(/img/de)" />xación.</p>
+<p><img src="/img/-" /> En lugar <img src="/img/!%5B%5D(/img/de)" />
+in<img src="/img/!%5B%5D(/img/de)" />xar los datos directamente por su
+<img src="/img/valor," /> se in<img src="/img/!%5B%5D(/img/de)" />xan
+por sus términos o pa<img src="/img/la" />bras c<img
+src="/img/la" />ve.</p>
+<p><img src="/img/-" /> <img src="/img/Tab!%5B%5D(/img/la)s" /> <img
+src="/img/especiales" /> <img src="/img/con" /> <img
+src="/img/fi!%5B%5D(/img/la)s" /> <img src="/img/!%5B%5D(/img/de)" />
+<img src="/img/la" /> <img src="/img/forma:" /> <img src="/img/pares" />
+<img src="/img/" /> <img src="/img/valor," /> <img src="/img/lista" />
+<img src="/img/!%5B%5D(/img/de)" /> c<img src="/img/la" />ves <img
+src="/img/." /></p>
+<p><img src="/img/-" /> Dado un <img src="/img/valor," /> <img
+src="/img/!%5B%5D(/img/de)" />vuelve todas <img src="/img/la" />s c<img
+src="/img/la" />ves correspondientes.</p>
+<p><img src="/img/-" /> Como si fueran índices secundarios, estas c<img
+src="/img/la" />ves pue<img src="/img/!%5B%5D(/img/de)" /> usarse para
+acce<img src="/img/!%5B%5D(/img/de)" />r a los datos correspondientes
+usando un índice primario.</p>
+<h4 id="funcionamiento">Funcionamiento</h4>
+<p><img src="/img/-" /> Cuando se realiza una <img
+src="/img/con" />sulta que incluye un término, el sistema busca en el
+archivo invertido ese término y recupera <img src="/img/la" /> <img
+src="/img/lista" /> <img src="/img/!%5B%5D(/img/de)" /> documentos
+asociados.</p>
+<p><img src="/img/-" /> Luego, pue<img src="/img/!%5B%5D(/img/de)" />
+utilizar esta <img src="/img/lista" /> para recuperar los documentos
+relevantes <img src="/img/!%5B%5D(/img/de)" /> <img src="/img/la" />
+base <img src="/img/!%5B%5D(/img/de)" /> datos</p>
+<h3 id="join-índices">Join índices</h3>
+<p>Los índices <img src="/img/!%5B%5D(/img/de)" /> unión son estructuras
+<img src="/img/!%5B%5D(/img/de)" /> datos utilizadas para optimizar <img
+src="/img/con" />sultas que involucran operaciones <img
+src="/img/!%5B%5D(/img/de)" /> unión entre tab<img
+src="/img/la" />s.</p>
+<p><img src="/img/-" /> Los índices almacenan información pre<img
+src="/img/-" />calcu<img src="/img/la" />da sobre <img src="/img/la" />s
+re<img src="/img/la" />ciones entre <img src="/img/la" />s tab<img
+src="/img/la" />s para acelerar el proceso <img
+src="/img/!%5B%5D(/img/de)" /> unión.</p>
+<p><img src="/img/-" /> Permite recuperar rápidamente los registros
+re<img src="/img/la" />cionados sin tener que realizar un escaneo
+completo <img src="/img/!%5B%5D(/img/de)" /> <img src="/img/la" />s
+tab<img src="/img/la" />s.</p>
+<h1 id="tecnologías-almacenamiento-escable">Tecnologías <img
+src="/img/!%5B%5D(/img/de)" /> almacenamiento esca<img
+src="/img/la" />ble</h1>
+<h2 id="escabilidad-1">Esca<img src="/img/la" />bilidad</h2>
+<p>Capacidad <img src="/img/!%5B%5D(/img/de)" /> adaptación y respuesta
+<img src="/img/!%5B%5D(/img/de)" /> un sistema <img src="/img/con" />
+respecto al rendimiento <img src="/img/!%5B%5D(/img/de)" /> este a
+medida que aumentan <img src="/img/!%5B%5D(/img/de)" /> forma
+significativa el número <img src="/img/!%5B%5D(/img/de)" />
+usuarios.</p>
+<p><img src="/img/-" /> Hace referencia a <img src="/img/la" />
+propiedad <img src="/img/!%5B%5D(/img/de)" /> aumentar <img
+src="/img/la" /> capacidad <img src="/img/!%5B%5D(/img/de)" /> trabajo
+<img src="/img/!%5B%5D(/img/de)" /> un programa sin alterar <img
+src="/img/la" /> eficiencia <img src="/img/!%5B%5D(/img/de)" /> trabajo
+o tamaño <img src="/img/!%5B%5D(/img/de)" /> un sistema y sin poner en
+riesgo el buen funcionamiento y <img src="/img/la" /> calidad <img
+src="/img/!%5B%5D(/img/de)" />l mismo.</p>
+<p><img src="/img/-" /> Es un aspecto complejo e importante <img
+src="/img/!%5B%5D(/img/de)" />l diseño.</p>
+<p><img src="/img/-" /> Influye en el rendimiento <img
+src="/img/!%5B%5D(/img/de)" /> forma significativa.</p>
+<p><img src="/img/-" /> Si una aplicación está bien diseñada, <img
+src="/img/la" /> esca<img src="/img/la" />bilidad no <img
+src="/img/con" />struye un problema y se <img
+src="/img/!%5B%5D(/img/de)" />duce <img src="/img/!%5B%5D(/img/de)" />
+<img src="/img/la" /> implementación y <img
+src="/img/!%5B%5D(/img/de)" />l diseño general <img
+src="/img/!%5B%5D(/img/de)" />l sistema.</p>
+<p><img src="/img/-" /> Supone un factor crítico en el crecimiento <img
+src="/img/!%5B%5D(/img/de)" /> un sistema.</p>
 <h3 id="tipos-según-dimensiones">Tipos según dimensiones</h3>
-<ul>
-<li><p>En carga: un sistema distribuido nos hace fácil el ampliar y
-reducir sus recursos para acomodar cargas más pesadas o más ligeras
-según se requiera.</p></li>
-<li><p>Geográfica: aquel que mantiene su utilidad y usabilidad, sin
-importar que tan lejos estén sus usuarios o recursos.</p></li>
-<li><p>Administrativa: no importa qué tantas organizaciones diferentes
-necesiten compartir un solo sistema distribuido, debe ser fácil de usar
-y manejar.</p></li>
-</ul>
-<h3 id="escalabilidad-vertical">Escalabilidad vertical</h3>
-<p>Escalar hacia arriba un sistema significa una migración de todo el
-sistema a un nuevo hardware que es más potente y eficaz que el
-actual.</p>
-<ul>
-<li><p>Una vez se ha configurado el sistema futuro, se realizan una
-serie de validaciones y copias de seguridad y se pone en
-funcionamiento.</p></li>
-<li><p>Las aplicaciones que estén funcionando bajo la arquitectura
-hardware antigua no sufren con la migración, el impacto en el código es
-mínimo.</p></li>
-</ul>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Ventaja</th>
-<th style="text-align: center;">Desventaja</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Nivel estructural: no supone ninguna
-modificación reseñable, lo que la convierte en una buena opción si los
-costos anteriores son asumibles</td>
-<td style="text-align: center;">Limitación de hardware: llegará un
-momento que existirá algún tipo de limitación hadware</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td style="text-align: center;">Costos: a medida que se invierte en
-hadware de muy altas prestaciones, los costos se disparan</td>
-</tr>
-</tbody>
-</table>
-<h3 id="escalabilidad-horizontal">Escalabilidad horizontal</h3>
-<p>Consiste en potenciar el rendimiento del sistema desde un aspecto de
-mejora global, a diferencia de aumentar la potencia de una única parte
-del sistema.</p>
-<ul>
-<li><p>Se basa en la modularidad de su funcionalidad.</p></li>
-<li><p>Suele estar conformado por una agrupación de equipos que dan
-soporte a la funcionalidad completa.</p></li>
-</ul>
-<table>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-<h2 id="balance-de-carga">Balance de carga</h2>
+<p><img src="/img/-" /> En carga: un sistema distribuido nos hace fácil
+el ampliar y reducir sus recursos para acomodar cargas más pesadas o más
+ligeras según se requiera.</p>
+<p><img src="/img/-" /> Geográfica: aquel que mantiene su utilidad y
+usabilidad, sin importar que tan lejos estén sus usuarios o
+recursos.</p>
+<p><img src="/img/-" /> Administrativa: no importa qué tantas
+organizaciones diferentes necesiten compartir un solo sistema
+distribuido, <img src="/img/!%5B%5D(/img/de)" />be ser fácil <img
+src="/img/!%5B%5D(/img/de)" /> usar y manejar.</p>
+<h3 id="escabilidad-vertical">Esca<img src="/img/la" />bilidad
+vertical</h3>
+<p>Esca<img src="/img/la" />r hacia arriba un sistema significa una
+migración <img src="/img/!%5B%5D(/img/de)" /> todo el sistema a un nuevo
+hardware que es más potente y eficaz que el actual.</p>
+<p><img src="/img/-" /> Una vez se ha <img src="/img/con" />figurado el
+sistema futuro, se realizan una serie <img
+src="/img/!%5B%5D(/img/de)" /> validaciones y copias <img
+src="/img/!%5B%5D(/img/de)" /> seguridad y se pone en
+funcionamiento.</p>
+<p><img src="/img/-" /> Las aplicaciones que estén funcionando bajo <img
+src="/img/la" /> arquitectura hardware antigua no sufren <img
+src="/img/con" /> <img src="/img/la" /> migración, el impacto en el
+código es mínimo.</p>
+<p>|Ventaja|Desventaja| |:<img src="/img/-" />:|:<img src="/img/-" />:|
+|Nivel estructural: no supone ninguna modificación reseñable, lo que
+<img src="/img/la" /> <img src="/img/con" />vierte en una buena opción
+si los costos anteriores son asumibles|Limitación <img
+src="/img/!%5B%5D(/img/de)" /> hardware: llegará un momento que existirá
+algún tipo <img src="/img/!%5B%5D(/img/de)" /> limitación hadware|
+||Costos: a medida que se invierte en hadware <img
+src="/img/!%5B%5D(/img/de)" /> muy altas prestaciones, los costos se
+disparan|</p>
+<h3 id="escabilidad-horizontal">Esca<img src="/img/la" />bilidad
+horizontal</h3>
+<p>Consiste en potenciar el rendimiento <img
+src="/img/!%5B%5D(/img/de)" />l sistema <img
+src="/img/!%5B%5D(/img/de)" />s<img src="/img/!%5B%5D(/img/de)" /> un
+aspecto <img src="/img/!%5B%5D(/img/de)" /> mejora global, a diferencia
+<img src="/img/!%5B%5D(/img/de)" /> aumentar <img src="/img/la" />
+potencia <img src="/img/!%5B%5D(/img/de)" /> una única parte <img
+src="/img/!%5B%5D(/img/de)" />l sistema.</p>
+<p><img src="/img/-" /> Se basa en <img src="/img/la" /> modu<img
+src="/img/la" />ridad <img src="/img/!%5B%5D(/img/de)" /> su
+funcionalidad.</p>
+<p><img src="/img/-" /> Suele estar <img src="/img/con" />formado por
+una agrupación <img src="/img/!%5B%5D(/img/de)" /> equipos que dan
+soporte a <img src="/img/la" /> funcionalidad completa.</p>
+<p>|Ventaja|Desventaja| |:<img src="/img/-" />:|:<img src="/img/-" />:|
+|No existen limitaciones: se pue<img src="/img/!%5B%5D(/img/de)" />n
+agregar recursos <img src="/img/!%5B%5D(/img/de)" /> manera
+infinita|Gran modificación: <img src="/img/con" />lleva un gran trabajo
+<img src="/img/!%5B%5D(/img/de)" /> diseño y reampliación| ||Si <img
+src="/img/la" /> lógica se ha <img src="/img/con" />cebido para un único
+servidor, es probable que se tenga que reestructurar el mo<img
+src="/img/!%5B%5D(/img/de)" />lo arquitectónico para soportar este
+mo<img src="/img/!%5B%5D(/img/de)" />lo|</p>
+<h2 id="bance-carga">Ba<img src="/img/la" />nce <img
+src="/img/!%5B%5D(/img/de)" /> carga</h2>
 <p>Técnica para dividir el trabajo a compartir entre varios procesos,
-ordenadores, u otros recursos.</p>
-<ul>
-<li><p>Está muy relacionada con los sistemas multi-proceso, que trabajan
-o pueden trabajar con más de una unidad para llevar a cabo su
-funcionalidad.</p></li>
-<li><p>Para evitar cuellos de botella, el balance de la carga de trabajo
-se repite de forma equitativa a través de un algoritmo que estudia las
-peticiones del sistema y las redirecciona a la mejor opción.</p></li>
-<li><p>Hardware: rápidos porque es acceso hardware.</p></li>
-<li><p>Software: más lentos porque simulan el balanceo
-hardware.</p></li>
-</ul>
+or<img src="/img/!%5B%5D(/img/de)" />nadores, u otros recursos.</p>
+<p><img src="/img/-" /> Está muy re<img src="/img/la" />cionada <img
+src="/img/con" /> los sistemas multi<img src="/img/-" />proceso, que
+trabajan o pue<img src="/img/!%5B%5D(/img/de)" />n trabajar <img
+src="/img/con" /> más <img src="/img/!%5B%5D(/img/de)" /> una unidad
+para llevar a cabo su funcionalidad.</p>
+<p><img src="/img/-" /> Para evitar cuellos <img
+src="/img/!%5B%5D(/img/de)" /> botel<img src="/img/la" />, el ba<img
+src="/img/la" />nce <img src="/img/!%5B%5D(/img/de)" /> <img
+src="/img/la" /> carga <img src="/img/!%5B%5D(/img/de)" /> trabajo se
+repite <img src="/img/!%5B%5D(/img/de)" /> forma equitativa a través
+<img src="/img/!%5B%5D(/img/de)" /> un algoritmo que estudia <img
+src="/img/la" />s peticiones <img src="/img/!%5B%5D(/img/de)" />l
+sistema y <img src="/img/la" />s redirecciona a <img src="/img/la" />
+mejor opción.</p>
+<p><img src="/img/-" /> Hardware: rápidos porque es acceso hardware.</p>
+<p><img src="/img/-" /> Software: más lentos porque simu<img
+src="/img/la" />n el ba<img src="/img/la" />nceo hardware.</p>
 <h3 id="operaciones">Operaciones</h3>
 <h4 id="replicación">Replicación</h4>
-<p>Se basa en tener varias copias de un mismo dato en varios nodos de
-una base de datos distribuida.</p>
-<ul>
-<li><p>Síncrona.</p></li>
-<li><p>Asíncrona.</p></li>
-</ul>
+<p>Se basa en tener varias copias <img src="/img/!%5B%5D(/img/de)" /> un
+mismo dato en varios nodos <img src="/img/!%5B%5D(/img/de)" /> una base
+<img src="/img/!%5B%5D(/img/de)" /> datos distribuida.</p>
+<p><img src="/img/-" /> Síncrona.</p>
+<p><img src="/img/-" /> Asíncrona.</p>
 <h5 id="desafíos">Desafíos</h5>
-<h6 id="anomalía-por-lectura-después-de-escritura">Anomalía por lectura
-después de escritura</h6>
-<p>Solución: consistencia read-after-write</p>
-<ul>
-<li><p>Leer información editada propia en vez de en las
-replicas.</p></li>
-<li><p>Seguimiento de la última actualización con timestamps.</p></li>
-</ul>
-<h6 id="anomalía-por-lectura-de-réplica-desactualizada">Anomalía por
-lectura de réplica desactualizada</h6>
-<p>Solución: lecturas en secuencia en la que los datos no tienen una
-fecha anterior a una lectura previa.</p>
-<h6 id="anomalía-por-impedancia-en-la-velocidad-de-réplicas">Anomalía
-por impedancia en la velocidad de réplicas</h6>
-<p>Solución: si una secuencia de escrituras ocurre en un cierto orden,
-cualquiera que lea esas escrituras las verá aparecer en el mismo
-orden.</p>
+<h6 id="anomalía-por-lectura-spués-escritura">Anomalía por lectura <img
+src="/img/!%5B%5D(/img/de)" />spués <img src="/img/!%5B%5D(/img/de)" />
+escritura</h6>
+<p>Solución: <img src="/img/con" />sistencia read<img
+src="/img/-" />after<img src="/img/-" />write</p>
+<p><img src="/img/-" /> Leer información editada propia en vez <img
+src="/img/!%5B%5D(/img/de)" /> en <img src="/img/la" />s replicas.</p>
+<p><img src="/img/-" /> Seguimiento <img src="/img/!%5B%5D(/img/de)" />
+<img src="/img/la" /> última actualización <img src="/img/con" />
+timestamps.</p>
+<h6 id="anomalía-por-lectura-réplica-sactualizada">Anomalía por lectura
+<img src="/img/!%5B%5D(/img/de)" /> réplica <img
+src="/img/!%5B%5D(/img/de)" />sactualizada</h6>
+<p>Solución: lecturas en secuencia en <img src="/img/la" /> que los
+datos no tienen una fecha anterior a una lectura previa.</p>
+<h6 id="anomalía-por-impedancia-en-velocidad-réplicas">Anomalía por
+impedancia en <img src="/img/la" /> velocidad <img
+src="/img/!%5B%5D(/img/de)" /> réplicas</h6>
+<p>Solución: si una secuencia <img src="/img/!%5B%5D(/img/de)" />
+escrituras ocurre en un cierto or<img src="/img/!%5B%5D(/img/de)" />n,
+cualquiera que lea esas escrituras <img src="/img/la" />s verá aparecer
+en el mismo or<img src="/img/!%5B%5D(/img/de)" />n.</p>
 <h4 id="particionamiento">Particionamiento</h4>
-<p>Se basa en la idea de tener particionada la base de datos distribuida
-en varios nodos.</p>
-<ul>
-<li><p>Un dato está presente solo en la parte que le
-corresponde.</p></li>
-<li><p>En el escalamiento horizontal, cuando la computación distribuida
-se usa para separar la carga entre múltiples servidores.</p></li>
-<li><p>Enfoque tradiciona: la partición horizontal se una base de datos
-consiste en dividir una o más tablas por filas, generalmente dentro de
-una única instancia de un esquema y un servidor de base de
-datos.</p></li>
-<li><p>Sharding: divide las tablas problematicas de la misma manera,
-pero lo hace a través de potendiales instancias múltiples del
-esquema.</p></li>
-</ul>
+<p>Se basa en <img src="/img/la" /> i<img
+src="/img/!%5B%5D(/img/de)" />a <img src="/img/!%5B%5D(/img/de)" />
+tener particionada <img src="/img/la" /> base <img
+src="/img/!%5B%5D(/img/de)" /> datos distribuida en varios nodos.</p>
+<p><img src="/img/-" /> Un dato está presente solo en <img
+src="/img/la" /> parte que le correspon<img
+src="/img/!%5B%5D(/img/de)" />.</p>
+<p><img src="/img/-" /> En el esca<img src="/img/la" />miento
+horizontal, cuando <img src="/img/la" /> computación distribuida se usa
+para separar <img src="/img/la" /> carga entre múltiples servidores.</p>
+<p><img src="/img/-" /> Enfoque tradiciona: <img src="/img/la" />
+partición horizontal se una base <img src="/img/!%5B%5D(/img/de)" />
+datos <img src="/img/con" />siste en dividir una o más tab<img
+src="/img/la" />s por <img src="/img/fi!%5B%5D(/img/la)s" />,
+generalmente <img src="/img/!%5B%5D(/img/de)" />ntro <img
+src="/img/!%5B%5D(/img/de)" /> una única instancia <img
+src="/img/!%5B%5D(/img/de)" /> un esquema y un servidor <img
+src="/img/!%5B%5D(/img/de)" /> base <img src="/img/!%5B%5D(/img/de)" />
+datos.</p>
+<p><img src="/img/-" /> Sharding: divi<img
+src="/img/!%5B%5D(/img/de)" /> <img src="/img/la" />s tab<img
+src="/img/la" />s problematicas <img src="/img/!%5B%5D(/img/de)" /> <img
+src="/img/la" /> misma manera, pero lo hace a través <img
+src="/img/!%5B%5D(/img/de)" /> potendiales instancias múltiples <img
+src="/img/!%5B%5D(/img/de)" />l esquema.</p>
 <h5 id="ventajas">Ventajas</h5>
-<ul>
-<li><p>La carga de búsqueda para la gran tabla particionada ahora se
-puede dividir entre varios servidores.</p></li>
-<li><p>División tanto a nivel de servidor lógico como físico.</p></li>
-</ul>
+<p><img src="/img/-" /> La carga <img src="/img/!%5B%5D(/img/de)" />
+búsqueda para <img src="/img/la" /> gran tab<img src="/img/la" />
+particionada ahora se pue<img src="/img/!%5B%5D(/img/de)" /> dividir
+entre varios servidores.</p>
+<p><img src="/img/-" /> División tanto a nivel <img
+src="/img/!%5B%5D(/img/de)" /> servidor lógico como físico.</p>
 <h4 id="opciones-híbridas">Opciones híbridas</h4>
-<p>La partición se combina con la replicación para que las copias de
-cada partición se almacenen en varios nodos.</p>
-<ul>
-<li>Aunque cada registro pertenece exactamente a una partición, aún
-puede almacenarse en varios nodos diferentes para mejorar la tolerancia
-a fallos.</li>
-</ul>
-<hr />
-<p><a href="tag4_t1.html">T1: INTRODUCCIÓN</a></p>
+<p>La partición se combina <img src="/img/con" /> <img src="/img/la" />
+replicación para que <img src="/img/la" />s copias <img
+src="/img/!%5B%5D(/img/de)" /> cada partición se almacenen en varios
+nodos.</p>
+<p><img src="/img/-" /> Aunque cada registro pertenece exactamente a una
+partición, aún pue<img src="/img/!%5B%5D(/img/de)" /> almacenarse en
+varios nodos diferentes para mejorar <img src="/img/la" /> tolerancia a
+fallos.</p>
+<p><img src="/img/-" /><img src="/img/-" /><img src="/img/-" /> <a
+href="tag4_t1.html">T1: INTRODUCCIÓN</a></p>
 <p><a href="tag4_t2.html">T2: DISEÑO Y MODELADO</a></p>
 <p><a href="tag4_t3.html">T3: BASES DE DATOS EN ENTORNOS BIG
 DATA</a></p>
