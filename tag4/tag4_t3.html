@@ -252,38 +252,39 @@ más frecuentemente son utilizados.</p></li>
 <h2 id="centralizado-vs-distribuido">Centralizado vs Distribuido</h2>
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style="width: 75%" />
+<col style="width: 25%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Centralizado</th>
+<th style="text-align: center;">Centralizado</th>
 <th>Distribuido</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Control centralizado</td>
+<td style="text-align: center;">Control centralizado</td>
 <td>Control jerárquico</td>
 </tr>
 <tr class="even">
-<td>Independencia de datos: organización de los datos transparente para
-el progamador</td>
+<td style="text-align: center;">Independencia de datos: organización de
+los datos transparente para el progamador</td>
 <td>Transparencia en la distribución</td>
 </tr>
 <tr class="odd">
-<td>Reducción de redundancia: una sola copia de datos que se
-comparta</td>
+<td style="text-align: center;">Reducción de redundancia: una sola copia
+de datos que se comparta</td>
 <td>Replicación de datos: copias múltiples de datos incrementa la
 localidad y disponibilidad</td>
 </tr>
 <tr class="even">
-<td>Estructuras físicas complejas para accesos eficientes</td>
+<td style="text-align: center;">Estructuras físicas complejas para
+accesos eficientes</td>
 <td>No hay estructuras inter-sitios: uso de optimización global para
 reducir transferencia de datos</td>
 </tr>
 <tr class="odd">
-<td>Seguridad</td>
+<td style="text-align: center;">Seguridad</td>
 <td>Problemas de seguridad intrínsecos</td>
 </tr>
 </tbody>
@@ -329,14 +330,162 @@ almacenamiento en bases de datos NoSQL</h1>
 <h1 id="tecnologías-de-almacenamiento-escalable">Tecnologías de
 almacenamiento escalable</h1>
 <h2 id="escalabilidad-1">Escalabilidad</h2>
+<p>Capacidad de adaptación y respuesta de un sistema con respecto al
+rendimiento de este a medida que aumentan de forma significativa el
+número de usuarios.</p>
+<ul>
+<li><p>Hace referencia a la propiedad de aumentar la capacidad de
+trabajo de un programa sin alterar la eficiencia de trabajo o tamaño de
+un sistema y sin poner en riesgo el buen funcionamiento y la calidad del
+mismo.</p></li>
+<li><p>Es un aspecto complejo e importante del diseño.</p></li>
+<li><p>Influye en el rendimiento de forma significativa.</p></li>
+<li><p>Si una aplicación está bien diseñada, la escalabilidad no
+construye un problema y se deduce de la implementación y del diseño
+general del sistema.</p></li>
+<li><p>Supone un factor crítico en el crecimiento de un
+sistema.</p></li>
+</ul>
 <h3 id="tipos-según-dimensiones">Tipos según dimensiones</h3>
+<ul>
+<li><p>En carga: un sistema distribuido nos hace fácil el ampliar y
+reducir sus recursos para acomodar cargas más pesadas o más ligeras
+según se requiera.</p></li>
+<li><p>Geográfica: aquel que mantiene su utilidad y usabilidad, sin
+importar que tan lejos estén sus usuarios o recursos.</p></li>
+<li><p>Administrativa: no importa qué tantas organizaciones diferentes
+necesiten compartir un solo sistema distribuido, debe ser fácil de usar
+y manejar.</p></li>
+</ul>
 <h3 id="escalabilidad-vertical">Escalabilidad vertical</h3>
+<p>Escalar hacia arriba un sistema significa una migración de todo el
+sistema a un nuevo hardware que es más potente y eficaz que el
+actual.</p>
+<ul>
+<li><p>Una vez se ha configurado el sistema futuro, se realizan una
+serie de validaciones y copias de seguridad y se pone en
+funcionamiento.</p></li>
+<li><p>Las aplicaciones que estén funcionando bajo la arquitectura
+hardware antigua no sufren con la migración, el impacto en el código es
+mínimo.</p></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Ventaja</th>
+<th style="text-align: center;">Desventaja</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Nivel estructural: no supone ninguna
+modificación reseñable, lo que la convierte en una buena opción si los
+costos anteriores son asumibles</td>
+<td style="text-align: center;">Limitación de hardware: llegará un
+momento que existirá algún tipo de limitación hadware</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Costos: a medida que se invierte en
+hadware de muy altas prestaciones, los costos se disparan</td>
+</tr>
+</tbody>
+</table>
 <h3 id="escalabilidad-horizontal">Escalabilidad horizontal</h3>
+<p>Consiste en potenciar el rendimiento del sistema desde un aspecto de
+mejora global, a diferencia de aumentar la potencia de una única parte
+del sistema.</p>
+<ul>
+<li><p>Se basa en la modularidad de su funcionalidad.</p></li>
+<li><p>Suele estar conformado por una agrupación de equipos que dan
+soporte a la funcionalidad completa.</p></li>
+</ul>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
 <h2 id="balance-de-carga">Balance de carga</h2>
+<p>Técnica para dividir el trabajo a compartir entre varios procesos,
+ordenadores, u otros recursos.</p>
+<ul>
+<li><p>Está muy relacionada con los sistemas multi-proceso, que trabajan
+o pueden trabajar con más de una unidad para llevar a cabo su
+funcionalidad.</p></li>
+<li><p>Para evitar cuellos de botella, el balance de la carga de trabajo
+se repite de forma equitativa a través de un algoritmo que estudia las
+peticiones del sistema y las redirecciona a la mejor opción.</p></li>
+<li><p>Hardware: rápidos porque es acceso hardware.</p></li>
+<li><p>Software: más lentos porque simulan el balanceo
+hardware.</p></li>
+</ul>
 <h3 id="operaciones">Operaciones</h3>
-<h2 id="replicación">Replicación</h2>
-<h3 id="desafíos">Desafíos</h3>
-<h2 id="particionamiento">Particionamiento</h2>
+<h4 id="replicación">Replicación</h4>
+<p>Se basa en tener varias copias de un mismo dato en varios nodos de
+una base de datos distribuida.</p>
+<ul>
+<li><p>Síncrona.</p></li>
+<li><p>Asíncrona.</p></li>
+</ul>
+<h5 id="desafíos">Desafíos</h5>
+<h6 id="anomalía-por-lectura-después-de-escritura">Anomalía por lectura
+después de escritura</h6>
+<p>Solución: consistencia read-after-write</p>
+<ul>
+<li><p>Leer información editada propia en vez de en las
+replicas.</p></li>
+<li><p>Seguimiento de la última actualización con timestamps.</p></li>
+</ul>
+<h6 id="anomalía-por-lectura-de-réplica-desactualizada">Anomalía por
+lectura de réplica desactualizada</h6>
+<p>Solución: lecturas en secuencia en la que los datos no tienen una
+fecha anterior a una lectura previa.</p>
+<h6 id="anomalía-por-impedancia-en-la-velocidad-de-réplicas">Anomalía
+por impedancia en la velocidad de réplicas</h6>
+<p>Solución: si una secuencia de escrituras ocurre en un cierto orden,
+cualquiera que lea esas escrituras las verá aparecer en el mismo
+orden.</p>
+<h4 id="particionamiento">Particionamiento</h4>
+<p>Se basa en la idea de tener particionada la base de datos distribuida
+en varios nodos.</p>
+<ul>
+<li><p>Un dato está presente solo en la parte que le
+corresponde.</p></li>
+<li><p>En el escalamiento horizontal, cuando la computación distribuida
+se usa para separar la carga entre múltiples servidores.</p></li>
+<li><p>Enfoque tradiciona: la partición horizontal se una base de datos
+consiste en dividir una o más tablas por filas, generalmente dentro de
+una única instancia de un esquema y un servidor de base de
+datos.</p></li>
+<li><p>Sharding: divide las tablas problematicas de la misma manera,
+pero lo hace a través de potendiales instancias múltiples del
+esquema.</p></li>
+</ul>
+<h5 id="ventajas">Ventajas</h5>
+<ul>
+<li><p>La carga de búsqueda para la gran tabla particionada ahora se
+puede dividir entre varios servidores.</p></li>
+<li><p>División tanto a nivel de servidor lógico como físico.</p></li>
+</ul>
+<h4 id="opciones-híbridas">Opciones híbridas</h4>
+<p>La partición se combina con la replicación para que las copias de
+cada partición se almacenen en varios nodos.</p>
+<ul>
+<li>Aunque cada registro pertenece exactamente a una partición, aún
+puede almacenarse en varios nodos diferentes para mejorar la tolerancia
+a fallos.</li>
+</ul>
 <hr />
 <p><a href="tag4_t1.html">T1: INTRODUCCIÓN</a></p>
 <p><a href="tag4_t2.html">T2: DISEÑO Y MODELADO</a></p>
