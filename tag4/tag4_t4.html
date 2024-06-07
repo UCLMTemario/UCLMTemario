@@ -180,8 +180,103 @@
 y análisis</h1>
 <h1 id="integración-de-datos">Integración de Datos</h1>
 <h1 id="métodos-de-integración">Métodos de Integración</h1>
+<h2 id="apis">APIs</h2>
+<p>Especificación formal para definir la comunicación entre componentes
+software.</p>
+<h2 id="servicios-web">Servicios Web</h2>
+<p>Conjunto de aplicaciones o de tecnologías con capacidad para
+interoperar en la web y con el fin de proporcionar unos servicios.</p>
+<h3 id="soap">SOAP</h3>
+<p>Protocolo simple de acceso a objetos.</p>
+<ul>
+<li><p>Estándar de W3C.</p></li>
+<li><p>Mensajes SOAP como XML.</p></li>
+</ul>
+<h3 id="wsdl">WSDL</h3>
+<p>Lenguaje descriptivo de servicio web.</p>
+<ul>
+<li>Estándar de W3C.</li>
+</ul>
+<blockquote>
+<p>WSDL define la interfaz y el contrato del servicio web, especificando
+las operaciones disponibles y cómo interactuar con ellas.</p>
+</blockquote>
+<h2 id="servicio-rest">Servicio REST</h2>
+<p>Cualquier interfaz entre sistemas que use HTTP para obtener datos o
+generar operaciones sobre esos datos.</p>
+<ul>
+<li><p>Necesidad de simplicidad y flexibilidad.</p></li>
+<li><p>Evolución de la arquitectura web.</p></li>
+<li><p>Protocolo cliente/servidor sin estado.</p></li>
+<li><p>Operaciones: GET, POST, PUT, DELETE.</p></li>
+<li><p>Manipulación a través de URI.</p></li>
+<li><p>Interfaz uniforme.</p></li>
+<li><p>Arquitectura jerárquica entre componentes.</p></li>
+</ul>
+<h2 id="servicio-graphql">Servicio GraphQL</h2>
+<h1 id="sin-terminar">SIN TERMINAR</h1>
 <h1 id="almacenamiento-basado-en-ficheros-de-texto-plano">Almacenamiento
 basado en ficheros de texto plano</h1>
+<h2 id="csv">CSV</h2>
+<p>Formato no estandarizado abierto sencillo para representar datos en
+forma de tabla.</p>
+<ul>
+<li><p>Principal uso: intercambiar datos de una base de datos
+relacional.</p></li>
+<li><p>No hay una estructura estándar, por lo que permmite una gran
+variedad de interpretaciones de cómo es.</p></li>
+</ul>
+<ol type="1">
+<li><p>Cada registro es una línea independiente, separada por un salto
+de línea.</p></li>
+<li><p>La última línea no tien por qué tener un salto de línea.</p></li>
+<li><p>La primera línea puede contener los nombres de los campos que
+contiene cada registro.</p></li>
+<li><p>Cada campo se separa por una coma.</p></li>
+<li><p>Cuando hay contenido de los campos especiales, debe estar marcado
+con la ““.</p></li>
+</ol>
+<h2 id="xml">XML</h2>
+<p>Meta-lenguaje extensible de etiquetas desarrollado por W3C.</p>
+<ul>
+<li>Principal uso: para almacenar e intercambiar datos.</li>
+</ul>
+<h3 id="estructura-jerárquica">Estructura jerárquica</h3>
+<p>Estructura de árbol.</p>
+<ol type="1">
+<li><p>Comienza con un Elemento Raíz y ramas de la raíz a los
+hijos.</p></li>
+<li><p>Todos los elementos pueden tener sub-elementos.</p></li>
+</ol>
+<h3 id="extensible">Extensible</h3>
+<p>Un elemento puede ser añadido cuándo se necesite.</p>
+<h3 id="autodescriptiva">Autodescriptiva</h3>
+<p>Formato legible para el humano.</p>
+<ul>
+<li>Las etiquetas describen el contenido del elemento.</li>
+</ul>
+<h2 id="json">JSON</h2>
+<p>Formato ligero de intercambio de datos.</p>
+<ul>
+<li><p>Establece una estructura de datos legible y simple.</p></li>
+<li><p>Se utiliza principalmente para transmitir datos entre servidor y
+aplicación web, como alternativa al XML.</p></li>
+</ul>
+<h3 id="estructura-jerárquica-1">Estructura jerárquica</h3>
+<ol type="1">
+<li><p>Colección de pares nombre-valor (objeto).</p></li>
+<li><p>Lista ordenada de valores (array).</p></li>
+</ol>
+<h3 id="tipos-de-valor">Tipos de valor</h3>
+<ol type="1">
+<li><p>String.</p></li>
+<li><p>Number.</p></li>
+<li><p>Object.</p></li>
+<li><p>Array.</p></li>
+<li><p>True.</p></li>
+<li><p>False.</p></li>
+<li><p>Null.</p></li>
+</ol>
 <hr />
 <p><a href="tag4_t1.html">T1: INTRODUCCIÓN</a></p>
 <p><a href="tag4_t2.html">T2: DISEÑO Y MODELADO</a></p>
