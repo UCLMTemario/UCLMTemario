@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Aika Kenshi" />
+  <title>COORDINACIÓN</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">COORDINACIÓN</h1>
+<p class="subtitle">TEMA 6</p>
+<p class="author">Aika Kenshi</p>
+<p class="date">21-06-2024</p>
+</header>
+<h1 id="exclusión-mutua-distribuida">EXCLUSIÓN MUTUA DISTRIBUIDA</h1>
+<p>Evita interferencias y garantiza la coherencia cuando varios procesos
+acceden a los recursos simultáneamente.</p>
+<ul>
+<li><p>Un sistema distribuido es una colección de n procesos.</p></li>
+<li><p>Un sistema es asíncrono.</p></li>
+<li><p>Los procesos no fallan.</p></li>
+<li><p>La entrega es fiable.</p></li>
+</ul>
+<blockquote>
+<p>Una sección crítica es un fragmento de código con recursos
+compartidos que no pueden ejecutarse por más de un proceso a la vez.</p>
+</blockquote>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Seguridad</th>
+<th style="text-align: center;">Vivacidad</th>
+<th style="text-align: center;">Ordenación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Como máximo un proceso puede ejecutarse
+en la sección crítica</td>
+<td style="text-align: center;">Las solicitudes de entrar y salir de la
+sección crítica se ejecutan con éxito y garantizan la ausencia de
+inanición y bloqueo</td>
+<td style="text-align: center;">Si una solicitud de entrada en la
+sección crítica se produce antes que otra, entonces la entrada a la
+sección crítica se concede en ese orden</td>
+</tr>
+</tbody>
+</table>
+<h2 id="servidor-central">Servidor central</h2>
+<ol type="1">
+<li><p>Para entrar a una sección crítica, un proceso envía un mensaje de
+solicitud y espera la respuesta.</p></li>
+<li><p>Si ningún otro proceso tiene el token, el servidor responde
+concediendo el token. En caso contrario, el servidor pone en cola la
+solicitud y no responde.</p></li>
+<li><p>Cuando el proceso que se ejecuta dentro de la sección crítica
+sale, devuelve el token al servidor.</p></li>
+<li><p>El servidor elige el proceso más antiguo de la cola y le responde
+concediendo el token.</p></li>
+</ol>
+<ul>
+<li><p>En ausencia de fallos, se cumple con las condiciones de seguridad
+y vivacidad.</p></li>
+<li><p>No se satisface la condición de ordenación.</p></li>
+<li><p>Para entrar en la sección crítica se necesitan 2
+mensajes.</p></li>
+<li><p>Salir de la sección crítica toma 1 único mensaje.</p></li>
+<li><p>El servidor puede convertirse en un cuello de botella en
+rendimiento.</p></li>
+</ul>
+<h2 id="basado-en-anillos">Basado en anillos</h2>
+<ol type="1">
+<li><p>Los procesos se disponen en un anillo lógico.</p></li>
+<li><p>Cada proceso P<sub>i</sub> tiene un canal de comunicación con el
+siguiente proceso, p<sub>i</sub>+1, del anillo.</p></li>
+<li><p>Si un proceso no requiere entrar en la sección crítica, cuando
+recibe el token lo reenvía al siguiente proceso del anillo.</p></li>
+<li><p>Exclusión mutua al obtener el token y retenerlo.</p></li>
+<li><p>Para salir de la sección crítica, el proceso envía el token al
+siguiente proceso.</p></li>
+</ol>
+<ul>
+<li><p>La topología en anillo puede no estar relacionada con las
+interconexiones físicas entre ordenadores.</p></li>
+<li><p>En ausencia de fallos, las condiciones de seguridad y vivacidad
+se cumplen.</p></li>
+<li><p>No se cumple la condición de ordenación.</p></li>
+<li><p>El ancho de banda se consume continuamente.</p></li>
+<li><p>Para entrar en la sección crítica se tarde entre 0 mensajes en el
+mejor de los casos y n mensajes en el peor.</p></li>
+<li><p>Para salir de la sección crítica solo se necesita 1
+mensaje.</p></li>
+</ul>
+<h2 id="ricart-and-agrawala">Ricart and Agrawala</h2>
+<ul>
+<li>Multidifusión y relojes lógicos.</li>
+</ul>
+<ol type="1">
+<li><p>Los mensajes para solicitar entrar en una sección crítica son de
+la fomra &lt; T, p<sub>i</sub> &gt;, donde T es el reloj lógico del
+emisor.</p>
+<ul>
+<li><p>Released: fuera de la sección crítica.</p></li>
+<li><p>Wanted: queriendos entrar en la sección crítica.</p></li>
+<li><p>Held: ejecutando la sección crítica.</p></li>
+</ul></li>
+</ol>
+<ul>
+<li><p>Se cumple las condiciones de seguridad, vivacidad y
+ordenación.</p></li>
+<li><p>Para entrar en la sección crítica, se necesitan N-1 peticiones y
+N-1 respuestas.</p></li>
+<li><p>Si se emplea multidifución, para entrar a la sección crítica se
+necesita 1 petición y N-1 respuestas.</p></li>
+</ul>
+<h3 id="ejemplo">Ejemplo</h3>
+<ol type="1">
+<li><p>P1 y P2 solicitan entrar en la sección simultaneamente a todos
+los procesos.</p></li>
+<li><p>P3 responde inmediatamente a ambos.</p></li>
+<li><p>P2 no responde aún porque L2 &lt; L1, por lo que sigue esperando
+a P1.</p>
+<ul>
+<li>P2 no tiene preferencia.</li>
+</ul></li>
+<li><p>P1 responde inmediatamente a P2 porque L2 &lt; L1&gt;.</p>
+<ul>
+<li>P1 tiene preferencia.</li>
+</ul></li>
+<li><p>P2 tiene respuesta de P1 y P3, por lo que entra en la sección
+crítica.</p></li>
+<li><p>P2 sale de la sección crítica y responde a P1.</p></li>
+<li><p>P1 tiene respuesta de P2 y P3, por lo que entra a la sección
+crítica.</p></li>
+</ol>
+<h2 id="maekawa">Maekawa</h2>
+<ol type="1">
+<li><p>Un conjunto de votos es suficiente para entrar en la sección
+crítica.</p></li>
+<li><p>Existe un conjunto de votos V<sub>i</sub> para cada proceso
+P<sub>i</sub>.</p>
+<ul>
+<li><p>V<sub>i</sub> ⊆ {p<sub>1</sub>, …, p<sub>i</sub>}.</p></li>
+<li><p>p<sub>i</sub> ∈ V<sub>i</sub>.</p></li>
+<li><p>V<sub>i</sub> ∩ V<sub>j</sub> = ∅.</p></li>
+</ul></li>
+<li><p>k es el tamaño de todos los conjuntos.</p>
+<ul>
+<li>|V<sub>i</sub>| = k.</li>
+</ul></li>
+<li><p>Cada proceso está contenido en M de los conjuntos
+V<sub>i</sub>.</p></li>
+<li><p>La solución óptima es minimizar k y M.</p>
+<ul>
+<li><p>k = √N.</p></li>
+<li><p>M = k.</p></li>
+</ul></li>
+</ol>
+<ul>
+<li><p>El algoritmo es propenso al bloqueo.</p></li>
+<li><p>La actualización de Sanders propone que los procesos pongan en
+cola las solicitudes pendientes en orden de ocurrencia.</p></li>
+<li><p>Para entrar a la sección crítica se necesitan 2·√N mensajes de
+entrada y √N mensajes de salida.</p></li>
+</ul>
+<h1 id="elecciones">ELECCIONES</h1>
+<p>Elegir un proceso único para desempeñar una función concreta.</p>
+<ul>
+<li><p>Hay n procesos P<sub>i</sub>.</p></li>
+<li><p>Un proceso P<sub>i</sub> puede ser participante o no de una
+elección.</p></li>
+<li><p>Cada proceso se identifica mediante un identificador único,
+totalmente ordenado.</p></li>
+<li><p>El proceso elegido es el que tiene mayor identificador.</p></li>
+<li><p>Todos los procesos están de acuerdo con la elección.</p></li>
+</ul>
+<ol type="1">
+<li><p>Seguridad: cada proceso participante, o bien no ha elegido aún, o
+bien ha elegido un proceso P que es el proceso no bloqueado al final de
+la ejecución con mayor id.</p></li>
+<li><p>Vivacidad: todos los procesos que participan en una elección
+acuerdan una elección o se bloquean.</p></li>
+</ol>
+<h2 id="basado-en-anillos-1">Basado en anillos</h2>
+<ol type="1">
+<li><p>Los procesos se disponen en un anillo mágico.</p></li>
+<li><p>Inicialmente, cada proceso se marca como no participante de una
+elección.</p></li>
+<li><p>Cualquier proceso P<sub>i</sub> que puede iniciar una elección,
+se marca como participante y envía un mensaje de elección (incluyendo su
+identificador) al proceso P<sub>i</sub>+1 del anillo.</p></li>
+<li><p>Cuando un proceso p<sub>j</sub> recibe un mensaje de elección
+compara el identificador del mensaje (a) con el suyo propio (b).</p>
+<ol type="1">
+<li><p>Si a &gt; b, reenvía el mensaje a P<sub>j</sub>+1 y se marca como
+participante.</p></li>
+<li><p>Si a &gt; b y p<sub>j</sub> es un no participante, ‘b’ se
+sustituye por ‘a’ en el mensaje de elección, reenvía el mensaje a
+P<sub>j</sub>+1 y se marca como participante.</p></li>
+<li><p>si a = b, el proceso P<sub>j</sub> es el que tiene mayor id y el
+coordinador elegido: reenvía el mensaje de elegido a p<sub>j</sub>+1
+anunciando su elección y adjuntando su identidad.</p></li>
+</ol></li>
+<li><p>Cuando un proceso p<sub>i</sub> recibe un mensaje de elegido se
+marca como no participante y reenvía el mensaje; salvo que sea el nuevo
+coordinador.</p></li>
+</ol>
+<ul>
+<li><p>N-1 mensajes para enviar el mensaje de elcción.</p></li>
+<li><p>N mensajes para completar el circuito con el mayor
+identificador.</p></li>
+<li><p>N mensajes para enviar el mensaje de elegido.</p></li>
+</ul>
+<blockquote>
+<p>Este algoritmo no tolera fallos.</p>
+</blockquote>
+<h2 id="matón">Matón</h2>
+<ul>
+<li><p>El proceso con el mayor identificador intimida para hacerse con
+el liderazgo.</p></li>
+<li><p>Los procesos suelen fallar durante la elección.</p></li>
+<li><p>El sistema es síncrono: utiliza tiempos de espera T para detectar
+el fallo de un proceso.</p></li>
+<li><p>Cada proceso conoce el identificador de los demás
+procesos.</p></li>
+<li><p>Cada proceso puede comunicarse con los demás.</p>
+<ol type="1">
+<li><p>Election: anuncia el mensaje de elección.</p></li>
+<li><p>Answer: respuesta a un mensaje de elección.</p></li>
+<li><p>Coordinator: anuncia la identidad del proceso elegido.</p></li>
+</ol></li>
+</ul>
+<ol type="1">
+<li><p>El proceso que sabe que tiene el identificador más alto envía un
+mensaje de coordiandor a todos los procesos con identificadores más
+bajos.</p></li>
+<li><p>En caso contrario, cualquier proceso P<sub>i</sub> puede que
+detecte el fallo del coordiandor puede iniciar una elección.</p></li>
+<li><p>Envía un mensaje de elección a los procesos que tienen un
+identificador superior.</p></li>
+<li><p>Espera el mensaje de respuesta.</p>
+<ul>
+<li><p>Si no llega mensaje de respuesta en el tiempo T, el proceso
+P<sub>i</sub> envía un mensaje de coordinador a todos los procesos con
+identificadores inferiores.</p></li>
+<li><p>En caso contrario, espera otro periodo T’ para recibir un mensaje
+de coordinador y, si no llega ninguno, inicia otra elección.</p></li>
+</ul></li>
+<li><p>Cualquier proceso P<sub>j</sub> que recibe un mensaje de elección
+devuelve un mensaje de respuesta.</p></li>
+<li><p>Y cualquier proceso P<sub>j</sub> que recibe un mensaje de
+coordiandor establece el nuevo coordiandor con el identificador obtenido
+en el mensaje.</p></li>
+</ol>
+<h1 id="consenso">CONSENSO</h1>
+<p>Los procesos se ponen de acuerdo sobre un valor después de que uno o
+varios de los procesos hayan propuesto cual debería ser ese valor.</p>
+<ul>
+<li><p>Un sistema distribuido consiste en una colección de n
+procesos</p></li>
+<li><p>La comunicación es fiable, pero algunos procesos pueden
+fallar.</p></li>
+</ul>
+<ol type="1">
+<li><p>Inicialmente, cada proceso P<sub>i</sub> comienza en estado
+indeciso y propone un único valor V<sub>i</sub> comunicándose con otros
+procesos.</p></li>
+<li><p>Cada proceso establece el valor de una variable de decisión y
+entra en estado decidido.</p></li>
+<li><p>El consenso se alcanza si la mayoría de procesos están de acuerdo
+sobre la variable de decisión.</p>
+<ul>
+<li><p>Termination: cada proceso correcto establece su variable de
+decisión.</p></li>
+<li><p>Agreement: el valor de decisión de todos los procesos correctos
+es el mismo.</p></li>
+<li><p>Integrity: si todos los procesos correctos propusieron el mismo
+valor, entonces cualquier proceso correcto en el estado decidido ha
+elegido ese valor.</p></li>
+</ul></li>
+</ol>
+<hr />
+<p><a href="tag7_t1.html">T1: INTRODUCCIÓN</a></p>
+<p><a href="tag7_t2.html">T2: DISEÑO DE PROTOCOLOS</a></p>
+<p><a href="tag7_t3.html">T3: INVOCACIÓN REMOTA</a></p>
+<p><a href="tag7_t4.html">T4: COMUNICACIÓN INDIRECTA</a></p>
+<p><a href="tag7_t5.html">T5: TIEMPO Y ESTADO</a></p>
+<p><a href="tag7_t6.html">T6: COORDINACIÓN</a></p>
+</body>
+</html>
