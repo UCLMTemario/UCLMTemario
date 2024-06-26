@@ -176,8 +176,7 @@
 <p class="author">Aika Kenshi</p>
 <p class="date">15-06-2024</p>
 </header>
-<h1 id="introducción-a-la-estimación-del-software">Introducción a la
-estimación del software</h1>
+<h1 id="introducción">INTRODUCCIÓN</h1>
 <ol type="1">
 <li><p>Estimación vs medición.</p></li>
 <li><p>Estimación vs planificarlo.</p></li>
@@ -236,7 +235,7 @@ bastante duda sobre la estimación inicial del proyecto.</p></li>
 <li><p>Conforme aumenta el porcentaje de decisiones tomadas, se puede
 afinar el rango de la estimación.</p></li>
 </ul>
-<h1 id="etapas-de-la-estimación">Etapas de la estimación</h1>
+<h1 id="estapas-de-la-estimación">ESTAPAS DE LA ESTIMACIÓN</h1>
 <h2 id="estimación-del-tamaño">Estimación del tamaño</h2>
 <p>El tamaño de un producto software es un indicador de la amplitud y
 profundidad del conjunto de prestaciones que incorpora, así como de la
@@ -299,8 +298,8 @@ determinan empíricamente.</p></li>
 planificación de la duración optimizando la utilización de los recursos
 disponibles.</p></li>
 </ul>
-<h1 id="técnicas-de-estimación-del-software">Técnicas de estimación del
-software</h1>
+<h1 id="técnicas-de-estimación-del-software">TÉCNICAS DE ESTIMACIÓN DEL
+SOFTWARE</h1>
 <h2 id="resumen-de-técnicas">Resumen de técnicas</h2>
 <h3 id="estimación-algorímica">Estimación algorímica</h3>
 <p>Se construye un modelo paramétrico basado en información histórica
@@ -530,9 +529,12 @@ límites.</p></li>
 <li><p>Una de las tres siguientes reglas deben aplicarse al proceso
 identificado.</p>
 <ol type="1">
-<li><p>El</p></li>
-<li></li>
-<li><p>.</p></li>
+<li><p>El proceso lógico es único para el tratamiento lógico realizado
+por otras consultas.</p></li>
+<li><p>El conjunto de datos elementales es diferente de los conjuntos de
+otras consultas.</p></li>
+<li><p>Los Archivos Lógicos Internos y los Archivos Lógicos Externos son
+diferentes de los archivos utilizados por otras consultas.</p></li>
 </ol></li>
 <li><p>La lógica del proceso elemental recupera datos o información de
 control de un Archivo Lógico Interno o Archivo Lógico Externo.</p></li>
@@ -698,12 +700,8 @@ datos on line en ambas direcciones</td>
 <tr class="even">
 <td style="text-align: center;">5</td>
 <td style="text-align: center;">Las funciones de procesamiento se
-realizan dinámicamente sobre el</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">componente del sistema más
+realizan dinámicamente sobre el componente del sistema más
 apropiado</td>
-<td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
@@ -804,12 +802,7 @@ la ejecución de la aplicación en un procesador central o dedicado</td>
 <tr class="even">
 <td style="text-align: center;">5</td>
 <td style="text-align: center;">Hay especiales restricciones sobre la
-aplicación en los</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">componentes distribuidos del
-sistema</td>
-<td style="text-align: center;"></td>
+aplicación en los componentes distribuidos del sistema</td>
 </tr>
 </tbody>
 </table>
@@ -1416,17 +1409,14 @@ Informe
 Componente LG3
 </td>
 <td>
-<ul>
-<li><pre><code>   &lt;/td&gt;
-   &lt;td&gt;
-       -
-   &lt;/td&gt;
-   &lt;td&gt;
-       10
-   &lt;/td&gt;</code></pre>
+</td>
+<td>
+</td>
+<td>
+10
+</td>
 </tr>
-</table></li>
-</ul>
+</table>
 <ol start="4" type="1">
 <li><p>Determinar la cantidad de Puntos de Objeto:</p>
 <ul>
@@ -1552,20 +1542,22 @@ Simple: a través de API
 1
 </td>
 </tr>
-<pre><code>&lt;td&gt;
-        Media: a través de protocolo
-    &lt;/td&gt;
-    &lt;td&gt;
-        2
-    &lt;/td&gt;
-&lt;tr&gt;
-    &lt;td&gt;
-        Compleja: a través de interfaz gráfica
-    &lt;/td&gt;
-    &lt;td&gt;
-        3
-    &lt;/td&gt;
-&lt;/tr&gt;</code></pre>
+<tr>
+<td>
+Media: a través de protocolo
+</td>
+<td>
+2
+</td>
+</tr>
+<tr>
+<td>
+Compleja: a través de interfaz gráfica
+</td>
+<td>
+3
+</td>
+</tr>
 </table>
 <ul>
 <li><p>Se calcula el factor de peso de los actores sin ajustar.</p>
@@ -1600,27 +1592,33 @@ Simple
 5
 </td>
 </tr>
-<pre><code>&lt;td&gt;
-        &gt;= 4 y &lt; 7
-    &lt;/td&gt;
-    &lt;td&gt;
-        Medio
-    &lt;/td&gt;
-    &lt;td&gt;
-        10
-    &lt;/td&gt;
-&lt;tr&gt;
-    &lt;td&gt;
-        &gt;= 7
-    &lt;/td&gt;
-    &lt;td&gt;
-        Complejo
-    &lt;/td&gt;
-    &lt;td&gt;
-        15
-    &lt;/td&gt;
-&lt;/tr&gt;</code></pre>
+<tr>
+<td>
+<blockquote>
+= 4 y &lt; 7
+</td>
+<td>
+Medio
+</td>
+<td>
+10
+</td>
+</tr>
+<tr>
+<td>
+</blockquote>
+<blockquote>
+= 7
+</td>
+<td>
+Complejo
+</td>
+<td>
+15
+</td>
+</tr>
 </table>
+</blockquote>
 <ul>
 <li><p>Se calcula el factor de peso de los Casos de Uso sin ajustar.</p>
 <ul>
@@ -1801,43 +1799,43 @@ w
 R11
 </td>
 <td>
+Caracteristica de seguridad
 </td>
-<pre><code>Caracteristica de seguridad
-    &lt;td&gt;
-        1
-    &lt;/td&gt;
-    &lt;td&gt;
-        x
-    &lt;/td&gt;
-&lt;/tr&gt;
- &lt;tr&gt;
-    &lt;td&gt;
-        R12
-    &lt;/td&gt;
-    &lt;td&gt;
-        Accesible por terceros
-    &lt;/td&gt;
-    &lt;td&gt;
-        1
-    &lt;/td&gt;
-    &lt;td&gt;
-        y
-    &lt;/td&gt;
-&lt;/tr&gt;
- &lt;tr&gt;
-    &lt;td&gt;
-        R13
-    &lt;/td&gt;
-    &lt;td&gt;
-        Se requiere formación especial
-    &lt;/td&gt;
-    &lt;td&gt;
-        1
-    &lt;/td&gt;
-    &lt;td&gt;
-        z
-    &lt;/td&gt;
-&lt;/tr&gt;</code></pre>
+<td>
+1
+</td>
+<td>
+x
+</td>
+</tr>
+<tr>
+<td>
+R12
+</td>
+<td>
+Accesible por terceros
+</td>
+<td>
+1
+</td>
+<td>
+y
+</td>
+</tr>
+<tr>
+<td>
+R13
+</td>
+<td>
+Se requiere formación especial
+</td>
+<td>
+1
+</td>
+<td>
+z
+</td>
+</tr>
 </table>
 <ol start="5" type="1">
 <li><p>Cálculo de factores de entorno: a cada uno de los factores de
