@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Aika Kenshi" />
-  <title>ARQUITECTURAS ESPECÍFICAS DE DOMINIO</title>
+  <title>TIEMPO Y ESTADO</title>
   <style>
     html {
       color: #1a1a1a;
@@ -171,141 +171,18 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">ARQUITECTURAS ESPECÍFICAS DE DOMINIO</h1>
+<h1 class="title">TIEMPO Y ESTADO</h1>
 <p class="subtitle">TEMA 5</p>
 <p class="author">Aika Kenshi</p>
-<p class="date">15-06-2024</p>
+<p class="date">21-06-2024</p>
 </header>
-<h1 id="introducción">Introducción</h1>
-<ul>
-<li><p>Desaparición de la ley de Moore y escala de Dennard.</p></li>
-<li><p>Problemas:</p>
-<ul>
-<li><p>Consumo energético limitado: el rendimiento de incrementa,
-reducienod severamente la energía por cada operación.</p></li>
-<li><p>El acceso a memoria es un gran contribuyente para el consumo
-energético.</p></li>
-<li><p>Sobrecarga causada por el diseño arquitectual.</p></li>
-</ul></li>
-<li><p>Solución: arquitecturas específicas de dominio.</p></li>
-<li><p>Caches no funcionan bien con patrones de acceso a memoria
-predecibles, para procesamiento de vídeo sin reúso de datos y malgasto
-de energía.</p></li>
-<li><p>Solo necesita enfocarse en algunos kernels específicos.</p></li>
-<li><p>DSAs usadas junto a CPUs-GPUs.</p></li>
-<li><p>Lenguajes de descripción más apropiados.</p></li>
-</ul>
-<h1 id="directrives-para-dsa">Directrives para DSA</h1>
-<ul>
-<li><p>Uso de memorias dedicadas para minimizar movimiento de
-datos.</p></li>
-<li><p>Invierte recursos en más unidades aritméticas o memorias más
-grandes.</p></li>
-<li><p>Usa la forma de paralelismo más sencilla que coincide con el
-dominio.</p></li>
-<li><p>Reduce el tamaño de los datos y tipos al más simple que es
-necesario para el dominio.</p></li>
-<li><p>Usa un lenguaje de programación específico de dominio.</p></li>
-</ul>
-<h1 id="deep-neural-networks">Deep Neural Networks</h1>
-<ul>
-<li><p>Área concreta del campo de la inteligencia artificial,
-relacionada con el machine learning y basada en redes
-neuronales.</p></li>
-<li><p>Inspirado en neuronas cerebrales.</p></li>
-<li><p>Una red artificial realiza el cómputo de la salida en los pesos
-basados en su entrada.</p></li>
-<li><p>Un clster de redes neuronales es organizado en capas.</p></li>
-<li><p>Cada capa busca distintas características.</p></li>
-<li><p>En cada paso se genera unformación de más alto nivel.</p></li>
-</ul>
-<h2 id="entrenamiento">Entrenamiento</h2>
-<ul>
-<li><p>Cálculo de pesos.</p></li>
-<li><p>Se realiza una vez.</p></li>
-<li><p>Tareas de computación pesada.</p></li>
-<li><p>Confía en GPUs.</p></li>
-</ul>
-<ol type="1">
-<li><p>Aprendizaje supervisado: basado en un conjunto grande de
-entrenamiento.</p></li>
-<li><p>Aprendizaje no supervisado: basado en funciones de
-incentivos.</p></li>
-</ol>
-<h2 id="inferencia">Inferencia</h2>
-<ul>
-<li><p>Después de que las DNNs hayan sido desplegadas en
-producción.</p></li>
-<li><p>Pasos de entrenamiento han sido completados y los pasos se han
-definido.</p></li>
-<li><p>Opimizar tarea recurrente mediante DNAs.</p></li>
-</ul>
-<h3 id="cnns">CNNs</h3>
-<p>Redes neuronales convolucionales.</p>
-<ul>
-<li><p>Usado ampliamente en visión por computador.</p></li>
-<li><p>Basado en la convolución y agrupación.</p></li>
-<li><p>No son redes completamente conectadas.</p></li>
-<li><p>Más simples y rápidas.</p></li>
-</ul>
-<h4 id="uso-de-lotes">Uso de lotes</h4>
-<ul>
-<li><p>Reusar pesos una vez capturados de la memoria a través de
-múltiples entradas.</p></li>
-<li><p>Incrementar la intensidad operacional.</p></li>
-</ul>
-<h4 id="cuantificación">Cuantificación</h4>
-<p>Usa 8 o 16 bits de punto fijo.</p>
-<h4 id="kernels">Kernels</h4>
-<ul>
-<li><p>Multiplicación de matriz-vector.</p></li>
-<li><p>Multiplicación de matriz-matriz.</p></li>
-<li><p>Stencii.</p></li>
-<li><p>ReLU.</p></li>
-<li><p>Sigmoide.</p></li>
-<li><p>Tangente hiperbólica.</p></li>
-</ul>
-<h3 id="tensor-processing-unit">Tensor Processing Unit</h3>
-<ul>
-<li><p>DNN ASIC de Google.</p></li>
-<li><p>Unidad de multiplicación de 8 bits 256x256.</p></li>
-<li><p>Movimientos de memoria gestionados por software.</p></li>
-<li><p>Co-procesador en el bus PCIe.</p></li>
-</ul>
-<h3 id="tpu-isa">TPU ISA</h3>
-<ul>
-<li><p>Read_Host_Memory: lee la memoria de CPU en el buffer
-unificado.</p></li>
-<li><p>Read_Weights: lee pesos de la memoria de pesos en la FIFO de
-pesos como entrada de la unidad de la matriz.</p></li>
-<li><p>MatrixMatrixMultiply/Convole: ejecuta una multiplicación
-matriz-matriz, una multiplicación matricial por elementos, una
-multiplicación vectorial por elementos o una convolución de los datos
-del buffer unificado en los acumuladores.</p>
-<ul>
-<li>Toma una entrada de tamaño variable B<em>256, la multiplica por una
-entrada constante de 256x256 y produce una salida B</em>256, tardando B
-ciclos en cadena en completarse.</li>
-</ul></li>
-<li><p>Activate: ejecuta funciones de activación.</p></li>
-<li><p>Write_Host_Memory: escribe datos del buffer unificado en la
-memoria del host.</p></li>
-<li><p>Usa memorias dedicadas: 24MiB de buffers dedicados, 4 MiB de
-buffers acumuladores.</p></li>
-<li><p>Invertir recursos en unidades aritméticas y memorias dedicadas:
-60% de la memoria y 250X de las unidades aritméticas de una CPU
-server-class.</p></li>
-<li><p>Usar la forma de paralelismo más sencilla que coincida con el
-dominio: explotar paralelismo SIMD 2D.</p></li>
-<li><p>Usar un lenguaje de programación de dominio específico: usar
-Tensor Flow.</p></li>
-</ul>
+<h1 id="section"></h1>
 <hr />
-<p><a href="tag5_t1.html">TEMA 1: INTRODUCCIÓN</a></p>
-<p><a href="tag5_t2.html">TEMA 2: PARALELISMO</a></p>
-<p><a href="tag5_t3.html">TEMA 3: PROCESADORES SUPERESCALARES</a></p>
-<p><a href="tag5_t4.html">TEMA 4: PARALELISMO A NIVEL DE HEBRAS</a></p>
-<p><a href="tag5_t5.html">TEMA 5: ARQUITECTURAS ESPECÍFICAS DE
-DOMINIO</a></p>
+<p><a href="tag5_t1.html">T1: INTRODUCCIÓN</a></p>
+<p><a href="tag5_t2.html">T2: DISEÑO DE PROTOCOLOS</a></p>
+<p><a href="tag5_t3.html">T3: INVOCACIÓN REMOTA</a></p>
+<p><a href="tag5_t4.html">T4: COMUNICACIÓN INDIRECTA</a></p>
+<p><a href="tag5_t5.html">T5: TIEMPO Y ESTADO</a></p>
+<p><a href="tag5_t6.html">T6: COORDINACIÓN</a></p>
 </body>
 </html>

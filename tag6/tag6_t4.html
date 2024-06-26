@@ -176,7 +176,1813 @@
 <p class="author">Aika Kenshi</p>
 <p class="date">15-06-2024</p>
 </header>
-<h1 id="section"></h1>
+<h1 id="introducción-a-la-estimación-del-software">Introducción a la
+estimación del software</h1>
+<ol type="1">
+<li><p>Estimación vs medición.</p></li>
+<li><p>Estimación vs planificarlo.</p></li>
+</ol>
+<blockquote>
+<p>La naturaleza de la estimación software.</p>
+<p>Cornell.</p>
+</blockquote>
+<h2 id="por-qué-es-importante-estimar">¿Por qué es importante
+estimar?</h2>
+<ul>
+<li><p>Ayuda a las organizaciones de desarrollo de software a tomar
+mejores decisiones de negocio.</p></li>
+<li><p>Ayuda a determinar la viabilidad de terminar proyectos de acuerdo
+a restricciones de tiempo, coste y funcionalidad, fijadas por los
+clientes y por los recursos disponibles.</p></li>
+<li><p>Guardando los datos históricos de estimaciones, los directivos
+pueden evaluar la validez de las estimaciones antes de comprometerse en
+planificaciones o costes de alto riesgo.</p></li>
+<li><p>Ayudan a medir el avance del proyecto y determinar la viabilidad
+de continuar con la planificación actual.</p></li>
+</ul>
+<h2 id="etapas">Etapas</h2>
+<p>Estas 3 etapas se pueden englobar en una etapa general, consistente
+en dar una estimación con un cierto margen de desviación e ir aumentando
+la precisión a medida que avanza el proyecto.</p>
+<ol type="1">
+<li><p>Estimar el tamaño del producto: en número de líneas de código o
+de puntos de función.</p>
+<ul>
+<li>Etapa más compleja.</li>
+</ul></li>
+<li><p>Estimar el esfuerzo a partir de la estimación del tamaño y datos
+previos de la organización en proyectos similares.</p></li>
+<li><p>Estimar la planificación: calendario.</p></li>
+</ol>
+<blockquote>
+<p>La estimación del software es un proceso basado en refinamientos
+sucesivos.</p>
+</blockquote>
+<h2 id="basado-en-refinamientos-sucesivos">Basado en refinamientos
+sucesivos</h2>
+<ul>
+<li><p>No se puede estimar con precisión el coste de un producto
+software hasta que se comprende con detalle cada una de sus
+prestaciones.</p></li>
+<li><p>A lo largo del ciclo de vida del desarrollador de un producto
+software se van tomando decisiones cada vez más detalladas.</p></li>
+<li><p>EL concepto del producto se refina en la fase de requisitos, los
+requisitos en el diseño preliminar, el diseño preliminar en el diseño
+detallado y el diseño detallado en el código.</p></li>
+<li><p>La incertidumbre sobre la naturaleza del producto aporta
+incertidumbre a la estimación.</p></li>
+<li><p>La incertidumbre sobre la única prestación puede introducir
+bastante duda sobre la estimación inicial del proyecto.</p></li>
+<li><p>Conforme aumenta el porcentaje de decisiones tomadas, se puede
+afinar el rango de la estimación.</p></li>
+</ul>
+<h1 id="etapas-de-la-estimación">Etapas de la estimación</h1>
+<h2 id="estimación-del-tamaño">Estimación del tamaño</h2>
+<p>El tamaño de un producto software es un indicador de la amplitud y
+profundidad del conjunto de prestaciones que incorpora, así como de la
+complejidad y dificultad del programa.</p>
+<h3 id="técnicas">Técnicas</h3>
+<h4 id="estimación-por-analogía">Estimación por Analogía</h4>
+<p>Estima el tamaño de un programa a partir de la descripción de sus
+características principales.</p>
+<ul>
+<li>Se suelen emplear herramientas de estimación que localizan
+automaticamente proyectos similares en una base de datos de
+proyectos.</li>
+</ul>
+<h4 id="estimación-bottom-up">Estimación Bottom-Up</h4>
+<ul>
+<li><p>Estima cada una de las partes principales del nuevo sistema con
+un porcentaje del tamaño de una parte similar de un sistema
+antiguo.</p></li>
+<li><p>Estima el tamaño total del sistema sumando los tamaños estimados
+de cada una de las partes.</p></li>
+</ul>
+<h4 id="modelos-paramétricos">Modelos paramétricos</h4>
+<p>Basados en un modelo matemático, utilizan un enfoque algorítmico.</p>
+<h2 id="estimación-del-esfuerzo">Estimación del esfuerzo</h2>
+<p>El esfuerzo es un indicador de la cantidad de trabajo necesario para
+relaizar un proyecto o alguno de los ítems de un proyecto.</p>
+<ul>
+<li><p>En productos software podemos considerar equivalente estimar el
+esfuerzo y el coste, ya que existe una reliación directa entre
+ambos.</p></li>
+<li><p>En ingeniería de software se suele medir en unidades del tipo
+&lt; persona &gt;&lt; tiempo &gt;.</p></li>
+</ul>
+<h3 id="técnicas-1">Técnicas</h3>
+<h4 id="estimación-por-analogía-1">Estimación por Analogía</h4>
+<ul>
+<li><p>Utilizando datos anteriores de la organización para saber cuánto
+esfuerzo se realizó en proyectos anteriores de tamaño similar al
+estimado.</p></li>
+<li><p>Utilizando tablas de estimación para convertir desde líneas de
+código a esfuerzo.</p></li>
+</ul>
+<h4 id="modelos-paramétricos-1">Modelos Paramétricos</h4>
+<p>Empleando un método algorítmico para convertir la estimación del
+tamaño a una estimación del esfuerzo.</p>
+<h2 id="estimación-de-la-duración">Estimación de la duración</h2>
+<ul>
+<li>El resultado es una estimación de la duración en unidades
+temporales.</li>
+</ul>
+<h3 id="métodos">Métodos</h3>
+<ul>
+<li><p>Datos anteriores de la organización.</p></li>
+<li><p>Tablas de estimación para convertir desde líneas de codigo a
+duración.</p></li>
+<li><p>Funciones de equivalencia semi-empríricas del tipo duración =
+función del esfuerzo, que incluyen diversos parámetros cuyos valores se
+determinan empíricamente.</p></li>
+<li><p>Software de gestión de proyectos que permita realizar una
+planificación de la duración optimizando la utilización de los recursos
+disponibles.</p></li>
+</ul>
+<h1 id="técnicas-de-estimación-del-software">Técnicas de estimación del
+software</h1>
+<h2 id="resumen-de-técnicas">Resumen de técnicas</h2>
+<h3 id="estimación-algorímica">Estimación algorímica</h3>
+<p>Se construye un modelo paramétrico basado en información histórica
+sobre los costes y sobre el tamaño.</p>
+<h4 id="modelos">Modelos</h4>
+<ul>
+<li><p>Empíricos: se construyen únicamente a partir de los datos
+históricos, mediante regresión.</p></li>
+<li><p>Teóricos: se derivan de hipótesis teóricas acerca del
+comportamiento de los proyectos.</p></li>
+</ul>
+<h3 id="estimación-heurística">Estimación heurística</h3>
+<p>Se incluyen aquí técnicas heurísticas como reglas de inducción,
+lógica difusa, redes neuronales y algorítmos genéticos.</p>
+<h3 id="estimación-por-analogía-2">Estimación por analogía</h3>
+<h3 id="juicio-de-expertos">Juicio de expertos</h3>
+<h2 id="la-importancia-de-medir-el-tamaño">La importancia de medir el
+tamaño</h2>
+<p>Es necesario un mecanismo adecuado de medición del tamaño para
+permitir estimar el esfuerzo, la duración y los costes.</p>
+<ul>
+<li><p>Tiene un impacto directo sobre la eficiencia y cómo se utilizan
+los recursos y cómo se administran los presupuestos.</p></li>
+<li><p>La medición apropiada del tamaño de un producto software permite
+gestionar razonablemente las expectativas del cliente relacionadas con
+clasificación de los requisitos</p></li>
+</ul>
+<blockquote>
+<p>Tamaño/Persona·UnidadTiempo</p>
+</blockquote>
+<h2 id="estimar-el-tamaño-del-software">Estimar el tamaño del
+software</h2>
+<ul>
+<li>Estimar el NLDC (número de líneas de código) a partir del número de
+elementos de datos que pertenecen a un determinado proceso elemental que
+se obtienen a su vez a partir de los Diagramas de Flujo de Datos.</li>
+</ul>
+<h3 id="problemas">Problemas</h3>
+<ul>
+<li><p>La falta de una definición universal de línea de código.</p></li>
+<li><p>Su dependencencia con el lenguaje de desarrollo.</p></li>
+<li><p>La dificultad de estimar en fases tempranas del desarrollo la
+cantidad de líneas de código que tendrá una aplicación.</p></li>
+</ul>
+<h3 id="soluciones">Soluciones</h3>
+<ul>
+<li><p>Puntos de Función: modelos algorítmicos basados en el número de
+variables y subprogramas para estimar el tamaño en la fase de
+diseño.</p></li>
+<li><p>Para software orientado a objetos también se han porpuesto
+métodos basados en Puntos de Objeto.</p></li>
+</ul>
+<h2 id="puntos-de-función">Puntos de Función</h2>
+<p>Es la técnica algorítmica de estimación del tamaño de un producto
+software más conocida.</p>
+<ul>
+<li><p>Utiliza una lista de parámetros orientado hacia las aplicaciones
+de gestión.</p></li>
+<li><p>Un punto de función es una medida sintética del tamaño de un
+programa.</p></li>
+<li><p>La estimación del número de punto de función de un producto
+software pretende medir su funcionalidad y no el número de líneas de
+código.</p></li>
+<li><p>Su número es proporcional a la funcionalidad porporcionada por el
+programa.</p></li>
+<li><p>Se centra en la perspectiva del sistema por parte del
+usuario.</p></li>
+</ul>
+<h3 id="proceso-de-cálculo">Proceso de cálculo</h3>
+<ol type="1">
+<li><p>Calcular los Puntos de función sin desarrollar.</p>
+<ol type="1">
+<li><p>Contar el número de funciones de usuario basado en contar el
+número de elementos de 5 tipos diferentes.</p></li>
+<li><p>Determinar el nivel de complejidad (alta, media o baja) de cada
+función de usuario, teniendo en cuenta el número de tipos de elementos
+de datos y el número de tipos de archivos referenciados.</p></li>
+<li><p>Aplicar pesos de complejidad: la suma para todas las funciones de
+usuario equivale al nº de Puntos de Función sin ajustar.</p></li>
+</ol></li>
+<li><p>Ajustar los Puntos de Función para tener en cuenta la
+“complejidad del proceso”, valorando el grado de influencia de 14
+factores diferentes.</p></li>
+</ol>
+<h4
+id="requisitos-para-la-estimación-de-los-puntos-de-función-en-etapas-temprana">Requisitos
+para la estimación de los puntos de función en etapas temprana</h4>
+<ul>
+<li><p>Descripción de requisitos expresada en el Pliego de
+Prescripciones Técnicas.</p></li>
+<li><p>Descripción informal de requisitos expresada en el lenguaje del
+dominio de la aplicación por parte del cliente.</p></li>
+<li><p>Datos almacenados por la propia aplicación (Ficheros Lógicos
+Internos) o datos que se deberán utilizar en la aplicación pero que son
+administrados y almacenados por otra aplicación (Ficheros Lógicos
+Externos)</p></li>
+<li><p>La funcionalidad de la aplicación, distinguiendo los procesos
+elementales: entradas, salidas y consultas.</p>
+<ul>
+<li>Para que un proceso sea considerado elemental, el proceso debe ser
+la menor unidad de actividad que tiene sentido para el usuario</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>Cuanto más precisos sean los requisitos, mejor se podrá realizar la
+estimación de los Puntos de Función.</p>
+</blockquote>
+<h4 id="identificar-frontera">1. Identificar frontera</h4>
+<h4 id="identificar-los-5-elementos-funcionales">2. Identificar los 5
+elementos funcionales</h4>
+<ol type="1">
+<li><p>Entradas: cualquier entrada que tenga un formato único o un solo
+procesamiento, a través de la cuál el usuario u otro programa puede
+añadir, borrar o cambiar datos.</p></li>
+<li><p>Salidas: cualquier salida que tenga un formato diferente o
+requiera on procesamiento diferente a otros tipos de salida, generada
+para el usuario u otro programa.</p></li>
+<li><p>Consultas: combinaciones de entrada y salida en las que cada
+entrada genera una salida simple e inmediata.</p></li>
+<li><p>Archivos lógicos internos: principales grupos lógicos de datos de
+usuarios o de control que están controlados completamente por el
+programa.</p></li>
+<li><p>Archivos de interfaz externos: cada uno de los grupos de datos
+lógicos o información de control que entra o sale del programa.</p></li>
+</ol>
+<h3 id="tipos-de-funciones-de-usuario">Tipos de funciones de
+usuario</h3>
+<h4 id="archivos-lógicos-internos">Archivos lógicos internos</h4>
+<p>Grupo de datos relacionados lógicamente o información de control
+reconocida por el usuario y mantenido dentro de los límites de la
+aplicación.</p>
+<ul>
+<li><p>Se corresponde con las entidades que típicamente aparecen en un
+diagrama Entidad-Relación.</p></li>
+<li><p>Información de control: datos que influyen en un proceso
+elemental de la aplicación que se está midiendo.</p>
+<ul>
+<li>Especifica qué, cuándo o cómo los datos van a ser procesados.</li>
+</ul></li>
+</ul>
+<h5 id="reglas-de-identificación">Reglas de identificación</h5>
+<ol type="1">
+<li><p>El grupo de datos o información de control es un grupo de datos
+lógico identificable por el usuario.</p></li>
+<li><p>El grupo de datos es mantenido por un proceso elemental, dentro
+de los límites de la aplicación que se está midiendo.</p></li>
+</ol>
+<h4 id="archivos-lógicos-externos">Archivos lógicos externos</h4>
+<p>Grupo de datos relacionados lógicamente o información de control
+identificable por el usuario, referenciado por la aplicación, pero
+mantenido dentro de los límites de otra aplicación.</p>
+<h5 id="reglas-de-identificación-1">Reglas de identificación</h5>
+<ol type="1">
+<li><p>EL grupo de datos o información de control es un grupo de datos
+lógico identificable por el usuario.</p></li>
+<li><p>El grupo de datos es referenciado por la aplicación que se está
+midiendo y es externo a ella.</p></li>
+<li><p>El grupo de datos no es mantenido por la aplicación que se está
+midiendo.</p></li>
+<li><p>EL grupo de datos es mantenido en un Archivo Lógico Interno de
+otra aplicación.</p></li>
+</ol>
+<h4 id="entradas">Entradas</h4>
+<p>Proceso elemental que procesa datos o información de control que
+proviene de fuera de los límites de la aplicación.</p>
+<h5 id="reglas">Reglas</h5>
+<ol type="1">
+<li><p>Los datos o información de control se reciben desde
+fuera.</p></li>
+<li><p>Al menos se actualiza un Archivo Lógico Interno si los datos
+introducidos en la aplicación no contienen información de
+control.</p></li>
+<li><p>El proceso es la unidad más pequeña de actividad que
+significativa para el negocio del usuario final.</p></li>
+<li><p>El proceso identificado debe verificar alguna de estas
+reglas.</p>
+<ol type="1">
+<li><p>Su lógica de proceso es única respecto de otras entradas externas
+de la aplicación.</p></li>
+<li><p>Los elementos de datos identificados son distintos a los de las
+otras entradas externas de la aplicación.</p></li>
+<li><p>Los Archivos Lógicos Internos y Archivos Lógicos Externos
+utilizados por otras entradas externas de la aplicación.</p></li>
+</ol></li>
+</ol>
+<h4 id="salidas">Salidas</h4>
+<p>Proceso elemental que envía datos o información de control hacia
+fuera de los límites de la aplicación.</p>
+<h5 id="reglas-1">Reglas</h5>
+<ol type="1">
+<li><p>La función envía información de control o datos fuera de los
+límites.</p></li>
+<li><p>Una de las tres siguientes reglas deben aplicarse al proceso
+identificado.</p>
+<ul>
+<li><p>El proceso lógico es único para el tratamiento lógico realizado
+para otras salidas.</p></li>
+<li><p>El conjunto de datos elementales identificado es diferente de los
+conjuntos identificados por otras salidas.</p></li>
+<li><p>Los Archivos Lógicos Internos y Archivos Lógicos Externos
+utilizados son diferentes de los archivos utilizados por otras
+salidas.</p></li>
+</ul></li>
+<li><p>La lógica de proceso elemental contiene al menos un cálculo o
+fórmula matemática.</p></li>
+<li><p>La lógica del proceso elemental crea datos derivados.</p></li>
+<li><p>La lógica del proceso elemental mantiene al menos un Archivo
+Lógico Interno.</p></li>
+<li><p>La lógica del proceso elemental altera el funcionamiento del
+sitema.</p></li>
+</ol>
+<h4 id="consultas">Consultas</h4>
+<p>Proceso elemental que envía datos o información de control fuera de
+los límites de la aplicación.</p>
+<ul>
+<li><p>Proporciona la salida de datos o información de control de un
+Archivos Lógicos Internos y Archivos Lógicos Externos.</p></li>
+<li><p>Combinación de Entrada y Salida a partir de una búsqueda de
+datos.</p></li>
+<li><p>No actualiza ficheros lógicos y no contiene datos derivados que
+requieran un proceso.</p></li>
+</ul>
+<h5 id="reglas-2">Reglas</h5>
+<ol type="1">
+<li><p>La función envía información de control o datos fuera de los
+límites.</p></li>
+<li><p>Una de las tres siguientes reglas deben aplicarse al proceso
+identificado.</p>
+<ol type="1">
+<li><p>El</p></li>
+<li></li>
+<li><p>.</p></li>
+</ol></li>
+<li><p>La lógica del proceso elemental recupera datos o información de
+control de un Archivo Lógico Interno o Archivo Lógico Externo.</p></li>
+<li><p>La lógica del proceso elemental no contiene un cálculo o fórmula
+matemática.</p></li>
+<li><p>La lógica del proceso elemental no crea datos derivados.</p></li>
+<li><p>La lógica del proceso elemental no mantiene un Archivo Lógico
+Interno.</p></li>
+<li><p>La lógica del proceso elemental no altera el funcionamiento del
+sistema.</p></li>
+</ol>
+<h3 id="complejidad-de-funciones-de-usuario">Complejidad de funciones de
+usuario</h3>
+<ul>
+<li>Número de tipo de elementos de datos incluidos.</li>
+</ul>
+<h4 id="det">DET</h4>
+<p>Número de tipos de elementos de datos incluidos.</p>
+<h5 id="reglas-3">Reglas</h5>
+<ol type="1">
+<li><p>Contar un DET para cada campo único, reconocido por el usuario,
+no repetido, mantenidos y/o recuperado de un Archvio Lógico Interno o
+Archivo Lógico Externo a través de un proceso elemental.</p></li>
+<li><p>Cuando dos aplicaciones mantienen y/o referencian los mismos
+Archvios Lógicos Internos o Archivos Lógicos Externos, pero cada una
+mantiene diferentes DETs, solo se cuentan los correspondientes a esa
+aplicación.</p></li>
+</ol>
+<h4 id="ret">RET</h4>
+<p>Número de Archivos Lógicos Internos referenciados.</p>
+<h5 id="reglas-4">Reglas</h5>
+<ol type="1">
+<li><p>Contar un RET para cada subgrupo en un Archvio Lógico Interno o
+Archivo Lógico Externo opcional u obligatorio.</p></li>
+<li><p>Si no hay subgrupos contar como un RET.</p></li>
+</ol>
+<h3 id="cálculo-de-puntos-de-función-totales">Cálculo de Puntos de
+Función Totales</h3>
+<ul>
+<li><p>PF: puntos de función.</p></li>
+<li><p>PFSA: puntos de función sin ajustar.</p></li>
+<li><p>SUMA(GI): suma de los grados de influencia de 14 factores que
+influyen en la complejidad del proceso.</p></li>
+</ul>
+<blockquote>
+<p>PF = PFSA·(0.65+0,01·SUMA(GI))</p>
+</blockquote>
+<ul>
+<li>El resultado de los puntos de función oscila entre el 65% y el 135%
+de los puntos de función sin ajustar.</li>
+</ul>
+<h3 id="ventajas">Ventajas</h3>
+<ul>
+<li><p>Contempla el sistema como un todo que se divide en determinadas
+funciones.</p></li>
+<li><p>Es independiente del entorno tecnológico en que se ha
+desarrollado el sistema.</p></li>
+<li><p>Es independiente de la metodología que vaya a ser
+utilizada.</p></li>
+<li><p>Es independiente de la experiencia y del estilo de
+programación.</p></li>
+<li><p>Es fácil de entender por el usuario.</p></li>
+</ul>
+<h3 id="factores-de-influencia">Factores de influencia</h3>
+<h4 id="comunicaciones-de-datos">1. Comunicaciones de datos</h4>
+<p>Concerniente a la transmisión de datos o información de control,
+enviados o recibidos mediante algún sistema de comunicaciones.</p>
+<ul>
+<li><p>Cada aplicación al menos tiene dos etapas: lado cliente y lado
+servidor.</p></li>
+<li><p>Dependiendo de la complejidad, estas etapas pueden extenderse a
+más capas o se pueden introducir protocolos de comunicación hardware y
+red.</p></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">GI</th>
+<th style="text-align: center;">Líneas Guía</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">La aplicación es un proceso por lotes
+puro o un PC stand alone</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Proceso por lotes con impresión remota o
+entrada remota de datos</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Proceso por lotes con impresión remota y
+entrada remota de datos</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">El TP de la intefaz para un proceso por
+lotes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">La aplicación está basada en un TP
+interactivo, pero con un solo protocolo de comunicaciones</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">La aplicación está basada en un TP
+interactivo, pero con más de un protocolo de comunciaciones</td>
+</tr>
+</tbody>
+</table>
+<h4 id="procesamiento-distribuido">2. Procesamiento distribuido</h4>
+<p>Concerniente a si una aplicación es monolítica y se ejecuta en un
+único procesador, o si la aplicación consiste en código independiente
+ejecutándose en procesadores distintos y persiguiendo un fin común.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">GI</th>
+<th style="text-align: center;">Líneas Guía</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">La aplicación no tiene el objetivo de
+transferir datos o funciones de procesamiento entre componentes del
+sistema</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Datos preparados por la aplicación para
+su procesamiento por el usuario final sobre otro componente del
+sistema</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">La aplicación prepara los datos para
+transferirlos; luego se transfieren y se procesan sobre otro
+componente/máquina del sistema</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">Proceso distribuido con transferencia de
+datos on line en una dirección</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">Proceso distribuido con transferencia de
+datos on line en ambas direcciones</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">Las funciones de procesamiento se
+realizan dinámicamente sobre el</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">componente del sistema más
+apropiado</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="objetivos-de-rendimiento">3. Objetivos de rendimiento</h4>
+<p>Las aplicaciones que soportan negocios o misiones críticas tienen
+importantes restricciones de rendimiento.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">GI</th>
+<th style="text-align: center;">Líneas Guía</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">No hay requisitos especiales</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Se establecen requisitos de rendimiento
+y diseño, pero no se requieren acciones especiales</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">La respuesta del proceso o la
+productividad es crítica durante las horas punta. No se requiere un
+diseño especial para el uso de la CPU. El tiempo límite de procesamiento
+es el siguiente día de negocio.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">La respuesta del proceso o la
+productividad es crítica durante todos los días del negocio. No se
+requiere un diseño especial para el uso de la CPU. Los requisitos de
+tiempo límite de procesamiento con sistemas de interfaz son
+críticos.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">Los requisitos de rendimiento del
+usuario son suficientemente críticos como para incluir tareas de
+análisis de rendimiento en la fase de diseño</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">Se emplearán herramientas específicas
+para el diseño que contemplen estas características</td>
+</tr>
+</tbody>
+</table>
+<h4 id="configuración-de-uso-intensivo">4. Configuración de uso
+intensivo</h4>
+<p>Describe el grado en que las restricciones de recursos de la máquina
+influenciarán el desarrollo de la aplicación.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">GI</th>
+<th style="text-align: center;">Líneas Guía</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">No se incluyen restricciones
+operacionales ni explícitas ni implícitas</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Existen restricciones operacionales,
+pero son menos restrictivas que una aplicación típica y no requieren por
+tanto esfuerzo adicional</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Se incluyen algunas consideraciones
+sobre tiempo y seguridad</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">Se incluyen requisitos específicos de
+procesador para una pieza concreta de la aplicación</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">Las limitaciones de operación restringen
+la ejecución de la aplicación en un procesador central o dedicado</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">Hay especiales restricciones sobre la
+aplicación en los</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">componentes distribuidos del
+sistema</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="tasas-de-transacción-rápidas">5. Tasas de transacción
+rápidas</h4>
+<p>Describe el grado en que el ritmo o ratio de trasacciones de negocio
+influenciarán el desarrollo de la aplicación.</p>
+<ul>
+<li>Si es alto, afectará al diseño, desarrollo, instalación y
+transporte.</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">GI</th>
+<th style="text-align: center;">Líneas Guía</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">Las transacciones no están afectadas por
+picos de tráfico</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Se preveen periodos de picos de tráfico
+mensuales</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Se preveen periodos de picos de tráfico
+semanales</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">Se preveen periodos de picos de tráfico
+diarios</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">Los picos de transacción indicados por
+el usuario en los requisitos o en acuerdos a nivel de servicio son
+suficientemente altos como para incluir tareas de análisis de
+rendimiento en la fase de diseño</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">Se requieren herramientas de análisis de
+rendimiento en las fases de diseño, desarrollo y/o instalación</td>
+</tr>
+</tbody>
+</table>
+<h4 id="entrada-de-datos-en-línea">6. Entrada de datos en línea</h4>
+<p>Describe el grado de entrada de datos de forma iteractiva.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">GI</th>
+<th style="text-align: center;">Líneas Guía</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">Todas las transacciones son tratadas por
+lotes</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Entre el 1% y el 7% de las funciones son
+entradas interactivas de datos</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Entre el 8% y el 15% de las funciones
+son entradas interactivas de datos</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">Entre el 16% y el 23% de las funciones
+son entradas interactivas de datos</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">Entre el 24% y el 30% de las funciones
+son entradas interactivas de datos</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">Más del 30% de las funciones son
+entradas interactivas de datos</td>
+</tr>
+</tbody>
+</table>
+<h4 id="amigabilidad-en-el-diseño">7. Amigabilidad en el diseño</h4>
+<p>Mide la facilidad de uso de la aplicación de cara al usuario
+final</p>
+<p>|GI|Líneas Guía| |0|No se han declarado ninguno de los requisitos
+especiales de usuario| |1|De 1 a 3 de los requisitos de la lista| |2| 4
+o 5 requisitos de la lista| |3| Seis o más requisitos, pero no hay
+requisitos especiales de usuario relacionados con la eficiencia| |4|
+Seis o más requisitos y los requisitos de eficiencia son suficientemente
+importantes para incluir tareas de diseño para el usuario final| |5|Se
+requiere del uso de herramientas y procesos para demostrar que se
+cumplen los requisitos establecidos|</p>
+<h4 id="actualización-de-datos-en-línea">8. Actualización de datos en
+línea</h4>
+<p>Tendrá una puntiación máxima si las actualizaciones en línea son
+obligatorias y especialmente dificultosas, quizá debido a la necesidad
+de realizar copias de seguridad, o de proteger los datos contra cambios
+accidentales.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">GI</th>
+<th style="text-align: center;">Líneas Guía1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">Ninguna</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Actualización en línea de uno a tres
+ficheros de control. El volumen de actualización es bajo y la
+recuperación fácil</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Actualización en línea de cuatro o más
+ficheros de control. El volumen de actualización es bajo y la
+recuperación fácil</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">Actualización en línea de importantes
+ficheros internos</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">S e considera esencial la protección
+contra pérdida de información y ha sido especialmente diseñada y
+programada en el sistema</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">Grandes volúmenes implican
+consideraciones de coste en el proceso de recuperación. Se incluyen
+procedimientos de recuperación que requieren mínima intervención del
+operador</td>
+</tr>
+</tbody>
+</table>
+<h4 id="procesamiento-complejo">9. Procesamiento complejo</h4>
+<p>Se considera complejo cuando hay muchas interacciones, puntos de
+decisión o gran númeor de ecuacions lógicas o matemáticas.</p>
+<ul>
+<li><p>Extensiones de proceso lógicas.</p></li>
+<li><p>Extensiones de proceso matemáticas.</p></li>
+<li><p>Muchos procesos de excepción que resultan en muchas funciones
+incompletas que deben repetirse.</p></li>
+<li><p>Procesos sensibles de control y/o seguridad.</p></li>
+<li><p>Procesos complejos para manejar múltiples posibilidades de
+Entrada y/o Salida.</p></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">GI</th>
+<th style="text-align: center;">Líneas Guía</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">Ninguno de los anteriores es
+aplicable</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Es aplicable uno de los anteriores</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Son aplicables dos de los
+anteriores</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">Son aplicables 3 de los anteriores</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">Son aplicables 4 de los anteriores</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">Todos ellos son aplicables</td>
+</tr>
+</tbody>
+</table>
+<h4 id="reusabilidad">10. Reusabilidad</h4>
+<p>Indica si gran parte de la funcionalidad del proyecto está pensada
+para un uso intensivo por otras aplicaciones.</p>
+<p>|GI|Líneas Guía| |0|No hay que reutilizar el código| |1|Se emplea
+código reutilizable dentro de la aplicación| |2|Menos del 10% de la
+aplicación se considera reutilizable| |3|El 10% o más de la aplicación
+se considera reusable| |4|La aplicación está específicamente preparada y
+documentada para facilitar la reutilización y se adapta para cumplir las
+necesidades del usuario específicas sobre el código fuente| |5|La
+aplicación está específicamente preparada y documentada para facilitar
+la reutilización y, además, se adapta para su uso mediante el
+mantenimiento de parámetros de usuario|</p>
+<h4 id="facilidad-de-instalación">11. Facilidad de instalación</h4>
+<p>Durante el desarrollo se consideran factores que facilitan la
+instalación.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">GI</th>
+<th style="text-align: center;">Líneas Guía</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">El usuario no ha declarado
+consideraciones especiales y no se requiere una configuración especial
+para la instalación</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">El usuario no ha declarado
+consideraciones especiales, pero se requiere una configuración especial
+para la instalación</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">El usuario ha declarado consideraciones
+especiales para la conversión e instalación y se requieren guías
+probadas de conversión e instalación. El impacto de la conversión sobre
+el proyecto no se considera importante</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">El usuario ha declarado consideraciones
+especiales para la conversión e instalación y se requieren guías
+probadas de conversión e instalación. El impacto de la conversión sobre
+el proyecto se considera importante</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">Además del GI 2, se proporcionan y
+prueban herramientas para la conversión e instalación automática</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">Además del GI 3, se proporcionan y
+prueban herramientas para la conversión e instalación automática</td>
+</tr>
+</tbody>
+</table>
+<h4 id="facilidad-operacional">12. Facilidad operacional</h4>
+<p>Se han tenido en cuenta factores de operatividad.</p>
+<ul>
+<li>Se han considerado procedimientos de arranque, de copia de respaldo
+y de recuperación.</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">GI</th>
+<th style="text-align: center;">Líneas Guía</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">No hay consideraciones especiales de
+operación aparte de los procesos normales de back-up establecidos por el
+usuario</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Se proporcionan procesos efectivos de
+arranque, back-up y recuperación, pero se requiere la intervención del
+operador</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">La aplicación minimiza la necesidad de
+montaje de cintas magnéticas</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">La aplicación minimiza la necesidad de
+manejo de papel</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">Lo anterior, pero sin requerirse la
+intervención del operador (cuenta como 2)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">La aplicación debe diseñarse para una
+operación totalmente automática. La recuperación automática ante errores
+es una funcionalidad de la aplicación</td>
+</tr>
+</tbody>
+</table>
+<h4 id="adaptabilidad">13. Adaptabilidad</h4>
+<p>La aplicación se diseña para soportar múltiples instalaciones en
+diferentes entornos y organizaciones.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">GI</th>
+<th style="text-align: center;">Líneas Guía</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">No hay requisitos de usuario para
+soporte a la instalación en más de un lugar</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Se consideran en el diseño múltiples
+instalaciones, pero para operar con idéntica configuración (tanto
+hardware como software)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Se consideran en el diseño múltiples
+instalaciones, pero para operar con similar configuración hardware y/o
+software</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">Se consideran en el diseño múltiples
+instalaciones, pero para operar con diferente configuración hardware y/o
+software</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">Se proporcionará documentación y plan de
+soporte debidamente probados para soportar la aplicación en múltiples
+sitios</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">Se proporcionará documentación y plan de
+soporte debidamente probados para soportar la aplicación en múltiples
+sitios</td>
+</tr>
+</tbody>
+</table>
+<h4 id="versatilidad">14. Versatilidad</h4>
+<p>Se han tenido en cuenta criterios que facilitarán el posterior
+mantenimiento.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">GI</th>
+<th style="text-align: center;">Líneas Guía</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">No se han tenido en cuenta criterios
+para facilitar el posterior mantenimiento</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Consultas y generación de Informes
+flexible que manejan peticiones simples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Peticiones de complejidad media: &gt;=
+un archivo interno</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">Peticiones complejas: combinaciones
+lógicas and/or sobre uno o más archivos internos</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">Los datos de control de las funciones
+residen en tablas mantenidas por el usuario mediante procesos
+interactivos online pero los cambios son efectivos el siguiente día
+hábil</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">Los cambios tienen efecto inmediato</td>
+</tr>
+</tbody>
+</table>
+<h2 id="puntos-objeto">Puntos objeto</h2>
+<p>Son una medida alternativa relacionada con la funcionalidad cuando se
+utilizan lenguajes 4GLs o similares para el desarrollo.</p>
+<ul>
+<li><p>Los puntos de objeto no son clases de objetos.</p></li>
+<li><p>EL número de puntos objeto en un programa es una estimación
+ponderada de el número de pantallas que son visualizadas por separado,
+el número de informes que se producen por el sistema y el número de
+módulos 3GL que deben desarrollarse para complementar el código
+4GL.</p></li>
+<li><p>Son más fáciles de estimar a partir de una especificación que los
+puntos de función, ya que solamente consideran pantallas, informes y
+módulos 3GL.</p></li>
+<li><p>Por lo tanto, pueden estimarse en fases tempranas del proceso de
+desarrollo.</p></li>
+</ul>
+<blockquote>
+<p>En esta etapa resulta muy difícil estimar el número de líneas de
+código de un sistema.</p>
+</blockquote>
+<h3 id="procedimiento">Procedimiento</h3>
+<ol type="1">
+<li><p>Determinar la cantidad de objetos: estimar la cantidad de
+pantallas, informes y componentes que contendrá la aplicación.</p></li>
+<li><p>Clasificar cada instancia de un objeto según sus niveles de
+complejidad (simple, media o díficil).</p></li>
+</ol>
+<table border>
+<tr>
+<td>
+Para pantallas
+</td>
+<td>
+Para informes
+</td>
+<td colspan="3">
+Nº y fuente de tablas de datos
+</td>
+</tr>
+<tr>
+<td>
+Nº de vistas que contiene
+</td>
+<td>
+Nº de secciones que contiene
+</td>
+<td>
+Total &lt; 4 ( &lt; 2 servidores; &lt; 3 clientes)
+</td>
+<td>
+Total &lt; 8 (2 o 3 servidores; 3 o 5 clientes)
+</td>
+<td>
+Total &gt; 8 ( &gt; 3 servidores; &gt; 5 clientes)
+</td>
+</tr>
+<tr>
+<td>
+&lt; 3
+</td>
+<td>
+0 o 1
+</td>
+<td>
+Simple
+</td>
+<td>
+Simple
+</td>
+<td>
+Medio
+</td>
+</tr>
+<tr>
+<td>
+3 a 7
+</td>
+<td>
+2 o 3
+</td>
+<td>
+Simple
+</td>
+<td>
+Medio
+</td>
+<td>
+Difícil
+</td>
+</tr>
+<tr>
+<td>
+<blockquote>
+8
+</td>
+<td>
+</blockquote>
+<blockquote>
+4
+</td>
+<td>
+Medio
+</td>
+<td>
+Difícil
+</td>
+<td>
+Difícil
+</td>
+</tr>
+</table>
+</blockquote>
+<ol start="3" type="1">
+<li><p>Dar el peso a cada objeto según su nivel de complejidad.</p>
+<ul>
+<li>Los pesos reflejan el esfuerzo relativo requerido para implementar
+una instancia de ese nivel de complejidad.</li>
+</ul></li>
+</ol>
+<table border>
+<tr>
+<td rowspan="2">
+Tipo de objeto
+</td>
+<td colspan="3">
+Peso de la complejidad
+</td>
+</tr>
+<tr>
+<td>
+Simple
+</td>
+<td>
+Media
+</td>
+<td>
+Alta
+</td>
+</tr>
+<tr>
+<td>
+Pantalla
+</td>
+<td>
+1
+</td>
+<td>
+2
+</td>
+<td>
+3
+</td>
+</tr>
+<tr>
+<td>
+Informe
+</td>
+<td>
+2
+</td>
+<td>
+5
+</td>
+<td>
+8
+</td>
+</tr>
+<tr>
+<td>
+Componente LG3
+</td>
+<td>
+<ul>
+<li><pre><code>   &lt;/td&gt;
+   &lt;td&gt;
+       -
+   &lt;/td&gt;
+   &lt;td&gt;
+       10
+   &lt;/td&gt;</code></pre>
+</tr>
+</table></li>
+</ul>
+<ol start="4" type="1">
+<li><p>Determinar la cantidad de Puntos de Objeto:</p>
+<ul>
+<li>Contador de Puntos de Objeto: suma todas las instancias de objeto
+ponderadas para conseguir un valor.</li>
+</ul></li>
+<li><p>Estimar el porcentaje de reutilización que se espera lograr en
+este proyecto.</p>
+<ul>
+<li>NPO = (Puntos Objeto) · (100 - %Reutilizado) / 100</li>
+</ul></li>
+<li><p>Determinar un ratio de productividad.</p>
+<ul>
+<li>PROD = NPO/meses-persona</li>
+</ul></li>
+</ol>
+<table border>
+<tr>
+<td>
+Experiencia y capacidad de los desarrolladores
+</td>
+<td>
+Madurez y capacidad en ICASE
+</td>
+<td>
+PROD
+</td>
+</tr>
+<tr>
+<td>
+Muy baja
+</td>
+<td>
+Muy baja
+</td>
+<td>
+4
+</td>
+</tr>
+<tr>
+<td>
+Baja
+</td>
+<td>
+Baja
+</td>
+<td>
+7
+</td>
+</tr>
+<tr>
+<td>
+Nominal
+</td>
+<td>
+Nominal
+</td>
+<td>
+13
+</td>
+</tr>
+<tr>
+<td>
+Alta
+</td>
+<td>
+Alta
+</td>
+<td>
+25
+</td>
+</tr>
+<tr>
+<td>
+Muy alta
+</td>
+<td>
+Muy alta
+</td>
+<td>
+50
+</td>
+</tr>
+</table>
+<ol start="7" type="1">
+<li><p>Calcular el valor Meses-Persona estimado.</p>
+<ul>
+<li>MP = NPO/PROD</li>
+</ul></li>
+</ol>
+<h2 id="puntos-de-caso-de-uso">Puntos de Caso de Uso</h2>
+<p>Método de estimación del tiempo de desarrollo de un proyecto mediante
+la asignación de pesos a un cierto número de factores que lo
+afectan.</p>
+<ul>
+<li><p>Para realizar el cálculo de los Puntos de Casos de Uso se calcula
+una Cuenta no Ajustada de Casos de Uso -UAUCP-, asignando una
+complejidad a los actores y a los casos de uso.</p></li>
+<li><p>A continuación, esta complejidad será ponderada con un Factor de
+Ajuste técnico y por un Factor de Ajuste relativo al entorno de
+implantación, obteniendo así la Cuenta de Puntos de Casos de Uso
+-UCP-</p></li>
+</ul>
+<h2 id="procedimiento-1">Procedimiento</h2>
+<ol type="1">
+<li>Clasificar cada interacción entre actor y caso de uso según su
+complejidad y asignar un peso en función de esta.</li>
+</ol>
+<table border>
+<tr>
+<td>
+Tipo de interacción
+</td>
+<td>
+Peso asignado
+</td>
+</tr>
+<tr>
+<td>
+Simple: a través de API
+</td>
+<td>
+1
+</td>
+</tr>
+<pre><code>&lt;td&gt;
+        Media: a través de protocolo
+    &lt;/td&gt;
+    &lt;td&gt;
+        2
+    &lt;/td&gt;
+&lt;tr&gt;
+    &lt;td&gt;
+        Compleja: a través de interfaz gráfica
+    &lt;/td&gt;
+    &lt;td&gt;
+        3
+    &lt;/td&gt;
+&lt;/tr&gt;</code></pre>
+</table>
+<ul>
+<li><p>Se calcula el factor de peso de los actores sin ajustar.</p>
+<ul>
+<li>UAW = Sum(cantidadDeUnTipoDeActor · Peso)</li>
+</ul></li>
+</ul>
+<ol start="2" type="1">
+<li>Calcular la complejidad de cada caso de uso según el número de
+transacciones o pasos del mismo.</li>
+</ol>
+<table border>
+<tr>
+<td>
+Nº de transacciones del Caso de Uso
+</td>
+<td>
+Tipo
+</td>
+<td>
+Peso
+</td>
+</tr>
+<tr>
+<td>
+&lt;= 3
+</td>
+<td>
+Simple
+</td>
+<td>
+5
+</td>
+</tr>
+<pre><code>&lt;td&gt;
+        &gt;= 4 y &lt; 7
+    &lt;/td&gt;
+    &lt;td&gt;
+        Medio
+    &lt;/td&gt;
+    &lt;td&gt;
+        10
+    &lt;/td&gt;
+&lt;tr&gt;
+    &lt;td&gt;
+        &gt;= 7
+    &lt;/td&gt;
+    &lt;td&gt;
+        Complejo
+    &lt;/td&gt;
+    &lt;td&gt;
+        15
+    &lt;/td&gt;
+&lt;/tr&gt;</code></pre>
+</table>
+<ul>
+<li><p>Se calcula el factor de peso de los Casos de Uso sin ajustar.</p>
+<ul>
+<li>UUCW = Sum(cantidadDeUnTipoDeCasoDeUso · Peso)</li>
+</ul></li>
+</ul>
+<ol start="3" type="1">
+<li><p>Calcular los Puntos de Casos de Uso no ajustados del sistema.</p>
+<ul>
+<li>UUCP = UAW + UUCW</li>
+</ul></li>
+<li><p>Cálculo de los Factores Técnicos (TFC): a cada uno de los
+Factores Técnicos se le asigna un valor de influencia en el proyecto
+entre 0 y 5.</p>
+<ul>
+<li>Obtenidos los grados de influencia se multiplican por el peso de
+cada factor.</li>
+</ul></li>
+</ol>
+<p><img src="/img/site2/tag6/Tema4-1.png" /></p>
+<table border>
+<tr>
+<td>
+Factor
+</td>
+<td>
+Descripción
+</td>
+<td>
+Peso
+</td>
+<td>
+Influencia
+</td>
+</tr>
+<tr>
+<td>
+R1
+</td>
+<td>
+Sistema Distribuido
+</td>
+<td>
+2
+</td>
+<td>
+n
+</td>
+</tr>
+<tr>
+<td>
+R2
+</td>
+<td>
+Objetivos de rendimiento
+</td>
+<td>
+1
+</td>
+<td>
+m
+</td>
+</tr>
+<tr>
+<td>
+R3
+</td>
+<td>
+Eficiencia respecto al usuario final
+</td>
+<td>
+1
+</td>
+<td>
+p
+</td>
+</tr>
+<tr>
+<td>
+R4
+</td>
+<td>
+Procesamiento complejo
+</td>
+<td>
+1
+</td>
+<td>
+q
+</td>
+</tr>
+<tr>
+<td>
+R5
+</td>
+<td>
+Código reutilizable
+</td>
+<td>
+1
+</td>
+<td>
+r
+</td>
+</tr>
+<tr>
+<td>
+R6
+</td>
+<td>
+Instalación sencilla
+</td>
+<td>
+0.5
+</td>
+<td>
+s
+</td>
+</tr>
+<tr>
+<td>
+R7
+</td>
+<td>
+Fácil utilización
+</td>
+<td>
+0.5
+</td>
+<td>
+t
+</td>
+</tr>
+<tr>
+<td>
+R8
+</td>
+<td>
+Portabilidad
+</td>
+<td>
+2
+</td>
+<td>
+u
+</td>
+</tr>
+<tr>
+<td>
+R9
+</td>
+<td>
+Fácil de cambiar
+</td>
+<td>
+1
+</td>
+<td>
+v
+</td>
+</tr>
+<tr>
+<td>
+R10
+</td>
+<td>
+Uso Concurrente
+</td>
+<td>
+1
+</td>
+<td>
+w
+</td>
+</tr>
+<tr>
+<td>
+R11
+</td>
+<td>
+</td>
+<pre><code>Caracteristica de seguridad
+    &lt;td&gt;
+        1
+    &lt;/td&gt;
+    &lt;td&gt;
+        x
+    &lt;/td&gt;
+&lt;/tr&gt;
+ &lt;tr&gt;
+    &lt;td&gt;
+        R12
+    &lt;/td&gt;
+    &lt;td&gt;
+        Accesible por terceros
+    &lt;/td&gt;
+    &lt;td&gt;
+        1
+    &lt;/td&gt;
+    &lt;td&gt;
+        y
+    &lt;/td&gt;
+&lt;/tr&gt;
+ &lt;tr&gt;
+    &lt;td&gt;
+        R13
+    &lt;/td&gt;
+    &lt;td&gt;
+        Se requiere formación especial
+    &lt;/td&gt;
+    &lt;td&gt;
+        1
+    &lt;/td&gt;
+    &lt;td&gt;
+        z
+    &lt;/td&gt;
+&lt;/tr&gt;</code></pre>
+</table>
+<ol start="5" type="1">
+<li><p>Cálculo de factores de entorno: a cada uno de los factores de
+entorno se le asigna un valor de influencia en el proyecto entre 0 a
+5.</p>
+<ul>
+<li>Obtenidos los grados de influencia se multiplican por el peso de
+cada factor y se calcula el factor de entorno que aplica.</li>
+</ul></li>
+</ol>
+<p><img src="/img/site2/tag6/Tema4-2.png" /></p>
+<table border>
+<tr>
+<td>
+Factor
+</td>
+<td>
+Descripción
+</td>
+<td>
+Peso
+</td>
+<td>
+Influencia
+</td>
+</tr>
+<tr>
+<td>
+R1
+</td>
+<td>
+Familiar con TUP
+</td>
+<td>
+1.5
+</td>
+<td>
+n1
+</td>
+</tr>
+<tr>
+<td>
+R2
+</td>
+<td>
+Experiencia en la aplicación
+</td>
+<td>
+0.5
+</td>
+<td>
+n2
+</td>
+</tr>
+<tr>
+<td>
+R3
+</td>
+<td>
+Experiencia con orientación a objetos
+</td>
+<td>
+1
+</td>
+<td>
+n3
+</td>
+</tr>
+<tr>
+<td>
+R4
+</td>
+<td>
+Capacidades de análisis
+</td>
+<td>
+0.5
+</td>
+<td>
+n4
+</td>
+</tr>
+<tr>
+<td>
+R5
+</td>
+<td>
+Motivación
+</td>
+<td>
+1
+</td>
+<td>
+n5
+</td>
+</tr>
+<tr>
+<td>
+R6
+</td>
+<td>
+Requisitos estables
+</td>
+<td>
+2
+</td>
+<td>
+n6
+</td>
+</tr>
+<tr>
+<td>
+R7
+</td>
+<td>
+Trabajadores a tiempo parcial
+</td>
+<td>
+-1
+</td>
+<td>
+n7
+</td>
+</tr>
+<tr>
+<td>
+R8
+</td>
+<td>
+Lenguaje completo
+</td>
+<td>
+-1
+</td>
+<td>
+n8
+</td>
+</tr>
+</table>
+<ol start="6" type="1">
+<li><p>Obtención de los Puntos de Casos de Uso ajustados.</p>
+<ul>
+<li>UCP = UUCP · TCF · EF</li>
+</ul></li>
+</ol>
 <hr />
 <p><a href="tag6_t1.html">TEMA 1: PLANIFICACIÓN ESTRATÉGICA</a></p>
 <p><a href="tag6_t2.html">TEMA 2: PLANIFICACIÓN DE PROYECTOS
