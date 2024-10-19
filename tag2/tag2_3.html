@@ -176,6 +176,204 @@
 <p class="author">Aika Kenshi</p>
 <p class="date">18-09-2024</p>
 </header>
-<h1 id="section"></h1>
+<h1 id="qué-es-la-infraestructura-digital">¿Qué es la infraestructura
+digital?</h1>
+<p>Antes de empezar a programar deberás decidir cómo y dónde se
+ejecutará tu proyecto. Es difícil construir antes de decidir sobre los
+materiales y herramientas.</p>
+<blockquote>
+<blockquote>
+<p>“La infraestructura digital es el conjunto de asuntos de Tecnología
+de Información que son de especial interés para las Tecnologías de
+Información.” -The Open Group.</p>
+</blockquote>
+</blockquote>
+<h2
+id="conceptos-básicos-de-la-infraestructura-de-tecnología-de-información">Conceptos
+básicos de la infraestructura de Tecnología de Información</h2>
+<p>Hay muchos aspectos que la infraestrucura de Tecnología de
+Información puede cubrir.</p>
+<ol type="1">
+<li><p>Ciclos de computación.</p></li>
+<li><p>Memoria y almacenamiento.</p></li>
+<li><p>Redes y comunicaciones.</p></li>
+</ol>
+<h2 id="elegir-la-infraestructura-correcta">Elegir la infraestructura
+correcta</h2>
+<p>Como emprendedor es importante comprender qué tendencias tecnológicas
+son importantes para ti.</p>
+<p><strong>“¿Cómo se puede pensar en la infraestructura correcta antes
+de haber profundizado en los requisitos?”</strong></p>
+<p>No puedes conocer todos los factores necesarios para tomar una
+decisión perfecta.</p>
+<ul>
+<li><p>No caer en la parálisis de análisis.</p></li>
+<li><p>Sé crítico.</p></li>
+</ul>
+<h1 id="de-computación-física-a-entornos-cloud">De computación “física”
+a entornos cloud</h1>
+<h2 id="virtualización">Virtualización</h2>
+<p>Imaginemos un ordenador. Cuando lo encendemos, el Sistema Operativo
+se carga. El Sistema Operativo gestiona y es capaz de actuar sobre el
+hardware del equipo. Posteriormente, nosotros podremos ejecutar
+aplicaciones sobre el Sistema Operativo.</p>
+<p>Con la virtualización, una aplicación conocida como
+<strong>hipervisor</strong> se carga como cualquier otra aplicación.</p>
+<p>Este hipervisor es capaz de <strong>emular</strong> cualquier número
+de <strong>ordenadores virtuales</strong>, cada uno son su propio
+Sistema Operativo.</p>
+<p>Además, gestiona el acceso de la máquina con el hardware del
+ordenador.</p>
+<ul>
+<li><p><strong>Tipo 1:</strong> No se emplea ningún tipo de sistema
+operativo. Se podría decir que el hipervisor se ejecuta directamente
+sobre el hardware del equipo y crea distintas máquinas
+virtuales.</p></li>
+<li><p><strong>Tipo 2:</strong> Se ejecuta el hipervisor sobre el
+sistema operativo huésped.</p></li>
+</ul>
+<p>También existe la paravirtualización, donde el Sistema Operativo
+abstrae recursos hardware para múltiples entornos virtuales sin tener
+que virtualizar el hardware para cada huésped.</p>
+<ul>
+<li>Aumento de eficiencia y rendimiento.</li>
+</ul>
+<p>La virtualización atrajo la atención en las compañías cuando se
+dieron cuenta que los servidores que adquirían se encontraban
+infrautilizados.</p>
+<p>Las grandes empresas necesitan dar soporte a cientos de
+configuraciones de infraestructuras diferentes.</p>
+<ul>
+<li><p>Número menor de servidores.</p></li>
+<li><p>Mejor gestión de configuración.</p></li>
+<li><p>Adición y eliminación de recursos.</p></li>
+<li><p>Copiar y trasladar fácilmente.</p></li>
+</ul>
+<p>Aunque la virtualización es concepto clave para hacer cloud
+computing, se debate en si es suficiente para considerarse cloud.</p>
+<ul>
+<li><p>Infraestructura como servicio.</p></li>
+<li><p>Plataforma como servicio.</p></li>
+<li><p>Software como servicio.</p></li>
+</ul>
+<h3 id="infraestructura-como-servicio">Infraestructura como
+servicio</h3>
+<p>La capacidad que se proporciona al consumidor es la de suministrar
+procesamiento, almacenamiento, redes y otros recursos informáticos
+fundamentales en los que el consumidor puede desplegar y ejecutar
+software arbitrario, que puede incluir sistemas operativos y
+aplicaciones.</p>
+<h3 id="plataforma-como-servicio">Plataforma como servicio</h3>
+<p>La capacidad que se proporciona al consumidor es la de desplegar en
+la infraestructura de la nube aplicaciones adquiridas por el consumidor
+o creadas utilizando lenguajes de programación, bibliotecas, servicios y
+herramientas soportadas por el proveedor.</p>
+<h3 id="software-como-servicio">Software como servicio</h3>
+<p>La capacidad que se ofrece al consumidor es la de utilizar las
+aplicaciones del proveedor que se ejecutan en una infraestructura en la
+nube.</p>
+<p>El consumidor no gestiona ni controla la infraestructura
+subyacente.</p>
+<h1 id="infraestructura-como-código">Infraestructura como código</h1>
+<p>Aumento de la necesidad de replicar servidores idénticos y de
+auto-escalado.</p>
+<p>No es posible tener un trabajador continuamente configurando y
+habilitando tales infraestructuras.</p>
+<p>Gracias a la virtualización, es muy fácil crear y destruir
+servidores.</p>
+<p>Rutinas coherentes y repetibles para el aprovisionamento y la
+modificación de los sistemas y su configuración.</p>
+<p>Los cambios se introducen en las definiciones y luego se aplican a
+los sistemas mediante procesos desatendidos que incluyen una validación
+exhautiva.</p>
+<p>Emplear técnicas ágiles como Test Driven Development, Continuous
+Integration y Continuous Delivery no permite modificar la
+infraestructura de manera rápida y eficaz.</p>
+<p>Dado que los cambios son el mayor riesgo para un sistema de
+producción, el cambio es inevitable y para mejorar hay que cambiar;
+tiene sentido optimizar su capacidad para realizar cambios de forma
+rápida y fiable.</p>
+<p>Aprovecharemos el dinamismo de las infraestructuras modernas para
+realizar cambios frecuentes y fiables.</p>
+<ul>
+<li><p>Definir todo como código.</p></li>
+<li><p>Entregar y testear continuamente todo el trabajo en
+curso.</p></li>
+<li><p>Desarrollar piezas pequeñas y sencillas que se puedan cambiar
+indpendientemente.</p></li>
+</ul>
+<h2 id="definir-todo-como-código">Definir todo como código</h2>
+<p>Gestionar todos los aspectos del desarrollo, la entrega y la gestión
+del software mediante la definición y codificación de la
+infraestructura, el esquema y las tuberias utilizados para crear,
+mantener, iterar o ampliar el desarrollo de aplicaciones.</p>
+<p>Aplicar el enfoque de desarrollo de aplicaciones a otros componentes
+de Tecnologías de Información para garantizar que las mejoras prácticas
+se definan y se sigan con un mínimo de esfuerzo.</p>
+<p>Definir todo el material “como código” es una práctica fundamental
+para realizar cambios de forma rápida y fiable.</p>
+<ul>
+<li><p><strong>Reutilización:</strong> Si defines una cosa como código,
+puedes crear muchas instancias de ella.</p></li>
+<li><p><strong>Consistencia:</strong> Las cosas construidas a partir de
+código se construyen siempre de la misma manera.</p></li>
+<li><p><strong>Transparencia:</strong> Todo el mundo puede ver cómo se
+construye el objeto mirando el código.</p></li>
+</ul>
+<h2 id="entregar-y-testear-continuamente">Entregar y testear
+continuamente</h2>
+<p>Utilizar la automatización para desplegar y probar cada componente de
+su sistema, e integran todo el trabajo que todos tienen en marcha.</p>
+<p>La idea es crear calidad en lugar de testearla.</p>
+<ul>
+<li>Integrar y probar todo el trabajo en curso.</li>
+</ul>
+<h2 id="desarrollar-piezas-pequeñas-y-sencillas">Desarrollar piezas
+pequeñas y sencillas</h2>
+<p>Cuánto más grande es un sistema, más fácil es cambiarlo y más fácil
+es romperlo.</p>
+<p>Dividir en componentes pequeños es fácil de entender y tiene
+interfaces claramente definidas para cambiar fácilmente cada componente
+y desplegar y probar cada componente de forma aislada.</p>
+<h1 id="gestión-de-la-configuración">Gestión de la configuración</h1>
+<p>Práctica de importancia <strong>crítica</strong> en los sistemas
+digitales.</p>
+<p>El seguimiento y el control de sus productos de trabajo a medida que
+evolucionan a través de un cambio tras otro es importante desde el
+primer día.</p>
+<ul>
+<li><p>Hacer una copia de seguridad o archivar el estado de un
+sistema.</p></li>
+<li><p>Comparar dos versiones del estado del sistema e identificar las
+diferencias.</p></li>
+<li><p>Restaurar el sistema a un estado operativo.</p></li>
+</ul>
+<h2 id="control-de-versiones">Control de versiones</h2>
+<p>Se considera como uno de los cuatro pilares de las metodologías
+ágiles; junto con el equipo, el desarrollo iterativo y el desarrollo
+incremental.</p>
+<p>Es crítico para cualquier tipo de sistema con contenido complejo y
+cambiante.</p>
+<blockquote>
+<blockquote>
+<p>¿Qué ha cambiado y cuándo?</p>
+</blockquote>
+</blockquote>
+<h3 id="gestión-de-paquetes">Gestión de paquetes</h3>
+<p>Se emplea para gestionar el estado de la infraestructura.</p>
+<p>Distinción entre source control y gestión de paquetes: la gestión de
+archivos binarios, a diferencia de los archivos simbólicos comprensibles
+para el ser humano.</p>
+<blockquote>
+<blockquote>
+<p>¿Qué versiones se instalan en qué ordenadores?</p>
+</blockquote>
+</blockquote>
+<h2 id="gestión-de-despliegue">Gestión de despliegue</h2>
+<p>Los recursos en control de versiones aún no están entregando valor;
+su combinación con recursos informáticos sí lo hará.</p>
+<p>La gestión de despliegue administra la combinación de los artefactos
+del control de versiones con los recursos necesarios para la entrega de
+valor.</p>
 </body>
 </html>
