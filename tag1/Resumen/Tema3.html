@@ -174,8 +174,586 @@
 <h1 class="title">Marcos Arquitectónicos. TOGAF</h1>
 <p class="subtitle">TEMA 3</p>
 <p class="author">Aika Kenshi</p>
-<p class="date">20-10-2024</p>
+<p class="date">06-11-2024</p>
 </header>
-<h1 id="section"></h1>
+<h1 id="marco-de-referencia">Marco de referencia</h1>
+<p>Un marco de referencia es una técnica estructurada para describir
+arquitecturas, enfocada en identificar y relacionar aspectos de la
+organización mediante métodos de modelado.</p>
+<p>Simplifica la complejidad organizacional, dividiendo la arquitectura
+en capas y proporcionando modelos para documentar cada una.</p>
+<p>Esto facilita la toma de decisiones sistémicas en toda la
+organización y permite planificar a largo plazo en términos de diseño,
+sostenibilidad y soporte.</p>
+<h1 id="marcos-de-arquitectura-de-industria">Marcos de arquitectura de
+industria</h1>
+<p>Los marcos de arquitectura de industria están diseñados
+específicamente para una industria particular.</p>
+<p>Definen a las partes interesadas, puntos de vista y técnicas de
+modelado relevantes, e incluyen modelos de referencia adaptados a las
+necesidades y características de esa industria.</p>
+<h1 id="marcos-de-arquitectura-de-dominio">Marcos de arquitectura de
+dominio</h1>
+<p>Los marcos de arquitectura de dominio están optimizados para un
+dominio o subdominio específico dentro de la arquitectura
+empresarial.</p>
+<p>Ofrecen técnicas y métodos detallados para abordar las necesidades
+particulares de ese área específica de la organización.</p>
+<h1 id="marcos-integrales-de-arquitectura-empresarial">Marcos integrales
+de arquitectura empresarial</h1>
+<p>Los marcos integrales de Arquitectura Empresarial son independientes
+de la industria y del dominio, y son ampliamente utilizados.</p>
+<p>Proporcionan una estructura general aplicable a diversas
+organizaciones para gestionar su arquitectura empresarial.</p>
+<h1 id="niveles-de-abstracción">Niveles de abstracción</h1>
+<p>Los niveles de abstracción en arquitectura dividen un problema grande
+en partes más pequeñas, facilitando el análisis y la solución. En el
+contexto de arquitectura, se aplican a cuatro preguntas clave:</p>
+<ul>
+<li>¿Por qué?: Explica la necesidad de la arquitectura.</li>
+<li>¿Qué?: Define las funcionalidades y requisitos de la
+arquitectura.</li>
+<li>¿Cómo?: Describe cómo se estructuran esas funcionalidades.</li>
+<li>¿Con qué?: Identifica los activos necesarios para implementar esa
+estructura.</li>
+</ul>
+<p>Este enfoque ayuda a organizar el trabajo de arquitectura en niveles
+claros y manejables.</p>
+<h1 id="nivel-contextual">Nivel contextual</h1>
+<p>El nivel contextual en arquitectura analiza el entorno de la empresa
+y el contexto de planificación y ejecución arquitectónica.</p>
+<p>Responde a por qué se adopta una arquitectura, cuál es su objetivo y
+la motivación alineada con los objetivos de la empresa.</p>
+<h1 id="nivel-conceptual">Nivel conceptual</h1>
+<p>El nivel conceptual en arquitectura descompone los requisitos para
+comprender el problema y lo necesario para resolverlo, sin enfocarse aún
+en cómo se implementará.</p>
+<p>Responde a qué es esencial para cumplir los requisitos y suele
+representarse a través de modelos de servicios en los diferentes
+dominios.</p>
+<h1 id="nivel-lógico">Nivel lógico</h1>
+<p>El nivel lógico en la arquitectura empresarial identifica los tipos
+de componentes necesarios (de negocio, información, aplicaciones y
+tecnología) para cumplir con los servicios definidos en el nivel
+conceptual.</p>
+<p>Responde a cómo se puede organizar y estructurar la arquitectura sin
+enfocarse en su implementación específica, permitiendo múltiples
+soluciones lógicas según los criterios de organización.</p>
+<h1 id="nivel-físico">Nivel físico</h1>
+<p>El nivel físico en la arquitectura empresarial define los elementos
+físicos necesarios para implementar los componentes lógicos
+identificados en el nivel anterior.</p>
+<p>Ofrece múltiples soluciones físicas, permitiendo varias opciones de
+uso de elementos concretos según criterios específicos de
+implementación.</p>
+<h1 id="modelo-de-zachman">Modelo de Zachman</h1>
+<p>El modelo de Zachman es un enfoque clásico de arquitectura
+empresarial, propuesto por John Zachman en 1987, que compara la
+arquitectura empresarial con la construcción de edificios.</p>
+<p>Ofrece una visión holística, considerando la empresa como un conjunto
+integral y proporcionando una estructura estática de los elementos
+arquitectónicos.</p>
+<p>Este modelo es independiente de las metodologías y herramientas de
+modelado y se presenta en una matriz bidimensional de 6x6, abordando
+diferentes perspectivas y aspectos de la organización.</p>
+<p>En el Modelo de Zachman:</p>
+<ul>
+<li><p>Filas: Representan los puntos de vista de las partes interesadas,
+organizados de lo más general a lo más específico.</p></li>
+<li><p>Columnas: Corresponden a las dimensiones clásicas de un problema
+(por ejemplo, qué, cómo, quién, cuándo, por qué, y dónde), sin un orden
+específico.</p></li>
+<li><p>Celdas: Son los componentes de la arquitectura empresarial,
+ubicados en la intersección de filas y columnas, representando elementos
+específicos según el punto de vista y la dimensión.</p></li>
+</ul>
+<h1 id="togaf-the-open-group-architecture-framework">TOGAF (The Open
+Group Architecture Framework)</h1>
+<p>TOGAF (The Open Group Architecture Framework) es un marco de trabajo
+para el desarrollo de arquitectura empresarial creado por The Open
+Group, un consorcio global que promueve el uso de estándares
+tecnológicos para lograr objetivos de negocio.</p>
+<ul>
+<li><p>TOGAF 1 fue lanzado en 1995 y se basó en el modelo
+TAFIM.</p></li>
+<li><p>La versión actual es TOGAF 10.</p></li>
+</ul>
+<p>TOGAF proporciona una metodología estructurada para el diseño,
+planificación, implementación y gobernanza de una arquitectura
+empresarial.</p>
+<h1 id="ámbito-de-aplicación-de-togaf">Ámbito de aplicación de
+TOGAF</h1>
+<p>TOGAF es un marco integral que se puede aplicar para crear
+arquitecturas empresariales en cualquier contexto y es válido para los
+cuatro dominios de la arquitectura empresarial:</p>
+<ol type="1">
+<li><p>Arquitectura de Negocio: Abarca la estrategia, gobernanza,
+organización y procesos de negocio.</p></li>
+<li><p>Arquitectura de Información: Se enfoca en la estructura física y
+lógica de la información y su gestión.</p></li>
+<li><p>Arquitectura de Aplicaciones: Define las funciones de los
+sistemas de información y sus relaciones con los procesos de
+negocio.</p></li>
+<li><p>Arquitectura de Tecnología: Se refiere a la infraestructura
+física y lógica de los sistemas y sirve como referencia técnica para
+alinear negocio y tecnología de información.</p></li>
+</ol>
+<h1 id="método-de-desarrollo-de-arquitectura">Método de desarrollo de
+arquitectura</h1>
+<p>El Método de Desarrollo de Arquitectura es un modelo iterativo que
+facilita la transformación controlada de una organización para cumplir
+sus objetivos.</p>
+<p>El Architecture Development Method (ADM) es el método de desarrollo
+de arquitectura utilizado en TOGAF.</p>
+<p>Este enfoque es genérico y se puede aplicar a cualquier tipo de
+empresa, permitiendo una definición y realización continua de la
+arquitectura empresarial.</p>
+<p>El Architecture Development Method (ADM) se caracteriza por ser un
+proceso iterativo a lo largo de todas sus fases, con decisiones tomadas
+en cada iteración.</p>
+<p>Entre sus características clave se incluyen:</p>
+<ul>
+<li><p>Cobertura completa de la empresa, abarcando todos los aspectos
+necesarios.</p></li>
+<li><p>Nivel de detalle variable, ajustado según las
+necesidades.</p></li>
+<li><p>Definición de periodos de tiempo y subperiodos con número y
+duración determinados.</p></li>
+<li><p>Aprovechamiento de activos generados en iteraciones previas o
+disponibles en el sector.</p></li>
+<li><p>Toma de decisiones basada en una evaluación práctica de recursos
+y su valor para la empresa.</p></li>
+<li><p>Validación continua de los resultados frente a las
+expectativas.</p></li>
+</ul>
+<p>Durante el proceso se generan resultados documentados en diferentes
+estados: Borrador (en desarrollo), Aprobado (revisado y aprobado pero no
+finalizado) y Finalizado (listo para ser implementado, aunque puede ser
+modificado en fases posteriores).</p>
+<p>Además, se garantiza la interoperabilidad mediante una política de
+numeración de versiones adecuada para las herramientas y repositorios
+utilizados.</p>
+<p>El Architecture Development Method (ADM) es un proceso iterativo y
+personalizable, que no sigue una secuencia fija ni un modelo en
+cascada.</p>
+<p>Las fases del ADM se adaptan según las características de la
+organización y de la iteración, lo que hace que el método sea flexible y
+dinámico.</p>
+<p>ADM funciona como un modelo de referencia, proporcionando una
+estructura para desarrollar soluciones e identificar los componentes de
+la empresa y sus relaciones.</p>
+<p>Sin embargo, el gráfico del ADM no debe interpretarse como un modelo
+de procesos, sino como una guía para gestionar la arquitectura de manera
+estructurada y adaptada a las necesidades específicas de la
+organización.</p>
+<h1 id="gestión-de-requisitos">Gestión de requisitos</h1>
+<p>La gestión de requisitos es una fase continua en el proceso de
+desarrollo de la arquitectura empresarial que asegura que cualquier
+cambio en los requisitos se maneje adecuadamente a través de procesos de
+gobernanza.</p>
+<p>Además, estos cambios se reflejan en todas las fases del
+desarrollo.</p>
+<p>Para facilitar este seguimiento, todos los nuevos requisitos pueden
+ser registrados en un repositorio único de requisitos.</p>
+<h1 id="fase-preliminar">Fase preliminar</h1>
+<p>La fase preliminar en el desarrollo de la arquitectura empresarial se
+centra en la preparación e iniciación de actividades.</p>
+<p>Incluye la confirmación de marcos de gobernanza y apoyo, la
+definición de principios de arquitectura, y la formación del equipo
+encargado de la creación y organización de la arquitectura.</p>
+<p>Además, se configura el marco TOGAF junto con otros marcos
+seleccionados, y se establece una estrategia y plan de implementación
+para las herramientas y técnicas necesarias.</p>
+<h1 id="fase-a-visión-de-arquitectura">Fase A: Visión de
+arquitectura</h1>
+<p>La fase A: Visión de arquitectura se enfoca en crear una visión
+aspiracional de la arquitectura empresarial a alto nivel.</p>
+<p>Incluye la definición del proyecto de arquitectura, identificación de
+stakeholders y sus requisitos de negocio, y la confirmación de los
+objetivos de negocio.</p>
+<p>También se verifica la posibilidad de transformar el negocio y se
+elaboran los principios de arquitectura.</p>
+<p>En esta fase, se identifican los riesgos asociados con la
+transformación, se desarrolla y aprueba la Declaración de Trabajo de
+Arquitectura, y se crea la Visión de Arquitectura.</p>
+<h1 id="fase-b-arquitectura-de-negocio">Fase B: Arquitectura de
+negocio</h1>
+<p>La fase B: Arquitectura de negocio se centra en el desarrollo de la
+arquitectura de negocio siguiendo la Visión de Arquitectura y la
+Declaración de Trabajo de Arquitectura, considerando a los
+stakeholders.</p>
+<p>Se seleccionan modelos de referencia, herramientas y puntos de vista
+adecuados.</p>
+<p>Esta fase incluye la descripción del estado base y el estado objetivo
+de la arquitectura de negocio, seguido de un análisis de las diferencias
+entre ambos.</p>
+<p>También se definen los posibles componentes de la hoja de ruta y se
+resuelven los impactos en toda la arquitectura.</p>
+<p>Se realiza una revisión formal con los stakeholders y se finaliza la
+arquitectura de negocio, actualizando o creando el Documento de
+Definición de Arquitectura.</p>
+<h1 id="fase-c-arquitectura-de-sistemas-de-información">Fase C:
+Arquitectura de sistemas de información</h1>
+<p>La fase C: Arquitectura de sistemas de información se enfoca en el
+desarrollo de la arquitectura de sistemas de información, cubriendo
+tanto la arquitectura de información como la arquitectura de
+aplicaciones.</p>
+<p>Ambas se desarrollan siguiendo la Visión de Arquitectura, la
+Arquitectura de Negocio, y considerando la Declaración de Trabajo de
+Arquitectura y los stakeholders.</p>
+<ol type="1">
+<li><p>Arquitectura de Información:</p>
+<ul>
+<li><p>Se seleccionan modelos de referencia, herramientas y puntos de
+vista.</p></li>
+<li><p>Se describe el estado base y el estado objetivo.</p></li>
+<li><p>Se realiza un análisis de diferencias y se definen componentes
+para la hoja de ruta.</p></li>
+<li><p>Se resuelven los impactos en la arquitectura general.</p></li>
+<li><p>Se lleva a cabo una revisión formal con los
+stakeholders.</p></li>
+<li><p>Se finaliza la Arquitectura de Información y se actualiza el
+Documento de Definición de Arquitectura.</p></li>
+</ul></li>
+<li><p>Arquitectura de Aplicaciones:</p>
+<ul>
+<li><p>Al igual que con la arquitectura de información, se seleccionan
+modelos de referencia, herramientas y puntos de vista.</p></li>
+<li><p>Se describen el estado base y el estado objetivo de las
+aplicaciones.</p></li>
+<li><p>Se realiza un análisis de diferencias y se definen posibles
+componentes para la hoja de ruta.</p></li>
+<li><p>Se abordan los impactos y se hace una revisión formal con los
+stakeholders.</p></li>
+<li><p>Se finaliza la Arquitectura de Aplicaciones y se actualiza el
+Documento de Definición de Arquitectura.</p></li>
+</ul></li>
+</ol>
+<h1 id="fase-d-arquitectura-de-tecnología">Fase D: Arquitectura de
+Tecnología</h1>
+<p>La fase D: Arquitectura de Tecnología se centra en el desarrollo de
+la arquitectura de tecnología, que incluye los bloques de construcción
+de negocio, datos y aplicaciones, siguiendo la Visión de Arquitectura y
+abordando la Declaración de Trabajo de Arquitectura y los
+stakeholders.</p>
+<ol type="1">
+<li><p>Selección de Modelos y Herramientas: Se eligen modelos de
+referencia, herramientas y puntos de vista adecuados para la
+arquitectura tecnológica.</p></li>
+<li><p>Estado Base y Estado Objetivo: Se describen el estado base actual
+de la arquitectura tecnológica y el estado objetivo deseado.</p></li>
+<li><p>Análisis de Diferencias: Se realiza un análisis de las
+diferencias entre el estado actual y el futuro, identificando los
+cambios necesarios.</p></li>
+<li><p>Componentes de la Hoja de Ruta: Se definen los posibles
+componentes de la hoja de ruta para lograr la transición entre el estado
+base y el objetivo.</p></li>
+<li><p>Impactos en la Arquitectura General: Se abordan y resuelven los
+impactos de la arquitectura tecnológica en todo el ámbito de la
+empresa.</p></li>
+<li><p>Revisión Formal con Stakeholders: Se lleva a cabo una revisión
+formal con los stakeholders clave para asegurar que la arquitectura
+tecnológica cumpla con los requisitos del negocio.</p></li>
+<li><p>Finalización: Se finaliza la Arquitectura de Tecnología y se
+actualiza el Documento de Definición de Arquitectura para reflejar los
+cambios y decisiones tomadas en esta fase.</p></li>
+</ol>
+<h1 id="fase-e-oportunidades-y-soluciones">Fase E: Oportunidades y
+soluciones</h1>
+<p>La fase E: Oportunidades y Soluciones se centra en la planificación
+de la implementación y la identificación de entregables para las
+arquitecturas desarrolladas en las fases anteriores (B, C y D).</p>
+<ol type="1">
+<li><p>Planificación de Implementación: Se realiza una planificación
+inicial de implementación para llevar a cabo las arquitecturas
+desarrolladas previamente.</p></li>
+<li><p>Determinación de Atributos de Cambio: Se identifican y confirman
+los atributos clave de cambio necesarios para la transición a la nueva
+arquitectura.</p></li>
+<li><p>Limitaciones de Implementación: Se identifican las limitaciones
+de implementación que podrían afectar la viabilidad de la
+arquitectura.</p></li>
+<li><p>Revisión de Análisis de Diferencias: Se revisan y consolidan los
+análisis de diferencias de las fases B, C y D para identificar las
+brechas restantes.</p></li>
+<li><p>Revisión de Requisitos y Dependencias: Se revisan los requisitos
+entre funciones de negocio relacionadas y sus dependencias para asegurar
+su alineación.</p></li>
+<li><p>Requisitos de Interoperabilidad: Se consolidan los requisitos de
+interoperabilidad necesarios para garantizar la integración entre
+sistemas.</p></li>
+<li><p>Preparación y Riesgo de Transformación: Se confirma la
+preparación para la transformación y se evalúan los riesgos asociados
+con el proceso de cambio.</p></li>
+<li><p>Estrategia de Implementación y Migración: Se formula una
+estrategia de implementación y migración para ejecutar la transición
+hacia la nueva arquitectura.</p></li>
+<li><p>Paquetes de Trabajo: Se identifican y agrupan los paquetes de
+trabajo necesarios para llevar a cabo la implementación.</p></li>
+<li><p>Arquitectura de Transición: Se define una arquitectura de
+transición que servirá de puente entre el estado actual y el estado
+objetivo.</p></li>
+<li><p>Hoja de Ruta de Arquitectura: Se crea una Hoja de Ruta de
+Arquitectura y un Plan de Implementación y Migración que guiarán el
+proceso de cambio en los próximos pasos.</p></li>
+</ol>
+<h1 id="fase-f-planificación-de-la-migración">Fase F: Planificación de
+la migración</h1>
+<p>La fase F: Planificación de la Migración se enfoca en la finalización
+del plan para la implementación y migración de la arquitectura desde el
+estado actual hasta el estado objetivo.</p>
+<ol type="1">
+<li><p>Finalización del Plan de Implementación y Migración: Se completa
+el Plan de Implementación y Migración que detalla cómo se llevará a cabo
+la transición desde la arquitectura base hacia la arquitectura
+objetivo.</p></li>
+<li><p>Asignación de Valor de Negocio: Se asigna un valor de negocio a
+cada paquete de trabajo, asegurando que cada actividad contribuya a los
+objetivos estratégicos de la empresa.</p></li>
+<li><p>Estimación de Recursos y Plazos: Se estiman los requisitos de
+recursos, disponibilidad y los plazos de los proyectos, garantizando la
+viabilidad de la migración.</p></li>
+<li><p>Priorización de Proyectos: Se priorizan los proyectos de
+migración según su relación coste/beneficio, considerando los riesgos
+involucrados y su impacto en la organización.</p></li>
+<li><p>Confirmación de la Hoja de Ruta de Arquitectura: Se confirma y
+actualiza la Hoja de Ruta de Arquitectura para asegurar que todas las
+decisiones sean coherentes con el plan general de migración.</p></li>
+<li><p>Actualización de la Declaración de Trabajo de Arquitectura: Se
+actualiza la Declaración de Trabajo de Arquitectura para reflejar los
+cambios en la planificación y los entregables.</p></li>
+<li><p>Cierre del Ciclo de Desarrollo de Arquitectura: Se completa el
+ciclo de desarrollo de arquitectura y se documentan las lecciones
+aprendidas durante todo el proceso para mejorar futuros desarrollos y
+migraciones.</p></li>
+</ol>
+<h1 id="fase-g-gobierno-de-la-implementación">Fase G: Gobierno de la
+implementación</h1>
+<p>La fase G: Gobierno de la Implementación se centra en la supervisión
+y gestión del proceso de implementación de la arquitectura
+empresarial.</p>
+<ol type="1">
+<li><p>Confirmación del Alcance y Prioridades: Se confirma el alcance y
+las prioridades de despliegue con la dirección de desarrollo para
+garantizar que los objetivos sean claros y alineados con la estrategia
+de la empresa.</p></li>
+<li><p>Identificación de Recursos y Habilidades: Se identifican los
+recursos y habilidades de desarrollo necesarios para llevar a cabo la
+implementación de forma efectiva.</p></li>
+<li><p>Guía del Desarrollo de Soluciones de Despliegue: Se proporciona
+orientación en el desarrollo de las soluciones de despliegue, asegurando
+que se cumplan los requisitos arquitectónicos.</p></li>
+<li><p>Revisión del Cumplimiento de la Arquitectura Empresarial: Se
+revisa si la implementación cumple con la arquitectura empresarial
+definida, asegurando que se sigan los principios establecidos.</p></li>
+<li><p>Implementación de Operaciones de Negocio y TI: Se asegura que las
+operaciones de negocio y los sistemas de Tecnología de Información (TI)
+estén correctamente implementados y operativos.</p></li>
+<li><p>Revisiones Post-Implementación: Se realizan revisiones
+post-implementación para evaluar el éxito de la implementación y
+realizar ajustes si es necesario.</p></li>
+<li><p>Cierre de la Implementación: Finalmente, se cierra el proceso de
+implementación, asegurando que todos los aspectos hayan sido
+correctamente ejecutados y documentados.</p></li>
+</ol>
+<h1 id="fase-h-gestión-de-cambio-de-arquitectura">Fase H: Gestión de
+cambio de arquitectura</h1>
+<p>La fase H: Gestión de Cambio de Arquitectura se enfoca en la gestión
+de la transición hacia una nueva arquitectura empresarial.</p>
+<ol type="1">
+<li><p>Gestión del Cambio: Se implementan procedimientos para gestionar
+el cambio hacia la nueva arquitectura, asegurando una transición
+controlada y efectiva.</p></li>
+<li><p>Influencia en Proyectos: Se trabaja para influir en los proyectos
+y asegurar que exploten adecuadamente la arquitectura empresarial para
+mejorar los resultados.</p></li>
+<li><p>Despliegue de Herramientas de Monitorización: Se despliegan
+herramientas de monitorización para evaluar el impacto del cambio y
+asegurar que la arquitectura esté funcionando según lo
+esperado.</p></li>
+<li><p>Gestión de Riesgos: Se identifican y gestionan los riesgos
+asociados con el cambio de arquitectura, minimizando su impacto en la
+organización.</p></li>
+<li><p>Análisis de Gestión del Cambio: Se realizan análisis para
+comprender cómo el cambio afectará a la organización y cómo gestionarlo
+adecuadamente.</p></li>
+<li><p>Desarrollo de Requisitos de Cambio: Se desarrollan requisitos de
+cambio para garantizar que se cumplan los objetivos de rendimiento y se
+alcancen los resultados deseados.</p></li>
+<li><p>Gestión del Proceso de Gobierno: Se gestionan los procesos de
+gobernanza para supervisar el cambio y garantizar que se adhiera a las
+políticas y principios establecidos.</p></li>
+<li><p>Activación del Proceso de Implementación del Cambio: Finalmente,
+se activa el proceso necesario para implementar efectivamente el cambio
+hacia la nueva arquitectura.</p></li>
+</ol>
+<h1 id="architecture-content-framework">Architecture Content
+Framework</h1>
+<p>El Architecture Content Framework (ACF) es una estructura
+proporcionada por TOGAF para organizar y definir los productos de
+trabajo generados durante cada iteración de las fases del Architecture
+Development Method (ADM).</p>
+<p>Los productos de trabajo son los resultados de los procesos
+realizados en cada fase de la arquitectura.</p>
+<ol type="1">
+<li><p>Estructurar la Descripción de la Arquitectura: Organiza y
+presenta los productos de trabajo de manera coherente, permitiendo una
+visión clara y estructurada de la arquitectura empresarial.</p></li>
+<li><p>Definir Productos de Trabajo y Modelos: El ACF proporciona un
+marco para identificar y estructurar los modelos que describen la
+arquitectura, asegurando consistencia en la documentación
+generada.</p></li>
+<li><p>Alinear con las Fases del ADM: El ACF está diseñado para
+alinearse con las fases del ADM, especificando las entradas y salidas en
+cada fase y colocando cada producto de trabajo dentro del contexto de la
+visión holística de la organización.</p></li>
+</ol>
+<p>En resumen, el ACF organiza los productos de trabajo generados
+durante el proceso de desarrollo de la arquitectura para asegurar que
+todos los elementos estén bien definidos y conectados con la estrategia
+empresarial global.</p>
+<h1 id="enterprise-metamodel">Enterprise Metamodel</h1>
+<p>El Enterprise Metamodel de TOGAF define los tipos de entidades y las
+relaciones entre ellas que aparecen en los modelos utilizados para
+describir una organización.</p>
+<p>Este metamodelo proporciona una estructura estandarizada que ayuda a
+organizar y comprender la arquitectura empresarial.</p>
+<p>El ACF (Architecture Content Framework) se complementa con este
+metamodelo al proporcionar una colección de modelos que describen la
+arquitectura de la empresa.</p>
+<p>El Metamodelo Empresarial estándar de TOGAF incluye las entidades y
+relaciones más comunes en la mayoría de las empresas, pero es flexible y
+puede ser adaptado para ajustarse a las necesidades específicas de una
+organización.</p>
+<ul>
+<li><p>Eliminar entidades y relaciones no relevantes para una empresa en
+particular.</p></li>
+<li><p>Añadir nuevas entidades y relaciones según las necesidades
+específicas de la organización.</p></li>
+</ul>
+<p>En resumen, el Enterprise Metamodel proporciona una base
+estandarizada y flexible que puede ser personalizada para crear una
+arquitectura empresarial adecuada a cada organización.</p>
+<h1 id="productos-de-trabajo">Productos de trabajo</h1>
+<p>Los productos de trabajo en TOGAF se dividen en entregables,
+artefactos y bloques de construcción, cada uno con sus características y
+funciones específicas:</p>
+<ol type="1">
+<li><p>Entregables:</p>
+<ul>
+<li><p>Son productos de trabajo formalmente diseñados, revisados,
+aprobados y firmados por las partes interesadas.</p></li>
+<li><p>Representan la salida final de un proyecto y se archivan o
+transfieren a un Repositorio de Arquitectura al finalizar el
+proyecto.</p></li>
+<li><p>Pueden ser utilizados como modelo de referencia o estándar,
+documentando el estado de la arquitectura en un momento
+determinado.</p></li>
+</ul></li>
+<li><p>Artefactos:</p>
+<ul>
+<li><p>Describen aspectos específicos de la arquitectura.</p></li>
+<li><p>Se clasifican en:</p>
+<ul>
+<li><p>Catálogos: Listas de elementos (documentos, bienes,
+procedimientos, etc.).</p></li>
+<li><p>Matriz: Representación de relaciones entre elementos.</p></li>
+<li><p>Diagramas: Representación gráfica de elementos.</p></li>
+</ul></li>
+<li><p>Los entregables pueden contener varios artefactos, pero un
+artefacto no necesariamente es un entregable.</p></li>
+<li><p>Los artefactos forman parte del Repositorio de
+Arquitectura.</p></li>
+</ul></li>
+<li><p>Bloques de construcción:</p>
+<ul>
+<li><p>Son paquetes de funcionalidad diseñados para abordar necesidades
+del negocio.</p></li>
+<li><p>Son componentes reutilizables que pueden combinarse para crear
+arquitecturas.</p></li>
+<li><p>Están compuestos por artefactos que pueden ser compartidos con
+otros bloques.</p></li>
+<li><p>Existen dos tipos:</p>
+<ul>
+<li><p>Bloques de construcción de arquitectura (ABB): Describen la
+capacidad requerida de la arquitectura (¿Qué?).</p></li>
+<li><p>Bloques de construcción de soluciones (SBB): Representan los
+componentes específicos que serán implementados para cumplir con esa
+capacidad (¿Cómo?).</p></li>
+</ul></li>
+</ul></li>
+</ol>
+<p>En resumen, estos productos de trabajo estructuran y documentan la
+evolución de la arquitectura empresarial, facilitando la gestión y
+reutilización de los componentes y asegurando que los entregables sean
+consistentes y alineados con los objetivos del negocio.</p>
+<h1 id="repositorio-de-arquitectura">Repositorio de arquitectura</h1>
+<p>El Repositorio de Arquitectura es un componente esencial para
+almacenar los productos de salida generados por el ADM en diferentes
+niveles de abstracción, facilitando la cooperación y el entendimiento
+entre las partes interesadas de la organización.</p>
+<p>Su objetivo es centralizar los activos arquitectónicos relevantes,
+permitiendo el desarrollo de arquitecturas específicas para la
+empresa.</p>
+<p>Este repositorio es clave para gestionar el ciclo de vida de la
+arquitectura dentro de un marco de gobernanza integral.</p>
+<p>El Repositorio de Arquitectura incluye diversos subcomponentes:</p>
+<ol type="1">
+<li><p>Metamodelo de Arquitectura: Define una aplicación a medida del
+marco arquitectónico y su contenido.</p></li>
+<li><p>Entorno de Arquitectura: Representa los activos desplegados en la
+empresa en un momento determinado, ajustados a distintos niveles de
+abstracción según los objetivos de la arquitectura.</p></li>
+<li><p>Capacidad de Arquitectura: Establece los parámetros, estructuras
+y procesos que soportan el gobierno del repositorio.</p></li>
+<li><p>Repositorio de Gobernanza: Registra la actividad de gobernanza a
+nivel organizacional.</p></li>
+<li><p>Entorno de Soluciones: Refleja los bloques de construcción de
+soluciones que han sido planificados o desplegados por la
+empresa.</p></li>
+<li><p>Repositorio de Requisitos de Arquitectura: Contiene todos los
+requisitos de arquitectura aceptados y aprobados.</p></li>
+<li><p>Biblioteca de Referencia: Proporciona directrices, plantillas y
+patrones que facilitan la creación de nuevas arquitecturas.</p></li>
+<li><p>Biblioteca de Estándares: Recoge los estándares que deben seguir
+las nuevas arquitecturas, incluyendo normas del sector, productos de
+proveedores, y servicios existentes en la organización.</p></li>
+<li><p>Modelos de referencia y estándar externos: Utilizados como guías
+o referencias externas para alinear la arquitectura con mejores
+prácticas.</p></li>
+<li><p>Consejo de Arquitectura: Supervisa y gestiona la capacidad de la
+arquitectura empresarial, asegurando su alineación con los objetivos
+estratégicos de la organización.</p></li>
+</ol>
+<p>Este repositorio centraliza todos los elementos necesarios para
+garantizar la coherencia, eficiencia y éxito en la gestión de la
+arquitectura empresarial.</p>
+<h1 id="continuum-empresarial">Continuum empresarial</h1>
+<p>El Continuum Empresarial es una visión integral de la arquitectura
+que organiza y estructura el Repositorio de Arquitectura.</p>
+<p>Muestra artefactos y bloques de construcción, destacando sus
+relaciones y cómo evolucionan a lo largo del ciclo de desarrollo de la
+arquitectura.</p>
+<p>Además, ilustra cómo estos elementos pueden ser reutilizados y
+aprovechados, clasificando los activos relevantes en el contexto global
+de la empresa.</p>
+<p>Estos activos incluyen metas empresariales, iniciativas estratégicas,
+políticas, principios, entre otros.</p>
+<p>El Continuum de Arquitectura se centra en las reglas y relaciones
+genéricas que definen la arquitectura, utilizando bloques de
+construcción reutilizables que evolucionan desde conceptos abstractos y
+genéricos hasta activos específicos de la organización.</p>
+<p>Su propósito es reducir la redundancia y guiar la selección de
+elementos dentro del Continuum de Soluciones.</p>
+<p>El Continuum de Soluciones describe la implementación de los activos
+definidos en el Continuum de Arquitectura, enfocándose en bloques de
+construcción reutilizables que reflejan las soluciones acordadas entre
+clientes y socios comerciales.</p>
+<p>Este continuum aborda tanto los aspectos comunes como las diferencias
+entre productos, sistemas y servicios implementados.</p>
+<p>En conjunto, estos continuums permiten una gestión más eficiente de
+la arquitectura empresarial, asegurando que los activos y soluciones
+estén alineados con los objetivos estratégicos de la organización y sean
+reutilizables para facilitar su evolución.</p>
 </body>
 </html>
