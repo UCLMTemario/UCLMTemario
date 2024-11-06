@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Aika Kenshi" />
+  <title>Estrategia y Planificación de Sistemas de Información</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Estrategia y Planificación de Sistemas de
+Información</h1>
+<p class="subtitle">TEMA 1</p>
+<p class="author">Aika Kenshi</p>
+<p class="date">05-11-2024</p>
+</header>
+<h1 id="qué-es-un-sistema">¿Qué es un sistema?</h1>
+<p>Un sistema es un conjunto de elementos interrelacionados que operan
+conjuntamente para cumplir una función específica. Estos elementos
+trabajan como partes de un mecanismo definido y pueden interactuar con
+su entorno a través de entradas y salidas. Los componentes de un sistema
+incluyen el procesamiento, el control y la retroalimentación, que
+permiten ajustar y optimizar su funcionamiento en respuesta a las
+condiciones externas.</p>
+<h1 id="datos">Datos</h1>
+<p>Son hechos, transacciones o eventos sin procesar, desorganizados y
+difíciles de comprender. Existen de manera independiente y no tienen
+significado por sí mismos.</p>
+<h1 id="información">Información</h1>
+<p>Resultado de datos procesados y organizados que tienen relación entre
+sí y aportan significado. Para ser efectiva, la información debe ser
+útil, relevante, precisa y completa, y debe presentarse con un nivel de
+detalle adecuado.</p>
+<h1 id="conocimiento">Conocimiento</h1>
+<p>Es la comprensión de la información y la capacidad de aplicarla de
+manera efectiva para realizar tareas o tomar decisiones informadas.
+Implica un nivel de interpretación y aplicación que va más allá de la
+mera información.</p>
+<h1 id="qué-es-un-sistema-de-información">¿Qué es un Sistema de
+Información?</h1>
+<p>Un Sistema de Información es un sistema diseñado para adquirir,
+almacenar y distribuir información sobre el entorno. Su objetivo es
+apoyar las operaciones, la gestión y la toma de decisiones dentro de la
+organización. Estos sistemas pueden ser manuales o computarizados, es
+decir, no necesariamente requieren de tecnología informática para
+funcionar. Además, un sistema informático por sí solo no garantiza ser
+un sistema de información de la organización, ya que debe estar alineado
+con las necesidades y procesos de la misma.</p>
+<p>Las características de los Sistemas de Información incluyen: 1.
+Integración organizacional: se alinean con la estructura de la
+organización para mejorar la coordinación interna y facilitar la toma de
+decisiones. 2. Relevancia y fiabilidad: proporcionan información
+necesaria y confiable para el funcionamiento de la organización. 3.
+Control y protección de datos: aseguran la generación de información
+precisa y la protección de los datos internos. 4. Procesamiento de
+transacciones: manejan y procesan transacciones de manera eficiente. 5.
+Gestión de información: permiten la creación, mantenimiento y
+almacenamiento de información. 6. Generación de informes: facilitan la
+elaboración de informes que apoyan la toma de decisiones. 7. Orientación
+a objetos: están diseñados para cumplir de forma directa y eficiente los
+objetivos de la organización.</p>
+<p>Los Sistemas de Información de la empresa se estructuran en tres
+niveles: 1. Estrategia de negocio: se centra en los objetivos de la
+empresa, el desarrollo de productos y su posicionamiento en el mercado,
+así como en la toma de decisiones clave para el crecimiento y la
+competitividad. 2. Estrategias de Sistemas de Información: Se relacionan
+con los procesos de negocio y la demanda de aplicaciones necesarias para
+optimizar el funcionamiento y la eficiencia operativa de la empresa. 3.
+Estrategia de Tecnología de Información: aborda las operaciones de
+soporte y la arquitectura tecnológica que sustenta los sistemas de
+información, garantizando que la infraestructura tecnológica esté
+alineada con las necesidades y estrategias de la organización.</p>
+<h1 id="fases-de-uso-de-las-tecnologíasd-e-información">Fases de uso de
+las Tecnologíasd e Información</h1>
+<ol type="1">
+<li>Inicio: se introduce la tecnología en actividades específicas,
+controladas por un número reducido de personas.</li>
+<li>Expansión: se amplía el uso de los sistemas a un mayor número de
+personas y departamentos dentro de la organización.</li>
+<li>Control: se establece un límite en el crecimiento del uso de la
+tecnología para asegurar que se alinee con los objetivos de la empresa,
+manteniendo un control adecuado de la expansión.</li>
+<li>Madurez: los sistemas se integran completamente en la organización y
+se adaptan a sus objetivos, convirtiéndose en una fuente clave de
+ventaja competitiva y elementos esenciales para la estrategia
+empresarial.</li>
+</ol>
+<h1 id="planificación-por-niveles">Planificación por niveles</h1>
+<ol type="1">
+<li>Estratégico: se enfoca en el largo plazo, dirigido por la alta
+dirección, y establece los objetivos generales de la organización.</li>
+<li>Táctico: se centra en el medio plazo, gestionado por mandos
+intermedios, y se ocupa del desarrollo de las capacidades necesarias
+definidas en el nivel estratégico.</li>
+<li>Operativo: se orienta al corto plazo, a cargo de supervisores y
+responsables de área, y se enfoca en establecer metas y estructuras
+productivas para los equipos de trabajo, basándose en tareas específicas
+y orientándose a resultados.</li>
+</ol>
+<h1 id="estrategia">Estrategia</h1>
+<p>La estrategia se refiere a las metas y objetivos que una organización
+desea alcanzar. Se centra en definir claramente la dirección y las
+acciones necesarias para lograr lo que se quiere hacer en el futuro.</p>
+<h1 id="plan">Plan</h1>
+<p>Un plan es el proceso que se sigue para alcanzar los objetivos
+establecidos en la estrategia. Se trata de un enfoque práctico que
+define los pasos y acciones necesarias para lograr lo que se desea.</p>
+<h1 id="planificación-estratégica">Planificación estratégica</h1>
+<p>La planificación estratégica es el proceso que establece los
+objetivos futuros de una organización y define las actividades y
+recursos necesarios para alcanzarlos. Para establecer estos objetivos,
+es fundamental conocer la situación actual y considerar los factores
+internos y externos que pueden influir en el logro de los mismos. Una
+buena planificación desde el inicio es esencial para alcanzar el
+éxito.</p>
+<p>Los objetivos de la planificación estratégica buscan: 1. Alinear los
+sistemas y tecnologías de información con la estrategia de negocio. 2.
+Alcanzar los objetivos empresariales mediante el uso efectivo de los
+sistemas y tecnologías de información. 3. Identificar y desarrollar los
+recursos necesarios para implementar estas tecnologías. 4. Construir una
+infraestructura tecnológica que sea competitiva, eficiente y flexible.
+5. Establecer planes para la implementación de la estrategia de sistemas
+y tecnologías de información en la empresa.</p>
+<p>Un proceso de planificación estratégica debe realizarse en momentos
+críticos, como: 1. Cambios importantes en el negocio o la tecnología. 2.
+Necesidad de involucrar a los directivos en la planificación estratégica
+de sistemas y tecnologías de información, especialmente con cambios en
+el organigrama. 3. Identificación de fracasos significativos que
+requieren ajustes. 4. Ampliación de la inversión en tecnologías de
+información para adpatarse a problemas actuales o alcanzar objetivos
+futuros.</p>
+<p>Los beneficios de la planificación estratégica incluyen: 1.
+Integración de sistemas y tecnologías de información en el
+funcionamiento de la empresa. 2. Alineación de las inversiones
+tecnológicas con las prioridades del negocio, optimizando su
+reconocimiento. 3. Obtención de ventajas competitivas y mejoras en
+eficiencia. 4. Mayor compromiso de la alta dirección con los sistemas y
+tecnologías de información. 5. Mejora en la previsión y asignación de
+recursos tecnológicos. 6. Desarrollo de una arquitectura tecnológica
+estable y sostenible. 7. Incremento del liderazgo y reconocimiento de
+los sistemas y tecnologías de información dentro de la organización.</p>
+<p>Las causas de fracaso en la planificación estratégica de sistemas y
+tecnologías de información incluyen: 1. Errores en la priorización y
+asignación de inversiones: insuciciencia y fallas en el contenido y la
+comunicación. 2. Problemas en la alta dirección: - Dificultad para
+involucrarse y poca dedicación. - Visión a corto plazo y falta de
+comprensión del proceso. - Escepticismo hacia las tecnologías. 3.
+Desafíos en los departamentos de Tecnología de Información: - Falta de
+liderazgo y credibilidad. - Desconexión de la dirección y del
+entendimiento del negocio. - Servicio insuficiente y escasez de recursos
+y capacidades. Estas barreras impiden una integración efectiva de
+Tecnologías de Información con los objetivos estratégicos de la
+organización.</p>
+<p>Las fases de la planificación estratégica son: 1. Identificación de
+necesidades: detectar los requierimientos estratégicos y tecnológicos de
+la organización. 2. Análisis del estado actual: evaluar la situación
+actual de la empresa en términos de recursos, capacidades y entornos. 3.
+Formulación de la estrategia: definir los objetivos estrategicos y el
+enfoque para alcanzarlos. 4. Plan de implementación: detallar los pasos,
+recursos y cronograma necesarios para ejecutar la estrategia.</p>
+<h1 id="análisis-dafo">Análisis DAFO</h1>
+<p>El análisis DAFO es una herramienta estratégica utilizada para
+evaluar la situación de una organización e identificar su posición en el
+mercado.</p>
+<p>Se compone de cuatro elementos: 1. Debilidades: aspectos internos que
+limitan el rendimiento de la organización y que deben mejorarse o
+corregirse. 2. Amenazas: factores externos que pueden representar un
+riesgo o desafío para la organización y su éxito. 3. Fortalezas:
+recursos y capacidades internas que proporcionan ventajas competitivas y
+permiten a la organización destacar en su sector. 4. Oportunidades:
+factores externos que pueden ser aprovechados para el crecimiento y
+desarrollo de la organización.</p>
+<h1 id="ser">Ser</h1>
+<p>SER se refiere a la filosofía y creencias que guían el comportamiento
+de los empleados y el funcionamiento de la organización, estableciendo
+límites para las acciones dentro de la empresa. Se define a través de 4
+a 7 valores fundamentales que son compartidos en toda la jerarquía
+organizacional. Estas creendias abordan preguntas como “¿En qué creemos
+como empresa?” y “¿Cómo queremos ser percibidos por nuestros clientes y
+la sociedad?”, estableciendo así la identidad y la cultura
+corporativa.</p>
+<h1 id="hacer">Hacer</h1>
+<p>HACER se refiere al propósito y alcance de una empresa en satisfacer
+necesidades mediante sus productos o servicios. Enfocado en el presente,
+responde a preguntas como “¿Cuál es la razón de ser de la empresa?”,
+“¿Qué hacer y por qué fue creada?”, “¿A quién van dirigidos sus
+productos y servicios?” y “¿En qué se diferencia de a competencia?”.
+Este enfoque puede evolucionar a lo largo del ciclo de vida de la
+empresa, adaptándose a nuevas demandas y oportunidades.</p>
+<h1 id="tener">Tener</h1>
+<p>TENER representa la visión futura de la empresa y la imagen ideal que
+aspira alcanzar a largo plazo. Esta declaración debe ser realista,
+ambiciosa, desafiante y motivadora. Responde a preguntas como “¿A qué
+estado queremos llevar a la empresa?”, “¿Cómo deseamos que la sociedad
+perciba a la empresa?” y “¿Cómo vemos la empresa en el futuro?”. Además,
+incluye cómo la empresa se adaptará a los desafíos futuros, guiando su
+crecimiento y evolución.</p>
+</body>
+</html>
