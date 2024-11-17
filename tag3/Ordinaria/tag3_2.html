@@ -178,35 +178,27 @@
 </header>
 <h1 id="captura-de-requisitos-dirigir-y-planificar">1. CAPTURA DE
 REQUISITOS: DIRIGIR Y PLANIFICAR</h1>
-<ul>
-<li><p>Metas:</p>
-<ul>
-<li><p>Definir el conjunto de requisitos que serán usados, construir e
-implementar la solución BI dentro del <u>plazo y presupuestos
-fijados</u>.</p></li>
-<li><p>Establecer las relaciones de trabajo con los patroncinadores de
-la organización, stakeholders y otros actores que apoyan el proyecto
-BI.</p></li>
-</ul></li>
-<li><p>Roles:</p>
-<ul>
-<li><p>Analista de negocio: personal de <strong>dilatada
-experiencia</strong> y responsable de recabar los requisitos. Debe tener
-la habilidad necesaria para conservar tanto con el personal TI como con
-los responsables del negocio.</p></li>
-<li><p>Ingeniero o arquitecto de datos.</p></li>
-<li><p>Modelador de datos.</p></li>
-<li><p>Diseñador ETL.</p></li>
-<li><p>Diseñador BI y/o analista de datos.</p></li>
-</ul></li>
-</ul>
-<h2 id="i.-tipos-de-requisitos">i. Tipos de requisitos</h2>
+<h2 id="i.-metas">i. Metas:</h2>
+<pre><code>- Definir el conjunto de requisitos que serán usados, construir e implementar la solución Inteligencia de Negociodentro del &lt;u&gt;plazo y presupuestos fijados&lt;/u&gt;.
+
+- Establecer las relaciones de trabajo con los patroncinadores de la organización, stakeholders y otros actores que apoyan el proyecto BI.</code></pre>
+<h2 id="ii.-roles">ii. Roles:</h2>
+<pre><code>- Analista de negocio: personal de &lt;strong&gt;dilatada experiencia&lt;/strong&gt; y responsable de recabar los requisitos. Debe tener la habilidad necesaria para conservar tanto con el personal TI como con los responsables del negocio.
+
+- Ingeniero o arquitecto de datos.
+
+- Modelador de datos.
+
+- Diseñador ETL.
+
+- Diseñador BI y/o analista de datos.</code></pre>
+<h2 id="iii.-tipos-de-requisitos">iii. Tipos de requisitos</h2>
 <ul>
 <li><p>Requisitos de negocio:</p>
 <ul>
-<li>Qué se quiere hacer con la solución BI.</li>
-<li>Usuarios con conocimientos profundos del negocio.</li>
-<li>Es preciso definir las métricas de negocio (KPIs).</li>
+<li><p>Qué se quiere hacer con la solución BI.</p></li>
+<li><p>Usuarios con conocimientos profundos del negocio.</p></li>
+<li><p>Es preciso definir las métricas de negocio (KPIs).</p></li>
 </ul></li>
 <li><p>Requisitos de datos:</p>
 <ul>
@@ -217,20 +209,701 @@ los responsables del negocio.</p></li>
 <ul>
 <li><p>Describen el proceso de análisis de los datos.</p></li>
 <li><p>BI use cases: determina quiénes, por qué y de qué manera se
-usarña el sistema BI por los responsables del negocio, los datos que
-serán necesarios y qué KPIs serán analizados por cada uno de
-ellos.</p></li>
+usarña el sistema de Inteligencia de Negociopor los responsables del
+negocio, los datos que serán necesarios y qué KPIs serán analizados por
+cada uno de ellos.</p></li>
+</ul></li>
+<li><p>Requisitos legales/normativos:</p>
+<ul>
+<li><p>Determinar las leyes o reglas a las que está sometida la
+organización para asegurar el cumplimiento de las mismas.</p></li>
+<li><p>Especial atención a los datos recabados de fuentes de datos
+externas en materia de seguridad y privacidad.</p></li>
+<li><p>Información fiscal privada.</p></li>
+</ul></li>
+<li><p>Reqisitos técnicos:</p>
+<ul>
+<li><p>Si la organización trabaja en modo on premise o en modo
+cloud.</p></li>
+<li><p>Dónde se alojan los centros de datos.</p></li>
+<li><p>Tipo de hardware y software usados.</p></li>
+</ul></li>
+<li><p>Requisitos de reemplazo o de sustitución:</p>
+<ul>
+<li><p>Determinar si existen en la organización sistemas de informes
+previos para el análisis del negocio.</p></li>
+<li><p>Aplicación (en caso de necesidad) de ingeniería inversa para
+aprovechar el conocimiento de los sistemas existentes.</p></li>
 </ul></li>
 </ul>
+<p><img src="/img/img/2425/tag3/Tema2_1.png" /></p>
+<h2
+id="iv.-técnicas-para-la-obtención-y-puesta-en-valor-de-requisitos">iv.
+Técnicas para la obtención y puesta en valor de requisitos</h2>
+<ul>
+<li><p><u>Entrevistas:</u> con todo el personal que pueda aportar
+conocimiento sobre el negocio y sobre el resto de cuestiones técnicas y
+operacionales necesarias para la captura de requisitos. No es una
+técnica sencilla de aplicar: requiere que el entrevistador sea
+experimentado y tenga capacidad para elegir bien a los entrevistados y
+obtener de ellos toda la información posible en un periódo de tiempo
+limitado.</p></li>
+<li><p><u>Brainstorming:</u> se basa en la mera acumulación de ideas y/o
+información sin evaluar las mismas. El grupo de personas que participa
+en estas reuniones no debe ser muy numeroso (máximo 10 personas),
+asumiendo una de ellas el rol de moderador de la sesión.</p></li>
+<li><p><u>Cuestionarios y checklists:</u> documento con preguntas cuyas
+respuestas sean cortas y concretas, o incluso cerradas por unas cuantas
+opciones en el propio cuestionario. Este cuestionario será cumplimentado
+para recoger información en forma independiente de una
+entrevista.</p></li>
+<li><p>Puesta en común de los requisitos obtenidos:</p>
+<ul>
+<li><p>Revisar todos los requisitos y determinar aquellos que aportan
+valor real.</p></li>
+<li><p>Eliminar los requisitos que son redundantes o que entran en
+conflicto con otros.</p></li>
+</ul></li>
+<li><p>Priorizar requisitos:</p>
+<ul>
+<li>Determinar qué requisitos son clave para la consecución del sistema
+de Inteligencia de Negocio a implementar.</li>
+</ul></li>
+</ul>
+<h2 id="v.-entregables">v. Entregables</h2>
+<p>El proceso de obtención debe concluir en un documento <u>breve</u>
+donde se reflejen los requisitos funcionales y no funcionales acordados
+entre las partes implicadas en el proceso.</p>
+<p>Debe contener necesariamente:</p>
+<ul>
+<li><p>Project description (descripción del proyecto): breve explicación
+del proyecto y objetivos.</p></li>
+<li><p>Project funcionality (funcionalidad del proyecto): resumen de los
+principales resultados.</p></li>
+<li><p>Project assumptions (supuestos del proyecto): esquema de
+dependencias o requisitos previos.</p></li>
+<li><p>Authors and contributors (autores y colaboradores): lista de
+personas que trabajan o ayudan en la documentación.</p></li>
+<li><p>List of inputs for requierements, such as (lista de entradas para
+los requisitos, tales como):</p>
+<ul>
+<li><p>Interview lists (listas de entrevistas).</p></li>
+<li><p>List of database and files examined (lista de bases de datos y
+ficheros examinados).</p></li>
+<li><p>Data source systems documentation (documentación de los sistemas
+de fuentes de datos).</p></li>
+<li><p>List of reporting systems, reports, and data shadow systems
+examined (lista de sistemas de notificación, informes y sistemas de
+datos sombra examinados).</p></li>
+</ul></li>
+<li><p>Requirements:</p>
+<ul>
+<li><p>Business requirements:</p>
+<ul>
+<li><p>High-level business requirements (requisitos empresariales de
+alto nivel).</p></li>
+<li><p>Business process supported (requisitos empresariales
+compatibles).</p></li>
+<li><p>Business rules and metrics (reglas de negocio y
+métricas).</p></li>
+</ul></li>
+<li><p>BI funtional requirements:</p>
+<ul>
+<li><p>Use cases (Casos de uso).</p></li>
+<li><p>Process workflow and user interaction (flujo de trabajo del
+proceso e interacción del usuario).</p></li>
+<li><p>Analytical styles and funcionality (estilos analíticos y
+funcionalidad).</p></li>
+</ul></li>
+<li><p>Data requirements:</p>
+<ul>
+<li><p>Data sources (fuentes de datos).</p></li>
+<li><p>Data conformance, consistency, and currency (conformidad,
+coherencia y actualidad de los datos).</p></li>
+<li><p>Data integration (integración de datos).</p></li>
+<li><p>Data quality (calidad de los datos).</p></li>
+</ul></li>
+<li><p>Regulatory and compliance requirements:</p>
+<ul>
+<li><p>Country (País).</p></li>
+<li><p>Industry (Industria).</p></li>
+<li><p>Privacy and security (privacidad y seguridad).</p></li>
+</ul></li>
+<li><p>Technical requirements:</p>
+<ul>
+<li><p>Infraestructure standards (normas de infraestructura).</p></li>
+<li><p>Technology directions (direcciones tecnológicas).</p></li>
+</ul></li>
+</ul></li>
+<li><p>Requirements priorities (prioridades de requisitos): prioridad
+subjetiva de los requisitos en función de las preferencias del
+patrocinador y del usuario.</p></li>
+<li><p>Issues and concerns (problemas y preocupaciones): recursos,
+presupuesto, calendario, alcance, etc.</p></li>
+<li><p><u>Change management</u> (gestión de cambios): necesidad de hacer
+un seguimiento de los cambios (adiciones, modificaciones y supresiones)
+de los requisitos y de cuándo se produjeron.</p></li>
+<li><p>Sing-offs (cánticos): lista de quién y cuándo se aprobaron los
+requisitos y cambios.</p></li>
+</ul>
+<h2 id="vi.-herramientas-para-plasmar-los-requisitos-funcionales">vi.
+Herramientas para plasmar los requisitos funcionales</h2>
+<ul>
+<li><p>Storyboard.</p></li>
+<li><p>BI mock-ups (maquetas).</p></li>
+<li><p>Concept mappings (mapas conceptuales): un mapa concuptual es una
+representación visual que ilustra las relaciones entre diferentes
+conceptos, ideas o información. Los mapas conceptuales suelen
+representar ideas como cuadros o círculos, conocidos como nodos, y los
+organizan jerárquicamente con líneas o flechas interconectadas,
+conocidas como arcos.</p>
+<ul>
+<li><p>Spider maps: el concepto central está en el centro y los temas
+relacionados se ramifican. Este tipo es más efectivo cuando se
+profundiza en diferentes aspectos de un concepto central.</p></li>
+<li><p>Flowcharts: representación visual de un proceso o flujo de
+trabajo.</p></li>
+<li><p>System maps: en lugar de conectar todas las ideas a un concepto
+central, un mapa de sistemas se concentra en las relaciones entre ideas
+sin una estructura jerárquica claramente definida.</p></li>
+<li><p>Hierarchy maps: los mapas de jerarquía ilustran el rango o la
+posición. La idea principal o el concepto de mayor rango se sitúa en la
+parte superior, mientras que las ideas de menor rango fluyen por debajo
+de forma estructurada.</p></li>
+</ul></li>
+</ul>
+<p>Hacer uso de herramientas colaborativas y visuales que reduzcan en lo
+posible la necesidad de escribir.</p>
 <h1 id="identificación-y-selección-de-fuentes-de-datos">2.
 IDENTIFICACIÓN Y SELECCIÓN DE FUENTES DE DATOS</h1>
+<h2 id="i.-dificultades">i. Dificultades</h2>
+<p>Los diferentes Sistemas de registros identificados pueden estar bien
+estructurados, pero <u>no lo están para el propósito del análisis</u>
+que queremos conseguir con el BI.</p>
+<p>Los datos de los diferentes Sistemas de registros suelen ser
+<u>inconsistentes</u> entre ellos.</p>
+<p>Esas inconsistencias suelen ser ocasionadas por las diferencias en
+cuanto a estructura o relaciones que tienen los Sistemas de
+registros.</p>
+<ul>
+<li>Calidad de los datos: la práctica habitual era que los errores en
+los datos debían ser corregidos en los Sistemas de registros de origen,
+aunque posteriormente se ha determinado que los mismos sean resueltos en
+el propio almacén de datos, ya que solo cuando los datos provenientes de
+los Sistemas de registros se integran entre ellos es cuando se
+<u>descubren los problemas</u> existentes.</li>
+</ul>
+<h2 id="ii.-preparación-de-datos">ii. Preparación de datos</h2>
+<p><img src="/img/img/2425/tag3/Tema2_2.png" /></p>
+<p>La figura muestra los <u>procesos de preparación de datos</u> en una
+progresión lógica.</p>
+<p>Aunque el diagrama implica que se están almacenando resultados
+intermedios en una base de datos provisional, es solo una representación
+lógica, ya que los mapeos intermedios pueden implicar el uso de
+<u>procesamiento en memoria o tablas temporales basadas en el
+rendimiento</u> y consideraciones de eficiencia en lugar de usar
+almacenamiento persistente en tablas de base de datos.</p>
+<p>En estos procesos se utilizan <u>tablas de referencia o
+dimensiones</u> para verificar las integraciones referenciales, buscando
+claves foráneas y realizar asignaciones cruzadas a códigos de
+referencia.</p>
+<ul>
+<li><p><u>Recopilar y extraer:</u> datos locales, en cloud y de fuentes
+externas. Se puede designar un experto para obtener esa información y,
+si se trata de un sistema interno, hacer que el grupo que mantiene ese
+sistema de origen sea responsable de sus procesos de
+extracción.</p></li>
+<li><p><u>Reformatear:</u> los datos de los sistemas de origen deben
+convertirse a un formato común para alinear el almacén de datos.
+Fundamental que exista un diccionario donde se describan las
+columnas.</p></li>
+<li><p><u>Consolidar y estandarizar varias fuentes de datos:</u>
+proporcionar una definición única y coherente de los datos para que los
+usuarios empresariales la utilicen en su análisis.</p></li>
+<li><p><u>Transformación de datos:</u> convertir los datos en
+información empresarial apta para el análisis. Estas transformaciones
+incluyen reglas de negocio, algoritmos y filtros que convierten los
+datos en un contexto comercial.</p></li>
+<li><p><u>Limpieza de datos:</u> implica un análisis más sofisticado de
+los datos más allá de la verificación registro por registro que ya se ha
+llevado a cabo.</p></li>
+<li><p><u>Almacenamiento de datos:</u> los datos se almacenan para que
+estén disponibles para su posterior procesamiento en la fase de
+análisis.</p></li>
+</ul>
+<h2 id="iii.-arquitectura-de-datos">iii. Arquitectura de datos</h2>
+<p>La arquitectura de datos define los datos junto con los esquemas,
+integración, transformaciones, almacenamiento y flujo de trabajo
+necesarios para permitir los requisitos analíticos de la arquitectura de
+la información.</p>
+<p>La elección de una arquitectura de datos u otra se determinará en
+base a las necesidades y tipo de las organizaciones que deseen implantar
+la Inteligencia de Negocio.</p>
+<h2 id="iv.-modelado-de-arquitectura-de-datos">iv. Modelado de
+arquitectura de datos</h2>
+<ul>
+<li><p>Modelo EDW (almacén de datos empresarial).</p></li>
+<li><p>Modelo Data Mart:</p>
+<ul>
+<li><p>Crear un proceso de Inteligencia de Negocio en la organización
+para un área o propósito específico, en lugar de un almacén de datos que
+obtenga datos de la actividad global del negocio.</p></li>
+<li><p>Se gana en sencillez a la hora de integrar la información y en
+velocidad de análisis e implementación de la solución.</p></li>
+<li><p>Visión parcial del negocio.</p></li>
+</ul></li>
+<li><p>Modelo Data Marts múltiples (Data Marts independientes)</p>
+<ul>
+<li><p>Cada Data Mart extrae datos directamente desde los sistemas de
+origen y reporta los informes a los departamentos establecidos.</p></li>
+<li><p>Cubre toda la actividad de la organización, pero con Data Marts
+especializados.</p></li>
+<li><p>Hay que mantener muchos sistemas de Inteligencia de
+Negocio.</p></li>
+</ul></li>
+<li><p>Modelo Data Marts desde EDW (EDW con Dara Marts múltiples):</p>
+<ul>
+<li><p>Un EDW con toda la información de la organización
+integrada.</p></li>
+<li><p>Los Data Mart extraen los datos desde el EDW, por lo que la
+información de análisis está unificada.</p></li>
+<li><p>Cubre toda la actividad de la organización con Data Marts
+especializados, pero con una fuente de datos única.</p></li>
+<li><p>Complejidad en el mantenimiento por tener múltiples
+elementos.</p></li>
+</ul></li>
+<li><p>Modelo ODS (almacén de datos operacionales):</p>
+<ul>
+<li><p>ODS: tipo de base de datos que se usa comúnmente como un área
+lógica provisional para un almacén de datos.</p></li>
+<li><p>Un ODS puede ser usado para integrar datos dispares de múltiples
+fuentes, para que las operaciones, los análisis y los informes
+empresariales puedan llevarse a cabo mientras se producen operaciones
+empresariales.</p></li>
+</ul></li>
+<li><p>Modelo FDW (almacén de datos federado):</p>
+<ul>
+<li><p>El sistema de Inteligencia de Negocio lo conforman varios
+almacenes de datos en localizaciones diferentes.</p></li>
+<li><p>La mejor práctica es diseñar el EDW lógicamente como un único
+almacén de datos, pero implementarlo físicamente en difenrentes
+ubicaciones (de manera federada) en función del rendimiento y las
+necesidades comerciales.</p></li>
+<li><p>También se puede implementar de forma que cada almacén mantenga
+su propio modelo de datos, esquemas y almacenamiento, pero pudiendo
+acceder a los datos de otros almacenes a través de una interfaz
+común.</p></li>
+</ul></li>
+</ul>
 <h1 id="integración-de-datos">3. INTEGRACIÓN DE DATOS</h1>
 <h2 id="i.-introducción">i. Introducción</h2>
+<h3 id="definición">Definición</h3>
+<p>La Integración de Datos es un conjunto de técnicas y subprocesos que
+se encargan de llevar a cabo todas las tareas relacionadas con la
+extracción, manipulación, control, integración, depuración de datos,
+carga y actualización del almacén de datos.</p>
+<p>Es decir, todas las tareas que se realizarán desde que se toman los
+datos de los diferentes Sistemas de registros (OTLP típicamente) hasta
+que se cargan en el almacén de datos.</p>
+<h3 id="métodos-de-integración-de-datos">Métodos de integración de
+datos</h3>
+<ul>
+<li><p><u>Ingesta de datos:</u> es el proceso de importar grandes
+archivos de datos de múltiples fuentes a un único sistema de
+almacenamiento -un almacén de datos, data mart o base de datos- desde el
+que se puede acceder a los mismos y analizarlos. La ingesta solo
+contempla el proceso de carga desde múltiples fuentes tal cual
+recopilados los datos (mismo formato de origen).</p></li>
+<li><p><u>Virtualización:</u> capa lógica que integra todos los datos de
+la organización repartidos entre sistemas heterogéneos, posibilitando
+que los usuarios puedan acceder a cualquier información
+independientemente de su ubicación, formato o protocolo. Permite
+gestionar los datos de manera unificada proporcionado, así, una
+seguridad y gobernanza centralizadas.</p></li>
+<li><p><u>Procesos ETL (extracción, transformación y carga):</u> método
+de integración de datos (no optimizados para el propósito que se desea
+conseguir) que consiste en extraer, transformar y cargar múltiples
+fuentes de información para almacenarlas en un solo destino o almacén de
+datos.</p></li>
+</ul>
 <h2 id="ii.-fases-del-proceso-etl">ii. Fases del proceso ETL</h2>
+<h3 id="extracción">Extracción</h3>
+<p>Basándose en las necesidades y requisitos de los usuarios, se
+exploran las diversas fuentes OLTP que se tengan a disposición, y extrae
+la información que se considere relevante al caso.</p>
+<p>Si los datos operacionales residen un SGBD Relacional, el proceso de
+extracción se puede reducir a consultas SQL o rutinas programadas.</p>
+<p>En cambio, si se encuentran en un sistema no convencional o fuentes
+externas, la obtención de los mismos será más dificultosa (será
+altamente probable que haya que realizar cambios de formato o de
+convención).</p>
+<p>Una vez que los datos son seleccionados y extraídos, se guardan en un
+<u>almacenamiento intermedio,</u> lo cual permite, entre otras
+ventajas:</p>
+<ul>
+<li><p>Manipular los datos sin interrumpir ni paralizar los OLTP, ni
+tampoco el almacén de datos.</p></li>
+<li><p>No depender de la disponibilidad de los OLTP.</p></li>
+<li><p>Almacenar y gestionar los metadatos que se generarán en los
+procesos ETL.</p></li>
+<li><p>Facilitar la integración de las diversas fuentes, internas y
+externas.</p></li>
+</ul>
+<p>El almacenamiento intermedio constituye en la mayoría de los casos
+una base de datos donde la información puede ser almacenada.</p>
+<p>Los datos de estas tablas serán los que finalmente (una vez
+transformados) poblarán el almacén de datos.</p>
+<h4 id="modos-de-extracción">Modos de extracción</h4>
+<p>Básicamente, existen 3 modos distintos de extracción.</p>
+<p>El tipo de la organización y las necesidades a cubrir serán lo que,
+normalmente, determinará la elección de una u otra forma.</p>
+<ul>
+<li><p><u>Full Extract o extracción total:</u> consiste en extraer la
+totalidad de datos. En este caso, se barren tablas completas que pueden
+llegar a tener millones de registros.</p></li>
+<li><p><u>Incremental extract o extracción incremental:</u> se va
+procesando por lotes únicamente lo que fue modificado o
+agregado.</p></li>
+<li><p><u>Update Notification o notificación de actualizaciones:</u> en
+este caso, solo se van extrayendo los datos a medida que se produce una
+actualización.</p></li>
+</ul>
+<p>Change Data Capture (CDC): conjunto de patrones de diseño de software
+que se utilizan para determinar y rastrear los datos que han cambiado
+para que se puedan tomar medidas utilizando los datos modificados. Está
+estrechamente ligado con la fase de carga en el almacén de datos.</p>
+<ul>
+<li><p>La tarea de extracción debe causar el <u>mínimo impacto</u>
+posible en el sistema de origen. Para ello es aconsejable programar
+estas tareas en días y horarios de nula o mínima actividad
+laboral.</p></li>
+<li><p>Se debe evitar que provoque algún problema de
+<u>seguridad.</u></p></li>
+<li><p>Una extracción de un número demasiado grande de datos de una sola
+vez puede llegar a ralentizar, e incluso colapsar, el sistema. Por este
+motivo, es importante valorar muy bien las necesidades y el alcance de
+la operación a realizar y, si es necesario, llevar a cabo la operación
+de forma escalonada en bloques de menor tamaño y/o en las fechas y horas
+más adecuadas para lograr ese mínimo impacto.</p></li>
+</ul>
+<h3 id="transformación">Transformación</h3>
+<p>Esta fase es la encargada de convertir aquellos datos inconsistentes
+en un conjunto de datos <u>compatibles y congruentes,</u> para que
+puedan ser cargados en el almacén de datos.</p>
+<p>Estas acciones se llevan a cabo debido a que pueden existir
+diferentes fuentes de información, y es vital conciliar un formato y
+forma única, definiendo estándares, para que todos los datos que
+ingresarán al almacén de datos estén integrados.</p>
+<p>Los casos más comunes de transformación de datos son los
+siguientes:</p>
+<ul>
+<li><p>Codificación.</p></li>
+<li><p>Medida de atributos.</p></li>
+<li><p>Convenciones de nombramiento.</p></li>
+<li><p>Fuentes múltiples.</p></li>
+</ul>
+<p>Esta fase es también la encargada de realizar, entre otros, los
+procesos de <u>limpieza de datos</u> (data cleansing) y <u>aseguramiento
+en la calidad de los datos.</u></p>
+<h4 id="codificación">Codificación</h4>
+<p>Una inconsistencia muy típica que se encuentra al intentar integrar
+varias fuentes de datos es la de contar con más de una forma de
+codificar un atributo en común.</p>
+<p>Lo que se debe realizar en estos casos, es seleccionar o recodificar
+estos atributos, para que cuando la información llegue al almacén de
+datos, esté integrada de manera uniforme.</p>
+<p><img src="/img/img/2425/tag3/Tema2_3.png" /></p>
+<h4 id="medida-de-atributos">Medida de atributos</h4>
+<p>Los tipos de unidades de medidas utilizados para representar los
+atributos de una entidad varían considerablemente entre sí a través de
+los diferentes OTLP.</p>
+<p>Es necesario estandarizar las unidades de medida de los atributos
+para que todas las fuentes de datos expresen sus valores de igual
+manera.</p>
+<p>Los algoritmos que resuelven estas inconsistencias son generalmente
+los más complejos.</p>
+<p><img src="/img/img/2425/tag3/Tema2_4.png" /></p>
+<h4 id="convenciones-de-nombramiento">Convenciones de nombramiento</h4>
+<p>Habitualmente, un mismo atributo es nombrado de diversas maneras en
+los diferentes OLTP.</p>
+<p>Aquí, se debe utilizar la convención de nombramiento que para los
+usuarios sea más comprensible.</p>
+<p><img src="/img/img/2425/tag3/Tema2_5.png" /></p>
+<h4 id="fuentes-múltiples">Fuentes múltiples</h4>
+<p>Un mismo elemento puede derivarse desde varias fuentes.</p>
+<p>En este caso, se debe elegir aquella fuente que se considere más
+fiable y apropiada.</p>
+<p><img src="/img/img/2425/tag3/Tema2_6.png" /></p>
+<h4 id="limpieza-de-datos">Limpieza de datos</h4>
+<p>La limpieza de datos consiste en realizar distintos tipos de acciones
+sobre datos erróneos, inconsistentes e irrelevantes detectados en los
+Sistemas de registros.</p>
+<p>Estos datos pueden ser de dos tipos:</p>
+<ul>
+<li><p><u>Datos atípicos</u> ( <strong>outliers</strong>): cuando se
+determina que son claramente anomalías en los datos (no forman parte del
+proceso de negocio).</p></li>
+<li><p>Datos faltantes (missing values).</p></li>
+</ul>
+<p>Las acciones más típicas que se pueden llevar a cabo al encontrarse
+con outliers <u>anómalos</u> (que deben ser filtrados en la fase de
+integración de datos) son:</p>
+<ul>
+<li><p>Ignorarlos.</p></li>
+<li><p>Eliminar la columna.</p></li>
+<li><p>Filtrar la columna.</p></li>
+<li><p>Filtrar la fila errónea, ya que a veces su origen, se debe a
+casos especiales.</p></li>
+<li><p>Reemplazar el valor.</p></li>
+<li><p>Discretizar los valores de las columnas.</p></li>
+</ul>
+<p>Las acciones que suelen efectuarse contra <u>datos faltantes (missing
+values)</u> son:</p>
+<ul>
+<li><p>Ignorarlos.</p></li>
+<li><p>Eliminar la columna.</p></li>
+<li><p>Filtrar la columna.</p></li>
+<li><p>Filtrar la fila, ya que a veces su origen, se debe a casos
+especiales.</p></li>
+<li><p>Reemplazar el nulo por un valor.</p></li>
+<li><p>Esperar hasta que los datos faltantes estén dispobinles.</p></li>
+</ul>
+<p>Un factor clave que se debe tener en cuenta al elegir alguna acción
+es el de <u>identificar</u> el porqué de la anomalía, para luego actuar
+en consecuencia con el fin de evitar que se vuelvan a repetir.</p>
+<p>En algunos casos, los valores faltantes pueden ser fruto de la propia
+actividad de la organización.</p>
+<h3 id="carga">Carga</h3>
+<p>Esta función se encarga de realizar las tareas relacionadas con:</p>
+<ul>
+<li><p><u>Carga Inicial (Initial Load):</u> primera carga de datos que
+se realizará al almacén de datos. Por lo general, esta tarea consume un
+tiempo bastante considerable ya que se deben insertar registros que han
+sido generados durante años.</p></li>
+<li><p><u>Actualización o mantenimiento perósico:</u> mueven pequeños
+volúmenes de datos, y su frecuencia está dada en función de la
+granularidad (nivel de detalle) del almacén de datos y los
+requerimientos de los usuarios. El objetivo de esta tarea es añadir al
+depósito aquellos datos nuevos que se fueron generando desde el último
+refresco.</p></li>
+</ul>
+<p>Antes de realizar una nueva actualización sobre el almacén de datos,
+es necesario identificar si se han producido cambios en las fuentes
+originales de los datos (desde la fecha del último mantenimiento) a fin
+de no atentar contra la consistencia del almacén de datos.</p>
+<p>Para efectuar esta operación, se pueden realizar las siguientes
+acciones:</p>
+<ul>
+<li><p>Cotejar las instancias de los OLTP involucrados.</p></li>
+<li><p>Utilizar disparadores en los OLTP.</p></li>
+<li><p>Recurrir a Marcas de Tiempo (Time Stamp) en los registros de los
+OLTP.</p></li>
+<li><p>Comparar los datos existentes en los dos ambientes (OTLP y
+almacén de datos).</p></li>
+<li><p>Hacer uso de técnicas mixtas.</p></li>
+</ul>
+<p><u>Carga Total (Full Load):</u> Si este control consume demasiado
+tiempo y esfuerzo, o simplemente no puede llevarse a cabo por algún
+motivo en particular, existe la posibilidad de cargar el almacén de
+datos desde cero.</p>
+<p>Por otra parte, el proceso de carga tiene la tarea de mantener la
+estructura del almacén de datos, y trata temas relacionados con:</p>
+<ul>
+<li><p>Relaciones muchos a muchos.</p></li>
+<li><p>Claves Subrogadas (Subrogate Keys).</p></li>
+<li><p>Dimensiones Lentamente Cambiantes (Slowly Changing
+Dimensions).</p></li>
+<li><p>Dimensiones Degeneradas (Degenerate Dimensions).</p></li>
+</ul>
 <h1 id="análisis-de-datos">4. ANÁLISIS DE DATOS</h1>
 <h2 id="i.-tipos-de-análisis-de-datos">i. Tipos de análisis de
 datos</h2>
-<h2 id="ii.-análisis-olap-para-bi">ii. Análisis OLAP para BI</h2>
+<p>El análisis de datos es el proceso que permite extraer información
+significativa y relevante (conocimiento) de conjuntos de datos.</p>
+<p>Este proceso es fundamental para la toma de decisiones informadas en
+diversos campos, desde la ciencia y la tecnología hasta la economía y
+las ciencias sociales.</p>
+<p>El análisis de datos se sustenta en una amplia gama de técnicas y
+metodologías, entre las que se destacan la <u>estadística
+descriptiva,</u> la inferencia estadística, el aprendizaje automático y
+la <u>minería de datos.</u></p>
+<p>Esta herramienta permite identificar patrones, tendencias y
+relaciones subyacentes en los datos, lo que a su vez facilita la
+generación de hipótesis y la formulación de conclusiones
+fundamentales.</p>
+<p>La importancia del análisis de datos radica en su capacidad para
+transformar graves volúmenes de datos en conocimiento útil.</p>
+<h2 id="ii.-técnicas-de-análisis-de-datos-empresarial">ii. Técnicas de
+análisis de datos empresarial</h2>
+<ul>
+<li><p><u>OLAP:</u> técnica de análisis descriptiva y de naturaleza
+cuantitativa usada para el análisis de grandes volúmenes de información
+(normalmente estructurada) con un alto rendimiento. Esto se debe a que
+las bases de datos OLAP se optimizan para cargas de trabajo grandes en
+lecturas y pequelas en escritura. Técnica más usada en inteligencia de
+negocio.</p></li>
+<li><p><u>Data mining:</u> conjunto de técnicas tanto descriptivas como
+predictivas que ayudan a descubrir patrones de comportamiento que se
+repiten de manera consistente entre grandes cantidades de
+datos.</p></li>
+<li><p><u>Big data:</u> técnicas de análisis de datos cuyo tamaño,
+complejidad y velocidad de crecimiento dificultan su captura, gestión,
+procesamiento o análisis mediante tecnologías y herramientas
+tradicionales, dentro del tiempo necesaro para que sean útiles.</p></li>
+</ul>
+<h2 id="iii.-olap">iii. OLAP</h2>
+<p>El procesamiento en línea (OLAP) es una tecnología de software que
+permite analizar datos empresariales desde diferentes puntos de
+vista.</p>
+<p>Los sistemas OLAP almacenan datos multidimensionales al representar
+la información en más de dos dimensiones o categorías.</p>
+<p>Los datos bidimensionales incluyen columnas y filas, pero los
+multidimensionales tienen varias características.</p>
+<p>Un <u>cubo de datos OLAP o Hipercubo</u> es un modelo que representa
+una matriz multidimensional de información.</p>
+<p>Si bien es más fácil visualizarlo como un modelo de datos
+tridimensional, la mayoría de los cubos de datos tienen más de tres
+dimensiones.</p>
+<p><strong>Los cubos OLAP son rígidos,</strong> ya que no se pueden
+cambiar las dimensiones ni los datos subyacentes una vez modelados.</p>
+<h3 id="tipos-de-implementación-olap">Tipos de implementación OLAP</h3>
+<h4 id="relacional-olap-rolap">Relacional OLAP (ROLAP)</h4>
+<p>Este tipo de organización física se implementa sobre tecnología
+relacional, per agregándole extensiones y herramientas para poder
+utilizarlo como un analizador de almacén de datos.</p>
+<p>En los sistemas ROLAP, los cubos multidimensionales se generan
+dinámicamente al instante de realizar las diferentes consultas, haciendo
+de esta manera el manejo de cubos transparentes a los usuarios.</p>
+<p>Este proceso se puede resumir a través de los siguientes pasos:</p>
+<ol type="1">
+<li><p>Se selecciona los indicadores (hechos), atributos, jerarquías,
+etc, que compondrán el cubo multidimensional.</p></li>
+<li><p>Se ejecutan las consultas sobre los atributos, indicadores, etc,
+seleccionados en el paso anterior. De manera transparente a los
+usuarios, se crea y calcula dinámicamente el cubo correspondiente el
+cual dará respuesta a las consultas que se ejecuten.</p></li>
+</ol>
+<p>La principal desventaja de los sistemas ROLAP, es que los datos de
+los cubos se deben calcular cada vez que se ejecuta una consulta sobre
+ellos.</p>
+<p>Esto provoca que ROLAP no sea muy eficiente en cuanto a la rapidez de
+respuesta ante las consultas de los usuarios (es posible incrementar la
+velocidad de respuesta almacenando los resultados obtenidos de ciertas
+consultas en la memoria caché).</p>
+<p>El almacén de datos se organiza a través de una base de datos
+multidimensional que, sin embargo, puede ser soportado por un SGBD
+Relacional.</p>
+<p>Para lograr esto se utilizan los diferentes esquemas (en estrella,
+copo de nieve y constelación) los cuales transformarán el modelo
+multidimensional y permitirán que pueda ser gestionado por un SGDB
+Relacional ya que solo se almacenarán tablas.</p>
+<h4 id="multidimensional-olap-holap">Multidimensional OLAP (HOLAP)</h4>
+<p>El objetivo de los sistemas MOLAP es almacenar físicamente los datos
+en estructuras multidimensionales de manera que la representación
+externa y la interna coincidencia.</p>
+<p>Para ello, se dispone de estructuras de almacenamiento específica
+(Arrays) y técnicas de compactación de datos que favorecen el
+rendimiento del almacén de datos.</p>
+<p>MOLAP requiere que en una instancia previa se generen y calculen los
+cubos multidimensionales, para que luego puedan ser consultados.</p>
+<p>De esta forma, se posibilita que las consultas sean respondidas con
+mucha rapidez, ya que los mismos no deben ser calculados en tiempo de
+ejecución.</p>
+<p>Desventajas:</p>
+<ul>
+<li><p>Si es preciso realizar cambios sobre algún cubo, hay que
+generarlo totalmente para que se reflejen las modificaciones llevadas a
+cabo.</p></li>
+<li><p>Se precisa más espacio física para almacenar dichos datos (poco
+significativo).</p></li>
+</ul>
+<h4 id="hybrid-olap-holap">Hybrid OLAP (HOLAP)</h4>
+<p>Constituye un sistema híbrido entre MOLAP y ROLAP, que combina estas
+dos implementaciones para almacenar algunos datos en un motor relacional
+y otros en una base de datos multidimensional.</p>
+<p>Los datos agregados y precalculados se almacenan en estructuras
+multidimensionales y los de menor nivel de detalle en estructuras
+relacionales.</p>
+<p>Es decir, se utilizará ROLAP para navegar y explorar los datos, y se
+empleará MOLAP para el proceso de análisis.</p>
+<p>Como contrapartida, hay que realizar un buen análisis previo para
+identificar los diferentes tipos de datos a almacenar en las diferentes
+estructuras.</p>
+<h3 id="operadores-olap">Operadores OLAP</h3>
+<p>Una consulta a un almacén de datos consiste en la obtención de
+indicadores a partir de los datos de una tabla de hechos, restringidos
+por las propiedades o condiciones de los atributos que hayan sido
+creados y por el contexto por el que vayamos a visualizar los datos.</p>
+<p>Las operaciones que se pueden realizar sobre modelos
+multidimensionales y que son las que verdaderamente permitirán a los
+usuarios explorar e investigar los datos en busca de respuestas,
+son:</p>
+<ul>
+<li><p>Drill-up: permite apreciar los datos en menor nivel de detalle,
+subiendo por una <u>jerarquía</u> definida en un cubo.</p></li>
+<li><p>Dril-down: permite apreciar los datos en un mayor detalle,
+bajando por una <u>jerarquía</u> definida en un cubo.</p></li>
+<li><p>Roll-across: permite apreciar los datos en un menor detalle
+mediante la eliminación de un <u>atributo</u> de la consulta.</p></li>
+<li><p>Drill-across: permite apreciar los datos con un mayor nivel de
+detalle mediante la adición de un <u>atributo</u> de la
+consulta.</p></li>
+<li><p>Drill-through: permite apreciar los datos de un indicador en su
+máximo nivel de detalle.</p></li>
+<li><p>Pivot: permite seleccionar el orden de visualización de los
+atributos e indicadores, con el objetivo de analizar la información
+desde diferentes perspectivas.</p></li>
+<li><p>Page: presenta el cubo multidimensional dividido en secciones a
+través de los valores de un atributo, como si se tratase de páginas de
+un libro.</p></li>
+<li><p>Dice: permite extraer un subcubo del cubo dimensional analizado
+para enfatizar o remarcar los datos de dos o más dimensiones.</p></li>
+</ul>
 <h1 id="visualización-de-datos">5. VISUALIZACIÓN DE DATOS</h1>
+<p>La misión de cualquier herramienta de inteligencia de negocio es
+poner a disposición de los responsables de la organización el
+conocimiento extraído para la toma de decisiones.</p>
+<p>Un sistema de Inteligencia de Negocio también tiene que hacer que esa
+información sea <u>usable</u> una vez que llegue a su destino.</p>
+<p>Una de las formas en que el software de Inteligencia de Negocio puede
+hacer que la información sea más útil es a través de la
+visualización.</p>
+<p>La visualización significa presentar números, estadísticas, métricas,
+indicadores y otros hechos en un <u>formato gráfico</u> que los haga más
+fáciles de entender e interpretar.</p>
+<p>Representar los gráficos de una encuesta como un gráfico circular es
+un ejemplo simple de visualización.</p>
+<p>Los sistemas de visualización deben ser:</p>
+<ul>
+<li><p><u>Atractivos:</u> la representación de datos solo es útil a los
+usuarios si resulta fácil de entender y es visualmente llamativa.
+Diseñar sistemas de difusión de información visualmente atractivos
+permite atraer la atención de los usuarios y ayuda a que sean
+usados.</p></li>
+<li><p><u>Interactivos:</u> que los usuarios puedan modificar las
+perspectivas de los gráficos de manera visual, alternando la información
+mostrada de manera sencilla e intuitiva.</p></li>
+<li><p><u>Personalizables:</u> que se adapten perfectamente a las
+necesidades de los usuarios que visualizan la información.</p></li>
+</ul>
+<h1 id="i.-representación-espacial">i. Representación espacial</h1>
+<p>Este enfoque aprovecha las tecnologías cartográficas actuales para
+enlazar la información empresarial en mapas y otras representaciones
+geoespaciales.</p>
+<p>Permite a las organizaciones mostrar información geográfica útil para
+el negocio.</p>
+<p>El uso de tooltips que muestren el detalle de la información del
+negocio en cada territorio aporta valor a la visualización.</p>
+<h1 id="ii.-herramientas">ii. Herramientas</h1>
+<ul>
+<li><p><u>Dashboard</u> (panel de control): herramienta de gestión de la
+información que memoriza, analiza y muestra de manera visual los
+indicadores clave de desempeño (KPI), métricas y datos fundamentales
+para hacer un seguimiento del estado de una organización.</p></li>
+<li><p><u>Balanced Scorecard</u> (cuadro de mandos integral):
+herramienta de planificación y dirección que permite enlazar estratégias
+y objetivos con indicadores y metas para realizar con éxito la
+formulación e implantación estratégica.</p></li>
+</ul>
 </body>
 </html>
