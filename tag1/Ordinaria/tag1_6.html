@@ -175,8 +175,388 @@
 Información/Negocio</h1>
 <p class="subtitle">TEMA 6</p>
 <p class="author">Aika Kenshi</p>
-<p class="date">18-09-2024</p>
+<p class="date">07-12-2024</p>
 </header>
-<h1 id="section"></h1>
+<h1 id="qué-es-el-alineamiento-negocioti">¿Qué es el alineamiento
+negocio/TI?</h1>
+<p>Alinear la tecnología con los objetivos de negocio implica utilizar
+la tecnología como soporte a las tareas del negocio para:</p>
+<ul>
+<li><p>Realizarlas de forma eficiente.</p></li>
+<li><p>Mejorar la forma de trabajar de la organización.</p></li>
+<li><p>Posibilidad de ofrecer nuevos productos y servicios.</p></li>
+<li><p>Incrementar la competitividad de la empresa.</p></li>
+<li><p>Facilitar el cumplimiento de los objetivos.</p></li>
+</ul>
+<p>Este alineamiento se realiza a través de la <strong>arquitectura
+empresarial</strong>, modelando las arquitecturas de dominios de negocio
+y de Tecnología de Información con unos objetivos comunes.</p>
+<p>El alineamiento entre las arquitecturas de negocio y de Tecnología de
+Información es un objetivo y una necesidad común en las empresas
+modernas.</p>
+<p>Debido a la forma actual operar, el alineamiento perfecto nunca se
+consigue.</p>
+<ul>
+<li>Pensar en el alineamiento coomo un modo de regulación; dirige las
+decisiones para alcanzar la mejor alineación posible (nunca
+perfecta).</li>
+</ul>
+<h1 id="marco-de-alineamiento-graal">Marco de alineamiento GRAAL</h1>
+<ul>
+<li><p>Proyecto GRAAL (Guidelines Regarding Architecture Aligment;
+Directrices relativas a la alineación de la arquitectura), derivado de
+Archimate.</p></li>
+<li><p>GRAAL es un marco conceptual: colección de conceptos y relaciones
+entre ellos que se pueden usar para describir un fenómeno.</p></li>
+</ul>
+<table border>
+<tr>
+<th>
+Aspectos de sistemas
+</th>
+<td>
+Propiedades observables desde el exterior
+</td>
+</tr>
+<tr>
+<th>
+Agregación de sistemas
+</th>
+<td>
+Estructura interna (sistemas complejos compuestos de sistemas más
+simples)
+</td>
+</tr>
+<tr>
+<th>
+Procesos de sistemas
+</th>
+<td>
+Ciclo de vida del sistema
+</td>
+</tr>
+<tr>
+<th>
+Niveles de descripción
+</th>
+<td>
+Refinamiento del nivel de detalle de la descripción de sistemas
+</td>
+</tr>
+</table>
+<h2 id="aspectos-de-sistemas">1.- Aspectos de sistemas</h2>
+<ul>
+<li><p><u><strong>SISTEMAS:</strong></u> Conjunto de elementos cuya
+coherencia aporta un valor añadido a su entorno.</p></li>
+<li><p>Dos abstracciones:</p>
+<ul>
+<li><p><strong>Aspectos de sistemas:</strong> conjunto de todos los
+elementos con solo algunas de sus propiedades.</p></li>
+<li><p><strong>Subsistema:</strong> subconjunto de los elementos con
+todas sus propiedades.</p></li>
+</ul></li>
+<li><p>Reducción de la complejidad de un modelo de sistema:</p>
+<ul>
+<li><p>Foco en un aspecto del sistema.</p></li>
+<li><p>Foco en un único subsistema.</p></li>
+</ul></li>
+</ul>
+<h3 id="servicios-ofrecidos-al-entorno">Servicios ofrecidos al
+entorno</h3>
+<ul>
+<li><p><strong>Comportamiento:</strong> orden temporal de los servicios
+y las funciones que realizan.</p></li>
+<li><p><strong>Comunicación:</strong> interacciones con otras entidades
+durante la realización del servicio.</p></li>
+<li><p><strong>Semántica:</strong> significado de los símbolos
+intercambiados durante el servicio. Solo en sistemas de
+información.</p></li>
+</ul>
+<h3 id="calidad">Calidad</h3>
+<p>Valor aportado por los servicios a los stakeholders.</p>
+<ul>
+<li><p><strong>Para el usuario.</strong></p></li>
+<li><p><strong>Para el desarrollador.</strong></p></li>
+</ul>
+<h2 id="agregación-de-sistemas">2.- Agregación de sistemas</h2>
+<ul>
+<li><p><strong>Subsistema:</strong> una parte con todos los
+detalles.</p></li>
+<li><p>Todos los detalles: modelables con varios sistemas
+simples.</p></li>
+</ul>
+<p><q>Varios sistemas simples = un sistema complejo.</q></p>
+<h3 id="jerarquía-de-agregación-mundos">Jerarquía de agregación
+(mundos)</h3>
+<ul>
+<li><p><strong>Físico:</strong> entidades y procesos que se pueden
+describir con medidas físicas.</p></li>
+<li><p><strong>Lingüístico/Simbólico:</strong> manipulación de símbolos
+de comunicación.</p></li>
+<li><p><strong>Social:</strong> procesos de negocio, necesidades, valor,
+dinero, leyes…</p></li>
+</ul>
+<p>Las jerarquías de agregación son independientes, pero se pueden
+relacionar entre sí.</p>
+<h3 id="alineación-de-jerarquías">Alineación de jerarquías</h3>
+<ol type="1">
+<li><p><strong>Físico-Social:</strong> relacionar localización física
+del software y localización física del servicio de proceso de
+negocio.</p></li>
+<li><p><strong>Software-Físico:</strong> asignar software a dispositivos
+de procesado con localización en el mundo físico.</p></li>
+<li><p><strong>Software-Negocio:</strong> servicios del software
+coherentes con las necesidades del negocio.</p></li>
+<li><p><strong>Software-Personas:</strong> significado de símbolos para
+las personas coherente con las manipulaciones de los símbolos del
+software, que tienen valor para las personas.</p></li>
+</ol>
+<h2 id="procesos-de-sistemas">3. Procesos de sistemas</h2>
+<p>El principal problema de alineación es la coordinación con el
+desarrollo de sistemas de Tecnología de Información futuros.</p>
+<ul>
+<li><p>Para cada sistema puede existir múltiples versiones.</p></li>
+<li><p>Muchos sistemas dependen de terceros, con distintos tiempos de
+actualización.</p></li>
+</ul>
+<p>Coordinar las versiones sucesivas de todos los sistemas se convierte
+e una tarea muy complicada en la práctica.</p>
+<h3 id="ciclo-de-vida-de-los-sistemas">Ciclo de vida de los
+sistemas:</h3>
+<ol type="1">
+<li>Concepción.</li>
+<li>Adquisición (construcción o compra).</li>
+<li>Utilización.</li>
+<li>Mantenimiento.</li>
+<li>Eliminación.</li>
+</ol>
+<h2 id="niveles-de-descripción">4. Niveles de descripción</h2>
+<p>Clasificación del nivel de detalle con el que se describe un
+sistema.</p>
+<ul>
+<li>No es una dimensión de sistema sino una dimensión de
+descripción.</li>
+</ul>
+<h1 id="fenómeno-de-alineamiento">Fenómeno de alineamiento</h1>
+<h2 id="capas-de-aprovisionamiento-de-servicios">Capas de
+aprovisionamiento de servicios</h2>
+<p>Arquitecturas divididas en capas con un sistema, parte de una
+jerarquía de agregación.</p>
+<p><img src="/img/2425/tag1/Ordinaria/Tema6_1.png" /></p>
+<ul>
+<li><p>Relaciones de servicios entre capas:</p>
+<ul>
+<li><p><u>Primaria:</u> un sistema de una capa provee un servicio a
+cualquiera de las capas superiores.</p></li>
+<li><p><u>Secundaria:</u> servicios de gestión de sistemas entre capas
+(sin orden específico).</p></li>
+</ul></li>
+</ul>
+<p>En todas las capas, los sistemas tienen los mismo aspectos.</p>
+<p>Los servicios de cualquier capa proveen servicios, tienen
+comportamiento, y por encima del nivel físico, se comunican con otros
+sistemas mediante el intercambio de símbolos con significado.</p>
+<ul>
+<li>Cada sistema tiene propiedades de calidad.</li>
+</ul>
+<p>En todas las capas, los sistemas tienen el mismo ciclo de vida.</p>
+<h2 id="arquitectura-de-infraestructura">Arquitectura de
+infraestructura</h2>
+<ul>
+<li><p><strong>Infraestructura:</strong> conjunto de sistemas que deben
+estar disponibles para todos los usuarios cuando lo necesiten.</p></li>
+<li><p>Niveles de aprovisionamiento de servicios: infraestructuras
+divididas en dominios con una estructura de capas.</p>
+<ul>
+<li><p>Capas superiores usan servicios de capas inferiores.</p></li>
+<li><p>Capas inferiores forman una plataforma de implementación para
+capas superiores.</p></li>
+<li><p>Capas superiores ofrecen servicios próximos a las necesidades de
+negocio.</p></li>
+<li><p>Capa más alta softwares de productividad personal y software de
+inteligencia de negocio.</p></li>
+</ul></li>
+</ul>
+<div style="border: solid red 2px; background: #FFCCCB ">
+<p>En general, cuanto más lentamente cambien los servidores de un
+componente de la infraestructura, mayor será su conjunto de usuarios y
+viceversa.</p>
+</div>
+<p>Un ritmo de cambios bajo posibilita que una gran cantidad de usuarios
+aprendan a usar ese componente de infraestructura.</p>
+<p>Cuanto mayor es el conjunto de usuarios, más fácil es realizar
+cambios en el componente.</p>
+<h2 id="decisiones-de-adquisición-de-infraestructura">Decisiones de
+adquisición de infraestructura</h2>
+<div style="border: solid red 2px; background: #FFCCCB ">
+<p>La nueva tecnología se añade a la vieja tecnología. La nueva
+tecnología nunca llega a sustituir completamente a la vieja
+tecnología.</p>
+</div>
+<h2 id="arquitectura-de-sistemas-de-negocio">Arquitectura de sistemas de
+negocio</h2>
+<ul>
+<li><p><strong>Sistema de negocio:</strong> sistema software usado en
+algunos (no todos los) procesos de negocio.</p></li>
+<li><p>Desarrolladores o compradores para realizar determinados
+servicios en determinados procesos de negocio para determinados grupos
+de usuarios.</p></li>
+<li><p>Dos tipos:</p>
+<ul>
+<li><p><strong>Sistemas de información:</strong> almacenan
+datos.</p></li>
+<li><p><strong>Aplicaciones:</strong> usan datos.</p></li>
+</ul></li>
+<li><p><strong>Mapas de entorno:</strong> Estrechamente relacionados con
+los procesos de negocio.</p></li>
+<li><p><u>Áreas de aplicación:</u> grupos coherentes de actividades de
+negocio que requieren los mismos conocimientos.</p></li>
+<li><p><u>Áreas temáticas:</u> partes coherentes del mundo sobre las que
+se almacenan datos en los Sistemas de Información.</p></li>
+</ul>
+<p>Los mapas de entorno representan los interfaces de comunicación entre
+sistemas.</p>
+<ul>
+<li><u><strong>Diagrama de comunicación:</strong></u> los sistemas no se
+comunican directamente, sino a través de aplicaciones.</li>
+</ul>
+<p>Un Sistema de Información o aplicación se usa en varios procesos de
+negocio:</p>
+<ul>
+<li><p><u><strong>Ventaja:</strong></u> esos procesos usan los mismos
+datos.Buena coherencia entre procesos.</p></li>
+<li><p><u><strong>Desventaja:</strong></u> El sistema es más difícil de
+manejar. Diferentes procesos suelen requerir diferentes datos con
+diferentes significados, diferentes comportamientos e interfaces. Mayor
+complejidad de requisitos y definiciones de datos.</p></li>
+</ul>
+<div style="border: solid red 2px; background: #FFCCCB ">
+<p>La manejabilidad de un sistema de negocio es inversamente
+proporcional al número de procesos de negocio soportados por el
+sistema.</p>
+</div>
+<div style="border: solid red 2px; background: #FFCCCB ">
+<p>Los sistemas de negocio tienden a girar sobre la infraestructura.</p>
+</div>
+<p>Cuando se estandariza un sistema de negocio, aumenta el número de
+usuarios hasta el punto de pasar a formar parte de la
+infraestructura.</p>
+<h2 id="desalineamiento-estratégico">Desalineamiento estratégico</h2>
+<p>Las operaciones de negocio dirigen las decisiones de diseño sobre la
+arquitectura de sistemas de negocio.</p>
+<p>Las decisiones de infraestructura están dirigidas por varias fuerzas,
+una de ellas la estrategia de negocio.</p>
+<h3
+id="desalineamiento-estratégico-entre-infraestructura-y-sistemas-de-negocio">Desalineamiento
+estratégico entre infraestructura y sistemas de negocio</h3>
+<ul>
+<li><p>Se agrava por el desfase en los tiempos de desarrollo de ambas
+partes:</p>
+<ul>
+<li><p>Los sistemas de negociose actualizan cuadno el negocio lo
+necesita.</p></li>
+<li><p>La infraestructura se actualiza periódicamente.</p></li>
+</ul></li>
+<li><p>Solución posible: actualizar los sistemas de negocio
+periódicamente también.</p>
+<ul>
+<li>Resuelve el problema de sincronización, pero causa el problemade
+lentitud de respuesta a las necesidades de negocio.</li>
+</ul></li>
+</ul>
+<h2 id="ley-de-conway">Ley de Conway</h2>
+<div style="border: solid red 2px; background: #FFCCCB ">
+<p>La estructura de un sistema diseñado debe ser
+<strong>isomorfa</strong> a la estructura de comunicación del sistema
+diseñador.</p>
+</div>
+<p>Si el sistema a diseñar es demasiado complejo para ser diseñado por
+una sola persona, entonces muchas personas estará involucradas en el
+diseño, pero deberán acordar un reparto de las tareas entre ellos.</p>
+<p>Este reparto de tareas se reflejará en la estructura del sistema
+diseñado, ya que cada diseñador trabajará en su parte por separado.</p>
+<ul>
+<li><strong>Infraestructura dividida en dominios (reparto de
+tareas):</strong> .</li>
+</ul>
+<div style="border: solid red 2px; background: #FFCCCB ">
+<p>Cualquier cambio en la arq debe ir acompañado de un cambio en la
+estructura de gestión de la infraestructura.</p>
+</div>
+<p>En la arquitectura de sistemas de negocio, la ley de Conway implica
+que la capa de sistemas de negocio tiene que ser isomorfa al
+departamento de diseño de sistemas de negocio.</p>
+<ul>
+<li>Aplicación y temática diferentes se desarrollan por personas
+diferentes.</li>
+</ul>
+<p>También debe existir un isomorfismo entre el negocio (proceso de
+negocio) y los sistemas de negocio, representado por los mapas de
+entorno.</p>
+<p>Para conseguir el alineamiento, el departamento de diseño de sistemas
+de negocio se debe estructurar conforme a los procesos de negocio que
+realizan.</p>
+<h1 id="proceso-de-arquitectura">Proceso de arquitectura</h1>
+<div style="border: solid red 2px; background: #FFCCCB ">
+<p>El alineamiento no es solo cuestión de acoplar correctamente los
+diversos tipos de sistemas de los mundos físico, simbólico y social en
+una empresa. <br> <br> Es también una cuestión de ajustar el desarrollo
+y la gestión de procesos que involucran a esos sistemas.</p>
+</div>
+<h2 id="métodos-de-diseño-de-arquitectura">Métodos de diseño de
+arquitectura</h2>
+<p>Los métodos de diseño de arquitectura de una organización suelen
+estar basados en la <strong>ingeniería de la información.</strong></p>
+<p>Para tener control de las aplicaciones y los sistemas de información,
+se elaboran <strong>modelos de proceso de negocio</strong> de diversa
+complejidad; desde simples listas de actividades, hasta complejos
+diagramas UML de actividades y objetos.</p>
+<div style="border: solid red 2px; background: #FFCCCB ">
+<p>Cuanto más compleja es la notación de un modelo de proceso, más
+decisiones hay que tomar para construir el modelo y más errores se
+cometen.</p>
+</div>
+<p>Conviene explorar si hay formas más sencillas de hacer un mismo
+modelo.</p>
+<p>Los procesos complejos o críticos pueden requerir una notación
+compleja, pero la mayoría de los procesos de negocio no son tan
+complejos y pueden modelarse con una notación más sencilla.</p>
+<p>Los métodos de arquitectura y las notaciones actuales son demasiado
+complejas e inflexibles para ser utilizadas en el entorno empresarial
+actual.</p>
+<p>Se necesitan métodos más ligeros para adaptarse a la velocidad de
+proceso de las tecnologías.</p>
+<h2 id="gobernanza-de-tecnología-de-información">Gobernanza de
+Tecnología de Información</h2>
+<p>Actividad de control de las tecnologías de Información que consiste
+en la toma de decisiones sobre la adquisición, cambio y eliminación de
+Tecnologías de Información, así como en la monitorización de rendimiento
+de las Tecnologías de Información para poder controlarlas de forma más
+efectiva y eficiente.</p>
+<ul>
+<li>La gobernanza de Tecnología de Información es parte de la gobernanza
+de la organización.</li>
+</ul>
+<p>La gobernanza de Tecnología de Información es un problema de
+coordinación entre diferentes entidades de la organización.</p>
+<p>Independientemente de la configuración de la organización, el diseño
+de la arquitectura es un proceso descendente en el organigrama de la
+organización que entra en conflicto con los intereses locales.</p>
+<div style="border: solid red 2px; background: #FFCCCB ">
+<p>El diseño de arquitectura en la capa de sistemas de negocio se basa
+en criterios de optimización globales para la capa. Los arquitectos de
+sistemas individuales en la capa de sistemas de negocio se basan en
+criterios de optimización que son globales para sus proyectos, pero
+locales para la capa de sistemas de negocio en concreto.</p>
+</div>
+<ul>
+<li>Criterios globales de reducción de costes y reutilización de
+componentes.</li>
+</ul>
+<p>Pueden aparecer motivos a nivel local de un proyecto que justifiquen
+la no idoneidad de los criterios globales de la capa para ese proyecto
+concreto.</p>
+<p>Esto conduce a un conflicto entre la optimización a nivel locale y la
+optimización a nivel global.</p>
 </body>
 </html>
