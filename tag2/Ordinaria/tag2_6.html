@@ -174,8 +174,576 @@
 <h1 class="title">Gestión de operaciones</h1>
 <p class="subtitle">TEMA 6</p>
 <p class="author">Aika Kenshi</p>
-<p class="date">18-09-2024</p>
+<p class="date">15-12-2024</p>
 </header>
-<h1 id="section"></h1>
+<h1 id="por-qué-la-gestión-de-operaciones">¿Por qué la gestión de
+operaciones?</h1>
+<h2 id="introducción">Introducción</h2>
+<p>A medida que nuestro producto crezca y se use cada vez más, nos
+iremos dando cuenta de que ejecutarlo y monitorizarlo es muy distinto a
+implementarlo.</p>
+<p>Los ordenadores y servidores siguen siendo sorprendetemente poco
+confiables.</p>
+<ul>
+<li><p>Diseñar y operar sistemas distribuidos complejos basados en
+Tecnologías de Información es un desafío importante.</p></li>
+<li><p>Incluso con herramientas como infraestructura como código y las
+pipelines de CI/CD.</p></li>
+</ul>
+<p>Las operaciones del software son distintas del desarrollo de software
+per se.</p>
+<p>El trabajo está relativamente más impulsados por las interrupciones
+(interrupt-driven), en comparación con el enfoque “con la cabeza hacia
+abajo” en el desarrollo de nuevas funciones.</p>
+<h1 id="una-visión-general-en-la-gestión-de-operaciones">Una visión
+general en la gestión de operaciones</h1>
+<h2 id="concepto-de-operaciones">Concepto de operaciones</h2>
+<p>La gestión de operaciones es un tema muy amplio en la teoría de la
+gestión.</p>
+<p>Tanto en escuelas de negocios como en ingeniería y post-grados.</p>
+<p>Las empresas suelen contratar a directores de operaciones para
+dirigir las empresas.</p>
+<p>Comenzamos a cubrir la gestión de operaciones cuando examinamos el
+tema de la “gestión del trabajo”.</p>
+<p>En la gestión de operaciones tradicional, la cuestión del trabajo y
+quién lo está haciendo es fundamental.</p>
+<p>Para el profesional digital, “operaciones” tiende a tener un
+significado más técnico que la definición clásica de negocio.</p>
+<ul>
+<li>Centrado en cuestiones de integridad, disponibilidad y rendimiento
+de los sistemas, y en la retroalimentación de la comunidad de
+usuarios.</li>
+</ul>
+<blockquote>
+<p>Las operaciones consisten en el trabajo hecho para <strong>mantener
+un sistema funcionando</strong> de una manera que
+<strong>cumpla</strong> o <strong>supere</strong> los parámetros
+operativos especificados por un <strong>Acuerdo de Nivel de
+Servicio</strong> (SLA). Las operaciones incluyen todos los aspectos del
+ciclo de vida de un servicio: desde el lanzamiento inicial hasta el
+desmantelamiento final y todo lo demás.</p>
+</blockquote>
+<p>En el contexto digital las operaciones a menudo pueden significar
+“todo menos desarrollo”.</p>
+<p>En el modelo clásico, los desarrolladores construían sistemas y los
+“lanzaban por encima de la pared” a las operaciones.</p>
+<p>Cada parte contaba con procesos y tecnologías especializados que
+respaldaban sus preocupaciones particulares.</p>
+<p>Sin embargo, toda experiencia es parte del producto.</p>
+<p>Tanto para los que lo consumen como a los que lo ejecutan.</p>
+<p>Dado que tenemos un punto de vista algo más amplio que abarca toda la
+gestión digital, para este capítulo utilizaremos la siguiente definición
+de operaciones:</p>
+<div style="border: solid black 2px; background: orange; color: white">
+<p>
+Las operaciones son la
+<strong style="color: white">facilitación</strong> y el
+<strong style="color: white">apoyo directo</strong> de la
+<strong style="color: white">experiencia</strong> de valor digital.
+</p>
+<p>
+Tiende a ser <strong style="color: white">menos variable, más
+rentable</strong>, pero <strong style="color: white">más impulsado por
+las interrupciones</strong>que el
+<strong style="color: white">desarrollo de productos</strong>.
+</p>
+<p>
+Se trata más de restaurar un sistema a un estado conocido y menos de
+crear nuevas funcionalidades.
+</p>
+</div>
+<p>Es decir, las operaciones NO desarrollan nuevas funcionalidades de
+los sistemas.</p>
+<p>Las operaciones están impulsadas por procesos y son sistemáticas y
+tienden a ser impulsadas por interrupciones.</p>
+<p>Mientras que la investigación y el desarrollo fallan en la parte
+“sistemática” de la definición.</p>
+<p>Sin embargo, las nuevas funcionalidades suelen tener impacto
+operativos.</p>
+<p>Este ciclo continuo de innovación ha impulsado vínculos cada vez más
+estrechos entre el “desarrollo” y las “operaciones”.</p>
+<p>Este ciclo también ha generado confusión entorno a lo que se entiende
+exactamente por “operaciones”.</p>
+<p>En muchas organizaciones, existe una función de “Infraestructura y
+Operaciones” (I&amp;O).</p>
+<h2 id="sla">SLA</h2>
+<p>Un acuerdo a nivel de servicio (o SLA) es una forma de contrato entre
+el consumidor de servicios y el proveedor de servicios, que establece
+los criterios anteriores en términos de un acuerdo comercial.</p>
+<p>Un SLA se define típicamente en términos de criterios tales como:</p>
+<ul>
+<li><p>¿Qué % de tiempo estará disponible el servicio?</p></li>
+<li><p>Si el servicio sufre una interrupcción, ¿cuánto tiempo pasará
+hasta que se establecerá?</p></li>
+<li><p>¿Con qué rapidez responderá el servicio a las
+solicitudes?</p></li>
+</ul>
+<p>Cuando el rendimiento de un servicio no cumple con el acuerdo, esto a
+veces se denomina “incumplimiento” y el proveedor de servicios puede
+tener que pagar una multa.</p>
+<p>Si el proveedor de servicios excede el SLA, tal vez se emita un
+crédito.</p>
+<p>Los SLA impulsan gran parte del comportamiento operativo.</p>
+<ul>
+<li>Ayudan a priorizar incidentes y problemas, y el riesgo de los
+cambios propuestos se entiende en términos de los SLA.</li>
+</ul>
+<h1 id="monitorización">Monitorización</h1>
+<h2 id="técnicas-de-monitorización">Técnicas de monitorización</h2>
+<p>La monitorización es la principal forma de <strong>obtener
+visibilidad</strong> de los sistemas que gestionamos.</p>
+<p>Es el proceso de <strong>observar información</strong> sobre el
+<strong>estado de los elementos</strong> en la toma de
+<strong>decisiones de corto</strong> y <strong>largo plazo</strong>.</p>
+<ul>
+<li><p>¿Cómo se “monitoriza” la infraestructura informática?</p>
+<ul>
+<li>Claramente, sentarse en el centro de datos (suponiendo que pueda
+entrar) y mirar las luces en las caras de los servidores
+<strong>no</strong> transmitirá mucha información útil, más alá de si
+están apagados o encendidos.</li>
+</ul></li>
+</ul>
+<h3 id="monitorización-simple">Monitorización simple</h3>
+<p>Se utiliza una variedad de técnicas para monitorear la
+infraestructura informática.</p>
+<p>Por lo general, estos implican la comunicación a través de una red
+con el dispositivo que se administra.</p>
+<p>A menudo, el tráfico de red está en la misma red que transporta el
+tráfico principal de los equipos.</p>
+<p>A veces, sin embargo, hay una red “fuera de banda” distinta para el
+tráfico de administración.</p>
+<p>Una herramienta de <strong>monitoreo simple</strong> interactuará de
+forma regular con un nodo informático.</p>
+<h3 id="monitorización-extensa">Monitorización extensa</h3>
+<p>En términos más generales, estas herramientas proporcionan una
+variedad de mecanismos para monitorear y controlar los sistemas
+operativos de Tecnologías de Información.</p>
+<p>Pueden monitorear:</p>
+<ul>
+<li><p>Procesos informáticos y sus valores de entorno.</p></li>
+<li><p>Métricas de rendimiento.</p></li>
+<li><p>Eventos sucedidos a través de varios canales.</p></li>
+<li><p>Disponibilidad de la red.</p></li>
+<li><p>Contenido de archivos de registro.</p></li>
+<li><p>Las interacciones de un componente determinado con otros
+elementos de la infraestructura de Tecnologías de Información.</p></li>
+</ul>
+<h3 id="monitorización-basada-en-experiencia-del-usuario">Monitorización
+basada en experiencia del usuario</h3>
+<p>Mientras que unos monitoreos cubren indicadores del sistema que no
+suelen ser de interés directo para el usuario final, otros intentan
+simular la experiencia del usuario final.</p>
+<p>Los SLA a menudo se definen en términos del tiempo de respuesta
+experimentando por el usuario final.</p>
+<p>Todos estos datos pueden enviarse a una consola central e integrarse,
+con el objetivo de respaldar los acuerdos de nivel de servicio de la
+organización en orden de prioridad.</p>
+<h2 id="gestión-de-elementos">Gestión de elementos</h2>
+<p>Los <strong>gestores de elementos</strong> son herramientas de bajo
+nivel para gestionar diversas clases de infraestructura digitales o de
+Tecnologías de Información.</p>
+<p>Estas herramientas a menudo desempeñan un doble papel, ya que pueden
+cambiar la configuración de la infraestructura e informar sobre su
+estado.</p>
+<p>Sin embargo, muchos dependen de las interfaces gráficas de
+usuario.</p>
+<h2 id="diseño-de-operaciones-en-productos">Diseño de operaciones en
+productos</h2>
+<p>Las herramientas de monitoreo pueden proporcionar visiblemente
+continua de aspectos como rendimiento de la infraestructura o memoria
+utilizada.</p>
+<p>Sin embargo, el producto o la aplicación digital también debe
+proporcionar su <strong>propia telemetría</strong> específica de varias
+maneras.</p>
+<p>La telemetría es un sistema de comunicación a distancia que permite
+recoger, procesar y transmitir información de un dispositivo electrónico
+a otro.</p>
+<p>Esto es posible gracias a sensores que miden magnitudes físicas o
+químicas y envían información sobre el funcionamiento de determinado
+objeto.</p>
+<p>Volviendo a la monitorización… ¿Cómo proporcionar telemetría
+personalizada?</p>
+<p>Es fundamental que la disciplina de monitorización se base en la
+<strong>mejora continua</strong>.</p>
+<p>Mantener las técnicas de monitoreo actualizadas con sus desafíos
+operativos es una tarea interminable.</p>
+<p>Los enfoques que funcionan bien ayer, hoy generan demasiados falsos
+positivos.</p>
+<p>El equipo de operaciones ahora está sobrecargado con todo el
+ruido.</p>
+<h2 id="agregadores-aggregation-monitoring">Agregadores (aggregation
+monitoring)</h2>
+<p>No es posible para un equipo de operaciones acceda y comprenda cada
+uno de los elementos que reportan por los gestores de elementos
+presentes en el gran entorno de Tecnologías de Información.</p>
+<p>En su lugar, estos equipos se basan en <strong>agregadores</strong>
+para proporcionar una visión integrada de la complejidad.</p>
+<p>Estos agregadores pueden centrarse en eventos de estado
+simultáneamente, o específicamente en aspectos de rendimiento.</p>
+<p>Pueden incorporarse dependencias de la gestión para proporcionar una
+verdadera “visión empresarial” en los flujos de eventos.</p>
+<h1 id="gestión-de-la-capacidad-y-el-rendimiento">Gestión de la
+capacidad y el rendimiento</h1>
+<h2 id="gestión-de-la-capacidad">Gestión de la capacidad</h2>
+<p>La gestión de la capacidad y el rendimiento están estrechamente
+relacionadas.</p>
+<p><strong>Un sistema de gestión de la capacidad</strong> puede incluir
+grandes cantidades de datos recopilados de los sistemas de supervisión y
+gestión de eventos, almacenados durante largos periódos de tiempo para
+que se comprenda el historial de utilización del sistema y se pueda
+aventurar cierto grado de predicción del sistema y se pueda aventurar
+cierto grado de predicción para la utilización futura.</p>
+<p><strong>La gestión de la capacidad</strong> se refiere <strong>al
+acto de garantizar</strong> que una empresa <strong>maximice</strong>
+sus <strong>actividades potenciales</strong> y su
+<strong>producción</strong>, en todo momento y en todas las
+condiciones.</p>
+<p>La capacidad de un negocio mide cuánto puede conseguir, producir o
+vender dado un periódo de tiempo.</p>
+<h2 id="gestión-del-rendimiento">Gestión del rendimiento</h2>
+<p>La gestión de rendimiento se centra en <strong>la capacidad de
+respuesta</strong> de los sistemas.</p>
+<p>La capacidad de respuesta puede estar <strong>relacionada con el uso
+de la memoria</strong> (capacidad), pero algunos <strong>problemas de
+memoria no</strong> afectan inmediatamente a <strong>la capacidad de
+respuesta</strong>.</p>
+<p>Por ejemplo, una unidad de disco puede estar a punto de llenarse:</p>
+<ol type="1">
+<li><p>Cuando se llene, el sistema se bloqueará inmediatamente.</p></li>
+<li><p>El rendimiento se verá gravemente afectado.</p></li>
+</ol>
+<p>Hasta entonces, el sistema funciona bien.</p>
+<ul>
+<li>El disco debe reemplazarse en función de los informes de capacidad,
+no de las tendencias de rendimiento.</li>
+</ul>
+<p>Por otro lado, algunos problemas de rendimiento no están relacionados
+con la capacidad.</p>
+<h2 id="gestión-de-la-capacidad-y-del-rendimiento">Gestión de la
+capacidad y del rendimiento</h2>
+<p>Simplificando, la gestión de la capacidad y el rendimiento puede
+consistir en monitorear la utilización de la CPU, la memoria y el
+almacenamiento.</p>
+<p>Todo esto es un conjunto determinado de nodos, y generar alertas si
+se alcanzan ciertos umbrales.</p>
+<p>Cuando salta una alerta, ya sea a través de un sistema automatizado o
+a través de los esfuerzos manuales de un analista de capacidad, hay una
+serie de respuestas que pueden seguir:</p>
+<ul>
+<li><p>Adquirir más capacidad.</p></li>
+<li><p>Tratar de utilizar la capacidad existente de manera más
+eficiente.</p></li>
+<li><p>Reducir la demanda de alguna manera.</p></li>
+</ul>
+<hr />
+<h1 id="respuesta-operacional">Respuesta operacional</h1>
+<h2 id="canales-de-comunicación">Canales de comunicación</h2>
+<p>Cuando las señales de emergencia emerge desde los niveles inferiores
+de la infraestructura digital, pasan a través de una variedad de capas y
+causan un comportamiento variado y relacionado por todos los
+responsables digitales.</p>
+<p>Los componentes digitales envían eventos a la capa de monitoreo, los
+filtra en busca de problemas significativos.</p>
+<p>La herramienta de monitoreo puede crear automáticamente un ticlet, o
+tal vez primero proporciona una alerta a los operadores del sistema, que
+pueden enviarse mensajes instántaneos entre sí.</p>
+<p>Si el problema no se puede resolver operativamente antes de que
+comience a afectar a los usuarios, es posible que se cree un ticket de
+incidente, que tiene varios efectos:</p>
+<ul>
+<li><p>En primer lugar, la situación es ahora un hecho probado, y la
+gerencia puede comenzar a prestar atención.</p></li>
+<li><p>Se definen las responsabilidades de la gestión del incidente y se
+espera que las partes responsables comiencen a resolvelo.</p></li>
+<li><p>Si se necesita asistencia, el evento proporciona un punto de
+referencia común, en términos de Gestión de Trabajo.</p></li>
+</ul>
+<h2 id="chatops">ChatOps</h2>
+<p>Integración de las comunicaciones instantáneas con la ejecución
+operativa.</p>
+<blockquote>
+<p>Mientras están en una sala de chat, los miembros del equipo escriben
+comandos que el chat bot puede ejecutar mediante scripts y plugíns
+personalizados. Estos pueden variar desde despliegues de código hasta
+respuestas a eventos de seguridad o notificaciones a los miembros del
+equipo. Todo el equipo colabora en tiempo real mientras se ejecutan los
+comandos.</p>
+<p>Eric Sigler.</p>
+</blockquote>
+<p>Un ChatOps correctamente configurado proporciona un entorno
+colaborativo que permite un modelo mental colectivo poderoso e inmediato
+de la situación y lo que se está haciendo.</p>
+<p>También proporciona un registro de auditoría de quién hizo qué,
+cuándo y quién más estuvo involucrado.</p>
+<h2 id="emergencia-del-proceso-operativo">Emergencia del proceso
+operativo</h2>
+<ul>
+<li><p>Personal de guardia (oncall): responsabilidad principal de
+responder emergencias. Disponibilidad continua.</p></li>
+<li><p>Personal de servicio (onduty): responsable de responder a
+incidentes no críticos y mantener las operaciones actuales.</p></li>
+</ul>
+<p>¿Qué es una emergencia en el contexto de las Tecnologías de
+Información?</p>
+<p>Depende de dónde nos encontremos.</p>
+<ul>
+<li><p>Si se supone que un sistema, por SLA, ddebe estar disponible las
+34 horas del día, los 7 días de la semana, una interrupcción el sábado
+por la madrugada <strong>es una emergencia</strong>.</p></li>
+<li><p>Si se supone que solo debe estar disponible de lunes a viernes,
+es posible que la <strong>interrupcción no sea tan
+crítica</strong>.</p></li>
+</ul>
+<p>Anteriormente, analizamos cómo la simple gestión de tareas empieza a
+convertirse en gestión de procesos.</p>
+<p>Ciertamente, existe una preocupación por la
+<strong>previsibilidad</strong> cuando el objetivo es mantener un
+sistema en funcionamiento, por lo que la gestión de procesos gana fuerza
+como vehículo para estructurar el trabajo.</p>
+<p>Estos procesos operativos incluyen:</p>
+<ul>
+<li><p>Gestión de solicitudes.</p></li>
+<li><p>Gestión de indicentes.</p></li>
+<li><p>Gestión de problemas.</p></li>
+<li><p>Gestión de cambios.</p></li>
+</ul>
+<p>Incluso si solo gestionamos un solo producto, estos procesos son un
+marco útil a tener en cuenta a medida que aumenta el trabajo
+operativo.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Procesos</th>
+<th style="text-align: center;">Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Gestión de solicitudes</td>
+<td style="text-align: center;">Responder a solicitudes rutinarias.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Gestión de incidentes</td>
+<td style="text-align: center;">Identificar las interrupcciones del
+servicio y las situaciones que podrían provocarlas, y restablecer el
+servicio y/o mitigar el riesgo.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Gestión de problemas</td>
+<td style="text-align: center;">Identificar las causas de uno o más
+incidentes y remediarlos (a largo plazo).</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Gestión de cambios</td>
+<td style="text-align: center;">Registrar y realizar un seguimiento de
+las modificaciones propuestas en los componentes críticos de Tecnologías
+de Información. Notificar a las partes potencialmente adectadas y
+evaluar los cambios en función del riesgo. Asegurarse de que las partes
+interesadas clave ejerzan los derechos de aprobación.</td>
+</tr>
+</tbody>
+</table>
+<p>Estos procesos tienen una secuencia aproximada de:</p>
+<ol type="1">
+<li><p>Dar acceso al usuario al sistema.</p></li>
+<li><p>Si el sistema no funciona como se esperaba, identificar el
+problema y restablecer el servicio por cualquier medio necesario.
+Todavía no preocuparse por qué sucedió.</p></li>
+<li><p>Una vez que se restablezca el servicio, investiga por qué ocurrió
+el problema y proponer soluciones a largo plazo.</p></li>
+<li><p>Informar a las partes afectadas de los cambios propuestos,
+recopilar sus comentarios y aprobaciones, y realizar un seguimiento del
+progreso del cambio propuesto hasta su finalización exitosa.</p></li>
+</ol>
+<h2
+id="post-mortems-irreprochabilidad-y-demanda-operativa">Post-mortems,
+irreprochabilidad y demanda operativa</h2>
+<p><strong>Análisis de causa raíz:</strong> después de que se resuelve
+un incidente y se restablecen los servicios, se lleva a cabo una
+investigación adicional para revisar las causas y posibles soluciones a
+largo plazo para el problema.</p>
+<p>Este tipo de investigación puede ser estresante para las personas
+involucradas y los factores humanos se vuelven críticos.</p>
+<p>La seguridad psicológica adquiere un aspecto adicional e incluso más
+grave cuando consideramos las caídas de sistemas complejos.</p>
+<ul>
+<li>Muchas de las cuales están causadas por errores humanos.</li>
+</ul>
+<p>Durante mucho tiempo, los directivos han buscado personas a las que
+“responsabilizar” de los fallos de los sistemas complejos.</p>
+<p>Se trata de un enfoque inadecuado, ya que los sistemas complejos
+siempre son propensos a fallar.</p>
+<p>Las culturas que buscan culpables no fomentan una sensación de
+seguridad psicológica.</p>
+<p><strong>Contractual:</strong> se basa en explorar escenarios
+alternativos no reales para entiender mejor causas, efectos o
+decisiones.</p>
+<h3 id="teoría-de-la-manzana-podrida">Teoría de la manzana podrida</h3>
+<p>Los sistemas complejos estarían bien, si no fuera por el
+comportamiento errático de algunas personas poco confiables en él.</p>
+<p>Los errores humanos causan accidentes: los humanos son el principal
+contribuyente a más de dos tercios de ellos.</p>
+<p>Los fracasos vienen como sorpresas desagradables.</p>
+<p>Son inesperados y no pertenecen al sistema.</p>
+<p>Las fallas se introducen en el sistema solo a través de la falta de
+confiabilidad inherente de las personas.</p>
+<h3 id="nueva-visión">Nueva Visión</h3>
+<blockquote>
+<p>El error humano no es una causa de fracaso. El error humano es el
+efecto, el síntoma, de problemas más profundos. El error humano no es
+aleatorio. Está conectado sistemáticamente a las características de las
+herramientas, las tareas y el entorno operativo de las personas. El
+error humano no es la conclusión de una investigación. Es el punto de
+partida.</p>
+<p>Dekker</p>
+</blockquote>
+<p>Los principios de Dekker son un excelente punto de partida para
+desarrollar una cultura que respalde las investigaciones irreprochables
+de los indicentes.</p>
+<h1 id="diseño-de-operaciones-para-su-escalabilidad">Diseño de
+operaciones para su escalabilidad</h1>
+<h2 id="por-qué-hablar-del-diseño-en-operaciones">¿Por qué hablar del
+diseño en operaciones?</h2>
+<p>Hemos hablado anteriormente de ciertos factores esenciales para la
+escalabilidad del sistema.</p>
+<p>Todo esto es necesario, pero no suficiente para escalar los sistemas
+digitales.</p>
+<blockquote>
+<p>La construcción de un sistema escalable no es casualidad.</p>
+<p>Limoncelli et al.</p>
+</blockquote>
+<p>Una vez que un sistema comienza a encontrar un <strong>carga
+real</strong>, se debe prestar más atención a <strong>cómo</strong>
+funciona, en lugar de a lo <strong>que hace</strong>.</p>
+<p>No obstante, no es fácil saber cuándo centrarse en la
+escalabilidad.</p>
+<p>si el descubrimiento del producto no da en el blanco, el sistema
+nunca alcanzará el nivel de uso que requiere la escalabilidad.</p>
+<p>Insistir en que el producto digital tenga un diseño vanguardista y
+escalable, puede ser un despilfarro si el equipo sigue buscando un
+Producto Mínimo Viable.</p>
+<p>Por supuesto, si se está haciendo ingeniería de sistemas y
+construyendo un “engranaje”, puede que necesite pensar en la
+escalabilidad antes.</p>
+<p>Lo que suele ocurrir es que el sistema pasa por varios prototipos
+hasta que se encuentra algo con valor de mercado.</p>
+<p>Cuando el uso empieza a aumentar, el equipo se apresura a buscar un
+enfoque más sólido que tenga en cuenta la escalabilidad.</p>
+<h2 id="el-prinicipio-cap">El prinicipio CAP</h2>
+<p>El <strong>escalado vertical</strong> de sistemas digitales implica
+la adquisición de hardware y software más rápidos y potentes.</p>
+<p>Esta forma de escalar no funcionaría indefinidamente.</p>
+<p>El escalado vertical para una capacidad infinita no es física ni
+económicamente posible.</p>
+<p>Aquí empezaron a surgir los sistemas distribuidos.</p>
+<p>Tan pronto como comienzas a dividir tus datos entre servidores, te
+encuentras con las implicaciones prácticas del principio CAP:</p>
+<ul>
+<li><p>Consistencia (Consistency).</p></li>
+<li><p>Disponibilidad (Availability).</p></li>
+<li><p>Tolerancia (Partition Tolerance).</p></li>
+</ul>
+<h3 id="consistencia">Consistencia</h3>
+<p>La <strong>consistencia</strong> implica que todos los servidores (o
+“nodos”) del sistema ven los mismos datos al mismo tiempo.</p>
+<p><strong>Garantía transaccional:</strong> Si se está procesando una
+actualización, ningún nodo la verá antes que otro. Es el tipo de
+procesamiento en el que destacan las bases de datos relacionales.</p>
+<p>El sistema no mostrará ningún dato a nadie hasta que pueda mostrar a
+todos los usuarios los datos correctos.</p>
+<h3 id="disponibilidad">Disponibilidad</h3>
+<p>La <strong>disponibilidad</strong> significa lo que implica: que el
+sistema está disponible para proporcionar datos a petición.</p>
+<p>Si tenemos muchos nodos con los mismos datos en ellos, esto puede
+mejorar la disponibilidad, ya que, si uno se cae, el usuario puede
+seguir accediendo a los demás.</p>
+<h3 id="tolerancia">Tolerancia</h3>
+<p>La <strong>tolerancia</strong> a las caídas es la capacidad del
+sistema distribuido para hacer frente a las interrupcciones de las
+comunicaciones.</p>
+<p>Si tenemos dos nodos, de los que se espera que ambos tengan los
+mismos datos, y la red deja de comunicarse entre ellos, no podrán
+enviarse actualizaciones entre sí.</p>
+<p>En este caso, hay dos opciones: dejar de prestar servicios a todos
+los usuarios del sistema (fallo de disponibilidad) o aceptar que los
+datos no sean los mismos en todos los nodos (fallo de coherencia).</p>
+<h3 id="implicaciones">Implicaciones</h3>
+<p>Es imposible para un sistema distribuido garantizar simultáneamente
+las tres características mencionadas previamente.</p>
+<p>Un sistema no puede asegurar más de dos de estas tres características
+simultáneamente.</p>
+<p>Ningún sistema distribuido está a salvo de los <strong>fallos de
+red</strong>, por lo que generalmente hay que admitir la partición de la
+red.</p>
+<p>En ausencia de partición, pueden satisfacerse tanto la
+<strong>disponibilidad</strong> como la <strong>coherencia</strong>.</p>
+<p>En presencia de una partición, quedan dos opciones:
+<strong>consistencia</strong> y <strong>disponibilidad</strong>.</p>
+<ul>
+<li><p>Si se opta por la coherencia en lugar de la disponibilidad, el
+sistema devolverá un error o un tiempo de espera si no se puede
+garantizar que una información determinada esté actualizada debido a la
+partición de la red.</p></li>
+<li><p>Si se elige la disponibilidad en lugar de la coherencia, el
+sistema siempre procesará la consulta e intentará devolver la versión
+más reciente disponible de la información, incluso si no puede
+garantizar que esté actualizada debido a la partición de la
+red.</p></li>
+</ul>
+<h3 id="consistencia-o-disponibilidad">¿Consistencia o
+disponibilidad?</h3>
+<p>En los primeros años de la informática, la preferencia era por una
+fuerte consistencia.</p>
+<p>Dichos sistemas podrían ser consistentes y estar disponibles, pero no
+podrían tolerar interrupcciones de la red.</p>
+<p>Si la red no funciona, el sistema, o al menos una parte de él,
+también estaba inactivo.</p>
+<p>En empresas como Google o Facebook adoptaron un enfoque
+alternativo.</p>
+<blockquote>
+<p>Aceptaremos la inconsistencia en los datos para que nuestros sistemas
+estén siempre disponibles.</p>
+</blockquote>
+<p>Claramente, para un sitio de redes sociales como Facebook, no es
+necesario que una publicación esté en todas partes a la vez antes de que
+pueda mostrarse.</p>
+<p>El reto de aceptar la incoherencia es cómo hacerlo.</p>
+<p>Eventualmente, el sistema debe ser coherente y, si se realizan
+actualizaciones conflictivas, deben resolverse.</p>
+<p>Los sistemas escalables en general favorecen la disponibilidad y la
+tolerancia a particiones como principios y, por lo tanto, deben tomar
+medidas explícitas para restaurar la coherencia cuando se produce un
+error.</p>
+<p>El enfoque adoptado para particionar el sistema en réplicas es
+fundamental para administrar la coherencia final, lo que nos lleva al
+cubo de escalado AFK.</p>
+<h2 id="el-cubo-afk-del-escalado">El cubo AFK del escalado</h2>
+<p>El cubo AFK es un modelo tecnológico que indica tres enfoques
+mediante los cuales las plataformas tecnológicas pueden escalarse para
+satisfacer niveles crecientes de demanda sobre el sistema en
+cuestión.</p>
+<ol start="24" type="A">
+<li><p>Replicar el sistema completo.</p></li>
+<li><p>Dividir el sistema funcionalmente en capas o componentes más
+pequeños.</p></li>
+<li><p>Dividir los datos del sistema.</p></li>
+</ol>
+<h3 id="eje-x">Eje X</h3>
+<p>El eje X del modelo describe el escalado tecnológica a través de
+múltiples instancias del mismo componente mediante la clonación de un
+servicio o la replicación de un conjunto de datos.</p>
+<h3 id="eje-y">Eje Y</h3>
+<p>El eje Y de modelo describe el escalado de una solución tecnológica
+mediante la separación de una aplicación monolítica en distintos
+servicios o separando las funcionalidades.</p>
+<h3 id="eje-z">Eje Z</h3>
+<p>El eje Z del cubo describe el escalado de una solución tecnológica
+mediante la separación de componentes en función de ciertas
+características.</p>
 </body>
 </html>
