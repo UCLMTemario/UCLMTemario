@@ -174,8 +174,970 @@
 <h1 class="title">Modelado con ArchiMate</h1>
 <p class="subtitle">TEMA 5</p>
 <p class="author">Aika Kenshi</p>
-<p class="date">18-09-2024</p>
+<p class="date">16-12-2024</p>
 </header>
-<h1 id="section"></h1>
+<h1 id="introducción-a-archimate">Introducción a ArchiMate</h1>
+<p>Existen diferentes modelos, técnicas y lenguajes específicos para el
+modelado de las arquitecturas de dominio.</p>
+<ul>
+<li><p>Heterogeneidad entre dominios, métodos y técnicas.</p></li>
+<li><p>Necesidad de un lenguaje de modelado de arquitecturas capaz de
+modelar:</p>
+<ul>
+<li><p>Estructuras globales <u>dentro</u> de cada dominio (elementos
+principales y dependencias) comprensibles por no expertos en el
+dominio.</p></li>
+<li><p>Relaciones <u>entre</u> dominios.</p></li>
+<li><p>Base para técnicas de visualización y análisis de la
+arquitectura.</p></li>
+</ul></li>
+</ul>
+<p><strong>Trazabilidad bidireccional:</strong> se debe poder saltar
+entre elementos de cualquier dominio en ambas direcciones.</p>
+<h2 id="archimate">ArchiMate</h2>
+<p><strong>ArchiMate</strong> es un lenguaje visual de modelado de
+arquitecturas empresariales.</p>
+<p>Presenta un conjunto de iconografía para describir, analizar y
+visualizar las relaciones entre los distintos de la organización y su
+evolución:</p>
+<ul>
+<li><p>Estrategia y motivación de la organización.</p></li>
+<li><p>Procesos de negocio.</p></li>
+<li><p>Estructuras organizacionales.</p></li>
+<li><p>Flujos de información.</p></li>
+<li><p>Sistemas de Tecnología de Información.</p></li>
+<li><p>Infraestructura técnica y física.</p></li>
+</ul>
+<h3 id="características-de-archimate">Características de ArchiMate</h3>
+<ul>
+<li><p>Ligero: solo los conceptos justos y necesarios.</p></li>
+<li><p>Preciso: conceptos y modelos bien fundamentados.</p></li>
+<li><p>Aproximaciones existentes:</p>
+<ul>
+<li><p>UML: software.</p></li>
+<li><p>BPMN: procesos.</p></li>
+<li><p>ERD: datos</p></li>
+</ul></li>
+<li><p><strong>Diferencias:</strong> ArchiMate integra diversos dominios
+de arquitectura, con un alcance más amplio, pero menos
+detallado.</p></li>
+<li><p>Uso con TOGAF ADM.</p></li>
+</ul>
+<h3 id="archimate-y-adm-togaf">ArchiMate y ADM TOGAF</h3>
+<p><img src="/img/2425/tag1/Ordinaria/Tema5_1.png" /></p>
+<h2 id="definiciones-básicas">Definiciones básicas</h2>
+<ul>
+<li><p><strong>Marco central:</strong> estructura de referencia para
+clasificar los elementos del lenguaje central.</p></li>
+<li><p><strong>Lenguaje central:</strong> núcleo del lenguaje que define
+los conceptos para modelar arquitecturas.</p></li>
+<li><p><strong>Capa:</strong> abstracción del marco de ArchiMate para la
+cual se puede modelar la empresa.</p></li>
+<li><p><strong>Modelo:</strong> colección de conceptos en el contexto de
+la estructura de ArchiMate.</p></li>
+<li><p><strong>Concepto:</strong> elemento, relación o conector de
+relaciones.</p></li>
+<li><p><strong>Elemento:</strong> unidad básica en el metamodelo de
+ArchiMate. Se usa para definir y describir las partes constituyentes de
+la arquitectura y sus características.</p></li>
+<li><p><strong>Elemento central:</strong> elemento estructural o de
+comportamiento en una de las capas centrales.</p></li>
+<li><p><strong>Elemento compuesto:</strong> elemento formado por otros
+elementos.</p></li>
+<li><p><strong>Aspecto:</strong> clasificación de elementos según
+características independientes de las capas y relacionada con los
+intereses de los stakeholders.</p></li>
+<li><p><strong>Atributo:</strong> propiedad asociada a un concepto del
+lenguaje.</p></li>
+<li><p><strong>Relación:</strong> conexión entre dos conceptos. Puede
+ser estructurales, de dependencia, dinámicas, u otras.</p></li>
+<li><p><strong>Conector:</strong> elemento usado para asociar dos o más
+relaciones entre sí.</p></li>
+</ul>
+<h1 id="estructura">Estructura</h1>
+<h2 id="relaciones-entre-términos">Relaciones entre términos</h2>
+<p><img src="/img/2425/tag1/Ordinaria/Tema5_2.png" /></p>
+<h2 id="marco-central">Marco central</h2>
+<ul>
+<li><u>Estructuras similares:</u> mismos tipos de elementos y
+relaciones, con distinta naturaleza.</li>
+</ul>
+<h3 id="capas">Capas</h3>
+<ol type="1">
+<li><p><u><strong>NEGOCIO (BUSINESS):</strong></u> muestra los
+<strong>servicios de negocio ofrecidos a los clientes</strong>,
+relacionados en la organización por procesos de negocio y llevados a
+cabo por actores de negocio.</p></li>
+<li><p><u><strong>APLICACIONES (APPLICATION):</strong></u> muestra los
+<strong>servicios de aplicación que soportan al negocio</strong>, y las
+aplicaciones que los realizan.</p></li>
+<li><p><u><strong>TECNOLOGÍA (TECHNOLOGY):</strong></u> muestra
+<strong>servicios de Tecnología de Información necesarios para ejecutar
+las aplicaciones</strong>, y el hardware y software de los sistemas que
+realizan dichos servicios.</p></li>
+</ol>
+<h4 id="orientación-a-servicios">Orientación a servicios</h4>
+<ul>
+<li><strong>Servicio:</strong> unidad de funcionamiento esencial que un
+sistema aporta a su entorno.</li>
+</ul>
+<blockquote>
+<p><strong>Servicios = enlaces entre capas</strong></p>
+</blockquote>
+<ul>
+<li><p>En cada capa:</p>
+<ul>
+<li><p><strong>Servicios externos:</strong> soporte a la capa
+superior.</p></li>
+<li><p><strong>Servicios internos</strong> soporte interno a las
+aplicaciones externas.</p></li>
+</ul></li>
+</ul>
+<h2 id="aspectos">Aspectos</h2>
+<ol type="1">
+<li><p><u><strong>Estructura activa:</strong></u> elementos
+estructurales capaces de mostrar comportamiento.</p></li>
+<li><p><u><strong>Comportamiento:</strong></u> procesos, funciones,
+eventos y servicios relacionados por los elementos activos de las tres
+capas centrales.</p></li>
+<li><p><u><strong>Estructura pasiva:</strong></u> objetos sobre los
+cuales se realiza el comportamiento.</p></li>
+</ol>
+<h1 id="metamodelo-genérico.-notación-elementos-y-patrones">Metamodelo
+genérico. Notación, elementos y patrones</h1>
+<h2 id="notación">Notación</h2>
+<p>ArchiMate ofrece una <strong>notación estándar</strong>.</p>
+<p>Cada elemento se representa en una caja con un icono en la esquiva
+superior derecha.</p>
+<ul>
+<li>Uso de letras en la esquiva superior izquierda para distinguir las
+capas.</li>
+</ul>
+<p>Los iconos solos también sirven para representar el elemento.</p>
+<p>Esquinas de las cajas según su significado:</p>
+<ul>
+<li><p><strong>Cuadradas:</strong> elementos estructurales.</p></li>
+<li><p><strong>Redondas:</strong> elementos de comportamiento.</p></li>
+<li><p><strong>Diagonales:</strong> elementos de motivación.</p></li>
+</ul>
+<p>Reutiliza representaciones de otras técnicas de modelado como UML y
+BPMN.</p>
+<ul>
+<li><strong>Anidación de elementos:</strong> notación alternativa de
+relaciones estructurales.</li>
+</ul>
+<h3 id="uso-de-colores">Uso de colores</h3>
+<ul>
+<li><p>Amarillo: capa de negocio.</p></li>
+<li><p>Azul: capa de aplicación.</p></li>
+<li><p>Verde: capa de tecnología.</p></li>
+<li><p>Morado: capa de motivación.</p></li>
+</ul>
+<h2 id="patrón-básico-de-modelado">Patrón básico de modelado</h2>
+<p>Se aplica en las tres capas centrales para responder a la pregunta
+clave <strong>¿QUIÉN ACTÚA sobre QUÉ?</strong>.</p>
+<p>Tres tipos de elementos:</p>
+<ul>
+<li><p><strong>QUIÉN: estructurales activos</strong> (los que
+actúan).</p></li>
+<li><p><strong>ACTÚA: comportamiento</strong> (acción de los
+activos).</p></li>
+<li><p><strong>Sobre QUÉ: estructurales pasivos</strong> (sobre los que
+se aplica el comportamiento de los activos).</p></li>
+</ul>
+<h2 id="tipos-de-elementos">Tipos de elementos</h2>
+<h3 id="estrctural-activo">ESTRCTURAL ACTIVO</h3>
+<p>Entidad capaz de realizar una acción.</p>
+<ul>
+<li><p><strong>Estructural activo interno:</strong> actores de negocio,
+componentes de aplicación, nodos y dispositivos, que realizan el
+comportamiento.</p></li>
+<li><p><strong>Estructural activo externo (interfaces)</strong> punto de
+acceso en el que se ofrecen servicios al entorno. Muestra una vista
+externa del servicio y esconde la estructura interna.</p></li>
+</ul>
+<h3 id="de-comportamiento">DE COMPORTAMIENTO</h3>
+<p>Representa los aspectos dinámicos de la empresa.</p>
+<ul>
+<li><p><strong>De comportamiento interno:</strong> unidad de actividad
+que puede ser reaizada por uno o varios elementos estructurales
+activos.</p></li>
+<li><p><strong>De comportamiento externo (servicios):</strong>
+comportamiento definido explícitamente y expuesto al entorno. Servicios
+accesibles a través de las interfaces.</p></li>
+<li><p><strong>Evento:</strong> cambio de estado. Puede tomar atributos
+temporales para indicar cuándo ocurren.</p></li>
+</ul>
+<h2 id="estrctural-pasivo">ESTRCTURAL PASIVO</h2>
+<p>Representa los elementos sobre los que los activos ejecutan los
+comportamientos.</p>
+<ul>
+<li><p>Accesibles a través de los elementos de comportamiento.</p></li>
+<li><p>No pueden ejecutar acciones.</p></li>
+<li><p>Suelen ser objetos de información o datos, aunque también pueden
+ser objetos físicos.</p></li>
+</ul>
+<h2 id="metamodelo-genérico">Metamodelo genérico</h2>
+<ul>
+<li><p><u>independiente de las capas</u>.</p></li>
+<li><p>Blanco: elementos estructurales (abstractos).</p></li>
+<li><p>Gris: elementos estratégicos (instanciables).</p></li>
+</ul>
+<h2 id="especializaciones-de-elementos">Especializaciones de
+elementos</h2>
+<ul>
+<li><p><strong>Proceso (comportamiento):</strong> <u>secuencia de
+comportamientos</u> para obtener un resultado específico.</p></li>
+<li><p><strong>Función (comportamiento):</strong> colección de
+comportamientos según un criterio específico.</p></li>
+<li><p><strong>Comportamiento colectivo impícito:</strong> varios
+elementos estructurales activos asignados a un mismo
+comportamiento.</p></li>
+<li><p><strong>Comportamiento colectivo explícito: Interacción</strong>
+(comportamiento interno) reaizada por una <strong>colaboración</strong>
+de varios elementos estructurales activos.</p></li>
+<li><p><strong>Colaboración (estructural activo):</strong> agregación de
+dos o más elementos estructurales activos internos que trabajan juntos
+para el desarrollo de un comportamiento colectivo.</p></li>
+<li><p><strong>Interacción (comportamiento):</strong> comportamiento
+colectivo que debe realizarse por dos o más elementos estructurales
+activos internos, asignados directamente o agregados en una
+colaboración.</p></li>
+</ul>
+<p>En cada capa se pueden combinar elementos y agregar relaciones entre
+procesos, funciones e interacciones.</p>
+<h2 id="elementos-de-motivación">Elementos de motivación</h2>
+<p>La motivación (¿Por qué?) no están incluida en el marco centra, es
+decir, se ubica en una <strong>nueva columna</strong>.</p>
+<p>Representan el contexto o la justificación de la arquitectura de la
+empresa.</p>
+<p>Abordan la manera en la que la arquitectura empresarial está alineada
+con el contexto de la organización.</p>
+<ul>
+<li>Numerosos elementos motivacionales.</li>
+</ul>
+<h2 id="elementos-de-estrategia">Elementos de estrategia</h2>
+<p>La estrategia del negocio determina los objetivos y el funcionamiento
+de la organización.</p>
+<ul>
+<li>No contemplada en el marco central, esto es, se localiza en una
+nueva capa sobre la de negocio.</li>
+</ul>
+<p>No hay elementos pasivos, solo elementos activos y de
+comportamiento.</p>
+<h2 id="elementos-compuestos">Elementos compuestos</h2>
+<p>Elementos resultantes de la combinación de otros conceptos que pueden
+proceder de múltiples aspectos o capas del lenguaje.</p>
+<p>Los elementos compuestos pueden agregarse para formar otros
+elementos.</p>
+<h3 id="grupo-grouping">Grupo (Grouping)</h3>
+<p>Agrega o compone una colección de conceptos (elementos y/o
+relaciones) de un mismo conjunto.</p>
+<p>Se crea una relación de agregación o composición entre el grupo y los
+conceptos que lo componen.</p>
+<ul>
+<li><p>Modelado de bloques de construcción (arquitectura y
+solución).</p></li>
+<li><p>Modelado de dominios: contiene conjuntos de datos relacionados y
+agrupables.</p></li>
+</ul>
+<h3 id="localización-location">Localización (location)</h3>
+<p>Representa un aspecto físico o conceptual (¿Dónde?) en el que se
+alojan los elementos estructurales (activos o pasivos) o se ejecutan los
+elementos de comportamiento.</p>
+<p>No requiere añadir una columna adicional al marco central.</p>
+<ul>
+<li>Modelado mediante la relación de asignación de una localización a un
+elemento esstructural.</li>
+</ul>
+<h1 id="metamodelo-genérico.-relaciones">Metamodelo genérico.
+Relaciones</h1>
+<h2 id="relaciones">Relaciones</h2>
+<p>Conexiones entre conceptos (casi siempre elementos, aunque también
+relaciones).</p>
+<p>Su significado exacto depende de los conceptos que conectan.</p>
+<h3 id="tipos-de-relaciones">Tipos de relaciones</h3>
+<ul>
+<li><p><u><strong>ESTRCTURALES:</strong></u> construcción estática o
+composición de conceptos del mismo o distinto tipo.</p>
+<ul>
+<li><p>Composición.</p></li>
+<li><p>Agregación.</p></li>
+<li><p>Asignación.</p></li>
+<li><p>Realización.</p></li>
+</ul></li>
+<li><p><u><strong>DE DEPENDENCIA:</strong></u> modelan dependencias
+entre elementos o el uso que se da a unos elementos para soportar otros
+elementos.</p>
+<ul>
+<li><p>Servicio.</p></li>
+<li><p>Acceso.</p></li>
+<li><p>Influencia.</p></li>
+<li><p>Asociación.</p></li>
+</ul></li>
+<li><p><u><strong>DINÁMICAS:</strong></u> modelan interacciones entre
+elementos.</p>
+<ul>
+<li><p>Lanzamiento.</p></li>
+<li><p>Flujo.</p></li>
+</ul></li>
+<li><p><u><strong>OTRAS</strong></u> no incluidas en las categorías
+anteriores.</p>
+<ul>
+<li>Especialización.</li>
+</ul></li>
+</ul>
+<h2 id="relaciones-estructurales">Relaciones estructurales</h2>
+<p>Describen la coherencia estática dentro de la arquitectura
+empresarial.</p>
+<ul>
+<li><p>El concepto origen siempre es un elemento.</p>
+<ul>
+<li>En Asignación y Realización puede ser un elemento o un conector de
+relaciones.</li>
+</ul></li>
+<li><p>El concepto destino puede ser un elemento o una relación (o
+varias).</p></li>
+</ul>
+<h3 id="composición">Composición</h3>
+<p>Representa que un elemento está formado por uno o más conceptos.</p>
+<ul>
+<li>Heredado de UML.</li>
+</ul>
+<p>El elemento origen completo o parcial está compuesto del elemento
+destino completo.</p>
+<p>Siempre se puede aplicar entre instancias del mismo tipo de
+elemento.</p>
+<p>Si se elimina la relación, los conceptos que forman el elemento
+también se eliminarán.</p>
+<h3 id="agregación">Agregación</h3>
+<p>Representa que un elemento combina uno o más conceptos.</p>
+<ul>
+<li>Heredado de UML.</li>
+</ul>
+<p>El elemento origen completo o parcial agrega al elemento destino
+completo.</p>
+<p>Siempre se puede aplicar entre instancias del mismo tipo de
+elemento.</p>
+<h3 id="asignación">Asignación</h3>
+<p>Representa la asignación de responsabilidad, ejecución o realización
+de un comportamiento.</p>
+<p>Relaciona elementos estructurales activos (origen) con elementos de
+comportamiento (destino).</p>
+<p>El elemento origen completo o parcial se asigna al elemento destino
+completo.</p>
+<h3 id="realización">Realización</h3>
+<p>Representa que una entidad juega un papel crítico en la creación,
+consecución u operación de una entidad más abstracta.</p>
+<p>Indica que entidades abstractas (lógicas) se realizan mediante
+entidades más tangibles (físicas).</p>
+<p>El elemento origen completo o parcial realiza el elemento destino
+completo.</p>
+<h2 id="relaciones-de-dependencia">Relaciones de dependencia</h2>
+<p>Describen la manera en la que los elementos soportan o son usados por
+otros elementos.</p>
+<p>Notación de UML, pero con significado distinto y dirección
+contraria.</p>
+<h3 id="servicio">Servicio</h3>
+<p>Representa que un elemento provee su funcionalidad a otro
+elemento.</p>
+<p>Describe cómo los servicios o interfaces ofrecidos por elementos de
+comportamiento o estructurales activos sirven a entidades de su
+entorno.</p>
+<p>El elemento origen completo o parcial sirve (es usado por) el
+elemento destino completo.</p>
+<h3 id="acceso">Acceso</h3>
+<p>Representa la capacidad de los elementos estructurales activos y de
+comportamiento de observar o actuar sobre los elementos estructurales
+pasivos.</p>
+<p>La punta de la flecha indica la creación, cambio o uso del elemento
+estructural pasivo.</p>
+<ul>
+<li><p>Dirección de un activo o comportamiento hacia un pasivo.</p></li>
+<li><p>Dirección contraria: lectura.</p></li>
+<li><p>Ambas direcciones: lectura/escritura.</p></li>
+</ul>
+<h3 id="influencia">Influencia</h3>
+<p>Representa que un elemento afecta la implementación o la consecución
+de un elemento de motivación.</p>
+<p>El símbolo implica una influencia positiva o negativa del elemento
+origen sobre el elemento destino.</p>
+<h3 id="asociación">Asociación</h3>
+<p>Representa una relación inespecífica o no representada por ningún
+otro tipo de relación de ArchiMate.</p>
+<ul>
+<li><p>Usada en primeras aproximaciones genéricas de un modelo que se
+refinan más tarde.</p></li>
+<li><p>Con o sin dirección.</p></li>
+</ul>
+<h2 id="relaciones-dinámicas">Relaciones dinámicas</h2>
+<p>Representa dependencias temporales entre elementos de una
+arquitectura.</p>
+<h3 id="lanzamiento-disparo">Lanzamiento (disparo)</h3>
+<p>Representa una relación temporal o casual entre dos elementos.</p>
+<ul>
+<li>Modela la precedencia temporal o casual de elementos de
+comportamiento en un proceso.</li>
+</ul>
+<p>El elemento origen completo o parcial debe acabar antes de que pueda
+iniciarse el elemento destino.</p>
+<h3 id="flujo">Flujo</h3>
+<p>Representa la transformación de información, bienes, dinero, etc, de
+un elemento a otro.</p>
+<ul>
+<li>No implica una relación causal.</li>
+</ul>
+<h2 id="otras-relaciones">Otras relaciones</h2>
+<h3 id="especialización">Especialización</h3>
+<p>Representa que un elemento es un caso particular de otro
+elemento.</p>
+<ul>
+<li>Basada en la relación de generalización de UML.</li>
+</ul>
+<p>Siempre se puede aplicar entre instancias del mismo tipo de
+elemento.</p>
+<h3 id="unión">Unión</h3>
+<p>Sirve para la conexión de relaciones del mismo tipo.</p>
+<ul>
+<li>Unión uno-muchos y muchos-muchos.</li>
+</ul>
+<p>Solo válidas entre dos conceptos si también puede existir una
+relación directa.</p>
+<ul>
+<li><p>AND: todos los elementos deben participar en la
+relación.</p></li>
+<li><p>OR: al menos uno de los elementos participa en la
+relación.</p></li>
+</ul>
+<h2 id="limitaciones">Limitaciones</h2>
+<ul>
+<li><p>Cada relación va exactamente de un concepto origen a otro
+concepto destino.</p></li>
+<li><p>No puede haber relaciones entre dos relaciones.</p></li>
+<li><p>Todas las relaciones conectadas a un conector de relación deben
+ser del mismo tipo.</p></li>
+<li><p>Una cadena de relaciones del mismo tipo entre elementos solo es
+válida si se puede establecer una relación directa del mismo tipo entre
+ambos elementos.</p></li>
+<li><p>Una relación entre elemento y otra relación solo puede ser una
+agregación, composición o asociación.</p>
+<ul>
+<li>Agregación y composición requieren que el elemento sea
+compuesto.</li>
+</ul></li>
+<li><p>Dos elementos del mismo tipo pueden conectarse con relaciones de
+agregación, composición o asociación.</p></li>
+<li><p>La asociación es posible entre dos elementos cualquiera,
+independiente del tipo.</p></li>
+</ul>
+<h1 id="visualización">Visualización</h1>
+<p><img src="/img/2425/tag1/Ordinaria/Tema5_3.png" /></p>
+<hr />
+<h1 id="capa-de-negocio">Capa de Negocio</h1>
+<h2 id="metamodelo-de-negocio">Metamodelo de negocio</h2>
+<p>Representa la estructura e interacción entre estrategia,
+organización, funciones, procesos y necesidades.</p>
+<p><img src="/img/2425/tag1/Ordinaria/Tema5_4.png" /></p>
+<h2 id="elementos-estructurales-activos">Elementos estructurales
+activos</h2>
+<p>Las entidades activas son los sujetos (personas, sujetos o recursos
+permanentes) que realizan comportamientos (procesos o funciones de
+negocio).</p>
+<p>Elementos internos:</p>
+<ul>
+<li><p><u><strong>Actor de negocio:</strong></u> entidad capaz de
+realizar un comportamiento.</p></li>
+<li><p><u><strong>Rol de negocio:</strong></u> responsabilidad para
+realizar un comportamiento al que se puede asignar un actor.</p></li>
+<li><p><u><strong>Colaboración:</strong></u> agregación de dos o más
+activos internos de negocio que trabajan de forma conjunta para un
+comportamiento colectivo.</p></li>
+</ul>
+<p>Elementos externos:</p>
+<ul>
+<li><u><strong>Interfaz de negocio:</strong></u> punto de acceso a un
+servicio de negocio.</li>
+</ul>
+<h2 id="elementos-de-comportamiento">Elementos de comportamiento</h2>
+<ul>
+<li>ArchiMate orientado a servicios: distinción entre comportamientos y
+externos.</li>
+</ul>
+<h3 id="comportamientos-internos">Comportamientos internos</h3>
+<ul>
+<li><p><u><strong>Proceso de negocio:</strong></u> secuencia de
+comportamientos de negocio para obtener un resultado
+específico.</p></li>
+<li><p><u><strong>Función de negocio:</strong></u> colección de
+comportamientos de negocio agrupados según criterios de recursos,
+competencias o conocimientos.</p></li>
+<li><p><u><strong>Interacción de negocio:</strong></u> unidad de
+comportamiento colectivo realizado por dos o más activos de
+negocio.</p></li>
+</ul>
+<h3 id="comportamientos-externos">Comportamientos externos</h3>
+<ul>
+<li><u><strong>Servicio de negocio:</strong></u> comportamiento
+explícitamente definido que ofrece un activo de negocio a su
+entorno.</li>
+</ul>
+<h3 id="cambio-de-estado">Cambio de estado</h3>
+<ul>
+<li><u><strong>Evento de negocio:</strong></u> cambio de estado de la
+organización, derivado de la ejecución de comportamientos de negocio y
+que puede desencadenar nuevos comportamientos.</li>
+</ul>
+<h2 id="elementos-estructurales-pasivos">Elementos estructurales
+pasivos</h2>
+<p>Elementos manipulados por los de comportamiento, como procesos de
+negocio y funciones.</p>
+<p>Tipos:</p>
+<ul>
+<li><p><u><strong>Objeto de negocio:</strong></u> concepto usado por un
+dominio particular del negocio.</p></li>
+<li><p><u><strong>Contrato:</strong></u> especialización formal o
+informal de un acuerdo entre proveedor y cliente que específica los
+derechos y obligaciones asociadas a un producto.</p></li>
+<li><p><u><strong>Representación:</strong></u> forma perceptible de la
+información contenida en un objeto de negocio.</p></li>
+</ul>
+<h2 id="elementos-compuestos-1">Elementos compuestos</h2>
+<ul>
+<li><u><strong>Producto:</strong></u> colección de servicios y/o
+elementos estructurales pasivos acompañado de un contrato o conjunto de
+acuerdos, ofrecido como un conjunto a clientes internos y externos.
+Puede contener elementos intangibles (basados en servicios) y tangibles
+(productos físicos).</li>
+</ul>
+<h2 id="patrón-básico">Patrón básico</h2>
+<h3 id="interfaz-servicio">INTERFAZ-SERVICIO</h3>
+<p>Una interfaz sirve a un rol (o un rol utiliza una interfaz) para
+acceder a un servicio.</p>
+<p>A un servicio se accede a través de la interfaz asignada.</p>
+<p>Un proceso realiza un servicio.</p>
+<h3 id="rol-proceso-objeto-de-negocio">ROL-PROCESO-OBJETO DE
+NEGOCIO</h3>
+<p>Un rol tiene asignado un proceso que genera un objeto de negocio.</p>
+<h1 id="capa-de-aplicaciones">Capa de Aplicaciones</h1>
+<h2 id="metamodelo-de-aplicación">Metamodelo de Aplicación</h2>
+<p>Representa la arquitectura de sistemas de información (dominios de
+información y aplicaciones), incluida la arquitectura de aplicaciones,
+su estructura e interacciones.</p>
+<p><img src="/img/2425/tag1/Ordinaria/Tema5_5.png" /></p>
+<h2 id="elementos-estructurales-activos-1">Elementos estructurales
+activos</h2>
+<h3 id="elementos-internos">Elementos internos</h3>
+<ul>
+<li><p><u><strong>Componente de aplicación:</strong></u> elemento activo
+principal de la capa de Aplicación, que puede modelar cualquier entidad
+de esta capa (sistemas de información y software completo o parcial).
+Independiente, reutilizable y reemplazable.</p></li>
+<li><p><u><strong>Colaboración:</strong></u> agregación de dos o más
+elementos estructurales activos internos de aplicación que trabajan de
+forma conjunta para un comportamiento colectivo.</p></li>
+</ul>
+<h3 id="elementos-externos">Elementos externos</h3>
+<ul>
+<li><u><strong>Interfaz de aplicación:</strong></u> punto de acceso a un
+servicio de aplicación por el que accede el usuario, otro componente de
+aplicación, o un nodo.</li>
+</ul>
+<h2 id="elementos-de-comportamiento-1">Elementos de comportamiento</h2>
+<h3 id="comportamientos-internos-1">Comportamientos internos</h3>
+<ul>
+<li><p><u><strong>Proceso de aplicación:</strong></u> secuencia de
+comportamientos de aplicación para obtener un resultado
+específico.</p></li>
+<li><p><u><strong>Función de aplicación:</strong></u> comportamiento
+automático ejecutado por un componente de aplicación.</p></li>
+<li><p><u><strong>Interacción de aplicación:</strong></u> unidad de
+comportamiento colectivo realizado por dos o más componentes de
+aplicación.</p></li>
+</ul>
+<h3 id="comportamientos-externos-1">Comportamientos externos</h3>
+<ul>
+<li><u><strong>Servicio de aplicación:</strong></u> comportamiento
+explícitamente definido que ofrece un componente de aplicación a su
+entorno.</li>
+</ul>
+<h3 id="cambio-de-estado-1">Cambio de estado</h3>
+<ul>
+<li><u><strong>Evento de aplicación:</strong></u> combio de estado a
+nivel de aplicación, derivado de la ejecución de comportamientos de
+aplicación y que puede desencadenar nuevos comportamientos.</li>
+</ul>
+<h2 id="elemetos-estructurales-pasivos">Elemetos estructurales
+pasivos</h2>
+<ul>
+<li><u><strong>Objeto de datos:</strong></u> representa datos
+estructurados para su procesado automático. Pieza de información con un
+significado claro tanto para el negocio como para las aplicaciones. Un
+objeto de datos se puede considerar como una representación de un objeto
+de negocio.</li>
+</ul>
+<h2 id="patrón-básico-1">Patrón básico</h2>
+<h3 id="interfaz-servicio-1">INTERFAZ-SERVICIO</h3>
+<p>Una interfaz sirve a un componente (o un componente utiliza una
+interfaz) para acceder a un servicio.</p>
+<p>A un servicio se accede a través de la interfaz asignada.</p>
+<p>Un proceso reaiza un servicio.</p>
+<h3 id="compomente-función-objeto-de-datos">COMPOMENTE-FUNCIÓN-OBJETO DE
+DATOS</h3>
+<p>Un componente tiene asignada una función que genera un objeto de
+datos.</p>
+<h1 id="capa-de-tecnología">Capa de Tecnología</h1>
+<h2 id="metamodelo-de-tecnología">Metamodelo de Tecnología</h2>
+<p>Representa la arquitectura de la infraestructura de Tecnología de
+Información, incluidos los servicios de la plataforma y los componentes
+físicos y lógicos.</p>
+<p><img src="/img/2425/tag1/Ordinaria/Tema5_6.png" /></p>
+<h2 id="elementos-estructurales-activos-y-enlaces">Elementos
+estructurales activos y enlaces</h2>
+<h3 id="elementos-internos-1">Elementos internos</h3>
+<ul>
+<li><p><u><strong>Nodos:</strong></u> elemento activo principal de la
+capa de Tecnología, representa un <u>recurso de hardware o software</u>
+que aloja, manipula o interactúa con otros recursos computacionales o
+físicos.</p>
+<ul>
+<li><p><u><strong>Dispositivos:</strong></u> <u>recursos hardware</u>
+con capacidad de procesamiento, en el que el software de sistema y los
+artefactos se almacenan o despliegan para su ejecución.</p></li>
+<li><p><u><strong>Software de sistema:</strong></u> entorno software en
+el que operan los artefactos y que contribuye a ejecutar y utilizar el
+software o los datos desplegados en él.</p></li>
+</ul></li>
+<li><p><u><strong>Colaboración:</strong></u> agregación de dos o más
+elementos estructurales activos internos de tecnología que trabajan de
+forma conjunta para un comportamiento colectivo.</p></li>
+</ul>
+<h3 id="elementos-externos-1">Elementos externos</h3>
+<ul>
+<li><u><strong>Interfaz de tecnología:</strong></u> punto de acceso a un
+servicio de tecnología por el que accede un nodo.</li>
+</ul>
+<h3 id="enlaces-entre-nodos">Enlaces entre nodos</h3>
+<ul>
+<li><p><u><strong>Camino:</strong></u> enlace entre dos o más nodos por
+el que pueden intercambiar datos, energía o material.
+<strong>Comunicación lógica entre nodos</strong>.</p></li>
+<li><p><u><strong>Red de comunicación:</strong></u> conjunto de
+estructuras que conectan nodos para la transmisión, enrutado y recepción
+de datos. <strong>Comunicación física entre nodos</strong>.</p></li>
+</ul>
+<h2 id="elemento-de-comportamiento">Elemento de comportamiento</h2>
+<h3 id="comportamientos-internos-2">Comportamientos internos</h3>
+<ul>
+<li><p><u><strong>Proceso de tecnología:</strong></u> secuencia de
+comportamientos de tecnología para obtener un resultado
+específico.</p></li>
+<li><p><u><strong>Función de tecnología:</strong></u> colección de
+comportamientos de tecnología que pueden ser realizados por un
+nodo.</p></li>
+<li><p><u><strong>Interacción de tecnología:</strong></u> unidad de
+comportamiento colectivo reutilizado por dos o más nodos.</p></li>
+</ul>
+<h3 id="comportamientos-externos-2">Comportamientos externos</h3>
+<ul>
+<li><u><strong>Servicio de tecnología:</strong></u> comportamiento
+explícitamente definido que ofrece un nodo a su entorno.</li>
+</ul>
+<h3 id="cambio-de-estado-2">Cambio de estado</h3>
+<ul>
+<li><u><strong>Evento de tecnología:</strong></u> cambio de estado a
+nivel de tecnología, derivado de la ejecución de comportamientos de
+tecnología y que puede desencadenar nuevos comportamientos.</li>
+</ul>
+<h2 id="elementos-estructurales-pasivos-1">Elementos estructurales
+pasivos</h2>
+<p>Los objetos de tecnología son los elementos usados y procesados por
+la intraestructura de la empresa.</p>
+<ul>
+<li><u><strong>Artefacto:</strong></u> parte de información usada o
+producida en un proceso de desarrollo de software, o por el despliegue y
+ejecución de un sistema de Tecnología de Información. Elemento tangible
+para representar ficheros.</li>
+</ul>
+<h2 id="patrón-básico-2">Patrón básico</h2>
+<h3 id="interfaz-servicio-2">INTERFAZ-SERVICIO</h3>
+<p>Una interfaz sirve a un nodo (o un nodo utiliza una interfaz) para
+acceder a un servicio.</p>
+<p>A un servicio se accede a través de la interfaz asignada.</p>
+<p>Un proceso realiza un servicio.</p>
+<h3 id="nodo-función-artefacto">NODO-FUNCIÓN-ARTEFACTO</h3>
+<p>Un nodo tiene asignada una función que genera un artefacto.</p>
+<h1 id="relaciones-entre-capas">Relaciones entre capas</h1>
+<p>Las relaciones entre capas fundamentales hace referencia al
+<strong>alineamiento entre capas</strong></p>
+<ul>
+<li><p>Dos tipos de relaciones principales:</p>
+<ul>
+<li><p><strong>Servicio:</strong> un elemento A de una capa sirve a un
+elemento B de otra capa (B utiliza A).</p></li>
+<li><p><strong>Realización:</strong> un elemento de una capa puede
+realizar un elemento comparable de otra capa <u>superior</u>.</p></li>
+</ul></li>
+</ul>
+<p>también se puede dar la relación de <strong>agregación</strong> entre
+un producto/servicio y los elementos de las capas inferiores para
+indicar que puede ofrecerse directamente a un cliente como parte de ese
+producto.</p>
+<h2 id="relación-negocio-aplicación">Relación Negocio-Aplicación</h2>
+<ul>
+<li><p><strong>Servicio:</strong> aspectos estructurales y de
+comportamiento del soporte entre las dos capas.</p>
+<ul>
+<li>Los servicios pueden realizarse de la capa de negocio a la
+aplicación y viceversa.</li>
+</ul></li>
+<li><p><strong>Realización:</strong> .</p>
+<ul>
+<li>Nunca desde negocio hasta aplicación.</li>
+</ul></li>
+</ul>
+<h2 id="relación-negocio-tecnología">Relación Negocio-Tecnología</h2>
+<ul>
+<li><p><strong>Servicio:</strong> aspectos estructurales y de
+comportamiento del soporte entre las dos capas.</p>
+<ul>
+<li>Los servicios pueden realizarse de la capa de negocio a la de
+tecnología y viceversa.</li>
+</ul></li>
+<li><p><strong>Realización:</strong> un elemento de tecnología puede
+realizar un elemento comparable de la capa de negocio.</p>
+<ul>
+<li>Nunca desde negocio hasta tecnología.</li>
+</ul></li>
+</ul>
+<h2 id="relación-aplicación-tecnología">Relación
+Aplicación-Tecnología</h2>
+<ul>
+<li><p><strong>Servicio:</strong> aspectos estructurales y de
+comportamiento del uso que las aplicaciones hacen de la infraestructura
+de tecnología y viceversa.</p></li>
+<li><p><strong>Realización:</strong> un elemento de aplicación se
+materializa en un elemento comparable de la infraestructura de
+tecnología (una tecnología realiza (hace realidad) una aplicación).</p>
+<ul>
+<li>Nunca desde aplicación hasta tecnología.</li>
+</ul></li>
+</ul>
+<hr />
+<h1 id="marco-completo">Marco completo</h1>
+<p><img src="/img/2425/tag1/Ordinaria/Tema5_7.png" /></p>
+<h1 id="aspecto-de-motivación">Aspecto de Motivación</h1>
+<h2 id="metamodelo-de-motivación">Metamodelo de Motivación</h2>
+<p>Representa las motivaciones o razones que guían el diseño o el cambio
+de una arquitectura empresarial.</p>
+<p><img src="/img/2425/tag1/Ordinaria/Tema5_8.png" /></p>
+<h2 id="stakeholder-driver-y-evaluación">Stakeholder, Driver y
+Evaluación</h2>
+<h3 id="stakeholder">Stakeholder</h3>
+<p>Representa el rol de un individuo, grupo u organización con intereses
+en los efectos de la arquitectura empresarial.</p>
+<p>Influyen en la creación y modificación de objetivos de negocio.</p>
+<h3 id="driver">Driver</h3>
+<p>Representa condiciones internas o externas que motivan a la
+organización a definir sus objetivos y realizar los cambios necesarios
+para alcanzarlos.</p>
+<p>Los drivers asociados con stakeholders representan sus intereses y
+preocupaciones en la arquitectura.</p>
+<ul>
+<li><p><u>Drivers internos:</u> satisfacción del cliente o
+rentabilidad.</p></li>
+<li><p><u>Drivers externos</u> (no asociados a stakeholders): cambios de
+legislación o cambios económicos.</p></li>
+</ul>
+<h3 id="evaluación">Evaluación</h3>
+<p>Representa el resultado de un análisis de la situación de la empresa
+con respecto a algún factor determinante (driver).</p>
+<p>Puede revelar debilidades, amenazas, fortalezas u oportunidades de la
+organización (análisis DAFO):</p>
+<ul>
+<li><p>Las debilidades y amenazas se deben considerar como problemas que
+necesitan ser abordados mediante objetivos que reduzcan sus
+efectos.</p></li>
+<li><p>Las fortalezas y oportunidades se deben traducir directamente a
+objetivos.</p></li>
+</ul>
+<h2 id="objetivo-resultado-principio-requisito-y-limitación">Objetivo,
+Resultado, Principio, Requisito y Limitación</h2>
+<p>La motivación de una organización para alcanzar unos Resultados
+concretos se representa a través de Objetivos, Principios, Requisitos y
+Limitaciones.</p>
+<h3 id="objetivo">Objetivo</h3>
+<p>Representa una declaración, dirección o estado final deseado para una
+organización y sus stakeholders.</p>
+<p>Pueden representar las necesidades de los stakeholders, y se usan
+para medir el éxito de una organización.</p>
+<p>Se expresan con palabras cualitativas: “incrementar” o “mejorar”.</p>
+<p>Se asocian a Resultados concretos, para describir resultados
+cuantitativos y cuándo se deben lograr.</p>
+<h3 id="resultado">Resultado</h3>
+<p>Resultados finales orientados al negocio.</p>
+<ul>
+<li>Tangibles, posiblemente cuantitativos y relacionados con el
+tiempo.</li>
+</ul>
+<p>Pueden tener distinto valor para distintos stakeholders.</p>
+<h3 id="principio">Principio</h3>
+<p>Declaración de intenciones que define una <u>propiedad general</u>
+que se aplica a cualquier elemento en un contexto determinado de la
+arquitectura.</p>
+<ul>
+<li>Alcance amplio y abstracto.</li>
+</ul>
+<h3 id="requisito">Requisito</h3>
+<p>Declaración de necesidades que define una propiedad que se aplica a
+un <u>sistema específico</u> según lo descrito por la arquitectura.</p>
+<p>Modelan las propiedades de los elementos para lograr los fines
+indicados por los objetivos.</p>
+<ul>
+<li>Requisitos: medios para alcanzar los objetivos.</li>
+</ul>
+<p>Alcance corto y más concreto que los principios.</p>
+<h3 id="limitación">Limitación</h3>
+<p>Factor que limita la consecución de objetivos.</p>
+<p>Restringe la <u>implementación de un sistema</u> (tipo de tecnología
+a usar), el <u>proceso de implementación</u> (limitación de tiempo o
+presupuesto), o <u>el funcionamiento del sistema</u> (restricciones
+legales).</p>
+<h2 id="significado-y-valor">Significado y Valor</h2>
+<h3 id="significado">Significado</h3>
+<p>Representa el conocimiento o la experiencia sobre un concepto de la
+arquitectura, o la interpretación que se le da en un contexto
+determinado.</p>
+<p>Se utiliza para describir el contenido y la finalidad de los
+elementos pasivos.</p>
+<p>Un mismo elemento puede tener significados diferentes para distintos
+stakeholders.</p>
+<h3 id="valor">Valor</h3>
+<p>Representa el valor relativo, la utilidad o la importancia de un
+concepto.</p>
+<p>Puede hacer referencia a términos económicos, valor
+práctico/funcional, derecho de uso de servicios, información o
+conocimiento.</p>
+<p>Un mismo elemento puede tener significados diferentes para distintos
+stakeholders.</p>
+<h2 id="relación-con-elementos-centrales">Relación con elementos
+centrales</h2>
+<p>Los elementos de motivación representan la motivación tras los
+elementos centrales.</p>
+<ul>
+<li>Core: relación indirecta con principios, resultados y
+objetivos.</li>
+</ul>
+<h1 id="capa-de-estrategia">Capa de Estrategia</h1>
+<h2 id="metamodelo-de-estrategia">Metamodelo de Estrategia</h2>
+<p>Representa la dirección estratégica y las decisiones de la empresa,
+así como su impacto en la Arquitectura Empresarial.</p>
+<p><img src="/img/2425/tag1/Ordinaria/Tema5_9.png" /></p>
+<h2 id="elementos-estructurales">Elementos estructurales</h2>
+<h3 id="recursosactivos">Recursos/Activos</h3>
+<p>Representa un bien que posee o controla una persona u
+organización.</p>
+<p>Se consideran fuentes de ventaja competitiva para una
+organización.</p>
+<ul>
+<li><p><u><strong>Recursos tangibles:</strong></u> activos
+<u>financiero</u> y activos <u>físicos</u>.</p></li>
+<li><p><u><strong>Recursos intangibles:</strong></u> activos
+<u>tecnológicos</u> y de <u>reputación</u>.</p></li>
+<li><p><u><strong>Recursos/activos humanos:</strong></u> conocimientos
+técnicos, capacidad de comunicación o motivación.</p></li>
+</ul>
+<h2 id="elementos-de-comportamiento-2">Elementos de comportamiento</h2>
+<h3 id="capacidad">Capacidad</h3>
+<p>Representa una habilidad de un elemento estructural activo en
+relación con la estrategia y el entorno de la empresa.</p>
+<p>Se orientan a la consecución de objetivos o a la aportación de valor
+mediante la obtención de un resultado.</p>
+<h3 id="curso-de-acción">Curso de acción</h3>
+<p>Representa un plan para confugurar algunas capacidades y recursos de
+la empresa para alcanzar un objetivo.</p>
+<p>Clasificación de estrategias (largo plazo y alcance amplio) y
+tácticas (corto plazo y alcance menor).</p>
+<h3 id="flujo-de-valor">Flujo de valor</h3>
+<p>Representa la organización de las actividades de una empresa para
+generar valor.</p>
+<p>Los recursos pueden asignarse a flujos de valor y las capacidades
+pueden servir a flujos de valor.</p>
+<p>Los flujos de valor suelen realizarse mediante procesos de
+negocio.</p>
+<ul>
+<li><p>Un proceso de negocio describe la secuencia temporal de
+comportamientos necesarios para alcanzar un resultado específico, con
+caminos alternativos y puntos de decisión.</p></li>
+<li><p>Un flujo de valor describe el comportamiento global de creación
+de valor desde la perspectiva del valor y utilidad generados, sin
+describir tareas ordenadas en el tiempo.</p></li>
+</ul>
+<h2 id="relación-con-elementos-centrales-1">Relación con elementos
+centrales</h2>
+<p><img src="/img/2425/tag1/Ordinaria/Tema5_10.png" /></p>
+<h1 id="capa-física">Capa Física</h1>
+<h2 id="metamodelo-de-elementos-físicos">Metamodelo de elementos
+Físicos</h2>
+<p>Representa una extensión de la capa de Tecnología para el modelado
+del mundo físico.</p>
+<p><img src="/img/2425/tag1/Ordinaria/Tema5_11.png" /></p>
+<h2 id="elementos-estructurales-activos-2">Elementos estructurales
+activos</h2>
+<h3 id="equipamiento">Equipamiento</h3>
+<h3 id="instalación">Instalación</h3>
+<h3 id="red-de-distribución">Red de distribución</h3>
+<h3 id="material">Material</h3>
+<h2 id="elementos-de-comportamiento-3">Elementos de comportamiento</h2>
+<p>No existen elementos de comportamiento específicos para esta capa,
+<u><strong>son los mismos que para la capa de
+Tecnología.</strong></u></p>
+<h1 id="capa-de-implementación-y-migración">Capa de Implementación y
+Migración</h1>
+<h2 id="metamodelo-de-elementos-de-implementación">Metamodelo de
+elementos de Implementación</h2>
+<p>Representa la implementación y mitigación de arquitecturas, programas
+de implementación o gestión de proyectos.</p>
+<p>&lt;2425/tag1/Ordinaria/Tema5_12.png&gt;</p>
+<h2 id="elementos-de-comportamiento-4">Elementos de comportamiento</h2>
+<h3 id="paquete-de-trabajo">Paquete de trabajo</h3>
+<p>Representa una serie de acciones identificadas y diseñadas para
+alcanzar resultados concretos dentro de un tiempo específico y con
+recursos limitados.</p>
+<ul>
+<li><p>Inicio y final, objetivo y entregables asociados bien
+definidos.</p></li>
+<li><p>Modela subproyectos o tareas dentro de un proyecto.</p></li>
+<li><p>Similar a un proceso de negocio.</p></li>
+</ul>
+<h3 id="evento">Evento</h3>
+<p>Representa un cambio de estado en la implementación y migración.</p>
+<p>Puede tener asociado un momento temporal en el que se produce, pero
+no tiene duración.</p>
+<h3 id="entregable">Entregable</h3>
+<p>Representa un resultado concreto de un paquete de trabajo.</p>
+<p>Se suelen especificar formalmente mediante un contrato y son
+acosdados, revisados y firmados por las partes interesadas.</p>
+<h3 id="plateau">Plateau</h3>
+<p>Representa un estado relativamente estable de la arquitectura que se
+mantiene durante un periodo limitado de tiempo.</p>
+<p>Soporta el modelo de desarrollo de arquitecturas de TOGAF:</p>
+<ul>
+<li><p>Las fases B, C y D desarrollan la arquitectura actual y la
+arquitectura futura.</p></li>
+<li><p>En la fase E se definen las <u>Arquitecturas de
+Transición</u>.</p>
+<ul>
+<li><strong>Arquitecturas de Transición:</strong> ayudan a agrupar los
+paquetes de trabajo y proyectos individuales en portafolios para una
+mejor gestión.</li>
+</ul></li>
+</ul>
+<h3 id="gap">Gap</h3>
+<p>Representa la diferencia entre dos plateaus: arquitectura base y
+arquitectura futura, o dos arquitecturas de transición consecutivas.</p>
+<h2 id="realización-con-otras-capas-y-aspectos">Realización con otras
+capas y aspectos</h2>
+<p><img src="/img/2425/tag1/Ordinaria/Tema5_13.png" /></p>
+<p><img src="/img/2425/tag1/Ordinaria/Tema5_14.png" /></p>
 </body>
 </html>
