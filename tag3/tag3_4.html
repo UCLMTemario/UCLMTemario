@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Aika Kenshi" />
+  <title>EXTRACCIÓN, TRANSFORMACIÓN Y CARGA DE DATOS</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">EXTRACCIÓN, TRANSFORMACIÓN Y CARGA DE DATOS</h1>
+<p class="subtitle">TEMA 4</p>
+<p class="author">Aika Kenshi</p>
+<p class="date">02-01-2025</p>
+</header>
+<h1 id="integración-de-datos">1. INTEGRACIÓN DE DATOS</h1>
+<p>Uno de los aspectos clave en inteligencia de negocio es proporcionar
+información consistente, completa, limpia y actualizada que permita el
+análisis y la toma de decisiones empresariales.</p>
+<p>La <u>integración</u> combina datos de diferentes fuentes y los une
+para, en última instancia, proporcionar una vista unificada.</p>
+<p>Una gran parte del trabajo en un proyecto de Inteligencia de Negocio
+consiste en diseñar y desarrollar procesos de integración de datos.</p>
+<p>Se estima que unas <u>tres cuartas partes</u> del tiempo del proyecto
+de Inteligencia de Negocio se dedican a la integración de datos.</p>
+<p>Con tanto tiempo del proyecto dedicado a esta área, es fundamental
+adoptar las mejores prácticas para diseñar procesos de integración de
+datos robustos, escalables y que sean efectivos para la
+organización.</p>
+<p>Existen dos grandes paradigmas a la hora de diseñar e implementar
+procesos ETLs: usar codigicación manual o utilizar herramientas y suites
+comerciales.</p>
+<p>Los procesos de integración de datos deben ser:</p>
+<ul>
+<li><p><u>Holísticos:</u> deben formar parte de los procesos de negocio
+de la organización de manera integrada para evitar superposiciones e
+incoherencias costosas.</p></li>
+<li><p><u>Incrementales:</u> construir soluciones globales de
+integración desde cero es un proceso costoso en tiempo y dinero, por lo
+que es preferible implementar soluciones incrementales para hacer el
+proceso más manejable y práctico.</p></li>
+<li><p><u>Iterativos:</u> la solución adoptada necesita evolucionar
+iterativamente para incorporar el aprendizaje adquirido con anterioridad
+y adaptarse a las necesidades cambiantes del negocio.</p></li>
+<li><p><u>Reutilizables:</u> aprovechar procesos realizados con
+anterioridad para el ahorro de costes y ganar en consistencia en cuanto
+a los datos.</p></li>
+<li><p><u>Documentados:</u> la documentación permite identificar datos
+que se han definido antes y posibilita la reutilización. Las
+herramientas de integración de datos generan documentación de forma
+automática, lo que facilita el trabajo del equipo de
+integración.</p></li>
+<li><p><u>Auditables:</u> las capacidades de auditoría permiten examinar
+el linaje de los datos y realizar análisis de impacto, lo cual
+proporciona una mejor comprensión del proceso de integración y facilita
+el mantenimiento del mismo.</p></li>
+</ul>
+<p>El objetivo de los procesos de integración es conseguir las cinco C’s
+de la información: clean (limpio), consistent (coherente), conformed
+(conforme), current (actual) y comprehensive (completo).</p>
+<h2 id="i.-proceso-manual-vs.-herramientas-etl">i. Proceso manual
+vs. herramientas ETL</h2>
+<p>El uso de herramientas de integración de datos, en particular las
+herramientas de extracción, transformación y carga (ETL) son usadas
+ampliamente en Inteligencia de Negocio de manera habitual, pero también
+es frecuente que la extracción de los datos se realice mediante
+codificaciones manuales.</p>
+<p>Este tipo de extracciones de datos mediante procesos manuales suelen
+ser más usadas por pequeñas y medianas empresas, pero también grandes
+empresas que adoptaron herramientas de integración de datos para cargar
+sus almacenes de datos empresariales suelen recurrir frecuentemente a
+extracciones codificadas manualmente para alimentar sus almacenes de
+datos de Inteligencia de Neogcio.</p>
+<p>Las razones para usar la codificación manual en lugar de utilizar
+herramientas son diversas, pero las herramientas proporcionan una serie
+de <u>ventajas</u> que no dan procesos manuales.</p>
+<h3 id="ventajas-de-usar-herramientas-etl">Ventajas de usar herramientas
+ETL</h3>
+<ul>
+<li><p><u>Procesos dimensionales reutilizables:</u> las herramientas de
+integración de datos ofrecen muchas funciones predefinidas o
+transformaciones utilizadas en los procesos de integración de datos
+basadas en buenas prácticas, que permiten su reutilización en sistemas
+distintos.</p></li>
+<li><p><u>Procesos robustos de calidad de datos:</u> muchas herramientas
+de integración de datos incluyen procesos de limpieza, conformidad y
+estandarización de datos que son críticos para la calidad de los datos,
+pero que a menudo son demasiado complejos para implementarse utilizando
+código SQL hecho a mano.</p></li>
+<li><p><u>Workflow, control de errores y funcionalidad de
+reinicio/recuperación:</u> las herramientas tienen la capacidad de
+analizar el rendimiento para identificar cuellos de botella e
+interacciones con otras aplicaciones. Con la codificación manual, todo
+esto debe codificarse además del procesamiento básico de integración de
+datos, incurriendo en un alto coste en tiempo y recursos.</p></li>
+<li><p><u>Análisis de impacto y funcionalidad de dónde se utiliza
+(linaje):</u> esto permite la gestión del cambio, mejora la
+productividad y reduce los errores inesperados.</p></li>
+<li><p><u>Autodocumentación de procesos y flujo de trabajo:</u> la
+documentación (<strong>si es que existe</strong>) asociada con la
+codificación manual es generalmente incompleta y
+desactualizada.</p></li>
+<li><p><u>Facilita la gestión de los datos:</u> las herramientas de
+integración de datos que proporcionan repositorios y diccionarios
+semánticos permiten la reutilización y el fácil mantenimiento de las
+definiciones comerciales y técnicas, a menudo denominadas metadatos.
+Esto permite que los proyectos de integración de datos posteriores
+puedan aprovechar el trabajo existente acelerando, así, el tiempo de
+desarrollo (time to market) y reduciendo los errores.</p></li>
+<li><p><u>Mayor productividad:</u> con toda la funcionalidad ya
+construida en las herramientas de integración de datos, ¿por qué una
+organización de Tecnología de Información, incluso si tuviera el tiempo
+y el dinero, tendría que volver a reinventarlo? Y no solo se consigue
+ser más productivo por el hecho de que la funcionalidad ya está
+integrada, sino porque las herramientas siguen las mejores prácticas de
+la industria y de esta manera se evitan errores que fácilmente se
+producirían sin ese conocimiento.</p></li>
+</ul>
+<h3
+id="comparativa-de-costes-entre-el-uso-de-codificación-manual-y-herramientas-etl">Comparativa
+de costes entre el uso de codificación manual y herramientas ETL</h3>
+<p><img src="/img/2425/tag3/Tema4_1.png" /></p>
+<h3
+id="principales-herramientas-de-integración-de-datos-según-gartner-group">Principales
+herramientas de integración de datos según Gartner Group</h3>
+<ul>
+<li><p><strong>Information PowerCenter:</strong> herramienta de
+integración mejor valorada por Gartner. Conectores para todo tipo de
+fuentes de datos. La integración de datos se realiza a modo punto a
+punto con un modelo distribuido.</p></li>
+<li><p><strong>Oracle GoldenGate, Oracle Data Integrator (ODI):</strong>
+software destinado a la integración y recopilación de datos en tiempo
+real en entornos de Tecnología de Información. ODI está destinado a
+realizar procesos de integración de datos desde grandes volúmenes de
+datos o grandes cargas de batch.</p></li>
+<li><p><strong>IBM InfoSphere DataStorage:</strong> permite realizar
+todo el proceso ETL completo en múltiples sistemas. Admite la
+administración extendida de metadatos y la conectividad empresarial con
+herramientas Big Data y Cloud.</p></li>
+<li><p><strong>Microsoft SQL Server Integration Services
+(SSIS):</strong> proporciona sus propios servicios de integración de SQL
+Server para conectarlo a diferentes BBDD.</p></li>
+<li><p><strong>Denodo Platform:</strong> acceso en tiempo real a los
+datos integrados en las diversas fuentes de datos de una organización
+(sin replica). Acceso a datos tanto estructurados como no estructurados
+desde fuentes de datos propias de la organización como Big Data o
+Cloud.</p></li>
+<li><p><strong>Talend (Qlik) Open Studio:</strong> suite que aporta un
+conjunto completo de herramientas de integración de datos mediante la
+definición de workflows.</p></li>
+</ul>
+<h2 id="ii.-data-integration-services">ii. Data integration
+services</h2>
+<p>A diferencia de las herramientas ETL de primera generación (simples
+generadores de código, de funcionalidad limitada y con un elevado coste)
+los productos de última generación ofrecen toda una serie de
+funcionalidades que van más allá de los procesos ETL: integración en
+tiempo real, transmisión de mensajes, servicios web, control de calidad
+de datos y limpieza de datos.</p>
+<p>Las herramientas ETL de última generación incluyen los siguientes
+servicios:</p>
+<ul>
+<li><p>Extracción.</p></li>
+<li><p>Carga.</p></li>
+<li><p>Elaboración de perfiles de datos.</p></li>
+<li><p>Ingesta de datos.</p></li>
+<li><p>Transformación de datos.</p></li>
+<li><p>Calidad de datos.</p></li>
+<li><p>Gestión de procesos.</p></li>
+<li><p>Gestión de operaciones.</p></li>
+<li><p>Transporte de datos.</p></li>
+</ul>
+<p><img src="/img/2425/tag3/Tema4_2.png" /></p>
+<h3 id="data-profiling-services">Data profiling services</h3>
+<p>Los servicios de perfilado de datos son el conjunto de procesos que
+permiten examinar la estructura y el contenido de las fuentes de datos
+con el objetivo de determinar aspectos como valores o rangos de datos,
+distribución de frecuencia, relaciones rotas y muchas otras
+características que son indicativas de posibles anomalías en los
+datos.</p>
+<p>La elaboración de perfiles de datos es esencial para establecer un
+proceso de calidad de datos.</p>
+<p>Tipos de análisis:</p>
+<ul>
+<li><p><u>Análisis de clave principal:</u> identificar la columna o
+conjunto de columnas que podrían ser más adecuadas como clave principal
+para cada tabla.</p></li>
+<li><p><u>Análisis de tablas cruzadas:</u> este proceso compara todas
+las columnas de las tablas seleccionadas con el objetivo de detectar
+columnas que comparten un dominio común. Si se encuentra que un par de
+columnas comparten un mismo dominio, podría indicar la existencia de una
+relación de clave externa entre dos tablas o, simplemente, datos
+redundantes.</p></li>
+<li><p><u>Análisis de relaciones:</u> identificar relaciones entre
+tablas.</p></li>
+<li><p><u>Análisis de tablas y columnas</u>.</p></li>
+</ul>
+<h4 id="cdc-change-data-capture">CDC (Change Data Capture)</h4>
+<p>Una vez que los servicios de acceso recopilan los datos, los
+servicios de ingesta de datos actualizan los almacenes de datos de
+Inteligencia de Negocio con los datos más recientes.</p>
+<p>Los procesos involucrados en la actualización de los datos son:
+<i>Change Data Capture</i> (CDC), <i>Slowly Changing Dimensions</i>
+(SCD) y <i>Reference Lookup</i> (búsqueda de referencia)</p>
+<p>La <strong>captura de datos modificados (CDC)</strong> es el proceso
+responsable de identificar los cambios realizados en los datos en una
+fuente de datos y entregar dichos cambios en tiempo real al sistema de
+Inteligencia de Negocio.</p>
+<p>Los CDC deben:</p>
+<ul>
+<li><p><u>Recopilar los datos que han cambiado</u> (insertados,
+modificados o eliminados) en las fuentes de datos desde la última vez
+que se ejecutó el proceso.</p></li>
+<li><p><u>Insertar, modificar o eliminar datos en el almacén de
+Inteligencia de Negocio</u> en función de los datos que se recopilaron
+de las fuentes y de los datos existentes en dicho almacén.</p></li>
+</ul>
+<p>En el caso de que el proceso CDC no pueda ser lo suficientemente
+preciso como para detectar únicamente los registros que han sido
+modificados desde la última vez que se ejecutó, el enfoque es
+<u>compensar el exceso</u> asegurándose de que se obtendrán todos los
+registros qeu se cambiaron (incluso si eso significa traer algunos
+registros que no fueron cambiados).</p>
+<p>Las <u><strong>técnicas CDC</strong></u> utilizadas para determinar
+qué datos han cambiado en los sistemas de origen desde la última
+ejecución del proceso son: columnas de auditoría, extracciones
+temporizadas, comparaciones de diferencias de fila, escáneres de
+registro o cola de mensajes y activadores de eventos.</p>
+<h5 id="audit-columns">Audit columns</h5>
+<p>La técnica de las columnas de auditoría utiliza columnas adicionales
+de fecha tanto en la tabla de origen como en la tabla de destino que
+registran la fecha y hora en que se insertó o modificó un registro.</p>
+<p>La lógica CDC es:</p>
+<ol type="1">
+<li><p>Se obtiene el valor máximo de las columnas
+<i>TGT_Create_DataTime</i> y <i>TGT_Modified_DataTime</i>.</p></li>
+<li><p>Se seleccionan todas las filas de la fuente de datos con
+<i>SRC_Create_DataTime</i> mayor que <i>TGT_Create_DataTime</i>, que son
+todas las filas creadas desde que se ejecutó el último proceso
+CDC.</p></li>
+<li><p>Se seleccionan todas las filas que tengan un
+SRC_Modified_DataTime mayor que TGT_Modified_DataTime, pero cuyo tiempo
+de creación (<i>SRC_Create_DataTime</i>) sea menor que el
+<i>TGT_Create_DataTime</i> (puestos que esos registros ya se han
+incluido en el paso 2).</p></li>
+<li><p>Se insertan las nuevas filas detectadas en el paso 2 y se
+modifican las filas detectadas en el paso 3 en el destino en función del
+SCD que se ha definido para esa tabla específica.</p></li>
+</ol>
+<h5 id="timed-extracts">Timed Extracts</h5>
+<p>La técnica de las <u><strong>extracciones temporizadas</strong></u>
+se basa en seleccionar todos los registros que se crearon o modificaron
+en la fuente de datos durante un intervalo de tiempo preestablecido
+(típicamente, SYSDATE-1, es decir, el día de ayer).</p>
+<p>Una vez seleccionados los registros, hay que determinar cuáles deben
+insertarse y cuáles requieren que las filas existentes sean modificadas
+siguiendo la política de SCD establecida para el sistema de Inteligencia
+de Negocio.</p>
+<p>Esta técnica era muy usada en los inicios de los sistemas de
+inteligencia de negocio por la sencillez en su aplicación, pero existen
+riesgos asociados a esta técnica: posibilidad de <u>procesamiento
+duplicado</u> si se producen fallos o reinicios durante el proceso de
+CDC, que <u>nunca se procese un determinado intervalo de tiempo</u> por
+un problema operativo.</p>
+<p>Debido a estos riesgos potenciales y problemas de confiabilidad, esta
+técnica de CDC no suele emplearse en la actualidad.</p>
+<h5 id="database-log-or-message-queue-scanners">Database Log or Message
+Queue Scanners</h5>
+<p>La técnica de los logs de bases de datos o escáneres de colas de
+mensajes consiste en tomar una instantánea en un punto definido en el
+tiempo (bien del log de la base de datos o del registro o cola de
+mensajes), busca en esa instantánea todas las transacciones que indiquen
+modidificaciones en los datos y actualiza la tabla objetivo con todos
+esos cambios.</p>
+<p>Las ventajas de usar esta técnica son:</p>
+<ul>
+<li><p>Crear un impacto mínimo en la base de datos o la cola de mensajes
+del origen de datos.</p></li>
+<li><p>Elimina la necesidad de cambiar de esquema de la fuente de datos
+para marcar los cambios en los datos.</p></li>
+</ul>
+<p>Sin embargo, existen problemas importantes para usar esta
+técnica:</p>
+<ul>
+<li><p>No hay estándares relacionados con la estructura o el flujo del
+proceso, por lo que cada base de datos o cola de mensajes requerirá una
+aplicación CDC diferente.</p></li>
+<li><p>La mayoría de los sistemas de gestión de bases de datos no
+documentan el formato interno de los registros o colas, por lo que será
+necesaria la compra de un producto CDC separado que maneje bases de
+datos específicas a las que se debe acceder.</p></li>
+</ul>
+<p>Debido a sus desafíos, la técnica CDC basada en <u><strong>Database
+Log</strong></u> se usa típicamente cuando es el único método capaz de
+capturar cambios de datos.</p>
+<h5 id="table-or-event-triggers">Table or Event Triggers</h5>
+<p>La técnica de disparadores utiliza activadores que se configuran en
+la base de datos registrar todos los cambios en la fuente de datos
+escribiéndolos en una tabla o archivo separado.</p>
+<p>Posteriormente, se utilizan estas entradas para actualizar el destino
+de datos cuando se lanza el proceso CDC.</p>
+<p>No es la mejor técnica posible ya que implica negativamente en el
+rendimiento de los sistemas origen al requerir múltiples escrituras en
+una tabla cada vez que se inserta o modifica una fila.</p>
+<h5 id="row-difference-comparisons">Row Difference Comparisons</h5>
+<p>La técnica comparaciones de diferencias de filas consiste en tomar
+una instantánea completa de la fuente de datos cada vez que se ejecuta
+el proceso de CDC y comparar dicha instantánea con la anterior para
+determinar todos los cambios producidos en la fuente de datos desde la
+última ejecución de CDC.</p>
+<p>La comparación completa de las diferencias entre las dos instantáneas
+produce una contabilidad completa y precisa de todos los cambios.</p>
+<p>Si bien esta es la más confiable de todas las técnicas de CDC,
+generalmente se evita cuando el número de fuentes de fuentes y volúmenes
+de datos es muy alto, porque:</p>
+<ul>
+<li><p>Las comparaciones fila por fila entre tablas consume mucho
+tiempo.</p></li>
+<li><p>La demanda de almacenamiento aumenta significativamente porque
+necesita tres copias de las fuentes de datos que se están utilizando en
+esta técnica: los datos originales, la instantánea anterior y la
+instantánea actual.</p></li>
+</ul>
+<h5 id="comparación-de-registros">Comparación de registros</h5>
+<p>Para la técnica de <u>comparación de registros</u> suele emplearse un
+código CRC (Cyclic Redundancy Checksum) formado por un entero largo (20
+dígitos o más) que permite detectar los cambios realizados en cada fila
+de la tabla.</p>
+<p>La técnica consiste en generar para cada registro un código CRC en
+base a los datos y volver a generarlo cuando se vaya a lanzar el proceso
+ETL, comparando el nuevo CRC con el existente para detectar si dicho
+registro ha sido modificado.</p>
+<p>Si la comparación determina que ha habido modidificaciones en el
+registro, el proceso ETL se detendrá y comparará cada campo del registro
+para encontrar cuál ha cambiado.</p>
+<p>Si se trata de datos relacionados con dimensiones, una vez que se ha
+identificado un registro de dimensión modificado, se puede decidir qué
+tipo de SCD es de aplicación. Por lo general, el sistema ETL mantiene
+una política para cada columna en la dimensión que determina si un
+cambio en ese atributo desencadena una respuesta de tipo 1, 2 o 3.</p>
+<h5 id="eliminación-de-registros">Eliminación de registros</h5>
+<p>Un aspecto importante a tener en cuenta es el de las
+<u><strong>eliminación de registros</strong></u> en el sistema de
+origen.</p>
+<p>En muchos casos, la entidad eliminada deberá seguir teniendo
+presencia en el almacén de datos porque tiene referencias históricas que
+hay que conservar.</p>
+<p>Si la regla de negocio establece de manera clara que la entidad
+eliminada ya no puede aparecer en cargas posteriores desde la fuente, se
+desvincula del proceso ETL de comparación para evitar nuevas
+comparaciones en el futuro (aunque en la dimensión histórica y tabla de
+hechos seguirá existiendo).</p>
+<p>Una opción eficaz es utilizar el operador MINUS para comparar las
+claves naturales de la dimensión en el almacén de datos contra las
+claves naturales en la tabla del sistema de origen (se precisa que haya
+conexión directa entre ambas para poder aplicarlo).</p>
+<p><code>SELECT nombre FROM ingles <strong>MINUS</strong> SELECT nombre
+FROM frances;</code> (<i>Se obtienen los registros de la primera
+consulta que NO coinciden con ningñun registro de la segunda
+consulta</i>)</p>
+<h1 id="proceso-de-extracción">2. PROCESO DE EXTRACCIÓN</h1>
+<h2 id="i.-mapa-lógico-de-datos">i. Mapa lógico de datos</h2>
+<p>Antes de comenzar a construir el sistema ETL de extracción es
+necesario confeccionar el mapa lógico de datos que refleje la relación
+entre los campos de origen y los campos de destino.</p>
+<p>El mapa lógico de datos es proporcionado por el arquitecto de datos,
+y será la especificación que utilice posteriormente el equipo ETL para
+crear los procesos ETL físicos.</p>
+<ul>
+<li><p><u>Identificar fuentes de datos candidatas:</u> comenzando con el
+nivel más alto de objetivos, identificar las posibles fuentes de datos
+candidatas que apoyarán las decisiones que necesita el negocio.</p></li>
+<li><p><u>Analizar los sistemas de origen con una herramienta de
+creación de perfiles de datos:</u> los datos en los sistemas de origen
+deben ser examinados para determinar la calidad, la integridad y la
+idoneidad para ese propósito. Dependiendo de su organización, la calidad
+de datos puede o no caer bajo la responsabilidad del equipo ETL, pero
+este paso de creación de perfiles de datos debe ser realizado por
+alguien con la visión de los responsables del negocio que utilizarán los
+datos para la toma de decisiones.</p></li>
+<li><p><u>Conocer los modelos de datos:</u> el equipo ETL debe
+comrpender completamente el modelo físico de las fuentes de datos así
+como el modelo dimensional del almacén de destino. El equipo de
+desarrollo debe tener claro cómo las dimensiones, los hechos y otras
+tablas especiales en el modelo dimensional trabajan en conjunto para
+implementar un proceso ETL que satisfaga los objetivos
+propuestos.</p></li>
+<li><p><u>Validar cálculos y fórmulas:</u> verificar con los usuarios
+finales cualquier cálculo especificado para asegurarse de que sean
+correctos antes de emplear tiempo codificando los algoritmos del proceso
+ETL.</p></li>
+</ul>
+<p>Pasos a seguir:</p>
+<ol type="1">
+<li><p>Identificar los SORs.</p></li>
+<li><p>Analizar los datos con herramientas de perfilado y conocer el
+modelo de datos.</p></li>
+<li><p>Determinar identificadores únicos y/o claves naturales.</p></li>
+<li><p>Identificar los tipos de datos.</p></li>
+<li><p>Identificar relaciones entre tablas.</p></li>
+<li><p>Consultar la tabla de búsqueda (<i>lookup table</i>) si existe
+para identificar las relaciones existentes en los datos.</p></li>
+<li><p>Determinar la cardinalidad de los atributos y de las
+relaciones.</p></li>
+</ol>
+<h2 id="ii.-extraer-datos-de-fuentes-diversas">ii. Extraer datos de
+fuentes diversas</h2>
+<h3 id="open-database-conectivity">Open database conectivity</h3>
+<p>Open DataBase Connectivity (ODBC) es un estándar de acceso a bases de
+datos desarrollado por SQL Acces Group (SAG) en 1992.</p>
+<p>El objetivo de ODBC es <u>posibilitar el acceso a cualquier dato
+desde cualquier aplicación</u>, sin importar qué sistema de gestión de
+bases de datos (DBMS) almacene los datos.</p>
+<ul>
+<li><p><strong>ODBC Manager:</strong> programa que acepta las sentencias
+SQL desde la aplicación ETL y lo enruta al driver ODBC apropiado.
+Mantiente la conexión entre la aplicación y el controlador
+ODBC.</p></li>
+<li><p><strong>Driver ODBC:</strong> traduce el lenguaje SQL del ODBC al
+lenguaje SQL nativo de la base de datos de la que extraer la
+información.</p></li>
+</ul>
+<h3 id="web-scraping">Web scraping</h3>
+<p><i>Web scraping</i> (raspado web) es una técnica utilizada para
+extraer información de sitios web de manera automatizada.</p>
+<p>Tres formas de proceder:</p>
+<ul>
+<li><p><u>Analizador sintáctico:</u> los analizadores (<i>parser</i>) se
+utilizan para convertir un texto en una nueva estructura (comúnmente
+árboles) que son más útiles para el análisis posterior. Un Analizador
+<strong>DOM</strong> (<i>Document Object Model</i>) utiliza la
+representación de contenidos del lado del cliente en el navegador para
+extraer datos, ya que cada nodo del árbol resultante es un objeto
+independiente y controlable.</p></li>
+<li><p><u>Bots:</u> un <i>bot</i> es un software dedicado a realizar
+determinadas tareas de forma automatizada. En el caso del <i>web
+harvesting</i>, los <i>bots</i> se utilizan para examinar páginas web
+automáticamente y recopilar datos.</p></li>
+<li><p><u>Texto:</u> usuarios expertos con la línea de comandos pueden
+aprovechar la función <i>grep</i> de Unix para buscar en la web
+determinados términos. Este es un método muy sencillo para extraer
+datos, aunque requiere más trabajo que la utilización de un software
+automatizado.</p></li>
+</ul>
+<p>El <i>web scraping</i> tiene limitaciones legales, por lo que hay que
+tener en cuenta los derechos de propiedad intelectual de los sitios
+web.</p>
+<p>El <i>scraping</i> es legal siempre y cuando los datos recabados
+estén <u>disponibles libremente para terceros</u> en la web de la que se
+pretende extraer los datos.</p>
+<h2 id="iii.-buenas-prácticas-en-el-proceso-de-extracción">iii. Buenas
+prácticas en el proceso de extracción</h2>
+<ul>
+<li><p><u>Recuperar los datos que se necesitan:</u> la consulta óptima
+es aquella que devuelve exactamente lo que se necesita. No es una buena
+práctica recuperar la tabla completa y filtrar posteriormente los datos
+en la herramienta ETL descartando los no deseados.</p></li>
+<li><p><u>Usar DISTINCT con moderación:</u> la cláusula DISTINCT es
+notoriamente lenta. Encontrar el equilibrio entre realizar un DISTINCT
+durante la extracción o agrupar los resultados posteriormente en la
+herramienta ETL es un reto, y por lo general dependerá del porcentaje de
+duplicados en la fuente de datos.</p></li>
+<li><p><u>Utilizar los operadores SET con moderación:</u> UNION, MINUS e
+INTERSECT son operadores de tipo SET y, como DISTINCT, son operadores
+muy lentos.</p></li>
+<li><p><u>Utilizar HINT cuando sea necesario:</u> la mayoría de las
+bases de datos admiten la palabra clave HINT que permite (entre otras
+cosas) forzar el uso de un índice determinado en una consulta. Esta
+capacidad es especialmente importante cuando se está utilizando un
+operador IN u OR, que generalmente opta por escanear una tabla completa
+en lugar de usar índices.</p></li>
+<li><p><u>Evitar el uso del operador NOT:</u> si es posible, evitar las
+uniones y las restricciones no equitativas. Tanto con el operador NOT
+como con los operadores ‘&lt;&gt;’, el motor de base de datos opta por
+escanear una tabla completa en lugar de utilizar índices.</p></li>
+<li><p><u>Evitar el uso de las funciones en la cláusulas WHERE:</u> pese
+a ser una condición difícil de evitar, especialmente cuando se opera con
+fechas, es una buena práctica evitar en lo posible el uso de funciones
+en la cláusula WHERE. Es mejor usar palabras clave de comparación en
+lugar de funciones siempre que sea posible.</p></li>
+</ul>
+<h2 id="iv.-detección-de-cambios-en-la-tabla-de-hechos">iv. Detección de
+cambios en la tabla de hechos</h2>
+<p>Los registros correspondientes a los <strong>hechos eliminados o
+modificados</strong> de los sistemas de origen pueden plantear un
+desafío muy difícil para el almacén de datos si no se notifica que se ha
+producido dicha eliminación o modidificación.</p>
+<p>Dado que generalmente no es factible volver a extraer registros de
+transacciones históricas en busca de estas alteraciones, la mejor
+alternativa es llevar a cabo alguno de los siguientes
+procedimientos:</p>
+<ul>
+<li><p>Acordar con los responsables de la fuente de origen, si es
+posible, la <u>notificación</u> de todos los registros de media (hechos)
+eliminados o modificados.</p></li>
+<li><p><u>Verificar periódicamente los totales históricos de los hechos
+en el origen</u> para alertar al personal de ETL de que algo ha
+cambiado. Cuando se detecta un cambio, será preciso profundizar tanto
+como sea posible para aislar el cambio y poder replicarlo en el almacén
+de datos.</p></li>
+</ul>
+<p>Una buena práctica cuando se identifica que un registro sobre un
+hecho ha sido borrado o modificado es la de <strong>insertar un nuevo
+registro que visibilice el cambio en el hecho</strong> cancelando o
+negando el original (en lugar de realizar una eliminación o
+actualización en el almacén de datos).</p>
+<p>Esto sumarizará al hecho reportado la cantidad correcta (si es
+aditiva) y proporcionará una pista de auditoría de la corrección.</p>
+<p>En estos casos, también puede ser conveniente llevar un sello de
+tiempo adicional que identifica cuándo tuvo lugar la corrección en la
+base de datos origen.</p>
+<h1 id="proceso-de-transformación">3. PROCESO DE TRANSFORMACIÓN</h1>
+<p>El proceso de transformación es el encargado de convertir los datos
+inconsistentes en un conjunto de datos <u>compatibles y congruentes</u>,
+para que puedan ser cargados en el almacén de datos y que los procesos
+de análisis posteriores ofrezcan resultados válidos para la
+organización.</p>
+<p>El proceso de transformación es especialmente necesario cuando el
+almacén de datos puede ser cargado con fuentes de datos diversas, ya que
+es altamente probable que los datos puedan tener formatos distintos.</p>
+<p>Es fundamental definir estándares para que todos los datos que
+ingresarán al almacén de datos estén integrados y unificados.</p>
+<p>El proceso de transformación consta de tres subprocesos
+principales:</p>
+<ul>
+<li><p>Aseguramiento de la calidad y limpieza de los datos (<i>data
+cleansing</i>).</p></li>
+<li><p>Eliminación de redundancias.</p></li>
+<li><p>Homogeneización de los datos.</p></li>
+</ul>
+<h2 id="i.-calidad-y-limpieza-de-los-datos">i. Calidad y limpieza de los
+datos</h2>
+<p>Los datos son precisos y de calidad si cumplen las siguientes
+características:</p>
+<ul>
+<li><p><u>Correctos:</u> los valores y las descripciones en los datos
+describen sus objetos asociados con veracidad y fidelidad.</p></li>
+<li><p><u>No ambiguos:</u> los valores y descripciones en los datos
+deben tener un solo significado.</p></li>
+<li><p><u>Coherentes:</u> los valores y las descripciones en los datos
+usan la misma convención para transmitir su significado.</p></li>
+<li><p><u>Completos:</u> hay dos aspectos relacionados:</p>
+<ul>
+<li><p>El primero es asegurar que los valores y las descripciones
+individuales en los datos están definidos para cada instancia (no
+nulos).</p></li>
+<li><p>El segundo aspecto asegura que el número total de registro está
+completo (que no haya habido pérdida de ellos durante el flujo de
+información).</p></li>
+</ul></li>
+<li><p><strong>Ser minucioso:</strong> el subsistema de limpieza de
+datos debe ser <u>exhaustivo en la detección, corrección y
+documentación</u> de la calidad de la información.</p></li>
+<li><p><strong>Ser rápido:</strong> el pipeline ETL debe procesar
+grandes volúmenes de datos en <u>ventanas de tiempo cada vez más
+reducidas</u>.</p></li>
+<li><p><strong>Ser transparente:</strong> se deben exponer los defectos
+de manera clara y llamar la atención sobre los <u>sistemas y prácticas
+comerciales que perjudican la calidad de los datos</u> de la
+organización. El objetivo es impulsar la reingeniería de procesos para
+mejorar los sistemas y procedimientos de entrada de datos.</p></li>
+<li><p><strong>Ser correctivo:</strong> corregir problemas de calidad de
+datos en la fuente (o lo más cerca posible de ella) es la única manera
+de mejorar la información de la organización y, por lo tanto, reducir
+los altos costos que pueden implicar una mala calidad de los datos. Sin
+embargo, la realidad es que muchas organizaciones aún no han establecido
+entornos formales de calidad de datos, por lo que <u>es posible que sea
+el equipo del almacén de datos el primero en descubrir problemas de
+calidad</u>. Es fundamental que el equipo ETL haga todo lo posible para
+solucionar estos problemas en los datos en origen.</p></li>
+</ul>
+<h3 id="data-quality-screens">Data quality screens</h3>
+<p>Las <strong>data quality screens</strong> (filtros de calidad de
+datos) es un concepto manejado en procesos ETL que consiste en aplicar
+una serie de filtros de calidad sobre los datos para verificar la
+idoneidad de los mismos.</p>
+<p>Los filtros actúan de dos formas: si la aplicación de filtro es
+satisfactoria, no hay repercusiones; pero si falla, entonces se
+<u>desencadenan una serie de eventos</u> que marcan los datos como no
+acordes a la calidad definida previamente.</p>
+<p>Aunque todos los filtros de calidad son arquitectónicamente
+similares, es conveniente dividirlos en cuatro tipos según el orden
+ascedente del alcance:</p>
+<ol type="1">
+<li><p><u>Column screens:</u> prueban los datos dentro de una sola
+columna. Suelen ser pruebas sencillas como verificar si una columna
+contiene valores nulos, valores fuera de un rango determinado, o si un
+valor no se ajusta a un formato requerido.</p></li>
+<li><p><u>Table screens:</u> comprueban datos a nivel de tabla.</p></li>
+<li><p><u>Structure screens:</u> verifican la relación de datos entre
+columnas. Los filtros de estructura también prueban las relaciones de
+clave principal/clave ajena entre columnas en dos tablas.</p></li>
+<li><p><u>Bussines rule screens:</u> implementan pruebas más complejas
+alineadas con el negocio.</p></li>
+</ol>
+<h4 id="column-nullity">Column nullity</h4>
+<p>Es fundamental para un sistema de inteligencia de negocio determinar
+qué columnas son requeridas y cuáles pueden contener valores nulos.</p>
+<p>En los modelos dimensionales, los registros integrados a menudo tiene
+reglas de nulidad más restrictivas que la fuente de datos porque todas
+las columnas de atributos dimensionales deben ser completadas, incluso
+si solo contiene datos descriptivos del tipo <i>Desconocido</i>, <i>No
+aplicable</i> o <i>No disponible</i>.</p>
+<p>El enfoque propuesto para verificar la nulidad consiste en una serie
+de instrucciones SQL que devuelvan los identificadores únicos de las
+filas infractoras:</p>
+<p><code>SELECT identificador_único_de_registros_incidentes FROM
+mesa_de_cola_de_trabajo WHERE nombre_sistema_origen = ‘Nombre del
+sistema origen’ AND columna IS NULL</code></p>
+<h4 id="column-numeric-and-data-range">Column numeric and data
+range</h4>
+<p>Aunque técnicamente las columnas numéricas y de fecha relacionales
+toleran un amplio rango de valores, desde una perspectiva de calidad de
+datos es muy posible que dichos rangos sean mucho más restrictivos.</p>
+<p>¿Es creíble que una transacción de un solo cliente sea por una
+cantidad de un millón de unidades?</p>
+<p>Tal vez sí, si el negocio es un intercambio B2B global, pero no si se
+trata de un punto de venta al por menor.</p>
+<p>La <i>screen</i> de datos numéricos y de rango de valores se encarga
+de detectar y registrar aquellas columnas numéricas que contienen
+valores que están fuera de lo que las normas de calidad de la
+información definen commo rangos válidos.</p>
+<p>El enfoque propuesto para filtrar estos errores potenciales consiste
+en la siguiente instrucción SQL:</p>
+<p><code>SELECT identificador_único_de_registros_incidentes FROM
+mesa_de_cola_de_trabajo WHERE nombre_sistema_origen = ‘Nombre del
+sistema origen’ AND columna_numerica IS NOT BETWEEN min AND
+max</code></p>
+<h4 id="column-lenght-restriction">Column lenght restriction</h4>
+<p>La detección de la longitud de las cadenas en las columnas de texto
+es útil para detectar cadenas de texto anormalmente largas o cortas para
+el tipo de dato que contienen.</p>
+<p>El enfoque propuesto para detectar textos demasiado largos o
+demasiado cortos consiste en la siguiente instrucción SQL:</p>
+<p><code>SELECT identificador_único_de_registros_incidentes FROM
+mesa_de_cola_de_trabajo WHERE nombre_sistema_origen = ‘Nombre del
+sistema origen’ AND LENGHT(columna_numerica) IS NOT BETWEEN min AND
+max</code></p>
+<h4 id="known-tables-row-count">Known tables row count</h4>
+<p>En determinadas tablas del modelo transaccional del negocio, es bien
+conocido el número exacto de registros que se espera de una entidad.</p>
+<p>En otros casos, aun no teniendo un conocimiento exacto del número de
+registros, se puede inferir un rango de registros aceptables que se
+pueden esperar, por lo que este tipo de <i>screens</i> detectan
+recuentos de registros que son inusualmente altos o bajos.</p>
+<p><code>SELECT COUNT() FROM mesa_de_cola_de_trabajo WHERE
+nombre_sistema_origen = ‘Nombre del sistema origen’ AND COUNT() &lt;&gt;
+‘Recuento_correcto_conocido’</code></p>
+<h3
+id="herramientas-del-proceso-de-aseguramiento-de-la-calidad-de-los-datos">Herramientas
+del proceso de aseguramiento de la calidad de los datos</h3>
+<h4 id="tabla-de-hechos-de-eventos-de-error">Tabla de hechos de eventos
+de error</h4>
+<p>tabla que almacena cada error o problema de calidad de datos que
+surja en el subsistema de calidad y limpieza de datos.</p>
+<p>Se estructura como si se tratase de un sistema de Inteligencia de
+Negocio propio formado por:</p>
+<ul>
+<li><p>La propia tabla de hechos que almacena los eventos de
+error.</p></li>
+<li><p>Al menos dos dimensiones: una dimensión de fecha y una dimensión
+de <i>screen</i> que contiene los distintos tipos de filtro usados en el
+sistema y que han generado los errores.</p></li>
+</ul>
+<p>El objetivo es poder analizar la información de los errores
+detectados y afinar los procesos ETL en relación a la calidad de los
+datos.</p>
+<h4 id="dimensión-de-auditoría-en-el-almacén-de-datos">Dimensión de
+auditoría en el almacén de datos</h4>
+<p>Dimensión que se relaciona con la tabla de hechos en el almacén de
+datos de Inteligencia de Negocio, donde se recogen marcas de tiempo y
+resultados importantes del proceso de ETL, errores significativos y su
+frecuencia u concurrencia para ese registro, y una puntuación general de
+calidad de los datos.</p>
+<p>Los registros de la dimensión de auditoría se crean como paso final
+del procesamiento para los registros de la tabla de hechos ya
+conformados (en cada carga del proceso ETL) y deben contener una
+descripción de las correcciones y cambios que se han aplicado a cada
+registro.</p>
+<p>En el mejor caso (registros sin errores) solo se creará un registro
+de auditoría para indicar que el proceso ha sido limpio mientras que, si
+ha habido errores, se creará un nuevos registro de auditoría para cada
+tipo de error detectado.</p>
+<h3 id="data-cleansing">Data cleansing</h3>
+<p>La limpieza de datos es el proceso de corrección y eliminación (en
+caso de ser necesario) de registros inexactos de una fuente de
+datos.</p>
+<p>El proposito de la limpieza de datos es detectar los llamados datos
+sucios (<i>dirty data</i> o partes incorrectas, irrelevantes o
+incompletas de los datos) para modificarlos o eliminarlos y garantizar
+así que un determinado conjunto de datos sea preciso y consistente con
+el resto de datos en el sistema de información.</p>
+<p>Este procedimiento se puede realizar de dos maneras:</p>
+<ol type="1">
+<li><p><u>Limpieza manual de datos:</u> generalmente se realiza por
+personas que leen un conjunto de registros para verificar con exactitud,
+corregir errores ortográficos y completar las entradas faltantes.
+Durante esta operación se eliminan algunos datos innecesarios o no
+deseados para aumentar la eficiencia dle procesamiento de
+datos.</p></li>
+<li><p><u>Limpieza automática de datos:</u> las personas son
+reemplazadas por programas informáticos capaces de analizar un mayor
+volumen de datos con la misma finalidad.</p></li>
+</ol>
+<p>El proceso de limpieza es un <u>proceso costoso tanto en tiempo como
+en recursos humanos</u>, por lo que algunas organizaciones subestiman la
+importancia del mismo.</p>
+<p>Esto puede producir efectos adversos causados por datos inexactos o
+inconsistentes y problemas a la hora del análisis posterior en el
+sistema de Inteligencia de Negocio.</p>
+<h2 id="ii.-eliminación-de-redundancias">ii. Eliminación de
+redundancias</h2>
+<p>La eliminación de datos duplicados (<strong>deduplication</strong>)
+es el proceso de mejora de la calidad de los datos mediante la
+eliminación de información redundante o repetitiva de los datos
+almacenados, con el objetivo de mejorar el espacio de almacenamiento,
+simplificar los procesos ETL y optimizar las transferencias de
+datos.</p>
+<p>En algunos casos, los datos duplicados se pueden detectar fácilmente
+a través de la aparición de valores idénticos en alguna columna clave
+(no PK).</p>
+<p>Sin embargo, lo habitual es que tal coincidencia no se encuentre tan
+fácilmente, y las únicas pistas disponibles sean la similitud entre
+varias columnas.</p>
+<p>Existen herramientas ETL que permiten detectar elementos duplicados
+comparando el conjunto de registros del flujo de datos entre la fuente
+de datos y el almacén de destino.</p>
+<p>Dichas herramientas proporcionan una puntuación de coincidencia que
+describe la probabilidad de similitud entre los registros existentes en
+el sistema de información.</p>
+<p>Las organizaciones con una necesidad importante de eliminación de
+duplicados pueden elegir también mantener una <u>biblioteca persiste de
+datos previamente coincidentes</u> y usar esta biblioteca para mejorar
+sus resultados de coincidencia.</p>
+<p>Si el proceso detecta duplicado, se pueden aplicar algunas de las
+siguientes acciones:</p>
+<ol type="1">
+<li><p><u>Eliminación:</u> el proceso ETL elimina directamente el valor
+duplicado.</p></li>
+<li><p><u>“Tokenización”:</u> se sustituye el valor duplicado por un
+token, el cual apunta hacia el valor correspondiente en los datos
+existentes.</p></li>
+<li><p><u>Normalización:</u> si una base de datos relacional contiene
+muchos valores de celda duplicados, puede significar un mal diseño
+inicial del modleo de datos, lo cual puede desencadenar un proceso de
+normalización dentro del proceso ETL. Generalmente, el proceso de
+normalización implica reestructurar las tablas de una forma más
+eficiente según las reglas establecidas en el negocio.</p></li>
+</ol>
+<p>Los procesos de eliminación de duplicados deben ser planificados
+cuidadosamente, ya que pueden surgir serios inconvenientes en el
+proceso, como:</p>
+<ul>
+<li><p><u>Eliminación accidental:</u> el mayor peligro de un proceso de
+eliminación de duplicados deficiente es que podría eliminar datos
+únicos.</p></li>
+<li><p><u>Falta de redundancia</u>la falta de mecanismos o datos
+duplicados que permitan mantener la funcionalidad o integridad de un
+sistema en caso de fallos. Esto significa que los elementos compartidos
+o comunes dentro de un conjunto de datos no cuentan con copias
+adicionales para respaldarlos.</p></li>
+<li><p><u>Aumento de sobrecostes:</u> el objetivo de la eliminación de
+datos duplicados es reducir los gastos generales de procesamiento. Pero
+también el proceso en sí implica una sobrecarga en el proceso general
+ETL, por lo que la organización tiene que equilibrar ese coste con lo
+que supone el proceso en general (que el coste/beneficio sea el mejor
+posible). Pueden surgir sobrecostes importantes si el proceso de
+eliminación de redundancias no logra reducir el tamaño del almacén o si
+el coste de procesamiento de la reconstrucción es demasiado
+alto.</p></li>
+</ul>
+<h2 id="iii.-homogeneización-de-datos">iii. Homogeneización de
+datos</h2>
+<p>El proceso de homogeneización o estandarización de los datos permite
+<u>unificar</u> la información de diversas fuentes de datos en un
+<u>formato único</u> que posibilite el análisis posterior de forma
+correcta y válida para el negocio.</p>
+<p>Es un proceso especialmente necesario cuando <u>los datos son
+recabados de fuentes de información diversas</u>, ya que es altamente
+probable que estos estén persistidos de una manera desigual siguiendo
+criterios de codificación y nomenclatura propios de cada sistema de
+información.</p>
+<p>Los casos más frecuentes en los que se deberá realizar la
+homogeneización de los datos son los siguientes:</p>
+<ul>
+<li><p>Codificación.</p></li>
+<li><p>Medida de atributos.</p></li>
+<li><p>Convenciones de nombramiento.</p></li>
+<li><p>Fuentes múltiples.</p></li>
+</ul>
+<h3 id="codificación">Codificación</h3>
+<p>Una inconsistencia muy típica que se encuentra al intentar integrar
+varias fuentes de datos es la de contar con más de una forma de
+codificar un atributo en común.</p>
+<p>Lo que se debe realizar en estos casos, es seleccionar o recodificar
+estos atributos, para que cuando la información llegue al almacén de
+datos, esté integrada de manera uniforme.</p>
+<p><img src="/img/2425/tag3/Tema4_3.png" /></p>
+<h3 id="medida-de-atributos">Medida de atributos</h3>
+<p>Los tipos de unidades de medidas utilizados para representar los
+atributos de una entidad varían considerablemente entre sí a través de
+los diferentes OTLP.</p>
+<p>Es necesario estandarizar las unidades de medida de los atributos
+para que todas las fuentes de datos expresen sus valores de igual
+manera.</p>
+<p>Los algoritmos que resuelven estas inconsistencias son generalmente
+los más complejos.</p>
+<p><img src="/img/2425/tag3/Tema4_4.png" /></p>
+<h3 id="convenciones-de-nombramiento">Convenciones de nombramiento</h3>
+<p>Habitualmente, un mismo atributo es nombrado de diversas maneras en
+los diferentes OTLP.</p>
+<p>Aquí, se debe utilizar la convención de nombramiento que para los
+usuarios sea más comprensible.</p>
+<p><img src="/img/2425/tag3/Tema4_5.png" /></p>
+<h3 id="fuentes-múltiples">Fuentes múltiples</h3>
+<p>Un mismo dato o conjunto de datos pueden obtenerse desde fuentes de
+datos diversas.</p>
+<p>En este caso, se debe elegir aquella fuente que se considere más
+fiable y apropiada.</p>
+<p><img src="/img/2425/tag3/Tema4_6.png" /></p>
+<h1 id="proceso-de-carga">4. PROCESO DE CARGA</h1>
+<h2 id="i.-carga-de-dimensiones">i. Carga de dimensiones</h2>
+<p>Cada vez que se crea un nuevo registro en una dimensión como
+consecuencia de un proceso ETL de carga, se debe <u>crear un nuevo valor
+de clave subrogada</u> que identifique de forma única al registro
+insertado.</p>
+<p>En un entorno de almacén de datos, las claves subrogadas para todas
+las dimensiones podrían generarse a partir de una sola fuente.</p>
+<p>En este caso, un elemento maestro de metadatos almacena la clave más
+alta utilizada para todas las dimensiones simultáneamente.</p>
+<p>Sin embargo, si hay muchos trabajos ETL concurrentes en ejecución,
+podrían ser rivales por leer y escribir los valores almacenados con los
+consiguientes problemas de acceso y actualzación de valores de
+clave.</p>
+<p>Por este motivo, se considera una buena práctica que se <u>establezca
+un contador de clave subrogada para cada tabla de dimensiones por
+separado.</u></p>
+<p>Una posibilidad para formar la clave subrogada es concatenar la clave
+natural del sistema de origen junto con un sello de tiempo que refleja
+cuándo se creó el registro en el sistema de origen o cuándo se insertó
+en el almacén de datos (intelligent or smart keys).</p>
+<p>Vincular a la clave subrogada la hora exacta de su creación puede ser
+útil en algunas situaciones, pero no es una alternativa aceptable por
+las siguientes razones:</p>
+<ul>
+<li><p><u>Por definición:</u> una clave subrogada no debe tener valor
+para el sistema de inteligencia de negocio más allá de identificar
+unívocamente cada registro. Si se vincula a la clave del sistema de
+origen y esta cambia, la clave deberá actualizarse en todo el sistema
+para mantener esa relación con la fuente de datos de origen.</p></li>
+<li><p><u>Por rendimiento:</u> concatenar la clave del sistema de origen
+con un sello de fecha degrada significativamente el rendimiento de la
+consulta. Al no haber control sobre las claves del sistema de origen, es
+muy probable tener que utilizar los tipos de datos CHAR o VARCHAR para
+las claves subrogadas. Además, al agregar el sello de tiempo, se le
+agregan 16 carácteres o más, por lo que el atributo puede volverse
+difícil de manejar. Esta clave debe propagarse por las tablas de hechos
+(normalmente con millones de registros) por lo que el espacio para
+almacenar los datos y los índices sería excesivo y provocaría una
+notable caída del rendimiento tanto en los procesos ETL como en las
+consultas.</p></li>
+<li><p><u>Por la existencia de fuentes heterogéneas:</u> la
+concentración de la clave natural y del sello de fecha solo puede
+llevarse a cabo en un entorno homogeneo. Lo habitual en sistemas de
+inteligencia de negocio es que los datos de las dimensiones provengan de
+muchas fuentes de datos diferentes. Cada uno de estos sistemas fuente
+tiene su propio propósito y puede identificar los mismos valores de una
+dimensión de manera diferente, por lo que el uso de este tipo de claves
+es prácticamente imposible.</p></li>
+</ul>
+<p>En la mayoría de los casos, se considera una buena práctica usar un
+<u>valor numérico</u> para la clave subrogada en la dimensión por las
+razones de rendimiento y de gestión de la información.</p>
+<h3 id="dimensiones-de-tiempo-y-fecha">Dimensiones de tiempo y
+fecha</h3>
+<p>Cada dimensión de fecha necesita como mínimo <u>un atributo de tipo
+de fecha</u> y <u>un atributo que contenga la clave</u> de la
+dimensión.</p>
+<p>Se considera una buena práctica incluir en la dimensión un registro
+que refleje un <u>valor especial</u> para aquellas situaciones de fecha
+en la que la fecha registrada no es aplicable, está corrupta o no ha
+sucedido todavía.</p>
+<p>La clave subrogada para la dimensión de fecha es la única que no
+sigue la recomendación de que sea un valor numérico sin sentido para el
+negocio.</p>
+<p>Se considera una buena práctica usar un valor numérico siguiendo el
+formato YYYYMMDD, lo cual permite identificar el valor representado en
+el registro.</p>
+<p>En el caso del registro para mostrar el valor especial (fecha que por
+alguna razón no aplica en la tabla de hechos) se puede usar el valor
+<strong>99999999</strong>.</p>
+<h3 id="slowly-changing-dimensions---scd-type-1">Slowly Changing
+Dimensions - SCD Type 1</h3>
+<p>El proceso ETL optará por el tipo 1 si los datos que se están
+modificando es debido a una corrección o porque desde la organización no
+hay interés en mantener el historial de los valores.</p>
+<p>El SCD Tipo 1 nunca afectará a la clave de la dimensión
+modificada.</p>
+<p>La técnica de implementación más fácil es usar sentencias SQL UPDATE
+para la actualización de los atributos de la dimensión.</p>
+<p>Desafortunadamente, SQL UPDATE es una transacción de <u>bajo
+rendimiento</u> y puede aumentar considerablemente la ejecución del
+proceso ETL.</p>
+<p>Para cambios muy grandes de Tipo 1, la mejor manera de reducir el
+tiempo de ejecución es emplear una tabla intermedia de carga masiva
+(bulk loader) en la que se insertarán los registros modificados para,
+posteriormente, eliminar los registros afectados de la tabla de
+dimensión e insertar los nuevos de la tabla intermedia.</p>
+<h3 id="slowly-changing-dimensions---scd-type-2">Slowly Changing
+Dimensions - SCD Type 2</h3>
+<p>El SCD tipo 2 requiere un buen sistema CDC.</p>
+<p>Los cambios en los datos de origen deben detectarse tan pronto como
+ocurran para que, de este modo, el registro afectado en el almacén de
+datos pueda ser actualizado.</p>
+<p>Si el sistema fuente no notifica al almacén de datos los cambios y no
+persiste la fecha de sus propias actualizaciones, el almacén de datos se
+ve obligado a descargar la dimensión completa y buscar registro por
+registro y campo por campo para detectar los cambios que han ocurrido
+desde la última vez que se descargó la dimensión de la fuente (técnica
+de comparación de registros CDC).</p>
+<p>Se considera una buena práctica agregar los siguientes cinco campos a
+las tablas de dimensiones procesadas:</p>
+<ol type="1">
+<li><p>Fecha de cambio (FK): permite a un usuario final utilizar el
+calendario laboral (días festivos, días de pago y periódos fiscales)
+para analizar cuántos cambios de un determinado tipo se hicieron en
+ciertos periódos importantes para el negocio.</p></li>
+<li><p>DataTime de inicio (fecha y hora exactas del cambio).</p></li>
+<li><p>DataTime de fin (fecha y hora exactas de próximo cambio): las dos
+marcas de fecha y hora permiten definir un intervalo de relevancia para
+que las consultas puedan obtener registros válidos usando la sentencia
+SQL BETWEEN.</p></li>
+<li><p>Motivo del cambio (campo de texto): este dato deberá venir del
+proceso ETL que dio lugar al registro modificado en la
+dimensión.</p></li>
+<li><p>Flag actual (current/expired).</p></li>
+</ol>
+<h3 id="slowly-changing-dimensions">Slowly Changing Dimensions</h3>
+<p>Si el sistema fuente no notifica los cambios y no marca con fecha las
+actualizaciones, el almacén de datos se ve obligado a descargar la tabla
+completa y buscar registro a registro los cambios desde la última vez
+que se actualizó la dimensión.</p>
+<p>En este caso, es preciso extraer previamente toda la información para
+realizar dicha búsqueda, persistiendo los registros modificados en un
+almacenamiento intermedio (dimensión maestra de referencia cruzada) para
+que la información se organice adecuadamente en el proceso ETL.</p>
+<h2 id="ii.-carga-de-hechos">ii. Carga de hechos</h2>
+<p>Las tablas de hechos están definidas por la granularidad (nivel de
+detalle) de las medidas del negocio que queremos representar en
+ellas.</p>
+<p>Se considera una buena práctica definir el nivel de detalle más alto
+de la actividad del engocio para que el análisis sea el más completo
+posible.</p>
+<p>Las tablas de hechos poseen un conjunto de claves foráneas conectadas
+a las dimensiones que proporcionan el contexto de las mediciones del
+negocio, así como uno o más campos numéricos de medida (hechos) y otros
+campos adicionales que completan la estructura de la tabla.</p>
+<p>La tabla de hechos deberá tener una clave que identifique
+unívocamente cada registro.</p>
+<p>Si no es posible hacerlo con el conjunto de claves ajenas a las
+dimensiones, lo mejor es usar una clave subrogada de tipo numérico
+(aunque no tenga valor para el negocio) o bien usar una degenerate
+dimension incluyendo como clave un atributo NK del Sistema de
+Registro.</p>
+<p>En el modelado dimensional, es fundamental mantener la <u>integridad
+referencial de la tabla de hechos con las dimensiones,</u> es decir, que
+no haya registros de la tabla de hechos que contengan referencias de
+clave ajena corruptas o desconocidas.</p>
+<p>Hay dos formas de violar la integridad referencial en una
+dimensión:</p>
+<ul>
+<li><p>Cargar un registro de hechos con una o más claves foráneas
+incorrectas.</p></li>
+<li><p>Eliminar un registro de dimensión cuya clave principal se esté
+utilizando en la tabla de hechos.</p></li>
+</ul>
+<p>Un hecho que viola la integridad referencial es un problema
+importante para el sistema de Inteligencia de Negocio.</p>
+<p>Aparentemente, el registro tiene cierta legitimidad, ya que
+probablemente representa una medida real del negocio, pero cualquier
+análisis que haga referencia a la dimensión incorrecta devolverá
+información no veraz (y, por tanto, sin valor para la organización).</p>
+<p>Los tres lugares principales en el proceso ETL donde se puede hacer
+cumplir la integridad referencial son:</p>
+<ol type="1">
+<li><p><u>Antes</u> de cargar el hecho, verificando que los registros
+contienen los valores de clave correctas contra la dimensión.</p></li>
+<li><p>Cumplimiento de la integridad referencial en la propia base de
+datos <u>en el momento</u> de cada inserción y eliminación de la tabla
+de hechos.</p></li>
+<li><p>Una vez cargados los registros, <u>escaneando</u> regularmente la
+tabla de hechos, buscando datos incorrectos de claves ajenas.</p></li>
+</ol>
+<p>Todas las tablas de dimensiones deben ser actualizadas ante nuevas
+inserciones de entidades y/o cambios de Tipo 2 <u>antes de cargar los
+datos en las tablas de hechos.</u></p>
+<p>El proceso es a la inversa al <u>eliminar registros,</u> primero se
+eliminan los registros de las tablas de hechos no deseados y
+posteriormente se hace lo propio con los registros de dimensiones al no
+tener ya ningún vínculo con la tabla de hechos.</p>
+<p>Al construir o cargar una tabla de hechos, el paso final del proceso
+ETL es <u>convertir las claves naturales de los nuevos registros en las
+claves subrogadas actuales</u> para cada entidad de dimensión.</p>
+<p>Consideraciones a la hora de cargar los registros en las tablas de
+hechos (<strong>nuevas inserciones y actualizaciones</strong>):</p>
+<ul>
+<li><p><u>Separar las inserciones de las actualizaciones:</u> aunque
+muchas herramientas ETL ofrecen la funcionalidad UPDATE ELSE INSERT, se
+trata de un proceso lento por lo que es conveniente que dichos procesos
+puedan separar ambas operaciones. La mejor práctica es <strong>aplicar
+primero las actualizaciones y posteriormente cargar de forma masiva los
+nuevos registros</strong> para obtener un rendimiento óptimo del proceso
+de carga.</p></li>
+<li><p><u>Utilizar una herramienta de carga masiva (bulk-load):</u> usar
+una herramienta de carga masiva en lugar de sentencias SQL INSERT para
+cargar datos mejora drásticamente el rendimiento de la carga. Los
+principales fabricantes de base de datos proporcionan este tipo de
+herramientas.</p></li>
+<li><p><u>Carga en paralelo:</u> el proceso de carga se optimiza si se
+separan físicamente en segmentos lógicos. Algunas herramientas ETL
+permiten particionar datos en función de rangos de valores de forma
+dinámica. Una vez que los datos se dividen en segmentos iguales, se
+procede a ejecutar el proceso ETL para cargar todos los segmentos en
+paralelo.</p></li>
+<li><p><u>Minimizar las actualizaciones físicas:</u> la actualización de
+registros en una tabla requiere cantidades masivas de sobrecarga en el
+DBMS, la mayoría de las cuales son causadas por la actualización del
+redo log (rollback log). En el caso de las actualizaciones, es
+preferible eliminar los registros que se acualizarán y posteriormente
+cargar las nuevas versiones de esos registros junto con los registros
+que ingresan al almacén de datos por primera vez.</p></li>
+</ul>
+<p>Aunque teóricamente la <strong>eliminación de hechos</strong> de una
+tabla está prohibida en almacenamiento de datos, la realidad es que el
+borrado de hechos es práctica común en la mayoría de los entornos de
+almacenamiento de datos.</p>
+<p>Si la organización requiere eliminaciones, existen dos formas de
+manejarlos:</p>
+<ul>
+<li><p><u>Eliminaciones físicas:</u> la organización no quiere conservar
+los datos en la Inteligencia de Negocio ya que también se eliminarán de
+los sistemas transaccionales de origen.</p></li>
+<li><p><u>Eliminaciones lógicas:</u> la eliminación lógica de registros
+de hechos es considerada como una práctica de eliminación segura. Una
+eliminación lógica implica la utilización de una columna adicional para
+marcar ese registro como eliminado (a través de un atributo flag o de
+fecha de fin de vigencia). Si se opta por este enfoque, hay que tener en
+cuenta que para cada consulta que incluya la tabla de hechos se debe
+aplicar una restricción para no mostrar los registros eliminados
+lógicamente.</p></li>
+</ul>
+</body>
+</html>
