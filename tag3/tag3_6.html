@@ -174,8 +174,772 @@
 <h1 class="title">VISUALIZACIÓN DE LA INFORMACIÓN</h1>
 <p class="subtitle">TEMA 6</p>
 <p class="author">Aika Kenshi</p>
-<p class="date">18-09-2024</p>
+<p class="date">02-01-2025</p>
 </header>
-<h1 id="section"></h1>
+<h1 id="principios-de-la-visualización-de-la-informacíón">1. PRINCIPIOS
+DE LA VISUALIZACIÓN DE LA INFORMACÍÓN</h1>
+<h2 id="i.-conceptos">i. Conceptos</h2>
+<p>El propósito de cualquier método de análisis es extraer conocimiento
+de los datos de una organización, pero los resultados obtenidos no
+tendrán ningún significado si no se muestran adecuadamente para la
+<u>audiencia objetivo</u> y según el <u>propósito que se desea
+alcanzar</u>.</p>
+<p>Una <strong>visualización de datos</strong> es una representación
+visual diseñada con el propósito de transmitir el significado de los
+datos y las percepciones que se han podido obtener del proceso de
+análisis realizado.</p>
+<p>Dado que las visualizaciones están diseñadas para un espectro amplio
+de audiencias, con diferentes propósitos y con diferentes niveles de
+habilidad, el primer paso para diseñar una buena visualización de datos
+es <u>conocer a la audiencia objetivo</u> a la que irá destinada para
+que la misma sea de utilidad y aporte el valor esperado del proceso de
+análisis.</p>
+<p>Aunque no hay un criterio uniforme sobre los tipos de visualizaciones
+por ser un concepto con una componente altamente subjetiva, sí se
+podrían agrupar en tres bloques diferentes:</p>
+<ul>
+<li><p><u><i>Data storytelling</i> (narración de datos) para <i>decision
+makers</i>:</u> a veces es necesario diseñar visualizaciones para un
+público menos técnico en cuanto al proceso de análisis, pero que son los
+responsables de la toma de decisiones en el negocio, por lo que es
+fundamental ofrecer la información de manera clara y entendible para que
+las decisiones estén mejor informadas. El objetivo, por tanto, debe ser
+crear una <strong>historia ordenada y altamente visual</strong> para que
+la audiencia pueda extraer conocimiento rápidamente sin tener que
+realizar un gran esfuerzo en su comprensión. Estas visualizaciones se
+muestran mejor en forma de <strong>imágenes estáticas</strong>, aunque
+los <i>decision makers</i> más expertos pueden preferir tener un
+<i>dashboard</i> interactivo que puedan usar para hacer la exploración
+de los datos de una manera más profunda.</p></li>
+<li><p><u><i>Data showcasing</i> (exhibición de datos) para
+analistas:</u> si la visualización está orientada a analistas
+(numéricos) del negocio, se pueden crear <strong>visualizaciones
+abiertas</strong>. El propósito de este tipo de visualización es ayudar
+a los analistas a explorar visualmente los datos y obtener sus propias
+conclusiones. Estas visualizaciones deben <strong>incluir más
+contextuales y menos enfoques concluyentes</strong> para que la
+audiencia objetivo pueda analizar los datos por sí mismos, y sacar sus
+propias conclusiones. Estas visualizaciones se entregan mejor como
+<strong><i>dashboards</i> dinámicos e interactivos</strong>.</p></li>
+<li><p><u><i>Data art</i> para el público en general:</u> si el público
+objetivo no tiene un rol activo en las decisiones de la organización, el
+<i>data art</i> (arte de datos) es el camino a seguir en la creación de
+visualizaciones. La meta principal del <i>data art</i> es entretener,
+provocar, molestar o hacer lo que sea necesario para <strong>atraer
+fuertemente la atención de la audiencia</strong>. Esta técnica de
+visualización tiene poca o ninguna narrativa, y no ofrece espacio para
+que los espectadores formen sus propias interpretaciones (desde el punto
+de vista analístico). Pese a todo, los datos deben ser mostrados con
+precisión sin distorsionar la realidad, simplemente valerse de las
+técnicas visuales necesarias para conseguir el fin deseado.</p></li>
+</ul>
+<p>Para hacer una visualización de datos funcional, es necesario llevar
+a cabo los siguientes pasos:</p>
+<ol type="1">
+<li><p><u>Conocimiento del público objetivo:</u> para poder diseñar una
+visualización que se ajuste a la audiencia es preciso conocer sus
+necesidades e intereses. Una buena técnica para recabar esta información
+es una <i>brainstorming</i> en la que se den respuestas a preguntas
+como: ¿cuál es el rol de los asistentes de la organización?, ¿cómo puede
+ayudar la visualización a su trabajo?, ¿hay algún condicionante de tipo
+empresarial y/o político a tener en cuenta entre los
+asistentes?</p></li>
+<li><p><u>Definir el propósito:</u> identificar exactamente lo que se
+está tratando de lograr con la visualización de datos: ¿se está buscando
+informar a los <i>decision makers</i> en las decisiones empresariales?
+¿o simplemente informar a todos los datos para que sean la audiencia la
+que extraiga sus propias decisiones?, ¿qué decisiones o procesos se
+intentan mejorar con la visualización?</p></li>
+<li><p><u>Elegir la visualización más funcional para el propósito:</u>
+en base al público objetivo y al propósito que se pretende conseguir, se
+debe seleccionar alguno de los tipos de visualización vistos
+anteriormente.</p></li>
+</ol>
+<h2 id="ii.-semántica-de-la-visualización">ii. Semántica de la
+visualización</h2>
+<p>El objetivo de toda visualización es encontrar una forma adecuada de
+expresar la información que permita entender y percibir en forma
+efectiva un conjunto de datos y las posibles relaciones entre ellos.</p>
+<p>Es importante enteder <u>qué</u> y a <u>quién</u> se quiere
+transmitir la información ya que, dependiendo de estos objetivos, la
+visualización deberá expresar los datos de manera diferente.</p>
+<p>La <u>semántica de la visualización</u> se refiere a cómo se debe
+representar la información para darle el contexto y el sentido que la
+audiencia espera obtener.</p>
+<p>A la hora de representar la información obtenida en la fase de
+análisis, existen dos formas diferentes de mostrarla gráficamente:</p>
+<ul>
+<li><p><u>Representaciones numéricas basadas en cuadrículas
+(tablas):</u> este tipo de elementos están indicados cuando la audiencia
+está muy focalizada en conocer los números precisos de la actividad de
+negocio.</p></li>
+<li><p><u>Elementos gráficos:</u> cuando el objetivo del análisis está
+principalmente en explorar las relaciones dentro de los datos, las
+vistas gráficas son más productivas que las vistas puramente
+numéricas.</p></li>
+</ul>
+<h3 id="gráficos-vs-representación-tabular-numérica">Gráficos vs
+Representación tabular numérica</h3>
+<p>La diferencia principal entre los gráficos y las Representaciones
+tabulares numéricas radica de la manera en que presentan y facilitan la
+interpretación de los datos.</p>
+<p>Los <strong>gráficos</strong> ofrecen una representación visual que
+permite identificar de manera intuitiva tendencias, relaciones y
+patrones, como la variación entre ventas y costos o el punto de
+equilibrio.</p>
+<p>En cambio, la <strong>representación tabular numérica</strong>
+organiza los datos de forma estructurada pero requiere un análisis más
+detallado y tiempo para identificar relaciones clave.</p>
+<h3 id="colores-y-formas">Colores y formas</h3>
+<p>Los colores y las formas funcionan como números que muestran su
+significado más por su forma y/o color en el gráfico que por la
+ubicación que ocupan en él.</p>
+<p>Estas herramientas permiten interpretar datos complejos de forma
+intuitiva, destacando relaciones y patrones sin necesidad de depender
+exclusivamente del texto o los valores numéricos.</p>
+<p>Podemos encontrar otro tipo de formas en los gráficos (como flechas)
+en los llamados <strong>gráficos dirigidos</strong> (especialmente
+cuando se superponen dichas formas en mapas).</p>
+<p>Este tipo de elementos son útiles para mostrar los <u>cambios de
+valor que se producen en el espacio y el tiempo</u>.</p>
+<h1 id="diseños-visuales">2. DISEÑOS VISUALES</h1>
+<h2 id="i.-consideraciones-de-diseño">i. Consideraciones de diseño</h2>
+<p>Una vez determinada la audiencia a la que irá destinada la
+visualización, es preciso decidir cómo se realizará la misma.</p>
+<p>Si se busca que la audiencia pueda tener una <u>visión analítica de
+los datos</u>, será necesario utilizar un estilo de diseño que muestre
+la información con el mayor detalle numérico posible para facilitar la
+interpretación de los resultados.</p>
+<p>Pero si lo que se busca es que la visualización de datos tenga,
+además, un <u>impacto en las personas</u>, habrá que usar un diseño
+visualmente atractivo que atraiga la atención y aporte, además, una
+componente emocional.</p>
+<p>Si se está diseñando una visualización para una audiencia con
+perfiles de ingenieros, científicos, o <i>decision makers</i>, se
+considera una buena práctica crear diseños simples y claros usando las
+técnicas <i>data storytelling</i> o <i>data showcasing</i>.</p>
+<p>En este caso, es recomendable el uso de gráficos de barras, diagramas
+de dispersión y gráficos de línea para facilitar el análisis usando
+opciones de color <u>tradicionales y conservadoras</u>.</p>
+<p>Las visualizaciones para el análisis de datos a audiencia con
+perfiles técnicos están destinadas a comunicar de forma clara y directa
+lo que está sucediendo en la actividad del negocio.</p>
+<p>Si se está diseñando una visualización de datos para influir o
+persuadir a las personas (no tanto desde el punto de vista de análisis
+empresarial) se deberán crear diseños que provoquen una respuesta
+emocional al público objetivo.</p>
+<p>Para este tipo de visualización se emplea generalmente la técnica de
+diseño <i>data art</i>, aunque también es posible recurrir a la técnica
+<i>data storytelling</i> aportando un extra de diseño de tipo
+emocional.</p>
+<h3 id="añadir-contexto">Añadir contexto</h3>
+<p>Añadir contexto a los elementos gráficos ayuda a la audiencia a
+<u>comprender el valor y el significado de la información que se está
+visualizando</u>.</p>
+<p>Si se ha optado por elegir un paradigma de diseño <i>data art</i>, no
+es adecuado agregar contexto ya que se perdería el objetivo que se
+pretende conseguir.</p>
+<p>Existen cuatro formas de añadir contexto a los gráficos:</p>
+<ul>
+<li><p><u>Mediante datos:</u> consiste en añadir datos contextuales
+relevantes para las métricas clave que se pretenden mostrar. Este tipo
+de información contextual ayuda a los espectadores a enteder el “por
+qué” y el “cómo”. Se considera una buena práctica añadir contexto
+mediante datos solo en aquellas visualizaciones destinadas a una
+audiencia analítica.</p></li>
+<li><p><u>Mediante anotaciones:</u> consiste en crear contexto
+incluyendo anotaciones que proporcionan un encabezado y una pequeña
+descripción de los datos que se están mostrando. Este método de creación
+de contexto es el más apropiado para un diseño de tipo <i>data
+storytelling</i> o <i>data showcasing</i>. Una buena anotación es útil
+tanto para audiencias puramente analíticas como aquellas que no lo son
+tanto.</p></li>
+<li><p><u>Mediante elementos gráficos:</u> otra forma efectiva de crear
+contexto en una visualización de datos es incluir elementos gráficos que
+transmitan la importancia relativa de los datos.</p></li>
+<li><p><u>Mediante títulos y subtítulos:</u> añadir títulos y subtítulos
+es la forma más sencilla de agregar contexto a los gráficos. El uso de
+títulos debe orientar a la audiencia hacia el contenido del gráfico, y
+deben ser lo suficientemente descriptivos para que el lector pueda
+comprender inmediantamente el propósito de la visualización.</p></li>
+</ul>
+<h2 id="ii.-selección-del-gráfico-adecuado">ii. Selección del gráfico
+adecuado</h2>
+<p>La elección del tipo de gráfico puede marcar el sentido de una
+visualización de datos.</p>
+<p>Probablemente, habrá que representar muchas facetas diferentes de la
+información, por lo que será necesario usar diferentes tipos de gráficos
+dentro de la misma visualización.</p>
+<p>Por ser algo totalmente subjetivo, la mejor práctica es elegir el
+tipo de gráfico que muestre de manera eficaz y clara para la audiencia
+el sentido de la información que se pretende difundir.</p>
+<p>Los gráficos más usados y que han demostrado ser los más útiles para
+la representación de datos de negocio son los siguientes:</p>
+<ul>
+<li><p>Gráficos estándar.</p></li>
+<li><p>Gráficos comparativos.</p></li>
+<li><p>Diagramas estadísticos.</p></li>
+<li><p>Diagramas especiales y mapas.</p></li>
+</ul>
+<h3 id="gráficos-estándar">Gráficos estándar</h3>
+<p>Los gráficos estándar están recomendados cuando la audiencia a la que
+se destina la visualización tiene un perfil no puramente analítico, ya
+que cuanto más complejos sean los gráficos, más difícil será para este
+tipo de público objetivo entender el mensaje que se pretende
+transmitir.</p>
+<h4 id="gráficos-de-área">Gráficos de área</h4>
+<p>Los <strong><u>gráficos de área</u></strong> son una forma sencilla y
+clara de comparar visualmente valores de los elementos de una categoría
+para un parámetro del negocio.</p>
+<p>Se recomienda su uso cuando se ha elegido un diseño de tipo <i>data
+storytelling</i> o <i>data showcasing</i>.</p>
+<h4 id="gráficos-de-barras">Gráficos de barras</h4>
+<p>Los <strong><u>gráficos de barras</u></strong> son una forma sencilla
+de comparar visualmente los valores de un parámetro para los elementos
+de una misma categoría.</p>
+<p>Al igual que en el caso de los gráficos de área, estos se recomiendan
+con diseños de tipo <i>data storytelling</i> o <i>data
+showcasing</i>.</p>
+<h4 id="gráficos-de-líneas">Gráficos de líneas</h4>
+<p>Los <strong><u>gráficos de líneas</u></strong> suelen mostrar cambios
+en los datos a lo largo del tiempo, pero también pueden trazar
+relaciones entre dos o más parámetros.</p>
+<p>Los gráficos de líneas son tan versátiles que pueden ser usados en
+todos los tipos de diseño de visualización.</p>
+<h4 id="gráficos-circulares">Gráficos circulares</h4>
+<p>Los <strong><u>gráficos circulares</u></strong>, que suelen ser de
+los más utilizados en las visualizaciones, proporcionan una forma
+sencilla de comparar valores de un parámetro en la misma categoría.</p>
+<p>Su simplicidad, sin embargo, puede ser un arma de doble filo, ya que
+una audiencia analítica puede preferir no verlos debido a su extrema
+sencillez.</p>
+<p>Por lo tanto, si el público objetivo es altamente especializado en
+cuanto a la capacidad analítica, se recomienda no hacer uso de
+ellos.</p>
+<h3 id="gráficos-comparativos">Gráficos comparativos</h3>
+<p>Los gráficos comparativos muestran el valor relativo a varios
+parámetros en una categoría, o la relación entre parámetros dentro de
+múltiples categorías compartidas.</p>
+<p>La principal diferencia entre los gráficos comparativos y los
+gráficos estándar es que los comparativos ofrecen una forma de comparar
+simultáneamente más de un parámetro y/o categoría, a diferencia de los
+estándar en los que solo se puede apreciar la diferencia de un parámetro
+de una única categoría.</p>
+<p>Se recomienda usar los gráficos comparativos cuando la audiencia
+tiene <u>capacidades analíticas</u> (aunque no sea demasiado
+especializada).</p>
+<h4 id="gráficos-de-burbujas">Gráficos de burbujas</h4>
+<p>Un <strong><u>gráficos de burbujas</u></strong> es una variante de un
+gráfico de dispersión en el que los puntos de datos se sustituyen por
+burbujas, las cuales representan una dimensión adicional mediante el
+tamaño de las mismas.</p>
+<p>Son útiles para demostrar las relaciones entre los datos y para
+identificar las brechas y los valores atípicos entre ellos.</p>
+<p>Un número excesivo de puntos de datos puede dar lugar a un exceso de
+burbujas en el gráfico, lo que dificultará la visualización de las
+relaciones entre los datos.</p>
+<p>Se recomienda su uso con conjuntos de datos no demasiado amplios o
+cuando se quiere resaltar ciertos valores entre la multitud.</p>
+<h4 id="mapas-de-árbol-tree-maps">Mapas de árbol (tree maps)</h4>
+<p>Los <strong><u>mapas de árbol</u></strong> muestran valores de la
+misma categoría usando el tamaño del área para mostrar el valor relativo
+en comparación con el total.</p>
+<h4 id="diagramas-de-círculos-rellenos-packed-circle-diagrams">Diagramas
+de círculos rellenos (packed circle diagrams)</h4>
+<p>Los <strong><u>diagramas de círculos rellenos</u></strong> usan tanto
+el tamaño del círculo como la agrupación para visualizar las relaciones
+entre categorías y sus valores.</p>
+<p>Son parecidos a los <i>mapas de árbol</i>, pero usando círculos en
+lugar de rectángulos.</p>
+<p>Cada círculo representa un valor diferente de la categoría y sus
+subcategorías correspondientes están dentro de ella.</p>
+<p>Cuanto mayor sea el tamaño del círculo, mayor será el valor del
+parámetro de esa categoría, y viceversa.</p>
+<h4 id="gráficos-de-columnas-apiladas">Gráficos de columnas
+apiladas</h4>
+<p>Los <strong><u>gráficos de columnas apiladas</u></strong> se utilizan
+para comparar múltiples atributos de un parámetro en la misma categoría,
+o para comparar diferentes categorías.</p>
+<p>Para garantizar que la visualización no se vuelva complicada en
+exceso, se considera una buena práctica no incluir demasiados atributos
+en el gráfico.</p>
+<h3 id="gráficos-estadísticos">Gráficos estadísticos</h3>
+<p>Los gráficos estadísticos están diseñados para mostrar los resultados
+de análisis puramente estadísticos.</p>
+<p>Suelen ser útiles solo para una audiencia con amplios conocimientos
+analíticos, por lo que no están recomendados para la técnica de
+visualización <i>data art</i>.</p>
+<h4 id="histograma">Histograma</h4>
+<p>Un <strong><u>histograma</u></strong> es una representación gráfica
+de una variable en forma de barras, donde la superficie de cada barra es
+proporcional a la frecuencia de los valores representados.</p>
+<h4 id="diagrama-de-dispersión">Diagrama de dispersión</h4>
+<p>Un <strong><u>diagrama de dispersión</u></strong> muestra los puntos
+de datos de acuerdo con sus valores (x, y) para revelar visualmente
+cualquier patrón significativo, lo cual permite descubrir rápidamente
+tendencias y valores atípicos en los datos.</p>
+<p>Si se usan las técnicas de diseño <i>data storytelling</i> o <i>data
+showcasing</i>, se considera una buena práctica crear inicialmente un
+diagrama de dispersión general para determinar qué áreas pueden ser
+interesantes (que puedan reflejar relaciones significativas entre los
+datos).</p>
+<h4 id="matriz-de-dispersión">Matriz de dispersión</h4>
+<p>Una <strong><u>matriz de dispersión</u></strong> es una serie de
+diagramas de dispersión que muestra las correlaciones entre múltiples
+variables.</p>
+<p>Descubrir relaciones entre variables puede ayudar a identificar
+agrupaciones entre ellas y descubrir valores atípicos (outliers) en el
+conjunto de los datos.</p>
+<h3 id="mapas">Mapas</h3>
+<p>Los mapas son representaciones especiales que muestran la ubicación,
+la forma y el tamaño de las características en un lugar geográfico
+determinado.</p>
+<p>En Inteligencia de Negocio, el uso de mapas aporta un gran poder de
+análisis al vincular la información puramente cuantitativa con las zonas
+geográficas donde tienen lugar los hechos analizados.</p>
+<h4 id="choropleth-maps">Choropleth maps</h4>
+<p>Los <strong><u>choropleth maps</u></strong> son gráficos especiales
+que muestran áreas geográficas divididas que están coloreadas,
+estampadas o sombreadas en relación con una variable.</p>
+<p>Este tipo de gráficos permiten visualizar los valores de los datos en
+un área geográfica, proporcionando una visión de cómo varían en el
+territorio que se muestra en dicho mapa.</p>
+<h4 id="mapas-de-puntospoint-maps">Mapas de puntos(point maps)</h4>
+<p>Los <strong><u>mapas de puntos</u></strong> son gráficos especiales
+que muestran las localizaciones geográficas de los datos como puntos en
+dicha representación.</p>
+<p>Los mapas de puntos se pueden enriqucer agregando contexto mediante
+el tamaño y/o color de los puntos para expresar el valor de un parámetro
+asociado.</p>
+<h4 id="mapas-raster-raster-surface-maps">Mapas raster (raster surface
+maps)</h4>
+<p>Los <strong><u>mapas raster</u></strong> son mapas especiales que
+muestran los valores de los datos sobre una variedad de imágenes
+geográficas reales.</p>
+<p>Para ello, los datos especiales que se tienen de los puntos a
+representar son transformados para poder ser reflejadas adecuadamente en
+el tipo de superficie elegida.</p>
+<h2 id="iii.-prácticas-básicas-de-diseño">iii. Prácticas básicas de
+diseño</h2>
+<p>Aunque el proceso de creación de visualización de análisis de datos
+es un proceso altamente subjetivo, existen una serie de prácticas
+recomendadas a tener en cuenta a la hora de una visualización.</p>
+<h3 id="la-consistencia-supera-a-la-elegancia">La consistencia supera a
+la elegancia</h3>
+<p>Es una buena práctica que el equipo de Inteligencia de Negocio cree
+una plantilla de diseño orientada a cada público.</p>
+<p>La plantilla debe incluir el posicionamiento estándar para títulos,
+leyendas, herramientas de navegación, ayuda y elementos visuales.</p>
+<p>También debe haber un fondo estándar y una marca como logotipo de una
+empresa o producto.</p>
+<p>Los usuarios del negocio deben tener la percepción de que cada
+visualización les es familiar en cuanto a diseño y la forma de
+interactuar, lo cual mejora su productividad y les permite concentrarse
+en el análisis en lugar de cómo manejarlo.</p>
+<p>El desarrollo de plantillas mejroa la productividad del equipo de
+Inteligencia de Negocio, acorta los tiempos de desarrollo y disminuye
+los costos de mantenimiento.</p>
+<h3 id="elegir-diseños-simples">Elegir diseños simples</h3>
+<p>Existe la tentación de introducir en una visualización demasiada
+información o demasiados elementos visuales en la pantalla de una
+aplicación de Inteligencia de Negocio.</p>
+<p>Crear demasiado desorden visual hace más difícil o, a veces,
+imposible trabajar de manera efectiva.</p>
+<p>No hay que tener miedo de las zonas en blanco en un <i>dashboard</i>,
+ya que no es un signo de debilidad; más bien, muestra moderación.</p>
+<h3 id="localización-adecuada-de-los-elementos-gráficos">Localización
+adecuada de los elementos gráficos</h3>
+<p>Es recomendable colocar los datos más importantes en la parte
+superior del tablero, en particular en la esquina superior izquierda que
+es donde los ojos de una persona suelen mirar primero.</p>
+<p>Si los elementos gráficos están vinculados entre sí para potenciar un
+análisis de negocios en particular, entonces el flujo de trabajo debe
+ser de arriba a abajo y de izquierda a derecha.</p>
+<h3 id="uso-razonable-de-los-colores">Uso razonable de los colores</h3>
+<p>Los colores se pueden usar de manera muy efectiva para mejorar la
+comprensión de los datos, pero también pueden convertirse en una
+distracción o incluso en un obstáculo.</p>
+<p>Es muy común codificar o asociar los colores con valores específicos
+de algo.</p>
+<p>Además, hacer que un tono de color sea más oscuro o aumentar el
+tamaño de un objeto en un gráfico puede representar valores
+crecientes.</p>
+<p>El diseño debe ser comprensible incluso <strong>si solo se ve en
+escala de grises para facilitar la visualización a las personas con
+deficiencias visuales</strong>, o cuando la pantalla se ha impreso (o
+guardado en un documento PDF) sin color.</p>
+<p>Hay varias directrices a tener en cuenta en el uso del color:</p>
+<ul>
+<li><p>Utilizar un número limitado de colores, ya que demasiados colores
+hacen que sea imposible discernir cómo han sido codificados los datos.
+Limitar también el número de paletas de colores en el diseño a no más de
+dos.</p></li>
+<li><p>Usar colores que contrasten entre ellos en lugar de colores con
+tonos ligeramente diferentes (si hemos optado por ese enfoque de diseño)
+ya que así será difícil distinguir la diferencia entre los valores
+representados.</p></li>
+<li><p>El uso de colores degradados es efectivo para mostrar diferencias
+en los tamaños o en las clasificacionesde los valores mostrados. Esta
+técnica puede ayudar a reducir el número total de visualizaciones
+necesarias para transmitir información, así como reducir el número de
+colores necesarios.</p></li>
+<li><p>Los esquemas de color deben representar cosas distintas en una
+pantalla única. Esquemas de color superpuestos en diferentes vistas crea
+confusión porque se utiliza el mismo color para representar cosas
+distintas.</p></li>
+<li><p>Usar colores convencionales siempre que sea posible. Esto permite
+a la audiencia asociar rápidamente lo que se pretende mostrar sin
+necesidad de leyendas o información adicional.</p></li>
+</ul>
+<h3 id="se-veía-muy-bien-en-mi-monitor">“Se veía muy bien en mi
+monitor”</h3>
+<p>Muchas herramientas de visualización de datos permiten diseñar el
+<i>dashboard</i> una vez, y mostrarlo posteriormente en muchas
+plataformas.</p>
+<p>Estos dispositivos varían en tamaño (desde enormes monitores de
+pantalla ancha hasta teléfonos de apenas cinco pulgadas) y también
+variarán en cuanto a la calidad de visualización.</p>
+<p>Aquellos <i>dashboards</i> que hayan sido diseñados en un monitor de
+grandes dimensiones pueden parecer muy convenientes, pero pueden variar
+significativamente al mostrarlos en un ordenador portátil o resultar
+imposibles de visualizar en una tableta u otro dispositivo portátil.</p>
+<p>Si la planificación de una solución de inteligencia de negocio
+incluye que las aplicaciones puedan ser usadas en múltiples plataformas,
+el desarrollador tendrá que crear un <strong>prototipo de
+diseño</strong> en cada una de ellas y verificar que los resultados que
+se rpetenden mostrar son comprensibles para la audiencia
+independientemente del dispositivo usado.</p>
+<h3 id="utilizar-filtros-y-slicers-segmentadores-de-datos">Utilizar
+filtros y slicers (segmentadores) de datos</h3>
+<p>Los filtros permiten a los usuarios del sistema personalizar su
+análisis de datos y exploración dentro de una aplicación de Inteligencia
+de Negocio.</p>
+<p>Hay varias recomendaciones:</p>
+<ul>
+<li><p>Es mejor aplicar filtros a todas las visualizaciones en conjunto
+de un <i>dashboard</i>.</p></li>
+<li><p>Los filtros generalmente se implementan mediante una lista de
+valores o menús desplegables, pero para filtros numéricos es más
+adecuado el uso de una barra deslizante ya que esto agiliza la
+aplicación del filtro.</p></li>
+<li><p>Mostrar visiblemente los filtros que están en uso para que la
+audiencia sepa lo que está viendo en ese momento.</p></li>
+<li><p>Si los atributos que se utilizan en los filtros tienen
+jerarquías, los filtros deben mostrarse según el orden de la jerarquía
+de mayor a menor.</p></li>
+<li><p>Si la lista de valores de filtro es larga, puede ser útil incluir
+las opciones “mostrar todas” o “ninguna” en la lista de
+valores.</p></li>
+</ul>
+<h3 id="usar-las-leyendas-solo-cuando-sea-necesario">Usar las leyendas
+solo cuando sea necesario</h3>
+<p>Las leyendas son otro tipo de elementos que pueden llevar al desorden
+si se usan en exceso.</p>
+<p>Es recomendable usar leyendas cuando no haya otra forma de comprender
+los datos en una visualización (cuando los colores no están
+etiquetados).</p>
+<p>En ocasiones, muchas visualizaciones que están relacionadas entre sí
+pueden compartir la misma leyenda.</p>
+<p>En ese caso, es recomendable que la leyenda sea visible en todas las
+partes donde se necesite para entender los valores mostrados.</p>
+<h3 id="limitar-las-visualizaciones-en-un-solo-diseño">Limitar las
+visualizaciones en un solo diseño</h3>
+<p>Un <i>dashboard</i> clásico suele presentar cuatro zonas de
+visualización o gráficos que están relacionados entre sí en un contexto
+empresarial.</p>
+<p>Si en el diseño se añaden más de cuatro o cinco visualizaciones, el
+<i>dashboard</i> se desordena, los gráficos se hacen más pequeños y la
+utilidad de la aplicación de Inteligencia de Negocio disminuye.</p>
+<p>Si se quieren añadir visualizaciones adicionales que están vinculadas
+a una de las cuatro o cinco del <i>dashboard</i> principal, es una buena
+práctica colocar esas visualizaciones en otro panel o informe.</p>
+<h3 id="resaltar-los-valores-atípicos-outliers">Resaltar los valores
+atípicos (outliers)</h3>
+<p>Dando por hecho que los valores atípicos son la excepción y no la
+regla, debe haber una señal visual que indique que el valor mostrado es
+un <i>outlier</i>.</p>
+<p>Estas señales pueden implicar el uso de un color diferente, usar una
+fuente con tamaño mayor o en negrita, texto resaltado o el uso de un
+icono descriptivo.</p>
+<p>Los valores atípicos pueden representar la mejor y/o la peor medida
+dentro de un conjunto de datos, dependiendo de lo que la empresa esté
+interesada en rastrear.</p>
+<h3 id="facilitar-la-lectura-de-las-etiquetas">Facilitar la lectura de
+las etiquetas</h3>
+<p>Las etiquetas horizontales son mucho más fáciles de leer que las
+etiquetas verticales.</p>
+<p>El estilo del texto, las fuentes y el tamaño también aumentan la
+legibilidad.</p>
+<h3 id="evitar-las-barras-de-desplazamiento">Evitar las barras de
+desplazamiento</h3>
+<p>Por lo general, se recomienda no utilizar las barras de
+desplazamiento porque con ellas es difícil determinar el contexto
+completo de los datos que se presentan.</p>
+<p>Si la audiencia necesita ver una tabla de datos con cierta cantidad
+de información, puede ser mejor ubicarla en una pantalla
+independiente.</p>
+<h3 id="otras-prácticas">Otras prácticas</h3>
+<p>Aparte de estas consideraciones de diseño en el uso de elementos y
+formatos gráficos, hay que evitar la sobrecarga de información cuando se
+presenta al público objetivo.</p>
+<p>Un <i>dashboard</i> sobrecargado con visualizaciones irrelevantes o
+inapropiadas distrae la atención de la audiencia, por lo que es
+recomendable:</p>
+<ul>
+<li><p><u>Eliminar el desorden:</u> mostrar solo aquellas dimensiones o
+medidas que son relevantes para el análisis.</p></li>
+<li><p><u>Usar terminología empresarial:</u> las dimensiones y medidas
+deben usar los nombres y la terminología del negocio. La audiencia
+espera encontrar los términos conocidos, no los nombres de los campos en
+la base de datos.</p></li>
+<li><p><u>Construir previamente las jerarquías y medidas específicas del
+negocio:</u> durante la fase de descubrimiento de datos, el equipo de
+Inteligencia de Negocio debe descubrir las jerarquías y las medidas
+específicas del negocio que se utilizan en el proceso de
+análisis.</p></li>
+</ul>
+<h2 id="iv.-errores-de-diseño">iv. Errores de diseño</h2>
+<p>Un problema asociado con las representaciones gráficas es la
+facilidad con la que se pueden tergiversar los datos mostrados.</p>
+<p>Las dos causas principales que pueden producir este problema (y que
+pueden ser evitadas) son:</p>
+<ul>
+<li><p><u>Mostrar múltiples dimensiones no relacionadas jerárquicamente
+en el orden equivocado en un solo gráfico.</u> Cuando el gráfico y los
+datos no comparten la misma estructura, el gráfico puede crear falsas
+impresiones sobre los datos si la información no se muestra en el orden
+correcto.</p></li>
+<li><p>Usar técnicas de visualización que <u>cambien el valor aparente
+en cantidades o proporciones</u>, pero que no reflejan la diferencia
+real de los cambios en los datos subyacentes, especialmente aquellas en
+las que influye el área.</p></li>
+</ul>
+<h1 id="tipos-de-gráficos-para-el-análisis">3. TIPOS DE GRÁFICOS PARA EL
+ANÁLISIS</h1>
+<h2 id="i.-gráficos-según-el-análisis">i. Gráficos según el
+análisis</h2>
+<p>Al diseñar la aplicación de Inteligencia de Negocio, es fundamental
+tener claro el <u>tipo de análisis</u> que la persona de negocios
+necesita para poder ayudarle en la toma de decisiones de la
+organización.</p>
+<p>Conocer este aspecto, ayudará al equipo de desarrollo del sistema de
+Inteligencia de Negocio a elegir los mejores tipos de gráficos para
+optimizar la visualización.</p>
+<p>Los tipos de análisis más habituales requeridos por los usuarios del
+negocio son los siguientes:</p>
+<ul>
+<li><p>Comparativo.</p></li>
+<li><p>Series temporales o tendencias.</p></li>
+<li><p>Contribución.</p></li>
+<li><p>Correlación.</p></li>
+<li><p>Datos geográficos.</p></li>
+<li><p>Distribución.</p></li>
+</ul>
+<h3 id="análisis-comparativo">Análisis comparativo</h3>
+<p>Los usuarios del negocio frecuentemente comparan y clasifican los
+datos.</p>
+<p>Cuando los usuarios buscan comparar medidas de negocio, los
+<u>gráficos de barras</u> (normales para comparar una única categoría o
+de barras apiladas para varias) son muy eficaces para el análisis
+comparativo debido a que las longitudes de las barras representan
+medidas cuantitativas que se pueden comparar con bastante facilidad.</p>
+<p>Recomendaciones de uso para los gráficos de barras:</p>
+<ul>
+<li><p>Usar un único color para las barras en lugar de varios colores,
+porque es más fácil aprecias los diferentes tamaños de las barras (para
+gráficos de barras simple).</p></li>
+<li><p>Las barras horizontales funcionan bien para cualquier número de
+elementos.</p></li>
+<li><p>Las barras verticales funcionan bien con menos de una docena de
+elementos.</p></li>
+</ul>
+<h3 id="series-temporales-o-análisis-de-tendencias">Series temporales o
+análisis de tendencias</h3>
+<p>Examinar las tendencias a lo largo del tiempo es una actividad
+analítica muy frecuente en Inteligencia de Negocio.</p>
+<p>A menudo, los datos rastreados se desglosan mediante alguna forma de
+segmentación.</p>
+<p>Las mejores visualizaciones para el análisis de series temporales son
+los <u>gráficos de líneas</u> y los <u>gráficos de áreas</u>.</p>
+<p>La convención para los gráficos de tendencia es que el tiempo se
+muestre horizontalmente en el eje X mientras que la medida representada
+se muestra en el eje Y.</p>
+<h4 id="gráficos-de-líneas-1">Gráficos de líneas</h4>
+<p>Los gráficos de líneas son muy efectivos para mostrar datos
+segmentados a medida que cambian con el tiempo.</p>
+<p>Tanto las tendencias como las diferencias relativas en cada uno de
+los segmentos son fáciles de discernir.</p>
+<p>Usa diferentes tipos de líneas y/o colores suelen mejorar la
+usabilidad del gráfico.</p>
+<h4 id="gráficos-de-áreas">Gráficos de áreas</h4>
+<p>Los gráficos de áreas combinan un gráfico de línea y un gráfico de
+barras, de forma que el espacio entre la línea y el eje inferior se
+rellena con un color que permite visualizar el volumen de cada categoría
+y sus variaciones en el tiempo.</p>
+<p>Este tipo de gráficos es muy útil cuando se quiere ver volúmenes,
+tendencias, continuidad y cambios en los datos.</p>
+<h3 id="análisis-de-contribución">Análisis de contribución</h3>
+<p>El objetivo del análisis de contribución es el cálculo o estimación
+de cómo ha contribuido cada actividad o proceso elemental de la
+organización en el total de la actividad del negocio.</p>
+<p>En este tipo de análisis, la contribución que cada segmento de algo
+hace un relación con el todo es típicamente representado por un
+porcentaje.</p>
+<p>La visualización más común utilizada para este propósito es un
+<u>gráfico circular</u>, pero este solo es efectivo cuando hay pocos
+elementos para mostrar (no más de diez) y cuando la audiencia no tiene
+un perfil demasiado analítico.</p>
+<p>Cuando existen multitud de valores, la visualización más recomendada
+para reflejar el análisis de contribución es el <i><u>tree map</u></i>,
+ya que permite mostrar una gran cantidad de valores en relación con el
+total.</p>
+<p>Es una buena práctica en un <i>tree map</i> utilizar un degradado de
+color para mejorar su utilidad si se quiere enfatizar el peso en la
+contribución del negocio.</p>
+<h3 id="análisis-de-correlación">Análisis de correlación</h3>
+<p>Como ya se mencionó con anterioridad, las representaciones gráficas
+son más efectivas que las tablas numéricas para permitir a los usuarios
+del negocio identificar posibles relaciones entre los datos
+(especialmente relevante cuando hay muchos datos que mostrar).</p>
+<p>Los <strong><u>diagramas de dispersión</u></strong> son muy eficaces
+para llevar a cabo el análisis de correlación, sobre todo cuando el
+tamaño y el color se utilizan para representar la variación en los
+valores cuantitativos.</p>
+<p>También es posible hacer uso una combinación de gráficos de líneas y
+de barras para realizar el análisis de correlación, especialmente cuando
+el análisis de tendencias se utiliza para identificar correlaciones.</p>
+<p>Aunque los gráficos de correlación puedan reflejar una relación
+potencial entre los datos, no garantiza que realmente exista una
+correlación.</p>
+<p>Es recomendable <u>validar una causalidad</u> antes de asegurar que
+existe una correlación real entre los datos.</p>
+<h3 id="datos-geográficos">Datos geográficos</h3>
+<p>El método más efectivo para visualizar datos por ubicación es usar un
+<u>mapa</u>.</p>
+<p>Habitualmente, se suele emparejar un gráfico adicional con el mapa
+(como un gráfico de líneas que muestre tendencias o una tabla de datos
+que brinde los detalles subyacentes) ya que proporciona información muy
+útil para mejorar la comprensión de lo mostrado en la visualización.</p>
+<h3 id="análisis-de-distribución">Análisis de distribución</h3>
+<p>Este tipo de análisis muestra la distribución de valores en todo el
+rango cuantitativo.</p>
+<p>Las dos técnicas de visualización utilizadas para apoyar el análisis
+de distribución son los <u><i>box plots</i></u> (diagramas de caja) y
+los <u>histogramas</u>.</p>
+<p>Un <strong><i>box plot</i></strong> es un método estandarizado para
+representar gráficamente una serie de datos numéricos a través de sus
+cuartiles (puntos tomados a intervalos regulares de la función de
+distribución de una variable aleatoria).</p>
+<p>De esta manera, se muestran a simple vista la mediana y los cuartiles
+de los datos y también pueden representarse sus valores atípicos.</p>
+<h1 id="herramientas-de-diseño-de-dashboards">4. HERRAMIENTAS DE DISEÑO
+DE DASHBOARDS</h1>
+<h2 id="i.-justificación-de-la-necesidad">i. Justificación de la
+necesidad</h2>
+<p>A la hora de plantear el <i>dashboard</i> en el que se mostrarán los
+indicadores o medidas del negocio (en base a los requisitos definidos
+por la organización y al tipo de audiencia objetivo) es preciso que el
+equipo de Inteligencia de Negocio realice un <u>diseño previo</u> en el
+que las partes implicadas puedan opinar sobre las necesidades de
+información que deberán ser satisfechas.</p>
+<p>El equipo de Inteligencia de Negocio deberá realizar un boceto basado
+en las especificaciones del negocio y siguiendo los <u>estándares de
+interfaz de usuarios y de política corporativa</u> en el que reflejar
+los elementos que mostrarán la información.</p>
+<p>Esta fase de diseño concluirá con un entregable que constará de un
+ejemplo de diseño de <i>dashboard</i> en el que se reflejen los
+elementos visuales y, dependiendo de la técnica elegida, los detalles y
+fluos de trabajo entre ellos.</p>
+<p>Al igual que con el desarrollo de estándares de interfaz de usuarios,
+el uso de métodos de diseño visual mejora la comprensión de lo que se
+propone construir y permite a los responsables del negocio colaborar con
+el equipo de Inteligencia de Negocio en la construcción del mismo.</p>
+<p>Las técnicas que utilizan los diseñadores para crear las
+especificaciones visuales de las aplicaciones de Inteligencia de Negocio
+son las siguientes:</p>
+<p><img src="/img/2425/tag3/Tema6_1.png" /></p>
+<p>Las distintas técnicas de diseño se muestran en orden creciente en
+cuanto al mayor nivel de detalle visual de izquierda a derecha.</p>
+<p>Un principio clave para optar por el uso de uno o más de estos
+métodos de diseño visual, es que deben hacerse rápidamente y no
+convertirse en proyectos en sí mismos.</p>
+<h2 id="ii.-herramientas">ii. Herramientas</h2>
+<h3 id="sketches-bocetos">Sketches (bocetos)</h3>
+<p>Los bocetos son un buen método para discutir y comunicar la intención
+y el contenido de la aplicación de Inteligencia de Negocio (desde una
+perspectiva conceptual) con todas las partes interesadas en el
+proyecto.</p>
+<p>De hecho, la mayoría de los diseños visuales comenzarán como un
+boceto que posteriormente se irán detallando.</p>
+<p>El uso de una pizarra o un simple papel es una forma rápida, fácil y
+económica de dibujar los bocetos iniciales y comenzar los cambios de
+impresión entre las partes implicadas, aunque estos no permiten el
+trabajo colaborativo.</p>
+<p>El uso de <u><strong>pizarras visuales</strong></u> puede ayudar en
+este aspecto.</p>
+<p>Los bocetos permiten los procesos de <i>brainstorming</i> y la
+participación de todos los actores implicados, ya que el proceso de
+creación de este tipo de técnica es muy fluida y fácilmente desechable
+en caso de que el resultado no sea el adecuado.</p>
+<p>A pesar de que los bocetos son mínimamente detallados, retratan
+visualmente la estructura de la aplicación de Inteligencia de Negocio
+(cosa que un documento de texto no haría).</p>
+<p>Los bocetos son un <u><strong>punto de partida</strong></u> para el
+diseño visual de aplicaciones de Inteligencia de Negocio, pero siguen
+siendo ambiguos y necesitan agregar más detalles usando otras técnicas
+de diseño visual.</p>
+<h3 id="wireframes">Wireframes</h3>
+<p>Un <i>wireframes</i> es una representación mucho más detallada del
+diseño de un <i>dashboard</i> en el que se muestra la estructura visual
+de la aplicación de Inteligencia de Negocio.</p>
+<p>Esta técnica se centra <u>en cómo se verá el diseño de la
+pantalla</u> de la aplicación de Inteligencia de Negocio, sin entrar en
+la navegación o la funcionalidad misma.</p>
+<p>Un <i>wireframe</i> proporciona el siguiente nivel de detalle
+respecto a lo que aporta un boceto.</p>
+<p>Los <i>wireframes</i> se dibujan en negro, tonos de grises y blanco
+en lugar de usar el color.</p>
+<p>Esta convención se utiliza para restringir el alcance del
+<i>wireframe</i> y enfocar su propósito.</p>
+<p>Un <i>wireframe</i> indicará la siguiente información:</p>
+<ul>
+<li><p>Los grupos que contendrán datos en el <i>dashboard</i>.</p></li>
+<li><p>La ubicación de cada uno de los contenidos en el diseño.</p></li>
+<li><p>Una representación de las visualizaciones como un gráfico o
+tabla.</p></li>
+<li><p>Descripción y colocación de filtros, controles deslizantes,
+títulos, subtítulos, campos de texto, logotipos y cualquier elemento de
+diseño incluido en el diseño.</p></li>
+</ul>
+<h3 id="storyboards">Storyboards</h3>
+<p>La técnica del <i>storyboard</i> se utiliza en la industria
+cinematográfica para diseñar la acción dentro de la película.</p>
+<p>Del mismo modo, una <i>storyboard</i> en Inteligencia de Negocio
+establece las principales acciones que los usuarios del negocio pueden
+llevar a cabo durante la fase de análisis y cómo interactuarán con la
+aplicación de Inteligencia de Negocio para realizarlas.</p>
+<p>Esta técnica también permite al diseñador de Inteligencia de Negocio
+tener una mejor perspectiva sobre cómo se relaciona cada tipo de
+análisis ya que, habitualmente, algunos tipos de análisis dependen a su
+vez de otros.</p>
+<p>Los <i>storyboard</i> son la <u>representación más completa de
+visualización y flujo de trabajo</u> que un equipo de Inteligencia de
+Negocio puede desarrollar sin construir un prototipo funcional.</p>
+<h3 id="mock-ups-maquetas">Mock-ups (maquetas)</h3>
+<p>Las maquetas son representaciones muy aproximadas del diseño final de
+la aplicación de Inteligencia de Negocio.</p>
+<p>La maqueta es una visualización estática de cómo se verá la
+aplicación de Inteligencia de Negocio para los usuarios del negocio,
+incluyendo los colores, iconos, botones, texto y gráficos que se
+utilizarán en el <i>dashboard</i> final.</p>
+<p>Es una representación estática (los usuarios no pueden interactuar
+con ella), pero se podrán apreciar el diseño de la herramienta con la
+que trabajarán una vez que se haya desarrollado.</p>
+<p>Normalmente, las herramientas de Inteligencia de Negocio pueden crear
+un prototipo con el diseño de la aplicación mucho más rápido que una
+herramienta de creación de <i>mock-ups</i>, por lo que las <u>maquetas
+no se utilizan habitualmente en Inteligencia de Negocio</u> a menos que
+la herramienta de Inteligencia de Negocio las genere junto con el
+prototipo.</p>
 </body>
 </html>
