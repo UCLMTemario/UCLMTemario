@@ -174,7 +174,7 @@
 <h1 class="title">MODELADO MULTIDIMENSIONAL</h1>
 <p class="subtitle">TEMA 3</p>
 <p class="author">Aika Kenshi</p>
-<p class="date">18-09-2024</p>
+<p class="date">15-01-2025</p>
 </header>
 <h1 id="introducción-al-modelado-dimensional">1. INTRODUCCIÓN AL
 MODELADO DIMENSIONAL</h1>
@@ -189,32 +189,930 @@ OLAP</u>.</p></li>
 <li><p>Los conceptos clave en el modelado dimensional son: <u>hechos,
 dimensiones y atributos</u>.</p></li>
 <li><p>Los hechos, las dimensiones y los atributos se pueden organizar
-de varias fomras, denominadas <u>esquemas</u>.</p></li>
-<li></li>
+de varias fomras, denominadas <u>esquemas</u>. La elección del esquema
+depende del tipo de informes que el modelo necesita facilitar, la
+naturaleza de los datos y el tipo de herramienta de Inteligencia de
+Negocio que se está utilizando.</p></li>
+<li><p>Los <u>hechos</u> representan los datos (normalmente
+cuantitativos) fruto de la actividad del negocio que se quiere
+analizar.</p></li>
+<li><p>Las <u>dimensiones</u> definen <strong>quién</strong>,
+<strong>dónde</strong>, <strong>cuándo</strong> y <strong>cómo</strong>
+en el modelo dimensional. Contienen atributos que aportan información
+adicional para el análisis y pueden tener diferentes
+<u>jerarquías</u>.</p></li>
+<li><p>EL <u>nivel de granularidad</u> es otro concepto clave con el
+modelado dimensional ya que determina el nivel de detalle de la
+información a analizar.</p></li>
 </ul>
 <h2 id="ii.-hechos">ii. Hechos</h2>
+<p>Un hecho es una medida de una actividad del negocio, como un evento o
+transacción comercial, y generalmente de tipo numérico:</p>
+<ul>
+<li><p>Ventas.</p></li>
+<li><p>Gastos.</p></li>
+<li><p>Niveles de inventario.</p></li>
+</ul>
+<p>Los hechos, a su vez, pueden ser <u>agregados o derivados</u>.</p>
+<p>Los hechos proporcionan la medida de lo bien o mal que funciona una
+organización.</p>
+<p>Las tablas de hechos están <u>normalizadas</u> y contienen poca
+redundancia.</p>
+<p>Se estima que el noventa por ciento de los datos en un modelo
+dimensional se encuentra normalmente en las tablas de hechos.</p>
+<p>Las tablas de hechos están compuestas por dos tipos de columnas:
+<u>claves</u> y <u>medidas</u>.</p>
+<ul>
+<li><p>La <strong>clave</strong> (<i>key</i>) está formada por un
+conjunto de claves foráneas (FK) que apuntan a las claves primarias de
+las tablas dimensionales que están asociadas.</p></li>
+<li><p>Las <strong>medidas</strong> (<i>measures</i>) representan
+columnas que contienen datos cuantificables, numéricos, que se pueden
+sumarizar.</p></li>
+</ul>
+<h3 id="tipos-de-tablas-de-hechos">Tipos de tablas de hechos</h3>
+<p>Hay tres tipos de tablas de hechos en el modelado dimensional:
+transaccionales, periódicas y acumulativas:</p>
+<h4 id="tablas-de-hechos-transaccionales">Tablas de hechos
+transaccionales</h4>
+<p>Son las más comunes en el modelado dimensional.</p>
+<p>Registran un evento o transacción relacionada con el negocio (un
+registro por transacción con todos los datos asociados al evento).</p>
+<h4 id="tablas-periódicas-de-hechos">Tablas periódicas de hechos</h4>
+<p>Registran instantáneas de datos para un tiempo específico.</p>
+<p>Cada fila representa un hecho en un momento específico.</p>
+<h4 id="tablas-de-hechos-acumulados">Tablas de hechos acumulados</h4>
+<p>Almacenan en un registro toda la actividad del ciclo de vida del
+evento, actualizando en dicho registro la actividad a medida que
+avanza.</p>
+<p>Procesos de negocio que tienen un punto de inicio definido, una serie
+de pasos intermedios y un punto final, pueden ser modelados con este
+tipo de tabla de hechos.</p>
+<h4 id="comparación">Comparación</h4>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Propiedad</th>
+<th style="text-align: center;">Hechos transaccionales</th>
+<th style="text-align: center;">Periódicas de hechos</th>
+<th style="text-align: center;">Hechos acumulados</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Granularidad</td>
+<td style="text-align: center;">Una fila por transacción</td>
+<td style="text-align: center;">Una fila por período de tiempo</td>
+<td style="text-align: center;">Una fila por cada duración de un
+evento</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Dimensión de fecha</td>
+<td style="text-align: center;">Nivel más bajo de granularidad</td>
+<td style="text-align: center;">Granularidad de fin de período</td>
+<td style="text-align: center;">Múltiples por fila</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Número de dimensiones</td>
+<td style="text-align: center;">Mínimo</td>
+<td style="text-align: center;">Medio</td>
+<td style="text-align: center;">Máximo</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Hechos</td>
+<td style="text-align: center;">Relacionado con la transacción</td>
+<td style="text-align: center;">Relacionado con el periodo</td>
+<td style="text-align: center;">Numerosos eventos a lo largo del ciclo
+de vida</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Medición</td>
+<td style="text-align: center;">Aditiva</td>
+<td style="text-align: center;">No aditiva, promedio</td>
+<td style="text-align: center;">Necesidad de derivar</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Dimensiones conformes</td>
+<td style="text-align: center;">Sí</td>
+<td style="text-align: center;">Sí</td>
+<td style="text-align: center;">Sí</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Hechos conformes</td>
+<td style="text-align: center;">Sí</td>
+<td style="text-align: center;">Sí</td>
+<td style="text-align: center;">Sí</td>
+</tr>
+</tbody>
+</table>
+<h3 id="campos-clave">Campos clave</h3>
+<p>Las tablas de hechos están <u>normalizadas</u>, por lo que cada fila
+de hechos debe estar identificadas de forma única por la clave.</p>
+<p>En ocasiones, puede ocurrir que la clave formada por el conjunto de
+FK de las tablas de dimensiones no identifique unívocamente los hechos,
+por lo que hay que optar por dos alternativas:</p>
+<ul>
+<li><p><strong><i>Surrogate key:</i></strong> crear una clave propia de
+la base de datos de tipo IDENTITY (número entero autoincremental que
+identifique de manera única cada registro). El uso de claves subrogadas
+tanto para la tabla de hechos como para las dimensiones, suele ser
+considerada una buena práctica en un modelo dimensional.</p></li>
+<li><p><strong><i>Degenerate dimensions:</i></strong> usar como parte de
+la clave de la tabla de hechos atributos que lo son en el modelo
+transaccional pero que (a priori) no lo son en el modelo dimensional. Se
+denominan de esta manera porque son atributos clave que no forman parte
+de ninguna dimensión del modelo.</p></li>
+</ul>
+<p><strong>IMPORTANTE:</strong> Los valores de los atributos que
+conforman las claves ajenas en la tabla de hechos NO pueden contener
+valores nulos (si los hubiese, el análisis posterior no sería
+correcto).</p>
+<h4 id="beneficios-de-las-claves-subrogadas">Beneficios de las claves
+subrogadas</h4>
+<ul>
+<li><p><u>Identificación única inmediata:</u> cualquier fila de tabla de
+hechos se identifica inmediatamente por la clave (sin tener que navegar
+por múltiples dimensiones para obtener la información
+asociada).</p></li>
+<li><p><u>Facilidad para reanudar una carga detenida:</u> ante un
+proceso de carga detenido abruptamente en un proceso ETL, el DBA puede
+localizar fácilmente el último registro cargado buscando la clave máxima
+en la tabla.</p></li>
+<li><p><u>Operación de actualización con una inserción seguida de una
+eliminación:</u> al depender el registro únicamente de un atributo de
+clave (no de una combinación de claves ajenas) es posible realizar una
+operación de actualización insertando el nuevo registro modificado y
+eliminando posteriormente el anterior (teniendo siempre presente, que
+los hechos no deberían ser cambiantes).</p></li>
+</ul>
+<h3 id="campos-de-medida.-granularidad">Campos de medida.
+Granularidad</h3>
+<p>Las columnas relativas a las medidas de las tablas de hechos
+contienen los datos propios de la actividad empresarial.</p>
+<p>La tabla de hechos posee una determinada granularidad
+(<strong><i>grain</i></strong>), la cual describe el nivel de detalle
+más atómico que vamos a encontrar de los datos.</p>
+<p>No es lo mismo tener un registro por cada venta realizada, que tener
+un registro por cada uno de los artículos de cada venta.</p>
+<p>A mayor granularidad, mayor será el número de registros de nuestra
+tabla de hechos.</p>
+<p>Dado que el espacio en disco y rendimiento no se ven notablemente
+afectados en los sistemas actuales, se debe considerar como <u>buena
+práctica</u> llegar siempre al máximo nivel de granularidad que resulte
+útil a los usuarios del negocio.</p>
+<h3 id="otros-tipos-de-campos">Otros tipos de campos</h3>
+<p>Algunos autores contemplan un tercer tipo de columnas en las tablas
+de hechos como son los <u>atributos de metadatos (o de linaje)</u>.</p>
+<p>No aportan valor para el usuario de negocio, pero sí pueden ser
+interesantes en determinadas circunstancias conocer el origen de los
+registros (para detectar errores en las fuentes de datos o auditar otros
+aspectos del negocio).</p>
+<h3 id="tipos-de-hechos">Tipos de hechos</h3>
+<ul>
+<li><p><strong>Additive Facts</strong> (hechos aditivos): medidas de
+negocio que se pueden sumarizar en todas las dimensiones. Son los tipos
+más frecuentes.</p></li>
+<li><p><strong>Semiadditive Facts</strong> (hechos semiaditivos):
+medidas de negocio que se pueden agregar en algunas dimensiones pero no
+en otras (generalmente dimensiones de fecha y tiempo).</p></li>
+<li><p><strong>Nonadditive Facts</strong> (hechos no aditivos): son
+medidas que no se pueden agregar en ninguna dimensión.</p></li>
+</ul>
+<p>Es importante <u>identificar los diferentes tipos de hechos</u>
+porque la sumarización o resumen de datos en una parte importante del
+proceso de análisis posterior.</p>
 <h2 id="iii.-dimensiones">iii. Dimensiones</h2>
+<p>Una dimensión es una entidad que establece el contexto empresarial
+para las medidas (hechos) utilizadas por una empresa.</p>
+<p>Las dimensiones definen el <u>quién</u>, <u>cuándo</u>, <u>cómo</u> y
+<u>donde</u> del modelo dimensional, y agrupan atributos similares en
+una categoría o área temática.</p>
+<p>Mientras que los hechos son numéricos, las dimensiones son de
+<u>naturaleza descriptiva</u> (aunque algunas de esas descripciones
+pueden ser numéricas).</p>
+<p>Las dimensiones permiten que los atributos dimensionales cambien sin
+tener que alterar los hechos subyacentes, evitando un procesamiento
+potencialmente complejo y lento.</p>
+<p>Desde la perspectiva del negocio, el propósito de las dimensiones es
+usar sus atributos para filtrar y analizar datos basados en medidas de
+rendimiento.</p>
+<p>Para ser útil en el análisis, un atributo dimensional necesita tener
+las siguientes características:</p>
+<ul>
+<li><p><u>Descriptivo:</u> para que los usuarios del negocio y los que
+diseñan las aplicaciones de Inteligencia de Negocio puedan
+entenderlo.</p></li>
+<li><p><u>Completo:</u> sin valores nulos.</p></li>
+<li><p><u>Único:</u> porque es fundamental que los valores sean
+identificables de forma única.</p></li>
+<li><p><u>Válido:</u> que los datos sean útiles para el
+negocio.</p></li>
+</ul>
+<p>Las tablas de dimensiones por lo general son muy anchas (contienen
+muchos atributos, y estos pueden tener bastantes caracteres cada uno) y
+cortas (suelen tener pocas filas en comparación con los hechos).</p>
+<p>Las tablas de dimensiones suelen estar <u>desnormalizadas</u>.</p>
+<p>Es habitual encontrar valores en texto en lugar de claves hacia otras
+tablas (tal y como se sugiere en las formas normales).</p>
+<p>La forma de relacionar estos campos para poder realizar el análisis
+posterior es a través de las <strong>jerarquías</strong>.</p>
+<h3 id="claves-de-dimensiones">Claves de dimensiones</h3>
+<p>En las claves de dimensión no es recomendable utilizar la clave de
+negocio (<i>business key</i> o <i>natural key</i>) usada en el sistema
+transaccional como clave principal (PK) por tres motivos
+principales:</p>
+<ul>
+<li><p><u>Rendimiento:</u> es preferible utilizar números entero de
+pocos bytes (tipos de datos INT) en lugar de usar claves formadas por
+caracteres. También puede haber cambios en las claves de negocio en los
+sistemas transaccionales que implicaría un proceso costoso de
+modificaciones masivas en las tablas de hechos.</p></li>
+<li><p><u>Homogeneización:</u> si tenemos varios orígenes de datos que
+queremos consolidar en una misma tabla de dimensiones y cada uno utiliza
+un tipo de datos o longitud diferente, o simplemente para un mismo
+elemento en cada tabla de origen tiene un valor diferente, se usa una
+nueva clave que sirva para las distintas fuentes.</p></li>
+<li><p><u>Información histórica:</u> cuando queremos almacenar el
+historial de cambios (cumpliendo las características básicas que debe
+cumplir un almacén de datos) es habitual tener varias filas con las
+diferentes versiones de los valores de los atributos y el periodo
+durante el que han estado vigentes, lo que implica que en la tabla de
+dimensiones habrá duplicidades en la clave de negocio, lo que impide que
+esta pueda ser la clave primaria.</p></li>
+</ul>
+<h4 id="clave-subrogada-o-sustituta">Clave subrogada (o sustituta)</h4>
+<p>Lo habitual, por tanto, es que se opte por tener una calve principal
+diferente a la usada en el sistema operacional, es decir, usar una
+<u>clave subrogada</u> (<i>surrogate key</i>).</p>
+<p>Al igual que en las tablas de hechos, una clave subrogada es un
+identificador único que es asignado a cada fila de la tabla de
+dimensiones y que conformará su clave principal.</p>
+<p>Esta clave <u>no tiene ningún sentido a nivel de negocio</u> (casi
+siempre), pero es necesaria para identificar de forma única cada una de
+las filas.</p>
+<p>Las claves subrogadas son siempre de tipo numérico, y habitualmente
+son autoincrementales.</p>
+<p>Una buena práctica es <u>mantener</u> la clave principal del sistema
+de origen como una clave alternativa en la dimensión (clave natural del
+sistema de origen).</p>
+<p>Si hay varios sistemas de origen con claves naturales distintas, es
+también una buena práctica agregar un atributo que identifique el
+sistema de origen del que proviene.</p>
+<p><strong>¿Por qué usar claves subrogadas en las
+dimensiones?</strong></p>
+<ul>
+<li><p><u>Integración de los datos de diversas fuentes:</u> al recopilar
+datos dimensionales de múltiples sistemas de origen, a menudo hay claves
+primarias incompatibles utilizadas en estos sistemas.</p></li>
+<li><p><u>Persistencia en el tiempo:</u> las claves primarias de los
+sistemas fuente a menudo cambian con el tiempo con diferentes nombres o
+numeraciones (según las convenciones que se utilicen en cada
+momento).</p></li>
+<li><p><u>Mejora del rendimiento:</u> una clave subrogada es un número
+entero (lo más pequeño posible). Los <i>joins</i> con la tabla de hechos
+será más rápida con este tipo de dato que usando claves alfanuméricas de
+gran tamaño.</p></li>
+</ul>
+<h3 id="jerarquía-de-dimensiones">Jerarquía de dimensiones</h3>
+<p>Una dimensión contiene una serie de atributos o características por
+las cuales es posible agrupar o filtrar la información.</p>
+<p>A veces estos atributos están organizados en <u>jerarquías</u> que
+permiten analizar los datos de forma agrupada, dicha agrupación se
+realiza mediante relaciones uno a muchos (1:N).</p>
+<p>Con los operadores OLAP se puede realizar un análisis mediante
+Drill-up y Drill-down por la jerarquía.</p>
+<p>Estas operaciones de análisis permiten agregar o desagregar la
+información de negocio gracias a las jerarquías, que proporciona una
+visión del negocio que no es fácil de visualizar en los sistemas
+transaccionales donde se almacenan los datos.</p>
 <h1 id="esquemas-dimensionales">2. ESQUEMAS DIMENSIONALES</h1>
 <h2 id="i.-esquema-en-estrella">i. Esquema en estrella</h2>
-<h2 id="ii.-esquema-en-copo-de-nieve">ii. Esquema en copo de nieve</h2>
-<h2 id="iii.-esquema-en-constelación">iii. Esquema en constelación</h2>
+<p>El esquema de estrella es el esquema más común para los modelos
+dimensionales.</p>
+<p>Consta de una tabla de hechos rodeada de múltiples tablas de
+dimensiones.</p>
+<p>El esquema de estrella es un compromiso entre un modelo completamente
+normalizado y uno desnormalizado, ya que la tabla de hechos está
+normalizada mientras que las dimensiones no suelen estarlo:</p>
+<ul>
+<li><p>Las tablas de hechos alojan la mayoría de los datos almacenados
+en el modelo dimensional, por lo que es importante que los mismos se
+almacenan en tablas normalizadas. Esta normalización es esencial para
+una mínima redundancia, facilidad de mantenimiento, y mejora del
+rendimiento en las consultas.</p></li>
+<li><p>Las dimensiones son tablas desnormalizadas con atributos que, a
+menudo, estarían dispersos en varias tablas si se utilizase un modelo
+relacional normalizado (3NF).</p></li>
+</ul>
+<p>El esquema en estrella es excelente para consultas, rendimiento y
+análisis; y es fácil de usar para los usuarios del negocio al
+proporcionar una lógica intiutiva de cómo está representada la
+información.</p>
+<h2 id="ii.-esquema-en-copo-de-nieve-snowflake">ii. Esquema en copo de
+nieve (Snowflake)</h2>
+<p>Está basado en el esquema de estrella, pero va un paso más allá al
+normalizar las jerarquías dentro de una o varias dimensiones.</p>
+<p>La diferencia es que algunas de las dimensiones no están relacionadas
+directamente con la tabla de hechos, sino que se relacionan con ella a
+través de otras dimensiones.</p>
+<p>El esquema en copo de nieve permite normalizar las dimensiones.</p>
+<p>Normalmente, este tipo de esquemas se suelen emplear por necesidades
+propias de los datos o por decisiones de diseño adoptadas por los
+modeladores de datos.</p>
+<p>Aunque la operación de normalizar las dimensiones es algo
+perfectamente admitido en el modelado dimensional, este proceso <u>solo
+debe hacerse en casos donde sea estrictamente necesario</u>.</p>
+<p>El motivo es que normalizar una dimensión redunda en una mejor
+estructura de los datos, pero penaliza drásticamente el rendimiento de
+las consultas (por los <i>joins</i> que se tienen que ejecutar) en el
+análisis posterior y complica mucho el diseño dimensional.</p>
+<p>El ahorro de espacio en disco asociado con las dimensiones
+normalizadas es <u>insignificante</u>.</p>
+<p>Si se compara con el almacenamiento que puede suponer una tabla de
+hechos (fácilmente 10 GB o más) el resultado es que el beneficio de
+normalizar una dimensión en relación con la pérdida de rendimiento que
+suponen los <i>joins</i> continuos del motor de análisis para recuperar
+la información, sea apenas apreciable (o, incluso, que sea
+negativo).</p>
+<h2 id="iii.-esquema-en-constelación-multifact-star-models">iii. Esquema
+en constelación (Multifact star models)</h2>
+<p>Los esquemas de estrella o copo de nieve generalmente están asociados
+con una sola tabla de hechos rodeada de dimensiones.</p>
+<p>La realidad es que la actividad de una empresa está formada por
+múltiples hechos, por lo que frecuentemente será necesario incluir más
+de una tabla de hechos para poder dar cabida a toda la actividad de la
+organización.</p>
+<p>Aunque los modelos ganan en complejidad, el esquema en constelación
+ayuda a visualizar mejor las relaciones entre los procesos de la
+organización.</p>
 <h1 id="modelo-dimensional-vs.-modelo-relacional">3. MODELO DIMENSIONAL
 VS. MODELO RELACIONAL</h1>
+<p>El modelo Entidad Relación (a veces conocido como modelo normalizado)
+es el estándar utilizado para los sistemas transaccionales (OLTP).</p>
+<p>Por el contrario, el modelado dimensional se adecúa para los sistemas
+de Inteligencia de Negocio y OLAP.</p>
+<p>El motivo está en <u>cómo ambos sistemas procesan y manipulan los
+datos</u>:</p>
+<ul>
+<li><p>Los datos en los sistemas OLTP se actualizan constantemente y de
+forma masiva, por lo que deben gestionar una gran cantidad de registros
+de manera concurrente. La normalización hace que el modelo posea una
+redundancia mínima para soportar el alto rendimiento de
+ransacciones.</p></li>
+<li><p>Los sistemas de Inteligencia de Negocio no actualizan los datos
+(los extraen, transforman y cargan desde los OLTPs de forma diferida).
+La atención se centra en el rendimiento de las consultas y en la
+recopilación y agregación de grandes conjuntos de datos.</p></li>
+</ul>
 <h1 id="conceptos-avanzados-sobre-dimensiones-y-hechos">4. CONCEPTOS
 AVANZADOS SOBRE DIMENSIONES Y HECHOS</h1>
 <h2 id="i.-dimensiones-de-fecha-y-tiempo">i. Dimensiones de fecha y
 tiempo</h2>
+<p>Las <strong>dimensiones de fecha</strong> son un aspecto fundamental
+en los sistemas de Inteligencia de Negocio.</p>
+<p>La práctica totalidad de la actividad de negocio de una organización
+tiene asociada una fecha siendo la evolución temporal de los mismos un
+aspecto clave en el análisis.</p>
+<p>Todas las tablas de hechos tienen al menos un atributo que se enlaza
+a la dimensión de fecha.</p>
+<p>Este atributo puede almacenarse como un tipo DATE(dd-MM-aaaa), como
+un tipo DATETIME(dd-MM-aaaa HH:mm:ss.SSSZ) o, lo recomendado, como un
+numérico según la composición de la clave ajena de la dimensión.</p>
+<p>Si se cumple esto último (que la clave ajena a la dimensión de fecha
+es una clave subrogada) es una buena práctica <u>incluir en la tabla de
+hechos un campo adicional de fecha</u> que exprese el mismo valor como
+DATE o como DATETIME.</p>
+<h3 id="cuestiones-a-tener-en-cuenta-relacionadas-con-fechas">Cuestiones
+a tener en cuenta relacionadas con fechas</h3>
+<ul>
+<li><p><u>Seleccionar o comparar DATETIME con DATE:</u> habitualmente,
+las fechas de un almacén de datos usa un tipo de datos DATETIME porque
+en el OLTP se registró ese nivel de detalle. Sin embargo, gran parte del
+análisis que realiza una organización se basa en el tipo DATE. La
+conversión de DATE a DATETIME transforma la fecha de “dd-MM-aaaa” a
+“dd-MM-aaaa 00:00:00.000”, por lo que un evento “dd-MM-aaaa
+HH-mm-ss.SSSZ” no entrará en el análisis. Por lo tanto, cada vez que se
+compara una fecha con un tipo de datos DATETIME, debe convertirse a
+DATE.</p></li>
+<li><p><u>Días festivos:</u> es fundamental detectar los días festivos o
+periodos vacacionales que pueden incidir en la actividad de negocio de
+una organización, para que el análisis no se vea desvirtuado por estos
+plazos de tiempo.</p></li>
+<li><p><u>Período de calendario calculados:</u> por funciones de fecha
+como trimestre, semana en año y día en el año. Toda información que se
+pueda incorporar a la dimensión fecha será de utilidad para la fase de
+análisis.</p></li>
+<li><p><u>Cambiar entre fecha de calendario fiscal y estándar</u> (si
+son diferentes entre sí): fórmulas basadas en reglas gubernamentales que
+convierten las fechas de los calendarios estándar a las fechas
+fiscales.</p></li>
+</ul>
+<h3 id="aspectos-de-diseño-de-una-dimensión-de-fecha">Aspectos de diseño
+de una dimensión de fecha</h3>
+<p>Aunque la composición de una dimensión de fecha depende de las
+necesidades de la organización, en cualquier sistema de Inteligencia de
+Negocio es necesaria la presencia de dos columnas en dicha
+dimensión:</p>
+<h4 id="clave-principal">1. Clave principal</h4>
+<p>La mejor práctica es que la clave subrogada de la dimensión fecha sea
+un número entero en formato <i>YYYYMMDD</i> ya que, si se utilizase una
+clave sustituta aleatoria autoincremental, la clave variará en función
+de la fecha de inicio asignada a la dimensión.</p>
+<p>En cambio, usando la convención <i>YYYYMMDD</i>, se garantiza que una
+fecha específica tenga el mismo valor en todas las dimensiones de fecha
+existentes en el modelo.</p>
+<p>Es la única excepción a la regla del modelado dimensional en que la
+clave sustituta de dimensión debe ser un número entero sin sentido
+aparente para el negocio.</p>
+<p>Hay varias ventajas al usar esta nomenclatura en la clave:</p>
+<ul>
+<li><p>Es universalmente entendido.</p></li>
+<li><p>Cumple con el estándar de intercambio internacional de fecha y
+hora ISO 8601: el estándar <strong>ISO 8601</strong> (<i>Data elements
+and interchange format -Information interchange- Representation of dates
+and times</i>) especifica la notación estándar utilizada para
+representar instantes, intervalos e intervalos recurrentes de tiempo
+evitando ambigüedades. Esta notación facilita la migración entre
+distintas plataformas.</p></li>
+<li><p>Lo que es más importante, esta convención hace consistente la
+dimensión de fecha, lo que ayuda a compartir datos en una
+organización.</p></li>
+</ul>
+<h4 id="columna-con-valor-de-fecha-completo">2. Columna con valor de
+fecha completo</h4>
+<p>La segunda columna obligatoria en una dimensión de fecha es la que
+almacena el valor de fecha completo.</p>
+<p>Esta columna es esencial, ya que se utiliza como columna de búsqueda
+en el proceso ETL que asigna al hecho la clave foránea de fecha de la
+dimensión.</p>
+<p>Además, es el campo que permitirá obtener nuevos valores de atributos
+relacionados con la fecha, los cuales permitirán el filtrado, agregación
+y agrupación en la fase de análisis, normalmente, a través de
+expresiones aplicadas directamente sobre el almacén de datos.</p>
+<p>Algunos de estos atributos adicionales en la dimensión de fecha
+obtenidos mediante expresiones de análisis son:</p>
+<ul>
+<li><p>Columnas que representan variaciones del mismo período de
+calendario.</p></li>
+<li><p>Períodos de calendario derivados de funciones de fecha.</p></li>
+<li><p>Columnas que se utilizan como <i>flags</i> para indicar si un día
+es entre semana, fin de semana, festivo, etc.</p></li>
+</ul>
+<p>Otra buena práctica es la de incluir un registro especial para
+representar fechas desconocidas o por determinar.</p>
+<h3 id="dimensiones-de-tiempo">Dimensiones de tiempo</h3>
+<p>Gran parte del análisis de negocio realizado en una organización
+implica solo la parte de la fecha del tipo de datos DATETIME.</p>
+<p>Habitualmente, el tiempo real en que ocurrió un hecho del negocio no
+es necesario porque la mayoría de las métricas se resumen por día,
+semana, trimestre o año.</p>
+<p>Esto ha llevado a dos enfoques diferentes sobre cómo manejar la hora
+del día en un sistema de Inteligencia de Negocio: tratar la hora del día
+<u>cómo un hecho</u>, o <u>cómo una dimensión</u>.</p>
+<h4 id="tiempo-como-un-hecho">Tiempo como un hecho</h4>
+<p>Si para el análisis <u>es irrelevante el tiempo o solo se realiza de
+forma limitada</u> en la organización, el tiempo se trata como un
+hecho.</p>
+<p>En este caso, la columna de fecha en la tabla de hechos contendrá
+tanto la fecha como la hora, manteniéndose igual el atributo con la FK a
+la dimensión de fecha.</p>
+<p>Hay varios motivos para conservar la hora del día incluso si no
+parece haber una necesidad analítica comercial:</p>
+<ul>
+<li><p>Posibilidad de vincular la fecha del hecho con la fecha real del
+sistema transaccional.</p></li>
+<li><p>Posibilidad de realizar el análisis puntual de la hora del día
+utilizando directamente la columna de hechos con la información
+completa.</p></li>
+<li><p>Si las condiciones cambian y el análisis del tiempo se convierte
+en un requisito, tener almacenada la información permite tener la
+capacidad de llevarlo a cabo sin tener que modificar la estructura del
+modelo.</p></li>
+</ul>
+<h4 id="tiempo-como-una-dimensión">Tiempo como una dimensión</h4>
+<p>Si <u>existe la necesidad de que el negocio pueda realizar el
+análisis por la hora del día</u> en que se producen los hechos, es
+preciso que el tiempo se gestione como una dimensión más.</p>
+<p>Este enfoque requiere disponer de <strong>tres columnas</strong> en
+la tabla de hechos para cada fecha que necesite ser analizada por el
+negocio: las mismas dos columnas que las incluidas en el enfoque del
+tiempo como hecho (FK a la dimensión de fecha y la columna que almacena
+el DATE o DATETIME completo) y una tercera columna que será una FK a la
+nueva dimensión de tiempo.</p>
+<p>La pregunta clave al diseñar la dimensión de tiempo es qué <u>nivel
+de granularidad</u> se necesita para el tiempo de análisis del día
+(horas, minutos, segundos o centésimas de segundo).</p>
+<p>El número de filas en la dimensión crecerá significativamente a
+medida que aumente el nivel de detalle.</p>
+<p>La <u>clave principal de la dimensión de tiempo</u> será una clave
+sustituta incremental que normalmente comenzará por cero (no es preciso
+un formato determinado como en la dimensión de fecha ya que los
+registros son siempre los mismos).</p>
+<p>Se pueden incluir de manera opcional columnas que se utilizarán con
+fines descriptivos y de filtrado en el análisis.</p>
+<h3 id="periodos-de-tiempo">Periodos de tiempo</h3>
+<p>El uso de la hora del día para el análisis en Inteligencia de Negocio
+suele estar enfocado a empresas en las que la actividad comercial está
+muy orientada al consumidor y a la evolución de sus hábitos de consumo a
+lo largo del día (comecio minorista, restaurantes, servicios públicos,
+telecomunicaciones y medios de comunicación).</p>
+<p>A menudo, este análisis de la hora del día se lleva a cabo en
+<u>períodos de tiempo</u> basados en rangos de tiempo.</p>
+<p>Para muchas organizaciones tan solo es necesaria tener definida una
+granularidad de periodos de tiempo, aunque en la tabla de hechos o en la
+dimensión de tiempo se almacene un gran nivel de detalle.</p>
+<p>Hay dos enfoques para respaldar el análisis de tiempo utilizando
+rangos de tiempo:</p>
+<ul>
+<li><p><u>Si se usa el tiempo como una dimensión</u> bastará con agregar
+más columnas a la dimensión de tiempo con las descripciones de franjas
+horarias.</p></li>
+<li><p><u>Si se usa el tiempo como un hecho</u> será necesario crear una
+dimensión de rangos de tiempo para asociar el hecho con su
+rango.</p></li>
+</ul>
+<p>Cualquiera de los enfoques es preferible a la codificación manual de
+períodos de tiempo, ya que puede ser redundante o inconsistente.</p>
+<h3 id="role-playing-dimensions">Role playing dimensions</h3>
+<p>Existen modelos de negocio en los que una dimensión puede ser
+referenciada varias veces desde la tabla de hechos, de manera que cada
+referencia representa un aspecto distinto aunque sea la misma
+dimensión.</p>
+<p>En el caso de fechas con roles diferenciados, la implementación de
+<i>role playing dimension</i> no puede hacerse conectando las claves
+contra la misma dimensión, ya que el motor de consultas de SQL (en
+modelos <i>ROLAP</i>) interpretaría esta combinación simultánea
+multidireccional de tal manera que sería preciso que todas las fechas
+implicadas fueran idénticas, lo cual es altamente improbable.</p>
+<p>Hay dos enfoques diferentes para implementar <i>role playing
+dimensions</i>:</p>
+<ul>
+<li><p><u>Crear tablas separadas para cada rol:</u> se crean dimensiones
+distintas para cada evento del hecho que lo necesite. Esto creará
+redundancias en el modelo y el mantenimiento será más complejo.</p></li>
+<li><p><u>Crear vistas para cada rol usando una sola dimensión:</u>
+evita el mantenimiento y la actualización de varias tablas físicas y
+ahorra espacio, pero es más complicado desde el punto de vista
+conceptual.</p></li>
+</ul>
 <h2
 id="ii.-tablas-de-hechos-sin-hechos-y-tablas-de-hechos-consolidados">ii.
 Tablas de hechos sin hechos y tablas de hechos consolidados</h2>
+<h3 id="tablas-de-hechos-sin-hechos-factless-fact">Tablas de hechos sin
+hechos (Factless fact)</h3>
+<p>Tal y como se ha visto hasta el momento, los hechos casi siempre
+tienen medidas cuantificables, pero hay excepciones.</p>
+<p>Estas excepciones ocurren cuando los eventos de un negocio no crean
+medidas cuantificables, lo que se conoce como <u>hechos sin hechos
+(factless fact)</u>.</p>
+<p>Existen dos tipos de <i>factless fact</i>:</p>
+<h4 id="factless-fact-tables-for-events-or-activities">Factless fact
+tables for events or activities</h4>
+<p>Tablas que almacenan un evento no cuantificable.</p>
+<p>No hay una medida directa asociada con ninguno de esos eventos, pero
+este hecho no significa que el evento no sea interesante para poder ser
+analizado.</p>
+<p>La mejor manera de modelar estos eventos es la de crear un atributo
+como un contador ficticio (<i>dummy counter</i>) que se establece a 1 o
+0, dependiendo de si el hecho ocurrió o no.</p>
+<p>Esto permite vincular el hecho con la dimensión correspondiente que
+posibilite realizar la sumarización de los eventos.</p>
+<h4 id="factless-fact-tables-for-conditions-or-coverage">Factless fact
+tables for conditions or coverage</h4>
+<p>Las tablas de hechos sin hechos también se utilizan para modelar
+condiciones u otras relaciones importantes entre dimensiones.</p>
+<p>Este tipo de escenarios siempre tienen dos partes: una tabla que
+contiene todas las condiciones que podrían suceder (<i>coverage fact
+table</i>) y la tabla que contiene lo que sí ha sucedido (la tabla de
+los hechos en sí).</p>
+<p>Cuando se resta la actividad de la tabla de hechos a lo almacenado en
+la <i>coverage fact table</i>, el resultado es el conjunto de
+condiciones que finalmente no han sucedido (<strong>análisis
+negativo</strong>).</p>
+<h3 id="tablas-de-hechos-consolidados">Tablas de hechos
+consolidados</h3>
+<p>A menudo es conveniente combinar hechos de múltiples procesos del
+negocio en una sola tabla de hechos consolidados, siempre que se puedan
+expresar con el mismo nivel de detalle.</p>
+<p>Este tipo de tablas están separadas de los procesos transaccionales y
+de los procesos de análisis de Inteligencia de Negocio habituales (de
+hecho, tendría sentido incluir este tipo de medidas en tablas con hechos
+ya sumarizados, pero no en tablas con hechos atómicos).</p>
 <h2 id="iii.-jerarquías-balanceadas-desequilibradas-e-irregulares">iii.
 Jerarquías balanceadas, desequilibradas e irregulares</h2>
+<h3 id="jerarquías-balanceadas">Jerarquías balanceadas</h3>
+<p>Todas las ramas dimensionales tienen el mismo número de niveles y la
+misma profundidad.</p>
+<p>La relación entre padres e hijos es constante.</p>
+<p><img src="/img/2425/tag3/Tema3_1.png" /></p>
+<h3 id="jerarquías-desequilibradas">Jerarquías desequilibradas</h3>
+<p>Las jerarquías desequilibradas ocurren cuando las ramas dimensionales
+tienen un número variable de niveles (profundidades inconsistentes
+aunque sin dejar de tener una relación padre-hijo constante).</p>
+<h3 id="jerarquías-irregulares">Jerarquías irregulares</h3>
+<p>Una jerarquía irregular contiene al menos un miembro de la jerarquía
+cuyo padre no está en el nivel que le corresponde inmediatamente por
+encima de él (los niveles saltan en la jerarquía).</p>
+<p><img src="/img/2425/tag3/Tema3_2.png" /></p>
+<h3 id="gestión-de-jerarquías-desequilibradas-e-irregulares">Gestión de
+jerarquías desequilibradas e irregulares</h3>
+<p>Existen dos maneras diferentes de gestionar las jerarquías
+desequilibradas e irregulares:</p>
+<ul>
+<li><p><u>Recursive pointer:</u> establece una relación padre-hijo
+dentro de la misma dimensión.</p></li>
+<li><p><u>Bridge table:</u> crear una tabla adicional que defina las
+relaciones entre la dimensión y los hechos.</p></li>
+</ul>
 <h2
 id="iv.-slowly-changing-dimensions-dimensiones-lentamente-cambiantes">iv.
-Slowly changing dimensions (Dimensiones lentamente cambiantes)</h2>
+Slowly Changing Dimensions (Dimensiones lentamente cambiantes)</h2>
+<p>El término <i>Slowly Changing Dimensions</i> (dimensiones lentamente
+cambiantes o SCD por sus siglas en inglés) hace referencia a que los
+datos de las dimensiones van cambiando poco a poco a lo largo del tiempo
+(no son incrementales como los hechos).</p>
+<p>Cada día hay nuevas ventas o pedidos, sin embargo, la categorización
+de los productos o clientes va cambiando poco a poco a lo largo del
+tiempo.</p>
+<p>Las dimensiones pueden ser <u><strong>estáticas</strong></u> (como
+los meses del año), <u><strong>cambiar muy lentamente</strong></u> (como
+el nombre de los municipios), o <u><strong>cambiar algo más
+rápidamente</strong></u> (como la edad de los clientes).</p>
+<p>Existen ocho tipos de SCD:</p>
+<ol type="1">
+<li><p><strong>SCD tipo 0:</strong> mantener datos originales.</p></li>
+<li><p><strong>SCD tipo 1:</strong> sobrescribe datos
+existentes.</p></li>
+<li><p><strong>SCD tipo 2:</strong> crear registros para los nuevos
+valores (información histórica).</p></li>
+<li><p><strong>SCD tipo 3:</strong> control de cambios usando columnas
+separadas (valor anterior en las nuevas columnas).</p></li>
+<li><p><strong>SCD tipo 4:</strong> añadir mini-dimensión.</p></li>
+<li><p><strong>SCD tipo 5:</strong> combinar tipos 4 + 1.</p></li>
+<li><p><strong>SCD tipo 6:</strong> combinar tipos 1 + 2 + 3.</p></li>
+<li><p><strong>SCD tipo 7:</strong> combinar tipos 1 + 2.</p></li>
+</ol>
+<h3 id="scd-tipo-0-mantener-datos-originales">SCD Tipo 0: Mantener datos
+originales</h3>
+<p>El tipo 0 es una dimensión fija (los datos en esta tabla de
+dimensiones se cargan una vez al comienzo del proyecto y nunca
+cambian).</p>
+<p>Esta técnica <u>no suele usarse</u> porque las organizaciones
+requieren que sus datos se mantengan constantemente actualizados, o solo
+se utiliza en dimensiones y atributos de naturaleza inmutable.</p>
+<p>Ejemplos de aplicación de políticas SCD Tipo 0 son:</p>
+<ul>
+<li><p>Dimensiones no cambiantes: fecha y tiempo (en la mayoría de sus
+atributos).</p></li>
+<li><p>Atributos considerados como “originales” en el modelo
+dimensional.</p></li>
+</ul>
+<h3 id="scd-tipo-1-sobrescribir-datos-existentes">SCD Tipo 1:
+Sobrescribir datos existentes</h3>
+<p>El tipo 1 consiste en sobrescribir los valores de los atributos
+dimensionales con los valores más actuales, por lo que no se almacena
+ningún tipo de información histórica.</p>
+<p>Esta técnica es adecuada cuando el cambio en la dimensión no afecta
+al análisis de los hechos vinculados.</p>
+<p><img src="/img/2425/tag3/Tema3_3.png" /></p>
+<h3
+id="scd-tipo-2-crear-registros-para-los-nuevos-valores-información-histórica">SCD
+Tipo 2: Crear registros para los nuevos valores (información
+histórica)</h3>
+<p>Por cada cambio que se produzca, se crea una nueva fila en la tabla
+de dimensiones con la fecha de inicio y una nueva clave sustituta, y se
+marca la fecha de fin de la versión anterior.</p>
+<p>Para cada hecho que entre en el almacén de datos se deberá comprobar
+a qué versión de la fila en la tabla de dimensiones se debe asociar (qué
+clave sustituta de almacenar) en función de la fecha en la que se
+produzca.</p>
+<p><img src="/img/2425/tag3/Tema3_4.png" /></p>
+<h3 id="scd-tipo-3-controlar-los-cambios-usando-columnas-separadas">SCD
+Tipo 3: Controlar los cambios usando columnas separadas</h3>
+<p>En el tipo 3, se sobrescribe el valor del atributo (como en el tipo
+1), pero se conserva el valor anterior en un nuevo atributo de la
+dimensión por tratarse de un valor importante para el negocio.</p>
+<p>Si un atributo cambia con un ritmo predecible, el negocio puede
+querer realizar el análisis por los valores históricos de dicho
+atributo.</p>
+<p><img src="/img/2425/tag3/Tema3_5.png" /></p>
+<p>En este caso, se aprovecha la naturaleza regular y predecible de los
+cambios generalizando el enfoque SCD de tipo 3 a una serie de atributos
+de dimensión de tipo 3.</p>
+<p>En la dimensión, hay un departamento actual (atributo que se
+sobrescribe) más una serie de atributos para cada designación anual.</p>
+<h3 id="scd-tipo-4-añadir-mini-dimensión">SCD Tipo 4: Añadir
+mini-dimensión</h3>
+<p>Aunque lo habitual es que los atributos dimensionales cambien
+lentamente en el tiempo, hay ocasiones en la que los cambios ocurren con
+más frecuencia en determinados atributos de la dimensión.</p>
+<p>Cuando existen dimensiones con atributos que cambian rápidamente y
+son relativamente grandes en cuanto al número total de registros
+existentes, dichos atributos pueden afectar negativamente tanto a la
+carga como al rendimiento de las consultas OLAP.</p>
+<p>La técnica tipo 4 consiste en dividir los atributos que cambian
+lentamente y los que lo hacen rápidamente en dos grupos
+diferenciados.</p>
+<p>El primer grupo, contendrá los atributos SCD y se considerará como la
+<u>dimensión primaria o base</u>; mientras que el segundo grupo,
+denominada <u>dimensión <i>profile</i> o mini-dimensión</u>, contendrá
+los atributos que cambian más rápidamente.</p>
+<p><img src="/img/2425/tag3/Tema3_6.png" /></p>
+<p>En el SCD tipo 4, para que pueda existir una referencia entre la
+dimensión primaria y la dimensión <i>profile</i>, lo más adecuado es
+establecer una relación entre ambas incorporando un nuevo atributo en la
+primaria como clave ajena a la <i>profile</i> (dimensión estabilizadora
+o <i>outrigger</i>).</p>
+<h3 id="scd-tipo-5-combinar-4-1">SCD Tipo 5: Combinar 4 + 1</h3>
+<p>La técnica tipo 5 aplica la técnica tipo 4 al dividir la dimensión en
+dos: una primaria con los atributos que combinan lentamente junto con
+los <u>valores actuales</u> (<i>current</i>) de los atributos que
+combinan rápidamente; y una mini-dimensión con los atributos que cambian
+rápidamente.</p>
+<p>Posteriormente, se usa la técnica 1 sobre los campos <i>current</i>
+de la dimensión primaria sobrescribiéndolos cada vez que se producen
+cambios en los atributos de la mini-dimensión para, de esta manera,
+tener siempre los valores actuales disponibles en la dimensión
+primaria.</p>
+<p>Este enfoque es adecuado cuando la mayor parte del análisis de
+negocio con la dimensión haga uso del valor actual de los atributos
+(“tal como están”), mientras que la mini-dimensión queda para realizar
+análisis sobre valores más atrás en el tiempo (“tal como estaban”) que,
+en teoría, serán menos frecuentes.</p>
+<p><img src="/img/2425/tag3/Tema3_7.png" /></p>
+<h3 id="scd-tipo-6-combinar-tipos-1-2-3">SCD Tipo 6: Combinar tipos 1 +
+2 + 3</h3>
+<p>Esta técnica crea un nuevo registro con cada cambio en los valores de
+los atributos que se están modificando (tipo 2), posteriormente almacena
+en la columna de valor histórico el valor anterior (tipo 3) y
+sobrescribe la columna de valor actual con el nuevo dato (tipo 1).</p>
+<p><img src="/img/2425/tag3/Tema3_8.png" /></p>
+<p>Esto permite que se pueda usar el atributo histórico para analizar
+los hechos según el valor que estaba en vigor cuando ocurrieron; pero
+también es posible realizar un análisis de manera global por el valor
+actual.</p>
+<h3 id="scd-tipo-7-combinar-1-2">SCD Tipo 7: Combinar 1 + 2</h3>
+<p>La técnica SCD tipo 7 (o SCD híbrida) consiste en crear dimensiones
+de tipo 1 y 2 y combinarlas con las tablas de hechos.</p>
+<p>Desde una <u>perspectiva de datos</u>, con esta técnica se realiza un
+seguimiento preciso de todos los cambios históricos en los atributos
+dimensionales que requiere el negocio.</p>
+<p>Desde una <u>perspectiva de análisis empresarial</u>, si tiene la
+opción de explorar los valores históricos en la dimensión de tipo 2 para
+el análisis “<i>as was</i>” (“tal como era”) y “<i>as is</i>” (“tal como
+es”); o proporcionar valores actuales de la dimensión de tipo 1 para el
+análisis “<i>as is</i>” (“tal como es”).</p>
+<p>Existen dos posibilidades de aplicación de la técnica SCD tipo 7: con
+clave subrogada dual o con clave subrogada única.</p>
+<p>La <u>clave subrogada dual</u> permite independizar el contenido de
+ambas tablas mostrando solo los valores actuales en la tabla tipo 1 (se
+requiere que exista una clave durable inmutable).</p>
+<p>Con la <u>clave subrogada única</u>, el número de registros es igual
+en ambas tablas, pero conteniendo información distinta.</p>
+<ul>
+<li><p><strong>DK (<i>Durable Key</i>):</strong> aquella que se
+establece en el almacén de datos para identificar un registro que puede
+haber sido alterado en el SOR de forma puntual.</p></li>
+<li><p><strong><i>Durable supernatural key:</i></strong> cuando en el
+almaćen de datos se requiere tener una clave única, se deeb crear una
+nueva clave durable que sea inmutable y no cambie en estas
+situaciones.</p></li>
+</ul>
+<p><img src="/img/2425/tag3/Tema3_9.png" /></p>
+<p><strong>SCD Tipo 7 con claves subrogadas <u>duales</u> para las
+tablas de dimensiones tipo 1 y tipo 2</strong></p>
+<p><img src="/img/2425/tag3/Tema3_10.png" /></p>
+<p><strong>SCD Tipo 7 con clave subrogada <u>única</u> para las tablas
+de dimensiones tipo 1 y tipo 2</strong></p>
 <h2 id="v.-conceptos-adicionales-sobre-dimensiones">v. Conceptos
 adicionales sobre dimensiones</h2>
+<h3 id="dimensiones-causales">Dimensiones causales</h3>
+<p>Los hechos suelen relacionarse con dimensiones relativas a productos,
+clientes, geografía, tiempo; que proporciona una visión sobre el “quién,
+qué y dónde” del hecho.</p>
+<p>Pero los hechos también tienen un componente de “por qué”.</p>
+<p>La <strong>dimensión causal</strong> indica <u>por qué</u> un cliente
+compró o devolvió un producto.</p>
+<p>Esta información puede ser muy importante para el negocio, porque
+puede indicar <u>patrones de comportamiento</u> que inciden de manera
+directa en la toma de decisiones empresariales, pero a menudo estas
+relaciones se pasan por alto en la fase de diseño de un modelo
+dimensional.</p>
+<h3 id="dimensiones-multivaluadas">Dimensiones multivaluadas</h3>
+<p>Las dimensiones multivaluadas son aquellas en las que un atributo de
+la tabla de hechos puede tener múltiples valores (le corresponderían,
+por tanto, diferentes valores de la misma dimensión).</p>
+<p>Hay tres enfoques distintos para modelar las dimensiones
+multivaluadas:</p>
+<ul>
+<li><p>Elegir un valor, ignorar los demás.</p></li>
+<li><p>Ampliar los atributos.</p></li>
+<li><p>Usar una tabla puente.</p></li>
+</ul>
+<h4 id="elegir-un-valor-específico-e-ignorar-los-otros-valores">Elegir
+un valor específico e ignorar los otros valores</h4>
+<p>Con esta técnica, las relaciones entre dimensiones y hechos
+permanecen sin cambios.</p>
+<p>El problema es que si se elige un valor específico y se ignoran los
+demás, se pierden el resto de detalles.</p>
+<p>Es el enfoque más rápido y fácil, pero también el menos adecuado.</p>
+<h4 id="ampliar-los-atributos">Ampliar los atributos</h4>
+<p>Consiste en extender los atributos de dimensión para incluir un
+<u>número fijo</u> de dimensiones multivalor (crear una lista dentro de
+cada registro de la dimensión).</p>
+<p>Es una forma rápida de resolver el problema cuando se tiene claro que
+existe un tope máximo de veces que puede ocurrir un atributo.</p>
+<p>El problema con este enfoque es que está limitado por el contexto del
+tope superior y, lo más importante, está imponiendo un grupo repetitivo
+en cada registro dimensional.</p>
+<h4 id="tabla-puente">Tabla puente</h4>
+<p>Consiste en crear una tabla intermedia entre la tabla de hechos y la
+tabla dimensional de forma que se pueda gestionar las relaciones muchos
+a muchos de los valores multivaluados.</p>
+<h3 id="outrigger-tables">Outrigger tables</h3>
+<p>Las <i>outrigger tables</i> (tablas estabilizadoras) surgen cuando
+hace referencia a una dimensión desde otra dimensión.</p>
+<p>El uso de estabilizadores elimina la necesidad de almacenar y
+actualizar atributos dimensionales de manera redundante en múltiples
+ubicaciones.</p>
+<p>Aunque generalmente no se recomienda relacionar dimensiones entre sí,
+hay situaciones en las que está justificado construir una dimensión
+estabilizadora que se conecte a otra dimensión.</p>
+<h3 id="dimensión-basura-junk-dimensions">Dimensión basura (Junk
+dimensions)</h3>
+<p>Una dimensión basura es una tabla de dimensión con atributos que
+inicialmente pueden formar parte de la tabla de hechos, pero que se
+extraen a una ubicación diferente para ser administrados, actualizados y
+consultados de una manera más eficiente.</p>
+<p>La naturaleza de estos atributos suele ser indicadores Sí/No o
+Verdadero/Falso (<i>flags</i>), o atributos con baja cardinalidad (que
+varían poco o que se repiten muy frecuentemente).</p>
 <h1 id="four-step-dimensional-design-process">5. FOUR-STEP DIMENSIONAL
 DESIGN PROCESS</h1>
+<p><strong>¿Cómo proceder a la hora de realizar un modelado
+dimensional?</strong></p>
+<p>Las cuatro decisiones clave que se toman durante el diseño de un
+modelo dimensional incluyen:</p>
+<ol type="1">
+<li><p>Identificar los procesos de negocio.</p></li>
+<li><p>Definir la granularidad.</p></li>
+<li><p>Definir las dimensiones.</p></li>
+<li><p>Identificar los hechos.</p></li>
+</ol>
+<p>Las respuestas a estas preguntas se obtendrán teniendo presente las
+necesidades del negocio junto con la naturaleza de los datos de
+origen.</p>
+<p>Una vez obtenidas, el equipo de diseño podrá determinar los nombres
+de las tablas y columnas del modelo, así como los valores de dominio y
+las reglas de negocio.</p>
+<p>Los responsables de la gobernanza de datos empresariales deben ser
+partícipes en esta actividad de diseño para garantizar la aceptación
+empresarial al sistema de inteligencia de negocio resultante.</p>
+<h2 id="paso-1-identificar-los-procesos-de-negocio">Paso 1: Identificar
+los procesos de negocio</h2>
+<p>Un <u>proceso de negocio</u> es una actividad realizada por una
+organización para alcanzar sus resultados.</p>
+<p>Los procesos de negocio suelen estar soportados por sistemas
+operacionales que controlan la actividad de la organización.</p>
+<p>Los procesos de negocio proporciona métricas clave de desempeño
+(KPIs).</p>
+<h2 id="paso-2-definir-la-granularidad">Paso 2: Definir la
+granularidad</h2>
+<p>Determinar cuál es el nivel de detalle que hay que definir en la
+tabla de hechos.</p>
+<p>La mejor práctica es indicar <u>el mayor nivel de detalle posible</u>
+para que el análisis sea pormenorizado.</p>
+<p>Cuanto más detallada y atómica sea la medición de los hechos, más
+información y conocimiento se podrá extraer en el análisis.</p>
+<p>Puede haber dimensiones (tiempo) que requieran también definir la
+granularidad.</p>
+<h2 id="paso-3-definir-las-dimensiones">Paso 3: Definir las
+dimensiones</h2>
+<p>Averiguar qué entidades serán las que den contexto a los datos a
+analizar.</p>
+<p>Es importante tener claro que una dimensión que siempre estará en un
+modelo dimensional (y que no aparece como entidad en el esquema Entidad
+Relación) es la dimensión temporal (normalmente de fecha).</p>
+<p>En cualquier sistema de Inteligencia de Negocio, el <u>tiempo es un
+factor clave</u> para determinar la evolución del negocio.</p>
+<h2 id="paso-4-identificar-los-hechos">Paso 4: Identificar los
+hechos</h2>
+<p>Determinar qué tablas alojan la actividad transaccional propia de la
+organización de las que se extraerán los indicadores y medidas que
+mostrarán la evolución dle negocio, permitirá tener una visión clara de
+los <u>hechos del negocio</u>.</p>
+<p>En esquemas relacionales complejos, es posible que estos hechos se
+encuentren repartidos por varias tablas, por lo que es necesario
+identificarlas y diseñar correctamente el proceso ETL para la carga en
+la tabla de hechos del modelo dimensional.</p>
+<p>Habitualmente, los hechos serán los procesos dentro de la
+organización que permitirán cumplir y/o mejorar los objetivos fijados
+por ella.</p>
 </body>
 </html>
